@@ -25,6 +25,7 @@ namespace crm
         private void btn_nuevo_Click(object sender, EventArgs e)
         {
             FormNuevoNegocio f = new FormNuevoNegocio();
+            f.MdiParent = this.MdiParent;
             f.Show();
         }
     }

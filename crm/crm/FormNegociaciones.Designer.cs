@@ -28,21 +28,30 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNegociaciones));
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btn_nuevo = new DevExpress.XtraEditors.SimpleButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
+            this.pag_lista = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.pag_estado = new DevExpress.XtraBars.Navigation.NavigationPage();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
+            this.navigationPane1.SuspendLayout();
+            this.pag_lista.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl1
             // 
-            this.gridControl1.Location = new System.Drawing.Point(12, 75);
+            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gridControl1.Location = new System.Drawing.Point(0, 0);
             this.gridControl1.MainView = this.gridView1;
             this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(967, 465);
+            this.gridControl1.Size = new System.Drawing.Size(944, 473);
             this.gridControl1.TabIndex = 0;
             this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -55,16 +64,16 @@
             // 
             // btn_nuevo
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(27, 31);
+            this.btn_nuevo.Location = new System.Drawing.Point(42, 9);
             this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(96, 38);
+            this.btn_nuevo.Size = new System.Drawing.Size(99, 38);
             this.btn_nuevo.TabIndex = 1;
             this.btn_nuevo.Text = "Añadir negocio";
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(821, 49);
+            this.textBox1.Location = new System.Drawing.Point(783, 18);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(158, 20);
             this.textBox1.TabIndex = 2;
@@ -78,20 +87,66 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Buscar";
             // 
+            // navigationPane1
+            // 
+            this.navigationPane1.Controls.Add(this.pag_lista);
+            this.navigationPane1.Controls.Add(this.pag_estado);
+            this.navigationPane1.Location = new System.Drawing.Point(1, 53);
+            this.navigationPane1.Name = "navigationPane1";
+            this.navigationPane1.PageProperties.ShowMode = DevExpress.XtraBars.Navigation.ItemShowMode.Image;
+            this.navigationPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
+            this.pag_lista,
+            this.pag_estado});
+            this.navigationPane1.RegularSize = new System.Drawing.Size(1010, 533);
+            this.navigationPane1.SelectedPage = this.pag_estado;
+            this.navigationPane1.SelectedPageIndex = 0;
+            this.navigationPane1.Size = new System.Drawing.Size(1010, 533);
+            this.navigationPane1.TabIndex = 4;
+            this.navigationPane1.Text = "Negociaciones";
+            // 
+            // pag_lista
+            // 
+            this.pag_lista.Caption = "Lista";
+            this.pag_lista.Controls.Add(this.gridControl1);
+            this.pag_lista.Image = ((System.Drawing.Image)(resources.GetObject("pag_lista.Image")));
+            this.pag_lista.Name = "pag_lista";
+            this.pag_lista.PageText = "";
+            this.pag_lista.Size = new System.Drawing.Size(944, 473);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(737, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Buscar";
+            // 
+            // pag_estado
+            // 
+            this.pag_estado.Caption = "Estado";
+            this.pag_estado.Image = ((System.Drawing.Image)(resources.GetObject("pag_estado.Image")));
+            this.pag_estado.Name = "pag_estado";
+            this.pag_estado.Size = new System.Drawing.Size(944, 473);
+            // 
             // FormNegociaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(991, 589);
-            this.Controls.Add(this.label1);
+            this.ClientSize = new System.Drawing.Size(1014, 589);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.navigationPane1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.btn_nuevo);
-            this.Controls.Add(this.gridControl1);
+            this.Controls.Add(this.label1);
             this.Name = "FormNegociaciones";
             this.Text = "Negocios";
             this.Load += new System.EventHandler(this.FormNegociaciones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
+            this.navigationPane1.ResumeLayout(false);
+            this.pag_lista.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,5 +159,9 @@
         private DevExpress.XtraEditors.SimpleButton btn_nuevo;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
+        private DevExpress.XtraBars.Navigation.NavigationPane navigationPane1;
+        private DevExpress.XtraBars.Navigation.NavigationPage pag_lista;
+        private DevExpress.XtraBars.Navigation.NavigationPage pag_estado;
+        private System.Windows.Forms.Label label2;
     }
 }

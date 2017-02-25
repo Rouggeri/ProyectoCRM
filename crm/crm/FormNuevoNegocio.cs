@@ -16,5 +16,11 @@ namespace crm
         {
             InitializeComponent();
         }
+
+        private void FormNuevoNegocio_Load(object sender, EventArgs e)
+        {
+            //WindowState = FormWindowState.Normal;
+            
+        }
     }
 }
