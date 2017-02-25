@@ -183,3 +183,6 @@ C:\Users\Chrix\Documents\Visual Studio 2015\Projects\crm\crm\bin\Debug\es\DevExp
 C:\Users\Chrix\Documents\Visual Studio 2015\Projects\crm\crm\bin\Debug\ja\DevExpress.XtraRichEdit.v15.2.resources.dll
 C:\Users\Chrix\Documents\Visual Studio 2015\Projects\crm\crm\bin\Debug\ru\DevExpress.XtraRichEdit.v15.2.resources.dll
 C:\Users\Chrix\Documents\Visual Studio 2015\Projects\crm\crm\obj\Debug\crm.FormNuevoNegocio.resources
+C:\Users\Marvin\Documents\GitHub\ProyectoCRM\crm\crm\bin\Debug\crm.exe.config
+C:\Users\Marvin\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.exe
+C:\Users\Marvin\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.pdb
