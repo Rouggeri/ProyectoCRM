@@ -183,6 +183,7 @@ C:\Users\Chrix\Documents\Visual Studio 2015\Projects\crm\crm\bin\Debug\es\DevExp
 C:\Users\Chrix\Documents\Visual Studio 2015\Projects\crm\crm\bin\Debug\ja\DevExpress.XtraRichEdit.v15.2.resources.dll
 C:\Users\Chrix\Documents\Visual Studio 2015\Projects\crm\crm\bin\Debug\ru\DevExpress.XtraRichEdit.v15.2.resources.dll
 C:\Users\Chrix\Documents\Visual Studio 2015\Projects\crm\crm\obj\Debug\crm.FormNuevoNegocio.resources
+<<<<<<< HEAD
 C:\Users\Chrix\Documents\GitHub\ProyectoCRM\crm\crm\bin\Debug\crm.exe.config
 C:\Users\Chrix\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.exe
 C:\Users\Chrix\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.pdb
@@ -368,3 +369,8 @@ C:\Users\Chrix\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.Login.resource
 C:\Users\Chrix\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.Properties.Resources.resources
 C:\Users\Chrix\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.csproj.GenerateResource.Cache
 C:\Users\Chrix\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.exe.licenses
+=======
+C:\Users\Marvin\Documents\GitHub\ProyectoCRM\crm\crm\bin\Debug\crm.exe.config
+C:\Users\Marvin\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.exe
+C:\Users\Marvin\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.pdb
+>>>>>>> f523f4b19c1281f9d68401c2b8bf95ff0ff82a83
