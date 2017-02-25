@@ -1,0 +1,192 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace crm
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        FormActividadesCalendario cal = new FormActividadesCalendario();
+        FormContactos con = new FormContactos();
+        FormNegociaciones neg = new FormNegociaciones();
+        frm_estadistica_empresa em = new frm_estadistica_empresa();
+        frm_estadistica_personal per = new frm_estadistica_personal();
+        frm_pronostico pro = new frm_pronostico();
+
+        private void LimpiarMDI()
+        {
+            if (this.ActiveMdiChild != null)
+            {
+                this.ActiveMdiChild.Close();
+            }
+        }
+
+        private void ClearAllMDIs()
+        {
+            foreach (Form f in this.MdiChildren)
+            {
+                f.Close();
+               // f.Dispose();
+            }
+        }
+
+        private void otroToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void caToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            cal = null;
+            con = null;
+            neg = null;
+            em = null;
+            per = null;
+            pro = null;
+
+            
+            if (neg == null)
+            {
+                neg = new FormNegociaciones();
+                neg.MdiParent = this;
+
+                neg.FormClosed += new FormClosedEventHandler(FormNegociaciones_FormClosed);
+                neg.Show();
+            }
+        }
+
+        private void actividadesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           // ClearAllMDIs();
+            LimpiarMDI();
+            if (cal == null)
+            {
+                cal = new FormActividadesCalendario();
+                cal.MdiParent = this;
+
+                cal.FormClosed += new FormClosedEventHandler(FormActividadesCalendario_FormClosed);
+                cal.Show();
+            }
+        }
+
+      
+
+        private void FormActividadesCalendario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cal = null;
+        }
+
+        private void contactoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           // ClearAllMDIs();
+            LimpiarMDI();
+            if (con == null)
+            {
+                con = new FormContactos();
+                con.MdiParent = this;
+
+                con.FormClosed += new FormClosedEventHandler(FormCotactos_FormClosed);
+                con.Show();
+            }
+
+        }
+
+        private void FormCotactos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            con = null;
+        }
+
+
+        private void gToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ClearAllMDIs();
+             LimpiarMDI();
+            if (neg == null)
+            {
+                neg = new FormNegociaciones();
+                neg.MdiParent = this;
+
+                neg.FormClosed += new FormClosedEventHandler(FormNegociaciones_FormClosed);
+                neg.Show();
+            }
+        }
+
+        private void FormNegociaciones_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            neg = null;
+        }
+
+        private void personalToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ClearAllMDIs();
+            LimpiarMDI();
+            if (em == null)
+            {
+                em = new frm_estadistica_empresa();
+                em.MdiParent = this;
+
+                em.FormClosed += new FormClosedEventHandler(frm_estadistica_empresa_FormClosed);
+                em.Show();
+            }
+        }
+
+        private void frm_estadistica_empresa_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            em = null;
+        }
+
+        private void personalToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            //ClearAllMDIs();
+            LimpiarMDI();
+            if (per == null)
+            {
+                per = new frm_estadistica_personal();
+                per.MdiParent = this;
+
+                per.FormClosed += new FormClosedEventHandler(frm_estadistica_personal_FormClosed);
+                per.Show();
+            }
+        }
+
+        private void frm_estadistica_personal_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            per = null;
+        }
+
+        private void proyeccionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ClearAllMDIs();
+            LimpiarMDI();
+            if (pro == null)
+            {
+                pro = new frm_pronostico();
+                pro.MdiParent = this;
+
+                pro.FormClosed += new FormClosedEventHandler(frm_pronostico_FormClosed);
+                pro.Show();
+            }
+        }
+
+        private void frm_pronostico_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            pro = null;
+        }
+    }
+}
