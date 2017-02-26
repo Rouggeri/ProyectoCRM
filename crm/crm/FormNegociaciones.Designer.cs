@@ -37,31 +37,20 @@
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.pag_lista = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pag_estado = new DevExpress.XtraBars.Navigation.NavigationPage();
-<<<<<<< HEAD
-=======
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
->>>>>>> 368c5671ef8443458753c75aaf7a44706a0a664e
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
-<<<<<<< HEAD
-            this.button7 = new System.Windows.Forms.Button();
-=======
->>>>>>> 368c5671ef8443458753c75aaf7a44706a0a664e
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             this.pag_lista.SuspendLayout();
             this.pag_estado.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -135,9 +124,6 @@
             // pag_estado
             // 
             this.pag_estado.Caption = "Estado";
-            this.pag_estado.Controls.Add(this.pictureBox1);
-            this.pag_estado.Controls.Add(this.button6);
-            this.pag_estado.Controls.Add(this.button5);
             this.pag_estado.Controls.Add(this.button4);
             this.pag_estado.Controls.Add(this.button3);
             this.pag_estado.Controls.Add(this.button2);
@@ -145,73 +131,6 @@
             this.pag_estado.Image = ((System.Drawing.Image)(resources.GetObject("pag_estado.Image")));
             this.pag_estado.Name = "pag_estado";
             this.pag_estado.Size = new System.Drawing.Size(944, 473);
-            // 
-<<<<<<< HEAD
-=======
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::crm.Properties.Resources.andre;
-            this.pictureBox1.Location = new System.Drawing.Point(27, 111);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(242, 267);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 6;
-            this.pictureBox1.TabStop = false;
-            // 
->>>>>>> 368c5671ef8443458753c75aaf7a44706a0a664e
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(381, 254);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 50);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(300, 254);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 50);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(381, 142);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 50);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(300, 198);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(381, 198);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(300, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -234,24 +153,47 @@
             // 
             this.tileGroup3.Name = "tileGroup3";
             // 
-<<<<<<< HEAD
-            // button7
+            // button1
             // 
-            this.button7.Location = new System.Drawing.Point(1, 9);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(36, 22);
-            this.button7.TabIndex = 5;
-            this.button7.Text = "button7";
-            this.button7.UseVisualStyleBackColor = true;
+            this.button1.Location = new System.Drawing.Point(300, 142);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 50);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
-=======
->>>>>>> 368c5671ef8443458753c75aaf7a44706a0a664e
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(381, 198);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 50);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(300, 198);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 50);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(381, 142);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 50);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // FormNegociaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 589);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.navigationPane1);
             this.Controls.Add(this.textBox1);
@@ -266,7 +208,6 @@
             this.navigationPane1.ResumeLayout(false);
             this.pag_lista.ResumeLayout(false);
             this.pag_estado.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -290,12 +231,5 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-<<<<<<< HEAD
-        private System.Windows.Forms.Button button7;
-=======
-        private System.Windows.Forms.PictureBox pictureBox1;
->>>>>>> 368c5671ef8443458753c75aaf7a44706a0a664e
     }
 }
