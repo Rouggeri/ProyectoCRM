@@ -41,11 +41,16 @@
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             this.pag_lista.SuspendLayout();
+            this.pag_estado.SuspendLayout();
             this.SuspendLayout();
             // 
             // gridControl1
@@ -119,6 +124,10 @@
             // pag_estado
             // 
             this.pag_estado.Caption = "Estado";
+            this.pag_estado.Controls.Add(this.button4);
+            this.pag_estado.Controls.Add(this.button3);
+            this.pag_estado.Controls.Add(this.button2);
+            this.pag_estado.Controls.Add(this.button1);
             this.pag_estado.Image = ((System.Drawing.Image)(resources.GetObject("pag_estado.Image")));
             this.pag_estado.Name = "pag_estado";
             this.pag_estado.Size = new System.Drawing.Size(944, 473);
@@ -144,6 +153,42 @@
             // 
             this.tileGroup3.Name = "tileGroup3";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(300, 142);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 50);
+            this.button1.TabIndex = 0;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(381, 198);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 50);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(300, 198);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 50);
+            this.button3.TabIndex = 2;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(381, 142);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 50);
+            this.button4.TabIndex = 3;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // FormNegociaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -162,6 +207,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
             this.navigationPane1.ResumeLayout(false);
             this.pag_lista.ResumeLayout(false);
+            this.pag_estado.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -181,5 +227,9 @@
         private DevExpress.XtraEditors.TileGroup tileGroup1;
         private DevExpress.XtraEditors.TileGroup tileGroup2;
         private DevExpress.XtraEditors.TileGroup tileGroup3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
     }
 }
