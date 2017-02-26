@@ -21,6 +21,7 @@ namespace crm
         private void frm_estadistica_personal_Load(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
+            pictureBox1.Image = Image.FromFile("andre.jpg");
         }
     }
 }
