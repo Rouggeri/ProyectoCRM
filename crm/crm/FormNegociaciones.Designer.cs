@@ -36,8 +36,11 @@
             this.label1 = new System.Windows.Forms.Label();
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.pag_lista = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.label2 = new System.Windows.Forms.Label();
             this.pag_estado = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.label2 = new System.Windows.Forms.Label();
+            this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
+            this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
+            this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -99,7 +102,7 @@
             this.pag_estado});
             this.navigationPane1.RegularSize = new System.Drawing.Size(1010, 533);
             this.navigationPane1.SelectedPage = this.pag_estado;
-            this.navigationPane1.SelectedPageIndex = 0;
+            this.navigationPane1.SelectedPageIndex = 1;
             this.navigationPane1.Size = new System.Drawing.Size(1010, 533);
             this.navigationPane1.TabIndex = 4;
             this.navigationPane1.Text = "Negociaciones";
@@ -113,6 +116,13 @@
             this.pag_lista.PageText = "";
             this.pag_lista.Size = new System.Drawing.Size(944, 473);
             // 
+            // pag_estado
+            // 
+            this.pag_estado.Caption = "Estado";
+            this.pag_estado.Image = ((System.Drawing.Image)(resources.GetObject("pag_estado.Image")));
+            this.pag_estado.Name = "pag_estado";
+            this.pag_estado.Size = new System.Drawing.Size(944, 473);
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -122,12 +132,17 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Buscar";
             // 
-            // pag_estado
+            // tileGroup1
             // 
-            this.pag_estado.Caption = "Estado";
-            this.pag_estado.Image = ((System.Drawing.Image)(resources.GetObject("pag_estado.Image")));
-            this.pag_estado.Name = "pag_estado";
-            this.pag_estado.Size = new System.Drawing.Size(944, 473);
+            this.tileGroup1.Name = "tileGroup1";
+            // 
+            // tileGroup2
+            // 
+            this.tileGroup2.Name = "tileGroup2";
+            // 
+            // tileGroup3
+            // 
+            this.tileGroup3.Name = "tileGroup3";
             // 
             // FormNegociaciones
             // 
@@ -163,5 +178,8 @@
         private DevExpress.XtraBars.Navigation.NavigationPage pag_lista;
         private DevExpress.XtraBars.Navigation.NavigationPage pag_estado;
         private System.Windows.Forms.Label label2;
+        private DevExpress.XtraEditors.TileGroup tileGroup1;
+        private DevExpress.XtraEditors.TileGroup tileGroup2;
+        private DevExpress.XtraEditors.TileGroup tileGroup3;
     }
 }
