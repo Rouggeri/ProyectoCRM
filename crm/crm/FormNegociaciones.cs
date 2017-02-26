@@ -20,6 +20,7 @@ namespace crm
         private void FormNegociaciones_Load(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
+           
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
