@@ -37,6 +37,8 @@
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.pag_lista = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pag_estado = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -45,8 +47,7 @@
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -136,6 +137,24 @@
             this.pag_estado.Name = "pag_estado";
             this.pag_estado.Size = new System.Drawing.Size(944, 473);
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(381, 254);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(75, 50);
+            this.button6.TabIndex = 5;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(300, 254);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 50);
+            this.button5.TabIndex = 4;
+            this.button5.Text = "button5";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(381, 142);
@@ -193,29 +212,21 @@
             // 
             this.tileGroup3.Name = "tileGroup3";
             // 
-            // button5
+            // button7
             // 
-            this.button5.Location = new System.Drawing.Point(300, 254);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(75, 50);
-            this.button5.TabIndex = 4;
-            this.button5.Text = "button5";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(381, 254);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 50);
-            this.button6.TabIndex = 5;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.button7.Location = new System.Drawing.Point(1, 9);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(36, 22);
+            this.button7.TabIndex = 5;
+            this.button7.Text = "button7";
+            this.button7.UseVisualStyleBackColor = true;
             // 
             // FormNegociaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1014, 589);
+            this.Controls.Add(this.button7);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.navigationPane1);
             this.Controls.Add(this.textBox1);
@@ -255,5 +266,6 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button7;
     }
 }
