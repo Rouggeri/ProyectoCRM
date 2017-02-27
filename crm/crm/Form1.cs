@@ -23,7 +23,8 @@ namespace crm
         frm_estadistica_empresa em = new frm_estadistica_empresa();
         frm_estadistica_personal per = new frm_estadistica_personal();
         frm_pronostico pro = new frm_pronostico();
-
+        frm_cliente cliente_form = new frm_cliente(); 
+ 
         private void LimpiarMDI()
         {
             if (this.ActiveMdiChild != null)
@@ -59,6 +60,7 @@ namespace crm
             em = null;
             per = null;
             pro = null;
+            cliente_form = null;
 
             
             if (neg == null)
@@ -187,6 +189,28 @@ namespace crm
         private void frm_pronostico_FormClosed(object sender, FormClosedEventArgs e)
         {
             pro = null;
+        }
+
+
+       
+
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LimpiarMDI();
+            if (cliente_form == null)
+            {
+                cliente_form = new frm_cliente();
+                cliente_form.MdiParent = this;
+
+                cliente_form.FormClosed += new FormClosedEventHandler(frm_cliente_FormClosed);
+                cliente_form.Show();
+            }
+
+        }
+        private void frm_cliente_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            cliente_form = null;
         }
     }
 }

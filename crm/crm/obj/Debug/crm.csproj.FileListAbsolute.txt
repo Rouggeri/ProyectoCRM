@@ -743,3 +743,5 @@ C:\ProyectoCRM\crm\crm\obj\Debug\crm.Login.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.Properties.Resources.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.csproj.GenerateResource.Cache
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe.licenses
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_cliente.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_empresa.resources
