@@ -63,8 +63,9 @@ namespace seguridad
             {
                 OdbcConnection con = new OdbcConnection();
                 //con.ConnectionString = "dsn=prueba2; database="+database+"; UID="+role+"; PWD="+password+"; ";
-                con.ConnectionString = "dsn=crm; UID=" + user + "; PWD=" + password + "; ";
-                //con.ConnectionString = "dsn=crm;";
+                //con.ConnectionString = "dsn=crm; UID=" + user + "; PWD=" + password + "; ";
+                //con.ConnectionString = "dsn=crm; UID=localhost; PWD=1234; ";
+                con.ConnectionString = "dsn=crm;";
                 con.Open();
                 return con;
             }
@@ -89,7 +90,7 @@ namespace seguridad
         {
             OdbcConnection con = new OdbcConnection();
             //con.ConnectionString = "dsn=prueba2; database="+database+"; UID="+role+"; PWD="+password+"; ";
-            con.ConnectionString = "dsn=hotelsancarlos; server=localhost; UID=" + user + "; PWD=" + password + "; ";
+            con.ConnectionString = "dsn=crm; server=localhost; UID=" + user + "; PWD=" + password + "; ";
             con.Close();
             return con;
         }
