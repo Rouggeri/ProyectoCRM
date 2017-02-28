@@ -35,7 +35,7 @@
             this.btn_cancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btn_nuevo = new DevExpress.XtraEditors.SimpleButton();
             this.btn_aceptar = new DevExpress.XtraEditors.SimpleButton();
-            this.txt_clientes = new System.Windows.Forms.TextBox();
+            this.txt_nombres = new System.Windows.Forms.TextBox();
             this.cmb_empresa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -49,8 +49,12 @@
             this.txt_puesto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_apellidos = new System.Windows.Forms.TextBox();
+            this.dgv_clientes = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tileNavCategory1
@@ -84,7 +88,7 @@
             this.tileNavPane1.Name = "tileNavPane1";
             this.tileNavPane1.OptionsPrimaryDropDown.BackColor = System.Drawing.Color.Empty;
             this.tileNavPane1.OptionsSecondaryDropDown.BackColor = System.Drawing.Color.Empty;
-            this.tileNavPane1.Size = new System.Drawing.Size(621, 40);
+            this.tileNavPane1.Size = new System.Drawing.Size(963, 40);
             this.tileNavPane1.TabIndex = 16;
             this.tileNavPane1.Text = "Clientes";
             // 
@@ -105,7 +109,7 @@
             this.groupControl1.Controls.Add(this.btn_cancelar);
             this.groupControl1.Controls.Add(this.btn_nuevo);
             this.groupControl1.Controls.Add(this.btn_aceptar);
-            this.groupControl1.Controls.Add(this.txt_clientes);
+            this.groupControl1.Controls.Add(this.txt_nombres);
             this.groupControl1.Controls.Add(this.cmb_empresa);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.label7);
@@ -119,7 +123,7 @@
             this.groupControl1.Controls.Add(this.txt_puesto);
             this.groupControl1.Controls.Add(this.label6);
             this.groupControl1.Controls.Add(this.txt_apellidos);
-            this.groupControl1.Location = new System.Drawing.Point(28, 53);
+            this.groupControl1.Location = new System.Drawing.Point(12, 64);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(564, 343);
             this.groupControl1.TabIndex = 19;
@@ -148,14 +152,15 @@
             this.btn_aceptar.Size = new System.Drawing.Size(75, 23);
             this.btn_aceptar.TabIndex = 14;
             this.btn_aceptar.Text = "Aceptar";
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
-            // txt_clientes
+            // txt_nombres
             // 
-            this.txt_clientes.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_clientes.Location = new System.Drawing.Point(89, 76);
-            this.txt_clientes.Name = "txt_clientes";
-            this.txt_clientes.Size = new System.Drawing.Size(132, 23);
-            this.txt_clientes.TabIndex = 6;
+            this.txt_nombres.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombres.Location = new System.Drawing.Point(89, 76);
+            this.txt_nombres.Name = "txt_nombres";
+            this.txt_nombres.Size = new System.Drawing.Size(132, 23);
+            this.txt_nombres.TabIndex = 6;
             // 
             // cmb_empresa
             // 
@@ -276,19 +281,45 @@
             this.txt_apellidos.Size = new System.Drawing.Size(126, 23);
             this.txt_apellidos.TabIndex = 7;
             // 
+            // dgv_clientes
+            // 
+            this.dgv_clientes.Location = new System.Drawing.Point(582, 64);
+            this.dgv_clientes.MainView = this.gridView1;
+            this.dgv_clientes.Name = "dgv_clientes";
+            this.dgv_clientes.Size = new System.Drawing.Size(903, 343);
+            this.dgv_clientes.TabIndex = 20;
+            this.dgv_clientes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.Yellow;
+            this.gridView1.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.Blue;
+            this.gridView1.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.Black;
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gridView1.GridControl = this.dgv_clientes;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.PaintStyleName = "Skin";
+            // 
             // frm_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 448);
+            this.ClientSize = new System.Drawing.Size(963, 528);
+            this.Controls.Add(this.dgv_clientes);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tileNavPane1);
             this.Name = "frm_cliente";
             this.Text = "Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frm_cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,7 +333,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_cancelar;
         private DevExpress.XtraEditors.SimpleButton btn_nuevo;
         private DevExpress.XtraEditors.SimpleButton btn_aceptar;
-        private System.Windows.Forms.TextBox txt_clientes;
+        private System.Windows.Forms.TextBox txt_nombres;
         private System.Windows.Forms.ComboBox cmb_empresa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
@@ -316,5 +347,7 @@
         private System.Windows.Forms.TextBox txt_puesto;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox txt_apellidos;
+        private DevExpress.XtraGrid.GridControl dgv_clientes;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }
