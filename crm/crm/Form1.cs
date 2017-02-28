@@ -55,6 +55,22 @@ namespace crm
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+            // conexion odbc
+            //try
+            //{
+            //    seguridad.Conexion.DSN = "crm";
+            //    seguridad.Conexion.PassWord = "1234";
+            //}
+            //catch (Exception ex)
+            //{
+            //    MessageBox.Show(ex.Message);
+
+            //}
+
+
+
+
             cal = null;
             con = null;
             neg = null;

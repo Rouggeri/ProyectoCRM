@@ -35,22 +35,26 @@
             this.btn_cancelar = new DevExpress.XtraEditors.SimpleButton();
             this.btn_nuevo = new DevExpress.XtraEditors.SimpleButton();
             this.btn_aceptar = new DevExpress.XtraEditors.SimpleButton();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txt_nombres = new System.Windows.Forms.TextBox();
+            this.cmb_empresa = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txt_correo = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txt_movil = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txt_telefono = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txt_puesto = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txt_apellidos = new System.Windows.Forms.TextBox();
+            this.dgv_clientes = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tileNavCategory1
@@ -84,7 +88,7 @@
             this.tileNavPane1.Name = "tileNavPane1";
             this.tileNavPane1.OptionsPrimaryDropDown.BackColor = System.Drawing.Color.Empty;
             this.tileNavPane1.OptionsSecondaryDropDown.BackColor = System.Drawing.Color.Empty;
-            this.tileNavPane1.Size = new System.Drawing.Size(621, 40);
+            this.tileNavPane1.Size = new System.Drawing.Size(963, 40);
             this.tileNavPane1.TabIndex = 16;
             this.tileNavPane1.Text = "Clientes";
             // 
@@ -105,21 +109,21 @@
             this.groupControl1.Controls.Add(this.btn_cancelar);
             this.groupControl1.Controls.Add(this.btn_nuevo);
             this.groupControl1.Controls.Add(this.btn_aceptar);
-            this.groupControl1.Controls.Add(this.textBox1);
-            this.groupControl1.Controls.Add(this.comboBox1);
+            this.groupControl1.Controls.Add(this.txt_nombres);
+            this.groupControl1.Controls.Add(this.cmb_empresa);
             this.groupControl1.Controls.Add(this.label1);
             this.groupControl1.Controls.Add(this.label7);
             this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Controls.Add(this.textBox6);
+            this.groupControl1.Controls.Add(this.txt_correo);
             this.groupControl1.Controls.Add(this.label3);
-            this.groupControl1.Controls.Add(this.textBox5);
+            this.groupControl1.Controls.Add(this.txt_movil);
             this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Controls.Add(this.textBox4);
+            this.groupControl1.Controls.Add(this.txt_telefono);
             this.groupControl1.Controls.Add(this.label5);
-            this.groupControl1.Controls.Add(this.textBox3);
+            this.groupControl1.Controls.Add(this.txt_puesto);
             this.groupControl1.Controls.Add(this.label6);
-            this.groupControl1.Controls.Add(this.textBox2);
-            this.groupControl1.Location = new System.Drawing.Point(28, 53);
+            this.groupControl1.Controls.Add(this.txt_apellidos);
+            this.groupControl1.Location = new System.Drawing.Point(12, 64);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(564, 343);
             this.groupControl1.TabIndex = 19;
@@ -148,23 +152,24 @@
             this.btn_aceptar.Size = new System.Drawing.Size(75, 23);
             this.btn_aceptar.TabIndex = 14;
             this.btn_aceptar.Text = "Aceptar";
+            this.btn_aceptar.Click += new System.EventHandler(this.btn_aceptar_Click);
             // 
-            // textBox1
+            // txt_nombres
             // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(89, 76);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(132, 23);
-            this.textBox1.TabIndex = 6;
+            this.txt_nombres.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nombres.Location = new System.Drawing.Point(89, 76);
+            this.txt_nombres.Name = "txt_nombres";
+            this.txt_nombres.Size = new System.Drawing.Size(132, 23);
+            this.txt_nombres.TabIndex = 6;
             // 
-            // comboBox1
+            // cmb_empresa
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(89, 122);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(132, 24);
-            this.comboBox1.TabIndex = 13;
+            this.cmb_empresa.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmb_empresa.FormattingEnabled = true;
+            this.cmb_empresa.Location = new System.Drawing.Point(89, 122);
+            this.cmb_empresa.Name = "cmb_empresa";
+            this.cmb_empresa.Size = new System.Drawing.Size(132, 24);
+            this.cmb_empresa.TabIndex = 13;
             // 
             // label1
             // 
@@ -196,13 +201,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Apellidos: ";
             // 
-            // textBox6
+            // txt_correo
             // 
-            this.textBox6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(89, 216);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(132, 23);
-            this.textBox6.TabIndex = 11;
+            this.txt_correo.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_correo.Location = new System.Drawing.Point(89, 216);
+            this.txt_correo.Name = "txt_correo";
+            this.txt_correo.Size = new System.Drawing.Size(132, 23);
+            this.txt_correo.TabIndex = 11;
             // 
             // label3
             // 
@@ -214,13 +219,13 @@
             this.label3.TabIndex = 2;
             this.label3.Text = "Puesto: ";
             // 
-            // textBox5
+            // txt_movil
             // 
-            this.textBox5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(89, 170);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(132, 23);
-            this.textBox5.TabIndex = 10;
+            this.txt_movil.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_movil.Location = new System.Drawing.Point(89, 170);
+            this.txt_movil.Name = "txt_movil";
+            this.txt_movil.Size = new System.Drawing.Size(132, 23);
+            this.txt_movil.TabIndex = 10;
             // 
             // label4
             // 
@@ -232,13 +237,13 @@
             this.label4.TabIndex = 3;
             this.label4.Text = "Teléfono: ";
             // 
-            // textBox4
+            // txt_telefono
             // 
-            this.textBox4.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(364, 170);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(126, 23);
-            this.textBox4.TabIndex = 9;
+            this.txt_telefono.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefono.Location = new System.Drawing.Point(364, 170);
+            this.txt_telefono.Name = "txt_telefono";
+            this.txt_telefono.Size = new System.Drawing.Size(126, 23);
+            this.txt_telefono.TabIndex = 9;
             // 
             // label5
             // 
@@ -250,13 +255,13 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Movil: ";
             // 
-            // textBox3
+            // txt_puesto
             // 
-            this.textBox3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(363, 118);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(126, 23);
-            this.textBox3.TabIndex = 8;
+            this.txt_puesto.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_puesto.Location = new System.Drawing.Point(363, 118);
+            this.txt_puesto.Name = "txt_puesto";
+            this.txt_puesto.Size = new System.Drawing.Size(126, 23);
+            this.txt_puesto.TabIndex = 8;
             // 
             // label6
             // 
@@ -268,27 +273,53 @@
             this.label6.TabIndex = 5;
             this.label6.Text = "Correo: ";
             // 
-            // textBox2
+            // txt_apellidos
             // 
-            this.textBox2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(363, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(126, 23);
-            this.textBox2.TabIndex = 7;
+            this.txt_apellidos.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_apellidos.Location = new System.Drawing.Point(363, 75);
+            this.txt_apellidos.Name = "txt_apellidos";
+            this.txt_apellidos.Size = new System.Drawing.Size(126, 23);
+            this.txt_apellidos.TabIndex = 7;
+            // 
+            // dgv_clientes
+            // 
+            this.dgv_clientes.Location = new System.Drawing.Point(582, 64);
+            this.dgv_clientes.MainView = this.gridView1;
+            this.dgv_clientes.Name = "dgv_clientes";
+            this.dgv_clientes.Size = new System.Drawing.Size(903, 343);
+            this.dgv_clientes.TabIndex = 20;
+            this.dgv_clientes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.Yellow;
+            this.gridView1.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.Blue;
+            this.gridView1.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.Black;
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gridView1.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gridView1.GridControl = this.dgv_clientes;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.PaintStyleName = "Skin";
             // 
             // frm_cliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(621, 448);
+            this.ClientSize = new System.Drawing.Size(963, 528);
+            this.Controls.Add(this.dgv_clientes);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.tileNavPane1);
             this.Name = "frm_cliente";
             this.Text = "Clientes";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frm_cliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_clientes)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -302,19 +333,21 @@
         private DevExpress.XtraEditors.SimpleButton btn_cancelar;
         private DevExpress.XtraEditors.SimpleButton btn_nuevo;
         private DevExpress.XtraEditors.SimpleButton btn_aceptar;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txt_nombres;
+        private System.Windows.Forms.ComboBox cmb_empresa;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txt_correo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txt_movil;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txt_puesto;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txt_apellidos;
+        private DevExpress.XtraGrid.GridControl dgv_clientes;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }
