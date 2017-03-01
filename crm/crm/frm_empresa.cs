@@ -16,5 +16,16 @@ namespace crm
         {
             InitializeComponent();
         }
+
+        private void frm_empresa_Load(object sender, EventArgs e)
+        {
+            cbo_pais.Properties.DataSource = OpBD.SeleccionarPaises();
+            cbo_pais.Properties.ValueMember = "id_pais";
+            cbo_pais.Properties.DisplayMember = "nombre";
+            cbo_pais.Properties.PopulateColumns();
+            cbo_pais.Properties.Columns[0].Visible = false;
+            
+
+        }
     }
 }
