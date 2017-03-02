@@ -746,3 +746,4 @@ C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe.licenses
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_cliente.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_empresa.resources
 C:\ProyectoCRM\crm\crm\bin\Debug\seguridad.dll
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.Form_inicio.resources
