@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_empresa));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.btn_guardar = new DevExpress.XtraEditors.SimpleButton();
             this.cbo_pais = new DevExpress.XtraEditors.LookUpEdit();
             this.txt_direccion = new System.Windows.Forms.RichTextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -48,6 +49,7 @@
             // groupControl1
             // 
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
+            this.groupControl1.Controls.Add(this.btn_guardar);
             this.groupControl1.Controls.Add(this.cbo_pais);
             this.groupControl1.Controls.Add(this.txt_direccion);
             this.groupControl1.Controls.Add(this.label4);
@@ -58,11 +60,21 @@
             this.groupControl1.Controls.Add(this.label2);
             this.groupControl1.Controls.Add(this.txt_nombre);
             this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Location = new System.Drawing.Point(131, 42);
+            this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(783, 406);
+            this.groupControl1.Size = new System.Drawing.Size(926, 460);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "Datos:";
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.Location = new System.Drawing.Point(426, 354);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(100, 31);
+            this.btn_guardar.TabIndex = 10;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // cbo_pais
             // 
@@ -176,5 +188,6 @@
         private System.Windows.Forms.RichTextBox txt_direccion;
         private System.Windows.Forms.Label label4;
         private DevExpress.XtraEditors.LookUpEdit cbo_pais;
+        private DevExpress.XtraEditors.SimpleButton btn_guardar;
     }
 }
