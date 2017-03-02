@@ -32,8 +32,8 @@
             this.tileNavPane1 = new DevExpress.XtraBars.Navigation.TileNavPane();
             this.label8 = new System.Windows.Forms.Label();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.btn_cancelar = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_nuevo = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_eliminar = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_modificar = new DevExpress.XtraEditors.SimpleButton();
             this.btn_aceptar = new DevExpress.XtraEditors.SimpleButton();
             this.txt_nombres = new System.Windows.Forms.TextBox();
             this.cmb_empresa = new System.Windows.Forms.ComboBox();
@@ -106,8 +106,8 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.btn_cancelar);
-            this.groupControl1.Controls.Add(this.btn_nuevo);
+            this.groupControl1.Controls.Add(this.btn_eliminar);
+            this.groupControl1.Controls.Add(this.btn_modificar);
             this.groupControl1.Controls.Add(this.btn_aceptar);
             this.groupControl1.Controls.Add(this.txt_nombres);
             this.groupControl1.Controls.Add(this.cmb_empresa);
@@ -128,22 +128,25 @@
             this.groupControl1.Size = new System.Drawing.Size(564, 343);
             this.groupControl1.TabIndex = 19;
             this.groupControl1.Text = "Información de contacto";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
-            // btn_cancelar
+            // btn_eliminar
             // 
-            this.btn_cancelar.Location = new System.Drawing.Point(382, 290);
-            this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(75, 23);
-            this.btn_cancelar.TabIndex = 16;
-            this.btn_cancelar.Text = "Cancelar";
+            this.btn_eliminar.Location = new System.Drawing.Point(382, 290);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(75, 23);
+            this.btn_eliminar.TabIndex = 16;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
-            // btn_nuevo
+            // btn_modificar
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(231, 290);
-            this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(75, 23);
-            this.btn_nuevo.TabIndex = 15;
-            this.btn_nuevo.Text = "Nuevo";
+            this.btn_modificar.Location = new System.Drawing.Point(231, 290);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(75, 23);
+            this.btn_modificar.TabIndex = 15;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
             // btn_aceptar
             // 
@@ -283,13 +286,15 @@
             // 
             // dgv_clientes
             // 
-            this.dgv_clientes.Location = new System.Drawing.Point(582, 64);
+            this.dgv_clientes.Location = new System.Drawing.Point(592, 64);
             this.dgv_clientes.MainView = this.gridView1;
             this.dgv_clientes.Name = "dgv_clientes";
-            this.dgv_clientes.Size = new System.Drawing.Size(903, 343);
+            this.dgv_clientes.Size = new System.Drawing.Size(564, 343);
             this.dgv_clientes.TabIndex = 20;
             this.dgv_clientes.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.dgv_clientes.Click += new System.EventHandler(this.dgv_clientes_Click);
+            this.dgv_clientes.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dgv_clientes_MouseDoubleClick);
             // 
             // gridView1
             // 
@@ -300,6 +305,7 @@
             this.gridView1.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
             this.gridView1.GridControl = this.dgv_clientes;
             this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.PaintStyleName = "Skin";
             // 
             // frm_cliente
@@ -330,8 +336,8 @@
         private DevExpress.XtraBars.Navigation.TileNavPane tileNavPane1;
         private System.Windows.Forms.Label label8;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private DevExpress.XtraEditors.SimpleButton btn_cancelar;
-        private DevExpress.XtraEditors.SimpleButton btn_nuevo;
+        private DevExpress.XtraEditors.SimpleButton btn_eliminar;
+        private DevExpress.XtraEditors.SimpleButton btn_modificar;
         private DevExpress.XtraEditors.SimpleButton btn_aceptar;
         private System.Windows.Forms.TextBox txt_nombres;
         private System.Windows.Forms.ComboBox cmb_empresa;
