@@ -118,7 +118,7 @@ namespace crm
             try
             {
                 // envio de parametros a ser modificados
-
+                direccionima = direccionima.Replace("\\", "\\\\");
                 empleados.ModificarEmpleado(txt_nombres.Text.Trim(),txt_apellidos.Text.Trim(),txt_puesto.Text.Trim(),txt_telefono.Text.Trim(),
                     txt_movil.Text.Trim(),txt_direccion.Text.Trim(),txt_correo.Text.Trim(), direccionima,codigoemp);
 
