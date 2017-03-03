@@ -19,11 +19,23 @@ namespace crm
 
         private void Form_inicio_Load(object sender, EventArgs e)
         {
+            //FONDO
             tile.BackgroundImage = Image.FromFile("azulf.jpg");
             tile.BackgroundImageLayout = ImageLayout.Stretch;
 
-            item_negocios.BackgroundImage = Image.FromFile("negocio.png");
-
+            //ITEM NEGOCIOS
+            
+            item_negocios.BackgroundImage = Image.FromFile("negocios2.png");
+            
+            //item_negocios.AppearanceItem.Hovered.BackColor = ColorTranslator.FromHtml("#EA2E49");
+            //item_negocios.AppearanceItem.Hovered.BackColor2 = ColorTranslator.FromHtml("#EA2E49");
+            //item_negocios.AppearanceItem.Hovered.BorderColor = ColorTranslator.FromHtml("#EA2E49");
+            //ITEM CONTACTOS
+            item_contactos.BackgroundImage = Image.FromFile("contactos2.png");
+            //ITEM CALENDARIO
+            item_calendario.BackgroundImage = Image.FromFile("calendario2.png");
         }
+
+
     }
 }
