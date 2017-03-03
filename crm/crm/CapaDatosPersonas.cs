@@ -65,5 +65,49 @@ namespace crm
             con.Close();
         }
 
+        // ---------------------------------------------- frm_NuevoEmpleado
+
+            // 1. Insertar nuevo empleado:
+        public void InsertarEmpleado(string nombres,string apellidos,string puesto,string telefono1, string movil, string direccion, string correo, string foto)
+        {
+            String cadena = "insert into tbl_empleado (nombres,apellidos,puesto,telefono1,movil,direccion,correo,foto,estado) values ('"+nombres+"','"+apellidos+"','"+puesto+"','"+telefono1+"','"+movil+"','"+direccion+"','"+correo+"','"+foto+"','activo')";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena,seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+
+        }
+
+        //2. Llenar gridchart empleados
+        public DataTable ConsultarEmpleados()
+        {
+            DataTable almacen = new DataTable();
+            String cadena = "select id_empleado,nombres,apellidos,puesto,telefono1,movil,direccion,correo,foto from tbl_empleado where estado = 'activo'";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(almacen);
+            return almacen;
+            
+        }
+
+        //3. modificar registro de empleados
+        public void ModificarEmpleado(string nombres, string apellidos, string puesto, string telefono1, string movil, string direccion, string correo, string foto,string codigo)
+        {
+            String cadena = "update tbl_empleado set nombres='"+nombres+"',apellidos='"+apellidos+"',puesto='"+puesto+"',telefono1='"+telefono1+"',movil='"+movil+"',direccion='"+direccion+"',correo='"+correo+"',foto='"+foto+"' where id_empleado='"+codigo+"'";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+        //4. Eliminar Empleados (cambio de estado)
+        public void EliminarEmpleado(string id_empleado)
+        {
+            String cadena = "update tbl_empleado set estado = 'inactivo' where id_empleado='" + id_empleado + "'";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
     }
 }

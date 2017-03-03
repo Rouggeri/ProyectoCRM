@@ -153,6 +153,12 @@
     <Compile Include="frm_estadistica_personal.Designer.cs">
       <DependentUpon>frm_estadistica_personal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_NuevoEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_NuevoEmpleado.Designer.cs">
+      <DependentUpon>frm_NuevoEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_pronostico.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     <EmbeddedResource Include="frm_estadistica_personal.resx">
       <DependentUpon>frm_estadistica_personal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_NuevoEmpleado.resx">
+      <DependentUpon>frm_NuevoEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_pronostico.resx">
       <DependentUpon>frm_pronostico.cs</DependentUpon>
     </EmbeddedResource>
@@ -213,6 +222,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -238,6 +248,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\imprimir1.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
