@@ -28,6 +28,9 @@ namespace crm
             FormNuevoNegocio f = new FormNuevoNegocio();
             f.MdiParent = this.MdiParent;
             f.Show();
+            
         }
+
+
     }
 }

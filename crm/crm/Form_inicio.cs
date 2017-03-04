@@ -24,18 +24,68 @@ namespace crm
             tile.BackgroundImageLayout = ImageLayout.Stretch;
 
             //ITEM NEGOCIOS
-            
             item_negocios.BackgroundImage = Image.FromFile("negocios2.png");
-            
-            //item_negocios.AppearanceItem.Hovered.BackColor = ColorTranslator.FromHtml("#EA2E49");
-            //item_negocios.AppearanceItem.Hovered.BackColor2 = ColorTranslator.FromHtml("#EA2E49");
-            //item_negocios.AppearanceItem.Hovered.BorderColor = ColorTranslator.FromHtml("#EA2E49");
             //ITEM CONTACTOS
             item_contactos.BackgroundImage = Image.FromFile("contactos2.png");
             //ITEM CALENDARIO
             item_calendario.BackgroundImage = Image.FromFile("calendario2.png");
+            //ITEM CLIENTES
+            item_clientes.BackgroundImage = Image.FromFile("clientes.png");
+            //ITEM PERSONAL
+            item_personal.BackgroundImage = Image.FromFile("personal.png");
+            //ITEM PRONOSTICOS
+            item_pronosticos.BackgroundImage = Image.FromFile("pronosticos.png");
+            //ITEM PRODUCTOS
+            item_productos.BackgroundImage = Image.FromFile("productos.png");
+            //ITEM VENTAS
+            item_ventas.BackgroundImage = Image.FromFile("ventas.png");
         }
 
+        private void item_negocios_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            FormNegociaciones f = new FormNegociaciones();
+            f.MdiParent = this.MdiParent;
+            f.Show();
+        }
 
+        private void item_contactos_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            FormContactos f = new FormContactos();
+            f.MdiParent = this.MdiParent;
+            f.Show();
+        }
+
+        private void item_calendario_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            FormActividadesCalendario f = new FormActividadesCalendario();
+            f.MdiParent = this.MdiParent;
+            f.Show();
+        }
+
+        private void item_clientes_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            frm_estadistica_empresa f = new frm_estadistica_empresa();
+            f.MdiParent = this.MdiParent;
+            f.Show();
+        }
+
+        private void item_personal_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            frm_estadistica_personal f = new frm_estadistica_personal();
+            f.MdiParent = this.MdiParent;
+            f.Show();
+        }
+
+        private void item_pronosticos_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            frm_pronostico f = new frm_pronostico();
+            f.MdiParent = this.MdiParent;
+            f.Show();
+        }
+
+        private void item_productos_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+
+        }
     }
 }
