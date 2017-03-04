@@ -42,12 +42,12 @@
             this.item_contactos = new DevExpress.XtraEditors.TileItem();
             this.item_calendario = new DevExpress.XtraEditors.TileItem();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem2 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem6 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem7 = new DevExpress.XtraEditors.TileItem();
+            this.item_clientes = new DevExpress.XtraEditors.TileItem();
+            this.item_personal = new DevExpress.XtraEditors.TileItem();
+            this.item_pronosticos = new DevExpress.XtraEditors.TileItem();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem1 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem3 = new DevExpress.XtraEditors.TileItem();
+            this.item_productos = new DevExpress.XtraEditors.TileItem();
+            this.item_ventas = new DevExpress.XtraEditors.TileItem();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -99,6 +99,7 @@
             this.item_negocios.Id = 14;
             this.item_negocios.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.item_negocios.Name = "item_negocios";
+            this.item_negocios.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_negocios_ItemClick);
             // 
             // item_contactos
             // 
@@ -116,6 +117,7 @@
             this.item_contactos.Id = 15;
             this.item_contactos.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.item_contactos.Name = "item_contactos";
+            this.item_contactos.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_contactos_ItemClick);
             // 
             // item_calendario
             // 
@@ -134,93 +136,113 @@
             this.item_calendario.Id = 16;
             this.item_calendario.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.item_calendario.Name = "item_calendario";
+            this.item_calendario.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_calendario_ItemClick);
             // 
             // tileGroup2
             // 
-            this.tileGroup2.Items.Add(this.tileItem2);
-            this.tileGroup2.Items.Add(this.tileItem6);
-            this.tileGroup2.Items.Add(this.tileItem7);
+            this.tileGroup2.Items.Add(this.item_clientes);
+            this.tileGroup2.Items.Add(this.item_personal);
+            this.tileGroup2.Items.Add(this.item_pronosticos);
             this.tileGroup2.Name = "tileGroup2";
             // 
-            // tileItem2
+            // item_clientes
             // 
-            this.tileItem2.AppearanceItem.Normal.BackColor = System.Drawing.Color.DarkOrchid;
-            this.tileItem2.AppearanceItem.Normal.BorderColor = System.Drawing.Color.DarkOrchid;
-            this.tileItem2.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
-            this.tileItem2.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem2.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.tileItem2.AppearanceItem.Normal.Options.UseFont = true;
+            this.item_clientes.AppearanceItem.Normal.BackColor = System.Drawing.Color.DarkOrchid;
+            this.item_clientes.AppearanceItem.Normal.BorderColor = System.Drawing.Color.DarkOrchid;
+            this.item_clientes.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
+            this.item_clientes.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.item_clientes.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.item_clientes.AppearanceItem.Normal.Options.UseFont = true;
+            this.item_clientes.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.item_clientes.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement4.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
             tileItemElement4.Text = "Clientes";
-            this.tileItem2.Elements.Add(tileItemElement4);
-            this.tileItem2.Id = 9;
-            this.tileItem2.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileItem2.Name = "tileItem2";
+            this.item_clientes.Elements.Add(tileItemElement4);
+            this.item_clientes.Id = 9;
+            this.item_clientes.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.item_clientes.Name = "item_clientes";
+            this.item_clientes.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_clientes_ItemClick);
             // 
-            // tileItem6
+            // item_personal
             // 
-            this.tileItem6.AppearanceItem.Hovered.BackColor = System.Drawing.Color.Red;
-            this.tileItem6.AppearanceItem.Hovered.BorderColor = System.Drawing.Color.Red;
-            this.tileItem6.AppearanceItem.Hovered.Options.UseBackColor = true;
-            this.tileItem6.AppearanceItem.Hovered.Options.UseBorderColor = true;
-            this.tileItem6.AppearanceItem.Normal.BackColor = System.Drawing.Color.Gray;
-            this.tileItem6.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Gray;
-            this.tileItem6.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
-            this.tileItem6.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem6.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.tileItem6.AppearanceItem.Normal.Options.UseFont = true;
+            this.item_personal.AppearanceItem.Hovered.BackColor = System.Drawing.Color.Red;
+            this.item_personal.AppearanceItem.Hovered.BorderColor = System.Drawing.Color.Red;
+            this.item_personal.AppearanceItem.Hovered.Options.UseBackColor = true;
+            this.item_personal.AppearanceItem.Hovered.Options.UseBorderColor = true;
+            this.item_personal.AppearanceItem.Normal.BackColor = System.Drawing.Color.Gray;
+            this.item_personal.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Gray;
+            this.item_personal.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
+            this.item_personal.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.item_personal.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.item_personal.AppearanceItem.Normal.Options.UseFont = true;
+            this.item_personal.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.item_personal.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement5.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
             tileItemElement5.Text = "Personal";
-            this.tileItem6.Elements.Add(tileItemElement5);
-            this.tileItem6.Id = 17;
-            this.tileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileItem6.Name = "tileItem6";
+            this.item_personal.Elements.Add(tileItemElement5);
+            this.item_personal.Id = 17;
+            this.item_personal.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.item_personal.Name = "item_personal";
+            this.item_personal.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_personal_ItemClick);
             // 
-            // tileItem7
+            // item_pronosticos
             // 
-            this.tileItem7.AppearanceItem.Normal.BackColor = System.Drawing.Color.OrangeRed;
-            this.tileItem7.AppearanceItem.Normal.BorderColor = System.Drawing.Color.OrangeRed;
-            this.tileItem7.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
-            this.tileItem7.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem7.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.tileItem7.AppearanceItem.Normal.Options.UseFont = true;
+            this.item_pronosticos.AppearanceItem.Normal.BackColor = System.Drawing.Color.OrangeRed;
+            this.item_pronosticos.AppearanceItem.Normal.BorderColor = System.Drawing.Color.OrangeRed;
+            this.item_pronosticos.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
+            this.item_pronosticos.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.item_pronosticos.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.item_pronosticos.AppearanceItem.Normal.Options.UseFont = true;
+            this.item_pronosticos.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.item_pronosticos.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement6.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
             tileItemElement6.Text = "Pronosticos";
-            this.tileItem7.Elements.Add(tileItemElement6);
-            this.tileItem7.Id = 18;
-            this.tileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
-            this.tileItem7.Name = "tileItem7";
+            this.item_pronosticos.Elements.Add(tileItemElement6);
+            this.item_pronosticos.Id = 18;
+            this.item_pronosticos.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
+            this.item_pronosticos.Name = "item_pronosticos";
+            this.item_pronosticos.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_pronosticos_ItemClick);
             // 
             // tileGroup3
             // 
-            this.tileGroup3.Items.Add(this.tileItem1);
-            this.tileGroup3.Items.Add(this.tileItem3);
+            this.tileGroup3.Items.Add(this.item_productos);
+            this.tileGroup3.Items.Add(this.item_ventas);
             this.tileGroup3.Name = "tileGroup3";
             // 
-            // tileItem1
+            // item_productos
             // 
-            this.tileItem1.AppearanceItem.Normal.BackColor = System.Drawing.Color.Red;
-            this.tileItem1.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Red;
-            this.tileItem1.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
-            this.tileItem1.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem1.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.tileItem1.AppearanceItem.Normal.Options.UseFont = true;
+            this.item_productos.AppearanceItem.Normal.BackColor = System.Drawing.Color.Red;
+            this.item_productos.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Red;
+            this.item_productos.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
+            this.item_productos.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.item_productos.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.item_productos.AppearanceItem.Normal.Options.UseFont = true;
+            this.item_productos.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.item_productos.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement7.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
             tileItemElement7.Text = "Productos";
-            this.tileItem1.Elements.Add(tileItemElement7);
-            this.tileItem1.Id = 20;
-            this.tileItem1.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem1.Name = "tileItem1";
+            this.item_productos.Elements.Add(tileItemElement7);
+            this.item_productos.Id = 20;
+            this.item_productos.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.item_productos.Name = "item_productos";
+            this.item_productos.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_productos_ItemClick);
             // 
-            // tileItem3
+            // item_ventas
             // 
-            this.tileItem3.AppearanceItem.Normal.BackColor = System.Drawing.Color.Green;
-            this.tileItem3.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Green;
-            this.tileItem3.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
-            this.tileItem3.AppearanceItem.Normal.Options.UseBackColor = true;
-            this.tileItem3.AppearanceItem.Normal.Options.UseBorderColor = true;
-            this.tileItem3.AppearanceItem.Normal.Options.UseFont = true;
+            this.item_ventas.AppearanceItem.Normal.BackColor = System.Drawing.Color.Green;
+            this.item_ventas.AppearanceItem.Normal.BorderColor = System.Drawing.Color.Green;
+            this.item_ventas.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 10.5F, System.Drawing.FontStyle.Bold);
+            this.item_ventas.AppearanceItem.Normal.Options.UseBackColor = true;
+            this.item_ventas.AppearanceItem.Normal.Options.UseBorderColor = true;
+            this.item_ventas.AppearanceItem.Normal.Options.UseFont = true;
+            this.item_ventas.BackgroundImageAlignment = DevExpress.XtraEditors.TileItemContentAlignment.MiddleCenter;
+            this.item_ventas.BackgroundImageScaleMode = DevExpress.XtraEditors.TileItemImageScaleMode.ZoomInside;
+            tileItemElement8.ImageToTextAlignment = DevExpress.XtraEditors.TileControlImageToTextAlignment.Top;
             tileItemElement8.Text = "Ventas";
-            this.tileItem3.Elements.Add(tileItemElement8);
-            this.tileItem3.Id = 21;
-            this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem3.Name = "tileItem3";
+            this.item_ventas.Elements.Add(tileItemElement8);
+            this.item_ventas.Id = 21;
+            this.item_ventas.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.item_ventas.Name = "item_ventas";
             // 
             // label1
             // 
@@ -268,7 +290,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.tile);
             this.Name = "Form_inicio";
-            this.Text = "Form_inicio";
+            this.Text = "Inicio";
             this.Load += new System.EventHandler(this.Form_inicio_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -280,15 +302,15 @@
         private DevExpress.XtraEditors.TileControl tile;
         private DevExpress.XtraEditors.TileGroup Grupo1;
         private DevExpress.XtraEditors.TileGroup tileGroup2;
-        private DevExpress.XtraEditors.TileItem tileItem2;
+        private DevExpress.XtraEditors.TileItem item_clientes;
         private DevExpress.XtraEditors.TileGroup tileGroup3;
         private DevExpress.XtraEditors.TileItem item_negocios;
         private DevExpress.XtraEditors.TileItem item_contactos;
         private DevExpress.XtraEditors.TileItem item_calendario;
-        private DevExpress.XtraEditors.TileItem tileItem6;
-        private DevExpress.XtraEditors.TileItem tileItem7;
-        private DevExpress.XtraEditors.TileItem tileItem1;
-        private DevExpress.XtraEditors.TileItem tileItem3;
+        private DevExpress.XtraEditors.TileItem item_personal;
+        private DevExpress.XtraEditors.TileItem item_pronosticos;
+        private DevExpress.XtraEditors.TileItem item_productos;
+        private DevExpress.XtraEditors.TileItem item_ventas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

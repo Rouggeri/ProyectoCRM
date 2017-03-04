@@ -82,14 +82,14 @@ namespace crm
             emp = null;
             ini = null;
 
-            
-            if (neg == null)
-            {
-                neg = new FormNegociaciones();
-                neg.MdiParent = this;
 
-                neg.FormClosed += new FormClosedEventHandler(FormNegociaciones_FormClosed);
-                neg.Show();
+            if (ini == null)
+            {
+                ini = new Form_inicio();
+                ini.MdiParent = this;
+
+                ini.FormClosed += new FormClosedEventHandler(frm_inicio_FormClosed);
+                ini.Show();
             }
         }
 

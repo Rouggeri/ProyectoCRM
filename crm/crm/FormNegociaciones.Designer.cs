@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNegociaciones));
+            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btn_nuevo = new DevExpress.XtraEditors.SimpleButton();
@@ -41,10 +46,13 @@
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.tileestado = new DevExpress.XtraEditors.TileControl();
+            this.tileGroup5 = new DevExpress.XtraEditors.TileGroup();
+            this.tileItem3 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem4 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem5 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem6 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem7 = new DevExpress.XtraEditors.TileItem();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -72,9 +80,9 @@
             // 
             // btn_nuevo
             // 
-            this.btn_nuevo.Location = new System.Drawing.Point(42, 9);
+            this.btn_nuevo.Location = new System.Drawing.Point(58, 9);
             this.btn_nuevo.Name = "btn_nuevo";
-            this.btn_nuevo.Size = new System.Drawing.Size(99, 38);
+            this.btn_nuevo.Size = new System.Drawing.Size(99, 29);
             this.btn_nuevo.TabIndex = 1;
             this.btn_nuevo.Text = "Añadir negocio";
             this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
@@ -124,10 +132,7 @@
             // pag_estado
             // 
             this.pag_estado.Caption = "Estado";
-            this.pag_estado.Controls.Add(this.button4);
-            this.pag_estado.Controls.Add(this.button3);
-            this.pag_estado.Controls.Add(this.button2);
-            this.pag_estado.Controls.Add(this.button1);
+            this.pag_estado.Controls.Add(this.tileestado);
             this.pag_estado.Image = ((System.Drawing.Image)(resources.GetObject("pag_estado.Image")));
             this.pag_estado.Name = "pag_estado";
             this.pag_estado.Size = new System.Drawing.Size(944, 473);
@@ -153,41 +158,67 @@
             // 
             this.tileGroup3.Name = "tileGroup3";
             // 
-            // button1
+            // tileestado
             // 
-            this.button1.Location = new System.Drawing.Point(300, 142);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 50);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.tileestado.AllowSelectedItem = true;
+            this.tileestado.DragSize = new System.Drawing.Size(0, 0);
+            this.tileestado.Groups.Add(this.tileGroup5);
+            this.tileestado.Location = new System.Drawing.Point(49, 62);
+            this.tileestado.MaxId = 7;
+            this.tileestado.Name = "tileestado";
+            this.tileestado.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileestado.Size = new System.Drawing.Size(843, 371);
+            this.tileestado.TabIndex = 0;
+            this.tileestado.Text = "tileControl1";
             // 
-            // button2
+            // tileGroup5
             // 
-            this.button2.Location = new System.Drawing.Point(381, 198);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 50);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
+            this.tileGroup5.Items.Add(this.tileItem3);
+            this.tileGroup5.Items.Add(this.tileItem7);
+            this.tileGroup5.Items.Add(this.tileItem4);
+            this.tileGroup5.Items.Add(this.tileItem5);
+            this.tileGroup5.Items.Add(this.tileItem6);
+            this.tileGroup5.Name = "tileGroup5";
             // 
-            // button3
+            // tileItem3
             // 
-            this.button3.Location = new System.Drawing.Point(300, 198);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 50);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
+            tileItemElement11.Text = "tileItem3";
+            this.tileItem3.Elements.Add(tileItemElement11);
+            this.tileItem3.Id = 2;
+            this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem3.Name = "tileItem3";
             // 
-            // button4
+            // tileItem4
             // 
-            this.button4.Location = new System.Drawing.Point(381, 142);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(75, 50);
-            this.button4.TabIndex = 3;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
+            tileItemElement12.Text = "tileItem4";
+            this.tileItem4.Elements.Add(tileItemElement12);
+            this.tileItem4.Id = 3;
+            this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem4.Name = "tileItem4";
+            // 
+            // tileItem5
+            // 
+            tileItemElement13.Text = "tileItem5";
+            this.tileItem5.Elements.Add(tileItemElement13);
+            this.tileItem5.Id = 4;
+            this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem5.Name = "tileItem5";
+            // 
+            // tileItem6
+            // 
+            tileItemElement14.Text = "tileItem6";
+            this.tileItem6.Elements.Add(tileItemElement14);
+            this.tileItem6.Id = 5;
+            this.tileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem6.Name = "tileItem6";
+            // 
+            // tileItem7
+            // 
+            tileItemElement15.Text = "tileItem7";
+            this.tileItem7.Elements.Add(tileItemElement15);
+            this.tileItem7.Id = 6;
+            this.tileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem7.Name = "tileItem7";
             // 
             // FormNegociaciones
             // 
@@ -227,9 +258,12 @@
         private DevExpress.XtraEditors.TileGroup tileGroup1;
         private DevExpress.XtraEditors.TileGroup tileGroup2;
         private DevExpress.XtraEditors.TileGroup tileGroup3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private DevExpress.XtraEditors.TileControl tileestado;
+        private DevExpress.XtraEditors.TileGroup tileGroup5;
+        private DevExpress.XtraEditors.TileItem tileItem3;
+        private DevExpress.XtraEditors.TileItem tileItem4;
+        private DevExpress.XtraEditors.TileItem tileItem5;
+        private DevExpress.XtraEditors.TileItem tileItem6;
+        private DevExpress.XtraEditors.TileItem tileItem7;
     }
 }
