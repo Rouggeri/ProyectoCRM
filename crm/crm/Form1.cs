@@ -275,6 +275,12 @@ namespace crm
         // Pestaña de Empleados
         private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            
+        }
+        
+
+        private void empleadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             if (empleado_form == null)
             {
                 empleado_form = new frm_NuevoEmpleado();
