@@ -20,39 +20,7 @@ namespace crm
         }
         string codigo_cliente = "";
 
-        private void btn_aceptar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-
-                // Iniciar grid (limpiarlo)
-                dgv_clientes.DataSource = "";
-
-                CapaDatosPersonas inserta = new CapaDatosPersonas();
-                inserta.InsertarNuevoCliente(txt_nombres.Text.Trim(), txt_apellidos.Text.Trim(),
-                cmb_empresa.SelectedValue.ToString(), txt_puesto.Text, txt_movil.Text, txt_telefono.Text, txt_correo.Text);
-
-                // carga de datagrid
-                DataTable contenedor = inserta.SeleccionarListaClientes();
-                dgv_clientes.DataSource = contenedor;
-
-                // Limpiar cajas de texto
-                txt_apellidos.Text = "";
-                txt_correo.Text = "";
-                txt_movil.Text = "";
-                txt_nombres.Text = "";
-                txt_puesto.Text = "";
-                txt_telefono.Text = "";
-
-                MessageBox.Show("Usuario registrado exitosamente");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-            
-                
-        }
+       
 
 
         // load de formulario cliente
@@ -89,6 +57,7 @@ namespace crm
 
         private void dgv_clientes_Click(object sender, EventArgs e)
         {
+            try { 
             // Crear vector:
             int[] vector = ((GridView)dgv_clientes.MainView).GetSelectedRows();
             // Seleccionar las areas que tomará el vector del grid
@@ -110,7 +79,11 @@ namespace crm
             txt_correo.Text = correo["correo"].ToString();
              codigo_cliente = id_cliente["id_cliente"].ToString();
 
-
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
 
 
         }
@@ -127,9 +100,56 @@ namespace crm
 
         }
         
+        
+        // Boton nuevo
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                // Limpiar cajas de texto
+                txt_apellidos.Text = "";
+                txt_correo.Text = "";
+                txt_movil.Text = "";
+                txt_nombres.Text = "";
+                txt_puesto.Text = "";
+                txt_telefono.Text = "";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                // Iniciar grid (limpiarlo)
+                dgv_clientes.DataSource = "";
+
+                CapaDatosPersonas inserta = new CapaDatosPersonas();
+                inserta.InsertarNuevoCliente(txt_nombres.Text.Trim(), txt_apellidos.Text.Trim(),
+                cmb_empresa.SelectedValue.ToString(), txt_puesto.Text, txt_movil.Text, txt_telefono.Text, txt_correo.Text);
+
+                // carga de datagrid
+                DataTable contenedor = inserta.SeleccionarListaClientes();
+                dgv_clientes.DataSource = contenedor;
+
+
+
+                MessageBox.Show("Usuario registrado exitosamente");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
+        }
+
         //_____________________________ BOTOM MODIFICAR________________
 
-        private void btn_modificar_Click(object sender, EventArgs e)
+        private void btn_editar_Click(object sender, EventArgs e)
         {
             try
             {
@@ -155,16 +175,22 @@ namespace crm
             {
                 MessageBox.Show(ex.Message);
             }
-
-
         }
 
-
         // Boton eliminar (Cambio de estado [inactivo])
-        private void btn_eliminar_Click(object sender, EventArgs e)
+
+        private void button2_Click(object sender, EventArgs e)
         {
             CapaDatosPersonas eliminar = new CapaDatosPersonas();
             eliminar.EliminarCliente(codigo_cliente);
+        }
+
+
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Hola Mundo Yo soy el Mensaje", "Yo soy el Titulo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+           
         }
     }
 }
