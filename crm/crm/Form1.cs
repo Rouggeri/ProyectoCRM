@@ -26,6 +26,7 @@ namespace crm
         frm_cliente cliente_form = new frm_cliente();
         frm_empresa emp = new frm_empresa();
         Form_inicio ini = new Form_inicio();
+        frm_NuevoEmpleado empleado_form = new frm_NuevoEmpleado();
  
         private void LimpiarMDI()
         {
@@ -81,6 +82,7 @@ namespace crm
             cliente_form = null;
             emp = null;
             ini = null;
+            empleado_form = null;
 
 
             if (ini == null)
@@ -267,6 +269,24 @@ namespace crm
         private void frm_inicio_FormClosed(object sender, FormClosedEventArgs e)
         {
             ini = null;
+        }
+
+
+        // Pestaña de Empleados
+        private void empleadoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (empleado_form == null)
+            {
+                empleado_form = new frm_NuevoEmpleado();
+                empleado_form.MdiParent = this;
+
+                empleado_form.FormClosed += new FormClosedEventHandler(frm_NuevoEmpleado_FormClosed);
+                empleado_form.Show();
+            }
+        }
+        private void frm_NuevoEmpleado_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            empleado_form = null;
         }
     }
 }

@@ -231,7 +231,7 @@
             this.linkLabel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 6);
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.Location = new System.Drawing.Point(87, 179);
+            this.linkLabel1.Location = new System.Drawing.Point(103, 179);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(41, 16);
             this.linkLabel1.TabIndex = 6;
