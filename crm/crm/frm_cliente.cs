@@ -124,21 +124,29 @@ namespace crm
         {
             try
             {
+                if (txt_apellidos.Text == "" || txt_correo.Text.Trim() == "" || txt_movil.Text == "" || txt_nombres.Text == "" || txt_puesto.Text == "" || txt_telefono.Text == "")
+                {
 
-                // Iniciar grid (limpiarlo)
-                dgv_clientes.DataSource = "";
+                    MessageBox.Show("Usuario no ingresado, Uno o más campos estan vacíos", "ADVERTENCIA", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                CapaDatosPersonas inserta = new CapaDatosPersonas();
-                inserta.InsertarNuevoCliente(txt_nombres.Text.Trim(), txt_apellidos.Text.Trim(),
-                cmb_empresa.SelectedValue.ToString(), txt_puesto.Text, txt_movil.Text, txt_telefono.Text, txt_correo.Text);
+                }
+                else
+                {
+                    // Iniciar grid (limpiarlo)
+                    dgv_clientes.DataSource = "";
 
-                // carga de datagrid
-                DataTable contenedor = inserta.SeleccionarListaClientes();
-                dgv_clientes.DataSource = contenedor;
+                    CapaDatosPersonas inserta = new CapaDatosPersonas();
+                    inserta.InsertarNuevoCliente(txt_nombres.Text.Trim(), txt_apellidos.Text.Trim(),
+                    cmb_empresa.SelectedValue.ToString(), txt_puesto.Text, txt_movil.Text, txt_telefono.Text, txt_correo.Text);
+
+                    // carga de datagrid
+                    DataTable contenedor = inserta.SeleccionarListaClientes();
+                    dgv_clientes.DataSource = contenedor;
 
 
 
-                MessageBox.Show("Usuario registrado exitosamente");
+                    MessageBox.Show("Usuario Ingresado existosamente", "Ingreso correcto", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                }
             }
             catch (Exception ex)
             {
@@ -153,23 +161,27 @@ namespace crm
         {
             try
             {
-                // envio de parametros a ser modificados
-                CapaDatosPersonas modificar = new CapaDatosPersonas();
-                modificar.ModificarCliente(txt_nombres.Text.Trim(), txt_apellidos.Text.Trim(), cmb_empresa.Text
-                , txt_puesto.Text.Trim(), txt_movil.Text.Trim(), txt_telefono.Text.Trim(),
-                txt_correo.Text.Trim(), codigo_cliente);
+                var opcion = MessageBox.Show("¿Esta seguro de modificar el registro?", "Modificar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (opcion == DialogResult.Yes)
+                {
+                    // envio de parametros a ser modificados
+                    CapaDatosPersonas modificar = new CapaDatosPersonas();
+                    modificar.ModificarCliente(txt_nombres.Text.Trim(), txt_apellidos.Text.Trim(), cmb_empresa.Text
+                    , txt_puesto.Text.Trim(), txt_movil.Text.Trim(), txt_telefono.Text.Trim(),
+                    txt_correo.Text.Trim(), codigo_cliente);
 
-                // carga de datagrid
-                DataTable contenedor = modificar.SeleccionarListaClientes();
-                dgv_clientes.DataSource = contenedor;
+                    // carga de datagrid
+                    DataTable contenedor = modificar.SeleccionarListaClientes();
+                    dgv_clientes.DataSource = contenedor;
 
-                // Limpiar cajas de texto
-                txt_apellidos.Text = "";
-                txt_correo.Text = "";
-                txt_movil.Text = "";
-                txt_nombres.Text = "";
-                txt_puesto.Text = "";
-                txt_telefono.Text = "";
+                    // Limpiar cajas de texto
+                    txt_apellidos.Text = "";
+                    txt_correo.Text = "";
+                    txt_movil.Text = "";
+                    txt_nombres.Text = "";
+                    txt_puesto.Text = "";
+                    txt_telefono.Text = "";
+                }
             }
             catch (Exception ex)
             {
@@ -181,15 +193,33 @@ namespace crm
 
         private void button2_Click(object sender, EventArgs e)
         {
-            CapaDatosPersonas eliminar = new CapaDatosPersonas();
-            eliminar.EliminarCliente(codigo_cliente);
+            var opcion = MessageBox.Show("¿Esta seguro de eliminar el registro?", "Eliminar Cliente", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (opcion == DialogResult.Yes)
+            {
+                CapaDatosPersonas eliminar = new CapaDatosPersonas();
+                eliminar.EliminarCliente(codigo_cliente);
+
+                DataTable contenedor = eliminar.SeleccionarListaClientes();
+                dgv_clientes.DataSource = contenedor;
+            }
+            
+
+            
         }
 
 
 
         private void button1_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hola Mundo Yo soy el Mensaje", "Yo soy el Titulo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            var opcion = MessageBox.Show("Hola Mundo Yo soy el Mensaje", "Yo soy el Titulo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (opcion == DialogResult.Yes)
+            {
+                MessageBox.Show("si");
+            }
+            else
+            {
+                MessageBox.Show("no");
+            }
            
         }
     }
