@@ -246,5 +246,11 @@ namespace crm
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void btn_siguiente_Click(object sender, EventArgs e)
+        {
+            frm_moneda moneda = new frm_moneda();
+            moneda.Show();
+        }
     }
 }
