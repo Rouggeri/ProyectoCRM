@@ -52,6 +52,8 @@
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.trackBarControl1 = new DevExpress.XtraEditors.TrackBarControl();
+            this.trackBar1 = new System.Windows.Forms.TrackBar();
             ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha_cierre.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha_cierre.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cbo_quien.Properties)).BeginInit();
@@ -61,6 +63,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
             this.SuspendLayout();
             // 
             // dtp_fecha_cierre
@@ -284,6 +289,8 @@
             // 
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
             this.groupControl1.CaptionLocation = DevExpress.Utils.Locations.Top;
+            this.groupControl1.Controls.Add(this.trackBar1);
+            this.groupControl1.Controls.Add(this.trackBarControl1);
             this.groupControl1.Controls.Add(this.simpleButton2);
             this.groupControl1.Controls.Add(this.simpleButton4);
             this.groupControl1.Controls.Add(this.dtp_fecha_cierre);
@@ -313,6 +320,23 @@
             this.groupControl1.TabIndex = 22;
             this.groupControl1.Text = "Datos del negocio:";
             // 
+            // trackBarControl1
+            // 
+            this.trackBarControl1.Location = new System.Drawing.Point(360, 397);
+            this.trackBarControl1.Name = "trackBarControl1";
+            this.trackBarControl1.Properties.LabelAppearance.Options.UseTextOptions = true;
+            this.trackBarControl1.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            this.trackBarControl1.Properties.ShowLabels = true;
+            this.trackBarControl1.Size = new System.Drawing.Size(330, 45);
+            this.trackBarControl1.TabIndex = 22;
+            // 
+            // trackBar1
+            // 
+            this.trackBar1.Location = new System.Drawing.Point(12, 407);
+            this.trackBar1.Name = "trackBar1";
+            this.trackBar1.Size = new System.Drawing.Size(311, 45);
+            this.trackBar1.TabIndex = 23;
+            // 
             // FormNuevoNegocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -332,6 +356,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -361,5 +388,7 @@
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton4;
         private DevExpress.XtraEditors.GroupControl groupControl1;
+        private System.Windows.Forms.TrackBar trackBar1;
+        private DevExpress.XtraEditors.TrackBarControl trackBarControl1;
     }
 }
