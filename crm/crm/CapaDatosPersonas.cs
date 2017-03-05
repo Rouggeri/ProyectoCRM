@@ -109,5 +109,86 @@ namespace crm
             con.Close();
         }
 
+        // ----------------------------------------------------- frm_nueva_moneda
+        // 1. Insertar nueva moneda:
+        public void Insertar_moneda(string nombre, string simbolo)
+        {
+            string cadena = "insert into moneda (nombre,simbolo,estado)values('"+nombre+"','"+simbolo+"','activo');";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+      
+
+
+    // 2. LLenar gridchart
+    public DataTable Consulta_moneda()
+        {
+            DataTable almacen = new DataTable();
+            string cadena = "select id_moneda,nombre,simbolo from moneda where estado = 'activo';";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(almacen);
+            return almacen;
+        }
+
+        // 3. Modificar un registro
+        public void modificar_moneda(string nombre,string simbolo, string id)
+        {
+            string cadena = "update moneda set nombre='" + nombre + "',simbolo='"+simbolo+"' where id_moneda='"+id+"';";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //4. Eliminar moneda (cambio de estado a inactivo)
+        public void Eliminar_Moneda(string id)
+        {
+            String cadena = "update moneda set estado = 'inactivo' where id_moneda='" + id + "'";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        // ------------------------------------------------------ frm_moneda
+
+        // 1. cargar combo box con monedas
+        public DataTable carga_combox_monedas()
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select id_moneda,nombre,simbolo from moneda where estado = 'activo';";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            carga.Rows.InsertAt(carga.NewRow(), 0);
+            return carga;
+
+        }
+
+        // 2. seleccionar simbolo segun opcion tomada del combobox
+        public DataTable seleccion_moneda_simbolo(string simbolo)
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select simbolo from moneda where id_moneda='"+simbolo+"'";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+
+        }
+
+        //3. Insertar en tabla valor_moneda
+        public void Insertar_valor_moneda(string valor, string id_moneda)
+        {
+            string cadena = "insert into valor_moneda (valor,id_moneda)values('"+valor+"','"+id_moneda+"')";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }

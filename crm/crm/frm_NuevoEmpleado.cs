@@ -83,20 +83,29 @@ namespace crm
         // Boton guardar informacion
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+            
             try
             {
-                // agregar mas "\" para que los acepte mysql 
-                direccionima = direccionima.Replace("\\", "\\\\");
+                if (txt_apellidos.Text == "" || txt_correo.Text == "" || txt_direccion.Text == "" || txt_movil.Text == "" || txt_nombres.Text == "" || txt_puesto.Text == "" || txt_telefono.Text == "")
+                {
 
-                empleados.InsertarEmpleado(txt_nombres.Text.Trim(), txt_apellidos.Text.Trim(), txt_puesto.Text.Trim(),
-                txt_telefono.Text.Trim(), txt_movil.Text.Trim(), txt_direccion.Text.Trim(), txt_correo.Text, direccionima);
+                    MessageBox.Show("Usuario no ingresado, Uno o más campos estan vacíos","ADVERTENCIA",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                }
+                else {
+                    // agregar mas "\" para que los acepte mysql 
+                    direccionima = direccionima.Replace("\\", "\\\\");
 
-                // actualizar datos despues de insertar
+                    empleados.InsertarEmpleado(txt_nombres.Text.Trim(), txt_apellidos.Text.Trim(), txt_puesto.Text.Trim(),
+                    txt_telefono.Text.Trim(), txt_movil.Text.Trim(), txt_direccion.Text.Trim(), txt_correo.Text, direccionima);
 
+                    // actualizar datos despues de insertar
 
-                DataTable almacen = new DataTable();
-                almacen = empleados.ConsultarEmpleados();
-                dgv_empleado.DataSource = almacen;
+                    MessageBox.Show("Empleado Ingresado existosamente","Ingreso correcto",MessageBoxButtons.OK,MessageBoxIcon.Asterisk);
+
+                    DataTable almacen = new DataTable();
+                    almacen = empleados.ConsultarEmpleados();
+                    dgv_empleado.DataSource = almacen;
+                }
             }
             catch (Exception ex)
             {
@@ -149,17 +158,20 @@ namespace crm
 
             try
             {
-                // envio de parametros a ser modificados
-                direccionima = direccionima.Replace("\\", "\\\\");
-                empleados.ModificarEmpleado(txt_nombres.Text.Trim(),txt_apellidos.Text.Trim(),txt_puesto.Text.Trim(),txt_telefono.Text.Trim(),
-                    txt_movil.Text.Trim(),txt_direccion.Text.Trim(),txt_correo.Text.Trim(), direccionima,codigoemp);
+                var opcion = MessageBox.Show("¿Esta seguro de modificar el registro?", "Modificar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (opcion == DialogResult.Yes)
+                {
+                    // envio de parametros a ser modificados
+                    direccionima = direccionima.Replace("\\", "\\\\");
+                    empleados.ModificarEmpleado(txt_nombres.Text.Trim(), txt_apellidos.Text.Trim(), txt_puesto.Text.Trim(), txt_telefono.Text.Trim(),
+                        txt_movil.Text.Trim(), txt_direccion.Text.Trim(), txt_correo.Text.Trim(), direccionima, codigoemp);
 
-                // carga de datagrid
-                DataTable contenedor = empleados.ConsultarEmpleados();
-                dgv_empleado.DataSource = contenedor;
+                    // carga de datagrid
+                    DataTable contenedor = empleados.ConsultarEmpleados();
+                    dgv_empleado.DataSource = contenedor;
 
-              
-               
+
+                }
             }
             catch (Exception ex)
             {
@@ -207,14 +219,27 @@ namespace crm
 
         private void button1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void btn_reporte_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void btn_eliminar_Click_1(object sender, EventArgs e)
+        {
             try
             {
+                var opcion = MessageBox.Show("¿Esta seguro de eliminar el registro?", "Eliminar Empleado", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (opcion == DialogResult.Yes)
+                {
+                    empleados.EliminarEmpleado(codigoemp);
 
-                empleados.EliminarEmpleado(codigoemp);
-
-                // carga de datos actualizados
-                DataTable contenedor = empleados.ConsultarEmpleados();
-                dgv_empleado.DataSource = contenedor;
+                    // carga de datos actualizados
+                    DataTable contenedor = empleados.ConsultarEmpleados();
+                    dgv_empleado.DataSource = contenedor;
+                }
             }
             catch (Exception ex)
             {
@@ -222,9 +247,10 @@ namespace crm
             }
         }
 
-        private void btn_reporte_Click(object sender, EventArgs e)
+        private void btn_siguiente_Click(object sender, EventArgs e)
         {
-           
+            frm_moneda moneda = new frm_moneda();
+            moneda.Show();
         }
     }
 }

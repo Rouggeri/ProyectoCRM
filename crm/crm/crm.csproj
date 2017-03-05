@@ -153,6 +153,18 @@
     <Compile Include="frm_estadistica_personal.Designer.cs">
       <DependentUpon>frm_estadistica_personal.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_moneda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_moneda.Designer.cs">
+      <DependentUpon>frm_moneda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_nueva_moneda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_nueva_moneda.Designer.cs">
+      <DependentUpon>frm_nueva_moneda.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_NuevoEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -203,6 +215,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_estadistica_personal.resx">
       <DependentUpon>frm_estadistica_personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_moneda.resx">
+      <DependentUpon>frm_moneda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_nueva_moneda.resx">
+      <DependentUpon>frm_nueva_moneda.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_NuevoEmpleado.resx">
       <DependentUpon>frm_NuevoEmpleado.cs</DependentUpon>
