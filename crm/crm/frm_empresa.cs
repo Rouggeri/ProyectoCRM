@@ -30,6 +30,24 @@ namespace crm
 
         private void btn_guardar_Click(object sender, EventArgs e)
         {
+           // string nombre = txt_nombre.Text.Trim();
+           // string telefono1 = txt_telefono1.Text.Trim();
+           // string telefono2 = txt_telefono2.Text.Trim();
+           // string email = txt_email.Text.Trim();
+           // string direccion = txt_direccion.Text.Trim();
+           // int pais = Convert.ToInt32(cbo_pais.EditValue);
+
+           // OpBD o = new OpBD();
+           //int res = o.InsertarEmpresa(nombre,direccion,email,telefono1,telefono2,pais);
+           // if (res == 1)
+           // {
+           //     MessageBox.Show("Empresa registrada");
+           // }
+           // else { MessageBox.Show("No se registro la empresa"); }
+        }
+
+        private void btn_save_Click(object sender, EventArgs e)
+        {
             string nombre = txt_nombre.Text.Trim();
             string telefono1 = txt_telefono1.Text.Trim();
             string telefono2 = txt_telefono2.Text.Trim();
@@ -38,13 +56,12 @@ namespace crm
             int pais = Convert.ToInt32(cbo_pais.EditValue);
 
             OpBD o = new OpBD();
-           int res = o.InsertarEmpresa(nombre,direccion,email,telefono1,telefono2,pais);
+            int res = o.InsertarEmpresa(nombre, direccion, email, telefono1, telefono2, pais);
             if (res == 1)
             {
                 MessageBox.Show("Empresa registrada");
             }
             else { MessageBox.Show("No se registro la empresa"); }
         }
-
     }
 }

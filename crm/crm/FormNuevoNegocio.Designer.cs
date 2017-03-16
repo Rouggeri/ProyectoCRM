@@ -29,43 +29,45 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNuevoNegocio));
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel1 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel2 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel3 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
+            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel4 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
             this.dtp_fecha_cierre = new DevExpress.XtraEditors.DateEdit();
             this.lbl_titulo = new System.Windows.Forms.Label();
             this.labelControl1 = new DevExpress.XtraEditors.LabelControl();
             this.txt_titulo = new System.Windows.Forms.TextBox();
-            this.cbo_quien = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.cbo_perem = new DevExpress.XtraEditors.ComboBoxEdit();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_detalles = new System.Windows.Forms.RichTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.cbo_moneda = new DevExpress.XtraEditors.ComboBoxEdit();
             this.txt_valor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.cbo_categoria = new DevExpress.XtraEditors.ComboBoxEdit();
             this.btn_nueva = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_refesh = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_refesh_cat = new DevExpress.XtraEditors.SimpleButton();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBoxEdit1 = new DevExpress.XtraEditors.ComboBoxEdit();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_nuevo_emp = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_actualizar_emp = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_nuevo_perem = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_refresh_perem = new DevExpress.XtraEditors.SimpleButton();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.trackBarControl1 = new DevExpress.XtraEditors.TrackBarControl();
-            this.trackBar1 = new System.Windows.Forms.TrackBar();
+            this.cbo_empleado = new System.Windows.Forms.ComboBox();
+            this.cbo_cat = new System.Windows.Forms.ComboBox();
+            this.btn_actualizar_mon = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_nueva_mon = new DevExpress.XtraEditors.SimpleButton();
+            this.cbo_perem = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbo_moneda = new DevExpress.XtraEditors.LookUpEdit();
+            this.label6 = new System.Windows.Forms.Label();
+            this.tb_etapa = new DevExpress.XtraEditors.TrackBarControl();
+            this.btn_guardar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha_cierre.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha_cierre.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbo_quien.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbo_perem.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbo_moneda.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbo_categoria.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1.Properties)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbo_moneda.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_etapa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_etapa.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // dtp_fecha_cierre
@@ -104,32 +106,6 @@
             this.txt_titulo.Size = new System.Drawing.Size(428, 21);
             this.txt_titulo.TabIndex = 3;
             // 
-            // cbo_quien
-            // 
-            this.cbo_quien.Location = new System.Drawing.Point(360, 120);
-            this.cbo_quien.Name = "cbo_quien";
-            this.cbo_quien.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbo_quien.Properties.DropDownRows = 2;
-            this.cbo_quien.Properties.Items.AddRange(new object[] {
-            "Empresa",
-            "Persona"});
-            this.cbo_quien.Size = new System.Drawing.Size(100, 20);
-            this.cbo_quien.TabIndex = 4;
-            // 
-            // cbo_perem
-            // 
-            this.cbo_perem.Location = new System.Drawing.Point(466, 120);
-            this.cbo_perem.Name = "cbo_perem";
-            this.cbo_perem.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbo_perem.Properties.DropDownRows = 2;
-            this.cbo_perem.Properties.Items.AddRange(new object[] {
-            "Empresa",
-            "Persona"});
-            this.cbo_perem.Size = new System.Drawing.Size(188, 20);
-            this.cbo_perem.TabIndex = 5;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -156,24 +132,11 @@
             this.label2.TabIndex = 8;
             this.label2.Text = "Valor del negocio";
             // 
-            // cbo_moneda
-            // 
-            this.cbo_moneda.Location = new System.Drawing.Point(360, 238);
-            this.cbo_moneda.Name = "cbo_moneda";
-            this.cbo_moneda.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbo_moneda.Properties.DropDownRows = 2;
-            this.cbo_moneda.Properties.Items.AddRange(new object[] {
-            "Empresa",
-            "Persona"});
-            this.cbo_moneda.Size = new System.Drawing.Size(100, 20);
-            this.cbo_moneda.TabIndex = 9;
-            // 
             // txt_valor
             // 
             this.txt_valor.Location = new System.Drawing.Point(466, 238);
             this.txt_valor.Name = "txt_valor";
-            this.txt_valor.Size = new System.Drawing.Size(322, 21);
+            this.txt_valor.Size = new System.Drawing.Size(188, 21);
             this.txt_valor.TabIndex = 10;
             // 
             // label3
@@ -185,19 +148,6 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Categoría";
             // 
-            // cbo_categoria
-            // 
-            this.cbo_categoria.Location = new System.Drawing.Point(360, 276);
-            this.cbo_categoria.Name = "cbo_categoria";
-            this.cbo_categoria.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.cbo_categoria.Properties.DropDownRows = 2;
-            this.cbo_categoria.Properties.Items.AddRange(new object[] {
-            "Empresa",
-            "Persona"});
-            this.cbo_categoria.Size = new System.Drawing.Size(294, 20);
-            this.cbo_categoria.TabIndex = 12;
-            // 
             // btn_nueva
             // 
             this.btn_nueva.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -207,15 +157,19 @@
             this.btn_nueva.Name = "btn_nueva";
             this.btn_nueva.Size = new System.Drawing.Size(61, 23);
             this.btn_nueva.TabIndex = 13;
+            this.btn_nueva.ToolTip = "Nueva categoria";
+            this.btn_nueva.Click += new System.EventHandler(this.btn_nueva_Click);
             // 
-            // btn_refesh
+            // btn_refesh_cat
             // 
-            this.btn_refesh.Image = ((System.Drawing.Image)(resources.GetObject("btn_refesh.Image")));
-            this.btn_refesh.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
-            this.btn_refesh.Location = new System.Drawing.Point(727, 273);
-            this.btn_refesh.Name = "btn_refesh";
-            this.btn_refesh.Size = new System.Drawing.Size(61, 23);
-            this.btn_refesh.TabIndex = 14;
+            this.btn_refesh_cat.Image = ((System.Drawing.Image)(resources.GetObject("btn_refesh_cat.Image")));
+            this.btn_refesh_cat.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
+            this.btn_refesh_cat.Location = new System.Drawing.Point(727, 273);
+            this.btn_refesh_cat.Name = "btn_refesh_cat";
+            this.btn_refesh_cat.Size = new System.Drawing.Size(61, 23);
+            this.btn_refesh_cat.TabIndex = 14;
+            this.btn_refesh_cat.ToolTip = "Actualizar";
+            this.btn_refesh_cat.Click += new System.EventHandler(this.btn_refesh_cat_Click);
             // 
             // label4
             // 
@@ -229,136 +183,233 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(172, 358);
+            this.label5.Location = new System.Drawing.Point(185, 359);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 13);
             this.label5.TabIndex = 16;
             this.label5.Text = "Empleado responsable";
             // 
-            // comboBoxEdit1
+            // btn_nuevo_emp
             // 
-            this.comboBoxEdit1.Location = new System.Drawing.Point(360, 351);
-            this.comboBoxEdit1.Name = "comboBoxEdit1";
-            this.comboBoxEdit1.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
-            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.comboBoxEdit1.Properties.DropDownRows = 2;
-            this.comboBoxEdit1.Properties.Items.AddRange(new object[] {
-            "Empresa",
-            "Persona"});
-            this.comboBoxEdit1.Size = new System.Drawing.Size(294, 20);
-            this.comboBoxEdit1.TabIndex = 17;
+            this.btn_nuevo_emp.Image = ((System.Drawing.Image)(resources.GetObject("btn_nuevo_emp.Image")));
+            this.btn_nuevo_emp.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
+            this.btn_nuevo_emp.Location = new System.Drawing.Point(660, 349);
+            this.btn_nuevo_emp.Name = "btn_nuevo_emp";
+            this.btn_nuevo_emp.Size = new System.Drawing.Size(61, 23);
+            this.btn_nuevo_emp.TabIndex = 18;
+            this.btn_nuevo_emp.ToolTip = "Nuevo empleado";
+            this.btn_nuevo_emp.Click += new System.EventHandler(this.btn_nuevo_emp_Click);
             // 
-            // simpleButton1
+            // btn_actualizar_emp
             // 
-            this.simpleButton1.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton1.Image")));
-            this.simpleButton1.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
-            this.simpleButton1.Location = new System.Drawing.Point(660, 349);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(61, 23);
-            this.simpleButton1.TabIndex = 18;
+            this.btn_actualizar_emp.Image = ((System.Drawing.Image)(resources.GetObject("btn_actualizar_emp.Image")));
+            this.btn_actualizar_emp.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
+            this.btn_actualizar_emp.Location = new System.Drawing.Point(727, 348);
+            this.btn_actualizar_emp.Name = "btn_actualizar_emp";
+            this.btn_actualizar_emp.Size = new System.Drawing.Size(61, 23);
+            this.btn_actualizar_emp.TabIndex = 19;
+            this.btn_actualizar_emp.ToolTip = "Actualizar";
+            this.btn_actualizar_emp.Click += new System.EventHandler(this.btn_actualizar_emp_Click);
             // 
-            // simpleButton2
+            // btn_nuevo_perem
             // 
-            this.simpleButton2.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton2.Image")));
-            this.simpleButton2.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
-            this.simpleButton2.Location = new System.Drawing.Point(727, 348);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(61, 23);
-            this.simpleButton2.TabIndex = 19;
+            this.btn_nuevo_perem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_nuevo_perem.Image = ((System.Drawing.Image)(resources.GetObject("btn_nuevo_perem.Image")));
+            this.btn_nuevo_perem.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
+            this.btn_nuevo_perem.Location = new System.Drawing.Point(660, 117);
+            this.btn_nuevo_perem.Name = "btn_nuevo_perem";
+            this.btn_nuevo_perem.Size = new System.Drawing.Size(61, 23);
+            this.btn_nuevo_perem.TabIndex = 20;
+            this.btn_nuevo_perem.ToolTip = "Nueva persona/empresa";
+            this.btn_nuevo_perem.Click += new System.EventHandler(this.btn_nuevo_perem_Click);
             // 
-            // simpleButton3
+            // btn_refresh_perem
             // 
-            this.simpleButton3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.simpleButton3.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton3.Image")));
-            this.simpleButton3.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
-            this.simpleButton3.Location = new System.Drawing.Point(660, 117);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(61, 23);
-            this.simpleButton3.TabIndex = 20;
-            // 
-            // simpleButton4
-            // 
-            this.simpleButton4.Image = ((System.Drawing.Image)(resources.GetObject("simpleButton4.Image")));
-            this.simpleButton4.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
-            this.simpleButton4.Location = new System.Drawing.Point(727, 117);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(61, 23);
-            this.simpleButton4.TabIndex = 21;
+            this.btn_refresh_perem.Image = ((System.Drawing.Image)(resources.GetObject("btn_refresh_perem.Image")));
+            this.btn_refresh_perem.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
+            this.btn_refresh_perem.Location = new System.Drawing.Point(727, 117);
+            this.btn_refresh_perem.Name = "btn_refresh_perem";
+            this.btn_refresh_perem.Size = new System.Drawing.Size(61, 23);
+            this.btn_refresh_perem.TabIndex = 21;
+            this.btn_refresh_perem.ToolTip = "actualizar";
+            this.btn_refresh_perem.Click += new System.EventHandler(this.btn_refresh_perem_Click);
             // 
             // groupControl1
             // 
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
             this.groupControl1.CaptionLocation = DevExpress.Utils.Locations.Top;
-            this.groupControl1.Controls.Add(this.trackBar1);
-            this.groupControl1.Controls.Add(this.trackBarControl1);
-            this.groupControl1.Controls.Add(this.simpleButton2);
-            this.groupControl1.Controls.Add(this.simpleButton4);
+            this.groupControl1.Controls.Add(this.btn_guardar);
+            this.groupControl1.Controls.Add(this.cbo_empleado);
+            this.groupControl1.Controls.Add(this.cbo_cat);
+            this.groupControl1.Controls.Add(this.btn_actualizar_mon);
+            this.groupControl1.Controls.Add(this.btn_nueva_mon);
+            this.groupControl1.Controls.Add(this.cbo_perem);
+            this.groupControl1.Controls.Add(this.comboBox1);
+            this.groupControl1.Controls.Add(this.cbo_moneda);
+            this.groupControl1.Controls.Add(this.label6);
+            this.groupControl1.Controls.Add(this.tb_etapa);
+            this.groupControl1.Controls.Add(this.btn_actualizar_emp);
+            this.groupControl1.Controls.Add(this.btn_refresh_perem);
             this.groupControl1.Controls.Add(this.dtp_fecha_cierre);
-            this.groupControl1.Controls.Add(this.simpleButton3);
+            this.groupControl1.Controls.Add(this.btn_nuevo_perem);
             this.groupControl1.Controls.Add(this.lbl_titulo);
             this.groupControl1.Controls.Add(this.labelControl1);
-            this.groupControl1.Controls.Add(this.simpleButton1);
+            this.groupControl1.Controls.Add(this.btn_nuevo_emp);
             this.groupControl1.Controls.Add(this.txt_titulo);
-            this.groupControl1.Controls.Add(this.comboBoxEdit1);
-            this.groupControl1.Controls.Add(this.cbo_quien);
             this.groupControl1.Controls.Add(this.label5);
-            this.groupControl1.Controls.Add(this.cbo_perem);
             this.groupControl1.Controls.Add(this.label4);
             this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Controls.Add(this.btn_refesh);
+            this.groupControl1.Controls.Add(this.btn_refesh_cat);
             this.groupControl1.Controls.Add(this.txt_detalles);
             this.groupControl1.Controls.Add(this.btn_nueva);
             this.groupControl1.Controls.Add(this.label2);
-            this.groupControl1.Controls.Add(this.cbo_categoria);
-            this.groupControl1.Controls.Add(this.cbo_moneda);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.txt_valor);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(888, 477);
+            this.groupControl1.Size = new System.Drawing.Size(925, 532);
             this.groupControl1.TabIndex = 22;
             this.groupControl1.Text = "Datos del negocio:";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
-            // trackBarControl1
+            // cbo_empleado
             // 
-            this.trackBarControl1.Location = new System.Drawing.Point(360, 397);
-            this.trackBarControl1.Name = "trackBarControl1";
-            this.trackBarControl1.Properties.LabelAppearance.Options.UseTextOptions = true;
-            this.trackBarControl1.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            this.trackBarControl1.Properties.ShowLabels = true;
-            this.trackBarControl1.Size = new System.Drawing.Size(330, 45);
-            this.trackBarControl1.TabIndex = 22;
+            this.cbo_empleado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_empleado.FormattingEnabled = true;
+            this.cbo_empleado.Location = new System.Drawing.Point(360, 351);
+            this.cbo_empleado.Name = "cbo_empleado";
+            this.cbo_empleado.Size = new System.Drawing.Size(294, 21);
+            this.cbo_empleado.TabIndex = 35;
             // 
-            // trackBar1
+            // cbo_cat
             // 
-            this.trackBar1.Location = new System.Drawing.Point(12, 407);
-            this.trackBar1.Name = "trackBar1";
-            this.trackBar1.Size = new System.Drawing.Size(311, 45);
-            this.trackBar1.TabIndex = 23;
+            this.cbo_cat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_cat.FormattingEnabled = true;
+            this.cbo_cat.Location = new System.Drawing.Point(360, 275);
+            this.cbo_cat.Name = "cbo_cat";
+            this.cbo_cat.Size = new System.Drawing.Size(294, 21);
+            this.cbo_cat.TabIndex = 34;
+            // 
+            // btn_actualizar_mon
+            // 
+            this.btn_actualizar_mon.Image = ((System.Drawing.Image)(resources.GetObject("btn_actualizar_mon.Image")));
+            this.btn_actualizar_mon.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
+            this.btn_actualizar_mon.Location = new System.Drawing.Point(727, 236);
+            this.btn_actualizar_mon.Name = "btn_actualizar_mon";
+            this.btn_actualizar_mon.Size = new System.Drawing.Size(61, 23);
+            this.btn_actualizar_mon.TabIndex = 33;
+            this.btn_actualizar_mon.ToolTip = "Actualizar";
+            this.btn_actualizar_mon.Click += new System.EventHandler(this.btn_actualizar_mon_Click);
+            // 
+            // btn_nueva_mon
+            // 
+            this.btn_nueva_mon.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_nueva_mon.Image = ((System.Drawing.Image)(resources.GetObject("btn_nueva_mon.Image")));
+            this.btn_nueva_mon.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
+            this.btn_nueva_mon.Location = new System.Drawing.Point(660, 236);
+            this.btn_nueva_mon.Name = "btn_nueva_mon";
+            this.btn_nueva_mon.Size = new System.Drawing.Size(61, 23);
+            this.btn_nueva_mon.TabIndex = 32;
+            this.btn_nueva_mon.ToolTip = "Nueva moneda";
+            this.btn_nueva_mon.Click += new System.EventHandler(this.btn_nueva_mon_Click);
+            // 
+            // cbo_perem
+            // 
+            this.cbo_perem.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_perem.FormattingEnabled = true;
+            this.cbo_perem.Location = new System.Drawing.Point(466, 119);
+            this.cbo_perem.Name = "cbo_perem";
+            this.cbo_perem.Size = new System.Drawing.Size(188, 21);
+            this.cbo_perem.TabIndex = 31;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Persona",
+            "Empresa"});
+            this.comboBox1.Location = new System.Drawing.Point(365, 119);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(95, 21);
+            this.comboBox1.TabIndex = 30;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // cbo_moneda
+            // 
+            this.cbo_moneda.EditValue = "Moneda";
+            this.cbo_moneda.Location = new System.Drawing.Point(360, 239);
+            this.cbo_moneda.Name = "cbo_moneda";
+            this.cbo_moneda.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.cbo_moneda.Size = new System.Drawing.Size(95, 20);
+            this.cbo_moneda.TabIndex = 27;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(204, 412);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(96, 13);
+            this.label6.TabIndex = 24;
+            this.label6.Text = "Etapa del negocio:";
+            // 
+            // tb_etapa
+            // 
+            this.tb_etapa.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tb_etapa.EditValue = null;
+            this.tb_etapa.Location = new System.Drawing.Point(344, 394);
+            this.tb_etapa.Name = "tb_etapa";
+            this.tb_etapa.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.tb_etapa.Properties.Appearance.BackColor2 = System.Drawing.SystemColors.Control;
+            this.tb_etapa.Properties.Appearance.Options.UseBackColor = true;
+            this.tb_etapa.Properties.LabelAppearance.Options.UseTextOptions = true;
+            this.tb_etapa.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
+            trackBarLabel1.Label = "Preparación o análisis";
+            trackBarLabel2.Label = "Discusión o desarrollo";
+            trackBarLabel2.Value = 1;
+            trackBarLabel3.Label = "Propuesta realizada";
+            trackBarLabel3.Value = 2;
+            trackBarLabel4.Label = "Cierre y acuerdo";
+            trackBarLabel4.Value = 3;
+            this.tb_etapa.Properties.Labels.AddRange(new DevExpress.XtraEditors.Repository.TrackBarLabel[] {
+            trackBarLabel1,
+            trackBarLabel2,
+            trackBarLabel3,
+            trackBarLabel4});
+            this.tb_etapa.Properties.Maximum = 3;
+            this.tb_etapa.Properties.ShowLabels = true;
+            this.tb_etapa.Size = new System.Drawing.Size(535, 72);
+            this.tb_etapa.TabIndex = 22;
+            // 
+            // btn_guardar
+            // 
+            this.btn_guardar.Image = ((System.Drawing.Image)(resources.GetObject("btn_guardar.Image")));
+            this.btn_guardar.Location = new System.Drawing.Point(475, 479);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(154, 41);
+            this.btn_guardar.TabIndex = 36;
+            this.btn_guardar.Text = "Guardar";
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // FormNuevoNegocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(888, 477);
+            this.ClientSize = new System.Drawing.Size(925, 532);
             this.Controls.Add(this.groupControl1);
             this.Name = "FormNuevoNegocio";
             this.Text = "Nuevo Negocio";
             this.Load += new System.EventHandler(this.FormNuevoNegocio_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha_cierre.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha_cierre.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbo_quien.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbo_perem.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbo_moneda.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cbo_categoria.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.comboBoxEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBarControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.trackBar1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cbo_moneda.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_etapa.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tb_etapa)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -369,26 +420,29 @@
         private System.Windows.Forms.Label lbl_titulo;
         private DevExpress.XtraEditors.LabelControl labelControl1;
         private System.Windows.Forms.TextBox txt_titulo;
-        private DevExpress.XtraEditors.ComboBoxEdit cbo_quien;
-        private DevExpress.XtraEditors.ComboBoxEdit cbo_perem;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RichTextBox txt_detalles;
         private System.Windows.Forms.Label label2;
-        private DevExpress.XtraEditors.ComboBoxEdit cbo_moneda;
         private System.Windows.Forms.TextBox txt_valor;
         private System.Windows.Forms.Label label3;
-        private DevExpress.XtraEditors.ComboBoxEdit cbo_categoria;
         private DevExpress.XtraEditors.SimpleButton btn_nueva;
-        private DevExpress.XtraEditors.SimpleButton btn_refesh;
+        private DevExpress.XtraEditors.SimpleButton btn_refesh_cat;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
-        private DevExpress.XtraEditors.ComboBoxEdit comboBoxEdit1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btn_nuevo_emp;
+        private DevExpress.XtraEditors.SimpleButton btn_actualizar_emp;
+        private DevExpress.XtraEditors.SimpleButton btn_nuevo_perem;
+        private DevExpress.XtraEditors.SimpleButton btn_refresh_perem;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.TrackBar trackBar1;
-        private DevExpress.XtraEditors.TrackBarControl trackBarControl1;
+        private DevExpress.XtraEditors.TrackBarControl tb_etapa;
+        private System.Windows.Forms.Label label6;
+        private DevExpress.XtraEditors.LookUpEdit cbo_moneda;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbo_perem;
+        private DevExpress.XtraEditors.SimpleButton btn_actualizar_mon;
+        private DevExpress.XtraEditors.SimpleButton btn_nueva_mon;
+        private System.Windows.Forms.ComboBox cbo_empleado;
+        private System.Windows.Forms.ComboBox cbo_cat;
+        private DevExpress.XtraEditors.SimpleButton btn_guardar;
     }
 }
