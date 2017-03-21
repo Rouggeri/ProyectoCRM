@@ -51,6 +51,8 @@ namespace crm
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(contenedor);
+            contenedor.Rows.InsertAt(contenedor.NewRow(), 0);
+
             return contenedor;
 
         }
@@ -173,7 +175,7 @@ namespace crm
         public DataTable seleccion_moneda_simbolo(string simbolo)
         {
             DataTable carga = new DataTable();
-            string cadena = "select simbolo from moneda where id_moneda='"+simbolo+"'";
+            string cadena = "select simbolo from moneda where id_moneda='" + simbolo + "'";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
@@ -189,6 +191,43 @@ namespace crm
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             cmd.ExecuteNonQuery();
             con.Close();
+        }
+
+        //------------------------------------ frm_NuevoCaso
+
+        // 1. cargar combo box con  empresas
+
+        public DataTable cargar_empresas()
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select id_empresa, nombre from empresa";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            carga.Rows.InsertAt(carga.NewRow(), 0);
+            return carga;
+        }
+
+        // 2. cargar combo box de clientes segun empresa seleccionada
+        public DataTable cargar_clientes( string id_empresa)
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select id_cliente, nombres from tbl_cliente where id_empresa='"+id_empresa+"' and estado = 'activo'";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
+
+        //3. cargar combobox de clientes que no tienen empresa (clientes individuales)
+        public DataTable cargar_clientes_SinEmpresa()
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select id_cliente, nombres from tbl_cliente where estado = 'activo' and id_empresa = '' ";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
         }
     }
 }

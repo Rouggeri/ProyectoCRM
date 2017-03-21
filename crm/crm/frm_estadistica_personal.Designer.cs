@@ -140,6 +140,7 @@
             this.vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.Grafíca)).BeginInit();
             this.Grafíca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -1313,11 +1314,23 @@
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 7;
             // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Location = new System.Drawing.Point(628, 18);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(65, 13);
+            this.linkLabel2.TabIndex = 8;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Nuevo Caso";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
             // frm_estadistica_personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 516);
+            this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.Grafíca);
@@ -1478,5 +1491,6 @@
         private System.Windows.Forms.Label label77;
         private System.Windows.Forms.ComboBox comboBox1;
         private DevExpress.XtraCharts.ChartControl chartControl1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
     }
 }

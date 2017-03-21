@@ -23,5 +23,11 @@ namespace crm
             WindowState = FormWindowState.Maximized;
             pictureBox1.Image = Image.FromFile("andre.jpg");
         }
+
+        private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frm_NuevoCaso caso = new frm_NuevoCaso();
+            caso.Show();
+        }
     }
 }

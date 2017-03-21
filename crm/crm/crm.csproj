@@ -171,6 +171,12 @@
     <Compile Include="frm_nueva_moneda.Designer.cs">
       <DependentUpon>frm_nueva_moneda.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_NuevoCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_NuevoCaso.Designer.cs">
+      <DependentUpon>frm_NuevoCaso.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_NuevoEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -230,6 +236,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_nueva_moneda.resx">
       <DependentUpon>frm_nueva_moneda.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_NuevoCaso.resx">
+      <DependentUpon>frm_NuevoCaso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_NuevoEmpleado.resx">
       <DependentUpon>frm_NuevoEmpleado.cs</DependentUpon>

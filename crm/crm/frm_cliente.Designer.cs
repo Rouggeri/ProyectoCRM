@@ -375,6 +375,7 @@
             this.btn_ultimo.Size = new System.Drawing.Size(30, 26);
             this.btn_ultimo.TabIndex = 181;
             this.btn_ultimo.UseVisualStyleBackColor = true;
+            this.btn_ultimo.Click += new System.EventHandler(this.btn_ultimo_Click);
             // 
             // btn_actualizar
             // 
