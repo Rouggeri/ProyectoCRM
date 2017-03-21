@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNegociaciones));
-            DevExpress.XtraEditors.TileItemElement tileItemElement11 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement12 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement13 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement14 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement15 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
+            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             this.gridControl1 = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btn_nuevo = new DevExpress.XtraEditors.SimpleButton();
@@ -42,17 +42,18 @@
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.pag_lista = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pag_estado = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.tileestado = new DevExpress.XtraEditors.TileControl();
+            this.tileGroup5 = new DevExpress.XtraEditors.TileGroup();
+            this.tileItem3 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem7 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem4 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem5 = new DevExpress.XtraEditors.TileItem();
+            this.tileItem6 = new DevExpress.XtraEditors.TileItem();
             this.label2 = new System.Windows.Forms.Label();
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
-            this.tileestado = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup5 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem3 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem4 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem5 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem6 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem7 = new DevExpress.XtraEditors.TileItem();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -132,31 +133,11 @@
             // pag_estado
             // 
             this.pag_estado.Caption = "Estado";
+            this.pag_estado.Controls.Add(this.button1);
             this.pag_estado.Controls.Add(this.tileestado);
             this.pag_estado.Image = ((System.Drawing.Image)(resources.GetObject("pag_estado.Image")));
             this.pag_estado.Name = "pag_estado";
             this.pag_estado.Size = new System.Drawing.Size(944, 473);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(737, 25);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Buscar";
-            // 
-            // tileGroup1
-            // 
-            this.tileGroup1.Name = "tileGroup1";
-            // 
-            // tileGroup2
-            // 
-            this.tileGroup2.Name = "tileGroup2";
-            // 
-            // tileGroup3
-            // 
-            this.tileGroup3.Name = "tileGroup3";
             // 
             // tileestado
             // 
@@ -182,43 +163,73 @@
             // 
             // tileItem3
             // 
-            tileItemElement11.Text = "tileItem3";
-            this.tileItem3.Elements.Add(tileItemElement11);
+            tileItemElement1.Text = "tileItem3";
+            this.tileItem3.Elements.Add(tileItemElement1);
             this.tileItem3.Id = 2;
             this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem3.Name = "tileItem3";
             // 
+            // tileItem7
+            // 
+            tileItemElement2.Text = "tileItem7";
+            this.tileItem7.Elements.Add(tileItemElement2);
+            this.tileItem7.Id = 6;
+            this.tileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
+            this.tileItem7.Name = "tileItem7";
+            // 
             // tileItem4
             // 
-            tileItemElement12.Text = "tileItem4";
-            this.tileItem4.Elements.Add(tileItemElement12);
+            tileItemElement3.Text = "tileItem4";
+            this.tileItem4.Elements.Add(tileItemElement3);
             this.tileItem4.Id = 3;
             this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem4.Name = "tileItem4";
             // 
             // tileItem5
             // 
-            tileItemElement13.Text = "tileItem5";
-            this.tileItem5.Elements.Add(tileItemElement13);
+            tileItemElement4.Text = "tileItem5";
+            this.tileItem5.Elements.Add(tileItemElement4);
             this.tileItem5.Id = 4;
             this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem5.Name = "tileItem5";
             // 
             // tileItem6
             // 
-            tileItemElement14.Text = "tileItem6";
-            this.tileItem6.Elements.Add(tileItemElement14);
+            tileItemElement5.Text = "tileItem6";
+            this.tileItem6.Elements.Add(tileItemElement5);
             this.tileItem6.Id = 5;
             this.tileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.tileItem6.Name = "tileItem6";
             // 
-            // tileItem7
+            // label2
             // 
-            tileItemElement15.Text = "tileItem7";
-            this.tileItem7.Elements.Add(tileItemElement15);
-            this.tileItem7.Id = 6;
-            this.tileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem7.Name = "tileItem7";
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(737, 25);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Buscar";
+            // 
+            // tileGroup1
+            // 
+            this.tileGroup1.Name = "tileGroup1";
+            // 
+            // tileGroup2
+            // 
+            this.tileGroup2.Name = "tileGroup2";
+            // 
+            // tileGroup3
+            // 
+            this.tileGroup3.Name = "tileGroup3";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(515, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // FormNegociaciones
             // 
@@ -265,5 +276,6 @@
         private DevExpress.XtraEditors.TileItem tileItem5;
         private DevExpress.XtraEditors.TileItem tileItem6;
         private DevExpress.XtraEditors.TileItem tileItem7;
+        private System.Windows.Forms.Button button1;
     }
 }
