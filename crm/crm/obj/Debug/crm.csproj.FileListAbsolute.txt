@@ -747,8 +747,8 @@ C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_cliente.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_empresa.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.Form_inicio.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_NuevoEmpleado.resources
-C:\ProyectoCRM\crm\crm\bin\Debug\seguridad.dll
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_moneda.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_nueva_moneda.resources
 >>>>>>> e239d58720aa1c0096b02df4e53031a21a9e9ab4
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.Form_categoria_neg.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_NuevoCaso.resources

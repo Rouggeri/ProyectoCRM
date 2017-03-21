@@ -222,5 +222,10 @@ namespace crm
             }
            
         }
+
+        private void btn_ultimo_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show( cmb_empresa.SelectedValue.ToString());
+        }
     }
 }
