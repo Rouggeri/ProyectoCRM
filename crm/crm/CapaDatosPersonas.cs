@@ -208,7 +208,7 @@ namespace crm
             return carga;
         }
 
-        // 2. cargar combo box de clientes segun empresa seleccionada
+        // ---------------------------   2. cargar combo box de clientes segun empresa seleccionada
         public DataTable cargar_clientes( string id_empresa)
         {
             DataTable carga = new DataTable();
@@ -219,7 +219,7 @@ namespace crm
             return carga;
         }
 
-        //3. cargar combobox de clientes que no tienen empresa (clientes individuales)
+        //-------------------------------  3. cargar combobox de clientes que no tienen empresa (clientes individuales)
         public DataTable cargar_clientes_SinEmpresa()
         {
             DataTable carga = new DataTable();
@@ -229,5 +229,77 @@ namespace crm
             adap.Fill(carga);
             return carga;
         }
+
+        //----------------------------------    4. Cargar combobox de Categoria
+
+        public DataTable cargar_categoria_caso()
+        {
+            DataTable categoria = new DataTable();
+            string cadena = "select id_cat_caso, nombre_caso, estado from categoria_caso where estado = 'activo'";
+            OdbcCommand cmd = new OdbcCommand(cadena,seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(categoria);
+            categoria.Rows.InsertAt(categoria.NewRow(),0);
+            return categoria;
+        }
+
+
+        //----------------------------------  5. Cargar combobox de Empleado responsable
+        public DataTable cargar_empleados()
+        {
+            DataTable categoria = new DataTable();
+            string cadena = "select id_empleado, nombres, apellidos from tbl_empleado where estado = 'activo'";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(categoria);
+            categoria.Rows.InsertAt(categoria.NewRow(),0);
+            return categoria;
+        }
+
+
+
+        // -------------------------------------- frm_categoria_caso
+
+        // 1. insertar nueva categoria
+        public void Insertar_NuevaCategoria_Caso(string categoria)
+        {
+            string cadena = "insert into categoria_caso (nombre_caso,estado) values ('"+categoria+"','activo')";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        // 2. Seleccionar datos de la tabla categoria
+        public DataTable cargar_categoria()
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select id_cat_caso,nombre_caso from categoria_caso where estado = 'activo'";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
+
+        // 3. Modificar datos de la tabla categoria
+        public void modificar_categoria(string nombre, string id)
+        {
+            string cadena = "update categoria_caso set nombre_caso='" + nombre + "' where id_cat_caso='" + id + "';";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        // 4. Eliminar datos de la tabla categoria (cambio de estado a inactivo)
+        public void eliminar_categoria(string id)
+        {
+            string cadena = "update categoria_caso set estado = 'inactivo' where id_cat_caso='" + id + "';";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
     }
 }
