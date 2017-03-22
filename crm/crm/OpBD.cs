@@ -29,6 +29,35 @@ namespace crm
             catch { return null; }
         }
 
+        
+        public static DataTable SeleccionarDatosRestantes(string id_negocio)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                OdbcConnection con = seguridad.Conexion.ObtenerConexionM();
+                OdbcCommand comando = new OdbcCommand("select n.detalles, n.etapa_negocio, n.fecha_inicio, n.id_empleado, concat(e.nombres, ' ', e.apellidos) as nom_emp from tbl_negocio n left join tbl_empleado e on n.id_empleado = e.id_empleado where id_negocio = "+id_negocio+"", con);
+                OdbcDataAdapter ad = new OdbcDataAdapter(comando);
+                ad.Fill(dt);
+                return dt;
+            }
+            catch { return null; }
+        }
+
+        public static DataTable SeleccionarNegocios()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+                OdbcCommand comando = new OdbcCommand("select n.id_negocio, n.titulo, concat(c.nombres,' ',c.apellidos) as nombre_clie, e.nombre,concat(m.nombre,'(', m.simbolo,')') as mon, n.valor, n.fecha_est_cierre, ca.nombre_cat from tbl_negocio n left join tbl_cliente c on n.id_cliente = c.id_cliente left join empresa e on n.id_empresa = e.id_empresa inner join moneda m on n.id_moneda = m.id_moneda inner join categoria_neg ca on n.id_cat = ca.id_cat where n.estado = 'activo' ", con);
+                OdbcDataAdapter ad = new OdbcDataAdapter(comando);
+                ad.Fill(dt);
+                return dt;
+            }
+            catch { return null; }
+        }
+
         public static DataTable SeleccionarCategorias()
         {
             try

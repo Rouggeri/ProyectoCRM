@@ -34,14 +34,15 @@
             DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
             DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.dgv_negocios = new DevExpress.XtraGrid.GridControl();
+            this.dgv_neg = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.btn_nuevo = new DevExpress.XtraEditors.SimpleButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.pag_lista = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pag_estado = new DevExpress.XtraBars.Navigation.NavigationPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.tileestado = new DevExpress.XtraEditors.TileControl();
             this.tileGroup5 = new DevExpress.XtraEditors.TileGroup();
             this.tileItem3 = new DevExpress.XtraEditors.TileItem();
@@ -53,31 +54,31 @@
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup3 = new DevExpress.XtraEditors.TileGroup();
-            this.button1 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_negocios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_neg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
             this.navigationPane1.SuspendLayout();
             this.pag_lista.SuspendLayout();
             this.pag_estado.SuspendLayout();
             this.SuspendLayout();
             // 
-            // gridControl1
+            // dgv_negocios
             // 
-            this.gridControl1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gridControl1.Location = new System.Drawing.Point(0, 0);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(944, 473);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.dgv_negocios.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgv_negocios.Location = new System.Drawing.Point(0, 0);
+            this.dgv_negocios.MainView = this.dgv_neg;
+            this.dgv_negocios.Name = "dgv_negocios";
+            this.dgv_negocios.Size = new System.Drawing.Size(944, 473);
+            this.dgv_negocios.TabIndex = 0;
+            this.dgv_negocios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgv_neg});
+            this.dgv_negocios.DoubleClick += new System.EventHandler(this.dgv_negocios_DoubleClick);
             // 
-            // gridView1
+            // dgv_neg
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowFooter = true;
+            this.dgv_neg.GridControl = this.dgv_negocios;
+            this.dgv_neg.Name = "dgv_neg";
+            this.dgv_neg.OptionsView.ShowFooter = true;
             // 
             // btn_nuevo
             // 
@@ -116,7 +117,7 @@
             this.pag_estado});
             this.navigationPane1.RegularSize = new System.Drawing.Size(1010, 533);
             this.navigationPane1.SelectedPage = this.pag_estado;
-            this.navigationPane1.SelectedPageIndex = 1;
+            this.navigationPane1.SelectedPageIndex = 0;
             this.navigationPane1.Size = new System.Drawing.Size(1010, 533);
             this.navigationPane1.TabIndex = 4;
             this.navigationPane1.Text = "Negociaciones";
@@ -124,7 +125,7 @@
             // pag_lista
             // 
             this.pag_lista.Caption = "Lista";
-            this.pag_lista.Controls.Add(this.gridControl1);
+            this.pag_lista.Controls.Add(this.dgv_negocios);
             this.pag_lista.Image = ((System.Drawing.Image)(resources.GetObject("pag_lista.Image")));
             this.pag_lista.Name = "pag_lista";
             this.pag_lista.PageText = "";
@@ -138,6 +139,15 @@
             this.pag_estado.Image = ((System.Drawing.Image)(resources.GetObject("pag_estado.Image")));
             this.pag_estado.Name = "pag_estado";
             this.pag_estado.Size = new System.Drawing.Size(944, 473);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(515, 17);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // tileestado
             // 
@@ -222,15 +232,6 @@
             // 
             this.tileGroup3.Name = "tileGroup3";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(515, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // FormNegociaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -244,8 +245,8 @@
             this.Name = "FormNegociaciones";
             this.Text = "Negocios";
             this.Load += new System.EventHandler(this.FormNegociaciones_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_negocios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_neg)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
             this.navigationPane1.ResumeLayout(false);
             this.pag_lista.ResumeLayout(false);
@@ -257,8 +258,8 @@
 
         #endregion
 
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl dgv_negocios;
+        private DevExpress.XtraGrid.Views.Grid.GridView dgv_neg;
         private DevExpress.XtraEditors.SimpleButton btn_nuevo;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label1;
