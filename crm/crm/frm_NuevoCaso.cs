@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FuncionesNavegador;
 
 namespace crm
 {
@@ -16,7 +17,7 @@ namespace crm
         {
             InitializeComponent();
         }
-
+        string id_form = "110";
         CapaDatosPersonas peticionescapa = new CapaDatosPersonas();
         string fecha = "";
         string open = "Abierto";
@@ -28,6 +29,19 @@ namespace crm
         {
             try
             {
+
+                //CapaNegocio fn = new CapaNegocio();
+                //DataTable seg = seguridad.ObtenerPermisos.Permisos(seguridad.Conexion.User, id_form);
+                //if (seg.Rows.Count > 0)
+                //{
+                //    fn.desactivarPermiso(seg, btn_guardar, btn_eliminar, btn_editar, btn_nuevo, btn_cancelar, btn_actualizar, btn_buscar, btn_anterior, btn_siguiente, btn_primero, btn_ultimo);
+                //}
+                //else
+                //{
+                //    btn_guardar.Enabled = false; btn_eliminar.Enabled = false; btn_editar.Enabled = false; btn_nuevo.Enabled = false; btn_actualizar.Enabled = false; btn_cancelar.Enabled = false; btn_buscar.Enabled = false;
+                //}
+
+
                 // Cargar combo box de categoria de casos
                 DataTable dt_categoria_casos = new DataTable();
                 dt_categoria_casos = peticionescapa.cargar_categoria_caso();
@@ -245,7 +259,7 @@ namespace crm
 
         }
 
-<<<<<<< HEAD
+
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
        
@@ -332,13 +346,9 @@ namespace crm
             dt_casos = peticionescapa.cargar_casos();
             dgv_casos.DataSource = dt_casos;
 
-            
-=======
-        private void btn_guardar_Click(object sender, EventArgs e)
-        {
+        } 
 
->>>>>>> 4aa5b785a48dd1956c65091fcb19d240d0736deb
-        }
+      
     }
     
 }

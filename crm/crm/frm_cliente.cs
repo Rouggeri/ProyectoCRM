@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using DevExpress.XtraGrid.Views.Grid;
+using FuncionesNavegador;
 
 namespace crm
 {
@@ -20,14 +21,27 @@ namespace crm
         }
         string codigo_cliente = "";
 
-       
 
+        string id_form = "107";
 
         // load de formulario cliente
         private void frm_cliente_Load(object sender, EventArgs e)
         {
             try
             {
+                CapaNegocio fn = new CapaNegocio();
+                DataTable seg = seguridad.ObtenerPermisos.Permisos(seguridad.Conexion.User, id_form);
+                if (seg.Rows.Count > 0)
+                {
+                    fn.desactivarPermiso(seg, btn_guardar, btn_eliminar, btn_editar, btn_nuevo, btn_cancelar, btn_actualizar, btn_buscar, btn_anterior, btn_siguiente, btn_primero, btn_ultimo);
+                }
+                else
+                {
+                    btn_guardar.Enabled = false; btn_eliminar.Enabled = false; btn_editar.Enabled = false; btn_nuevo.Enabled = false; btn_actualizar.Enabled = false; btn_cancelar.Enabled = false; btn_buscar.Enabled = false;
+                }
+
+
+
                 CapaDatosPersonas inserta = new CapaDatosPersonas();
                 DataTable contenedor = inserta.SeleccionarListaClientes();
                 dgv_clientes.DataSource = contenedor;

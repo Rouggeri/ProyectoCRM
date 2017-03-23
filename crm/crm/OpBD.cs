@@ -63,7 +63,7 @@ namespace crm
             try
             {
                 DataTable dt = new DataTable();
-                OdbcConnection con = seguridad.Conexion.ObtenerConexionM();
+                OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
                 OdbcCommand comando = new OdbcCommand("select nombre_cat from categoria_neg", con);
                 OdbcDataAdapter ad = new OdbcDataAdapter(comando);
                 ad.Fill(dt);

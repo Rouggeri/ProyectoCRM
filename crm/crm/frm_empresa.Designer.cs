@@ -33,15 +33,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_reporte = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_ultimo = new System.Windows.Forms.Button();
             this.btn_actualizar = new System.Windows.Forms.Button();
-            this.btn_save = new System.Windows.Forms.Button();
+            this.btn_guardar = new System.Windows.Forms.Button();
             this.btn_buscar = new System.Windows.Forms.Button();
             this.btn_primero = new System.Windows.Forms.Button();
             this.btn_anterior = new System.Windows.Forms.Button();
             this.btn_editar = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.cbo_pais = new DevExpress.XtraEditors.LookUpEdit();
             this.txt_direccion = new System.Windows.Forms.RichTextBox();
@@ -53,15 +53,20 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.cbo_pais.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
+            this.groupControl1.Controls.Add(this.gridControl1);
             this.groupControl1.Controls.Add(this.panel1);
             this.groupControl1.Controls.Add(this.cbo_pais);
             this.groupControl1.Controls.Add(this.txt_direccion);
@@ -84,15 +89,15 @@
             // 
             this.panel1.Controls.Add(this.btn_reporte);
             this.panel1.Controls.Add(this.btn_nuevo);
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btn_cancelar);
             this.panel1.Controls.Add(this.btn_ultimo);
             this.panel1.Controls.Add(this.btn_actualizar);
-            this.panel1.Controls.Add(this.btn_save);
+            this.panel1.Controls.Add(this.btn_guardar);
             this.panel1.Controls.Add(this.btn_buscar);
             this.panel1.Controls.Add(this.btn_primero);
             this.panel1.Controls.Add(this.btn_anterior);
             this.panel1.Controls.Add(this.btn_editar);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btn_eliminar);
             this.panel1.Controls.Add(this.btn_siguiente);
             this.panel1.Location = new System.Drawing.Point(177, 53);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
@@ -132,21 +137,21 @@
             this.btn_nuevo.TabIndex = 171;
             this.btn_nuevo.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // btn_cancelar
             // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(334, 4);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(56, 59);
-            this.button1.TabIndex = 176;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_cancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_cancelar.BackgroundImage")));
+            this.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_cancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_cancelar.FlatAppearance.BorderSize = 0;
+            this.btn_cancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_cancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btn_cancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_cancelar.Location = new System.Drawing.Point(334, 4);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_cancelar.Name = "btn_cancelar";
+            this.btn_cancelar.Size = new System.Drawing.Size(56, 59);
+            this.btn_cancelar.TabIndex = 176;
+            this.btn_cancelar.UseVisualStyleBackColor = true;
             // 
             // btn_ultimo
             // 
@@ -180,22 +185,22 @@
             this.btn_actualizar.TabIndex = 177;
             this.btn_actualizar.UseVisualStyleBackColor = true;
             // 
-            // btn_save
+            // btn_guardar
             // 
-            this.btn_save.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_save.BackgroundImage")));
-            this.btn_save.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_save.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_save.FlatAppearance.BorderSize = 0;
-            this.btn_save.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_save.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btn_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_save.Location = new System.Drawing.Point(98, 4);
-            this.btn_save.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_save.Name = "btn_save";
-            this.btn_save.Size = new System.Drawing.Size(58, 59);
-            this.btn_save.TabIndex = 172;
-            this.btn_save.UseVisualStyleBackColor = true;
-            this.btn_save.Click += new System.EventHandler(this.btn_save_Click);
+            this.btn_guardar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_guardar.BackgroundImage")));
+            this.btn_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_guardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_guardar.FlatAppearance.BorderSize = 0;
+            this.btn_guardar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_guardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_guardar.Location = new System.Drawing.Point(98, 4);
+            this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_guardar.Name = "btn_guardar";
+            this.btn_guardar.Size = new System.Drawing.Size(58, 59);
+            this.btn_guardar.TabIndex = 172;
+            this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_save_Click);
             // 
             // btn_buscar
             // 
@@ -261,21 +266,21 @@
             this.btn_editar.TabIndex = 173;
             this.btn_editar.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btn_eliminar
             // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(216, 4);
-            this.button3.Margin = new System.Windows.Forms.Padding(4);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(58, 59);
-            this.button3.TabIndex = 174;
-            this.button3.UseVisualStyleBackColor = true;
+            this.btn_eliminar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_eliminar.BackgroundImage")));
+            this.btn_eliminar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_eliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_eliminar.FlatAppearance.BorderSize = 0;
+            this.btn_eliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_eliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btn_eliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_eliminar.Location = new System.Drawing.Point(216, 4);
+            this.btn_eliminar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(58, 59);
+            this.btn_eliminar.TabIndex = 174;
+            this.btn_eliminar.UseVisualStyleBackColor = true;
             // 
             // btn_siguiente
             // 
@@ -296,7 +301,7 @@
             // cbo_pais
             // 
             this.cbo_pais.EditValue = "pais";
-            this.cbo_pais.Location = new System.Drawing.Point(573, 313);
+            this.cbo_pais.Location = new System.Drawing.Point(436, 313);
             this.cbo_pais.Name = "cbo_pais";
             this.cbo_pais.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -305,7 +310,7 @@
             // 
             // txt_direccion
             // 
-            this.txt_direccion.Location = new System.Drawing.Point(343, 313);
+            this.txt_direccion.Location = new System.Drawing.Point(206, 313);
             this.txt_direccion.Name = "txt_direccion";
             this.txt_direccion.Size = new System.Drawing.Size(224, 63);
             this.txt_direccion.TabIndex = 8;
@@ -314,7 +319,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(218, 316);
+            this.label4.Location = new System.Drawing.Point(81, 316);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(48, 13);
             this.label4.TabIndex = 7;
@@ -322,7 +327,7 @@
             // 
             // txt_email
             // 
-            this.txt_email.Location = new System.Drawing.Point(343, 264);
+            this.txt_email.Location = new System.Drawing.Point(206, 264);
             this.txt_email.Name = "txt_email";
             this.txt_email.Size = new System.Drawing.Size(363, 21);
             this.txt_email.TabIndex = 6;
@@ -330,7 +335,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(235, 272);
+            this.label3.Location = new System.Drawing.Point(98, 272);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(31, 13);
             this.label3.TabIndex = 5;
@@ -338,14 +343,14 @@
             // 
             // txt_telefono2
             // 
-            this.txt_telefono2.Location = new System.Drawing.Point(532, 216);
+            this.txt_telefono2.Location = new System.Drawing.Point(395, 216);
             this.txt_telefono2.Name = "txt_telefono2";
             this.txt_telefono2.Size = new System.Drawing.Size(174, 21);
             this.txt_telefono2.TabIndex = 4;
             // 
             // txt_telefono1
             // 
-            this.txt_telefono1.Location = new System.Drawing.Point(343, 216);
+            this.txt_telefono1.Location = new System.Drawing.Point(206, 216);
             this.txt_telefono1.Name = "txt_telefono1";
             this.txt_telefono1.Size = new System.Drawing.Size(174, 21);
             this.txt_telefono1.TabIndex = 3;
@@ -353,7 +358,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(212, 224);
+            this.label2.Location = new System.Drawing.Point(75, 224);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(54, 13);
             this.label2.TabIndex = 2;
@@ -361,7 +366,7 @@
             // 
             // txt_nombre
             // 
-            this.txt_nombre.Location = new System.Drawing.Point(343, 170);
+            this.txt_nombre.Location = new System.Drawing.Point(206, 170);
             this.txt_nombre.Name = "txt_nombre";
             this.txt_nombre.Size = new System.Drawing.Size(363, 21);
             this.txt_nombre.TabIndex = 1;
@@ -369,11 +374,26 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(152, 178);
+            this.label1.Location = new System.Drawing.Point(15, 178);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(114, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nombre de la empresa";
+            // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(610, 170);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(304, 206);
+            this.gridControl1.TabIndex = 186;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
             // 
             // frm_empresa
             // 
@@ -389,6 +409,8 @@
             this.groupControl1.PerformLayout();
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.cbo_pais.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -409,15 +431,17 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btn_reporte;
         private System.Windows.Forms.Button btn_nuevo;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_ultimo;
         private System.Windows.Forms.Button btn_actualizar;
-        private System.Windows.Forms.Button btn_save;
+        private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Button btn_buscar;
         private System.Windows.Forms.Button btn_primero;
         private System.Windows.Forms.Button btn_anterior;
         private System.Windows.Forms.Button btn_editar;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_siguiente;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
     }
 }

@@ -320,7 +320,7 @@ namespace crm
 
         private void casosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            LimpiarMDI();
+            //LimpiarMDI();
             if (caso == null)
             {
                 caso = new Form_Casos();

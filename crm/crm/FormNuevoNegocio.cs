@@ -16,24 +16,28 @@ namespace crm
         {
             InitializeComponent();
         }
-
+        string id_form = "105";
         private void FormNuevoNegocio_Load(object sender, EventArgs e)
         {
-            //WindowState = FormWindowState.Normal;
-            //LLENAR MONEDA
-            cbo_moneda.Properties.DataSource = OpBD.SeleccionarMonedas();
-            cbo_moneda.Properties.ValueMember = "id_moneda";
-            cbo_moneda.Properties.DisplayMember = "Moneda";
-            cbo_moneda.Properties.PopulateColumns();
-            cbo_moneda.Properties.Columns[0].Visible = false;
-            //LLENAR CATEGORIAS
-            cbo_cat.DataSource = OpBD.SeleccionarCategoriascbo();
-            cbo_cat.ValueMember = "id_cat";
-            cbo_cat.DisplayMember = "nombre_cat";
-            //LLENAR EMPLEADOS
-            cbo_empleado.DataSource = OpBD.SeleccionarEmpleados();
-            cbo_empleado.ValueMember = "id_empleado";
-            cbo_empleado.DisplayMember = "Empleado";
+            try
+            {
+                //WindowState = FormWindowState.Normal;
+                //LLENAR MONEDA
+                cbo_moneda.Properties.DataSource = OpBD.SeleccionarMonedas();
+                cbo_moneda.Properties.ValueMember = "id_moneda";
+                cbo_moneda.Properties.DisplayMember = "Moneda";
+                cbo_moneda.Properties.PopulateColumns();
+                cbo_moneda.Properties.Columns[0].Visible = false;
+                //LLENAR CATEGORIAS
+                cbo_cat.DataSource = OpBD.SeleccionarCategoriascbo();
+                cbo_cat.ValueMember = "id_cat";
+                cbo_cat.DisplayMember = "nombre_cat";
+                //LLENAR EMPLEADOS
+                cbo_empleado.DataSource = OpBD.SeleccionarEmpleados();
+                cbo_empleado.ValueMember = "id_empleado";
+                cbo_empleado.DisplayMember = "Empleado";
+            }
+            catch { MessageBox.Show("sin permisos!!"); }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FuncionesNavegador;
 
 namespace crm
 {
@@ -16,10 +17,25 @@ namespace crm
         {
             InitializeComponent();
         }
-
+        string id_form = "104";
         private void FormNegociaciones_Load(object sender, EventArgs e)
         {
             WindowState = FormWindowState.Maximized;
+
+            CapaNegocio fn = new CapaNegocio();
+            DataTable seg = seguridad.ObtenerPermisos.Permisos(seguridad.Conexion.User, id_form);
+            if (seg.Rows.Count > 0)
+            {
+                fn.desactivarPermiso(seg, btn_guardar, btn_eliminar, btn_editar, btn_nuevo, btn_cancelar, btn_actualizar, btn_buscar, btn_anterior, btn_siguiente, btn_primero, btn_ultimo);
+            }
+            else
+            {
+                btn_guardar.Enabled = false; btn_eliminar.Enabled = false; btn_editar.Enabled = false; btn_nuevo.Enabled = false; btn_actualizar.Enabled = false; btn_cancelar.Enabled = false; btn_buscar.Enabled = false;
+            }
+
+
+
+
             dgv_negocios.DataSource = OpBD.SeleccionarNegocios();
             if (dgv_negocios.DataSource != null)
             {
@@ -77,6 +93,13 @@ namespace crm
         {
             
             
+        }
+
+        private void btn_nuevo_Click_1(object sender, EventArgs e)
+        {
+            FormNuevoNegocio f = new FormNuevoNegocio();
+            f.MdiParent = this.MdiParent;
+            f.Show();
         }
     }
 }

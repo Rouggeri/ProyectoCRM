@@ -39,6 +39,8 @@ namespace crm
             item_productos.BackgroundImage = Image.FromFile("productos.png");
             //ITEM VENTAS
             item_ventas.BackgroundImage = Image.FromFile("ventas.png");
+            //ITEM CASOS
+            itemcasos.BackgroundImage = Image.FromFile("casos.png");
         }
 
         private void item_negocios_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
