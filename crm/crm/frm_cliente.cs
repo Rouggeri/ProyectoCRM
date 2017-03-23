@@ -135,9 +135,15 @@ namespace crm
                     // Iniciar grid (limpiarlo)
                     dgv_clientes.DataSource = "";
 
+                    string valor_empresa = cmb_empresa.SelectedValue.ToString();
+
+                    if (valor_empresa == "")
+                    {
+                        valor_empresa = "4";
+                    }
                     CapaDatosPersonas inserta = new CapaDatosPersonas();
                     inserta.InsertarNuevoCliente(txt_nombres.Text.Trim(), txt_apellidos.Text.Trim(),
-                    cmb_empresa.SelectedValue.ToString(), txt_puesto.Text, txt_movil.Text, txt_telefono.Text, txt_correo.Text);
+                    valor_empresa, txt_puesto.Text, txt_movil.Text, txt_telefono.Text, txt_correo.Text);
 
                     // carga de datagrid
                     DataTable contenedor = inserta.SeleccionarListaClientes();

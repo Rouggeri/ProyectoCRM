@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NuevoCaso));
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel1 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel2 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel3 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
-            DevExpress.XtraEditors.Repository.TrackBarLabel trackBarLabel4 = new DevExpress.XtraEditors.Repository.TrackBarLabel();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.dgv_casos_nivelusuario = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cmb_empresa = new System.Windows.Forms.ComboBox();
-            this.dgv_empleado = new DevExpress.XtraGrid.GridControl();
+            this.dgv_casos = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_reporte = new System.Windows.Forms.Button();
@@ -55,7 +53,6 @@
             this.cmb_cliente = new System.Windows.Forms.ComboBox();
             this.cmb_ente = new System.Windows.Forms.ComboBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.tb_etapa = new DevExpress.XtraEditors.TrackBarControl();
             this.btn_actualizar_emp = new DevExpress.XtraEditors.SimpleButton();
             this.btn_actualizar_ente = new DevExpress.XtraEditors.SimpleButton();
             this.dtp_fecha_cierre = new DevExpress.XtraEditors.DateEdit();
@@ -71,30 +68,32 @@
             this.txt_descripcion = new System.Windows.Forms.RichTextBox();
             this.btn_nueva_categoria = new DevExpress.XtraEditors.SimpleButton();
             this.label3 = new System.Windows.Forms.Label();
+            this.switch_caso = new DevExpress.XtraEditors.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_empleado)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_casos_nivelusuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_etapa)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_etapa.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha_cierre.Properties.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha_cierre.Properties)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.switch_caso.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
             // 
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
             this.groupControl1.CaptionLocation = DevExpress.Utils.Locations.Top;
+            this.groupControl1.Controls.Add(this.dgv_casos_nivelusuario);
             this.groupControl1.Controls.Add(this.cmb_empresa);
-            this.groupControl1.Controls.Add(this.dgv_empleado);
+            this.groupControl1.Controls.Add(this.dgv_casos);
             this.groupControl1.Controls.Add(this.panel1);
             this.groupControl1.Controls.Add(this.cmb_responsable);
             this.groupControl1.Controls.Add(this.cmb_categoria);
             this.groupControl1.Controls.Add(this.cmb_cliente);
             this.groupControl1.Controls.Add(this.cmb_ente);
             this.groupControl1.Controls.Add(this.label6);
-            this.groupControl1.Controls.Add(this.tb_etapa);
             this.groupControl1.Controls.Add(this.btn_actualizar_emp);
             this.groupControl1.Controls.Add(this.btn_actualizar_ente);
             this.groupControl1.Controls.Add(this.dtp_fecha_cierre);
@@ -110,12 +109,28 @@
             this.groupControl1.Controls.Add(this.txt_descripcion);
             this.groupControl1.Controls.Add(this.btn_nueva_categoria);
             this.groupControl1.Controls.Add(this.label3);
+            this.groupControl1.Controls.Add(this.switch_caso);
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1042, 570);
+            this.groupControl1.Size = new System.Drawing.Size(1143, 649);
             this.groupControl1.TabIndex = 23;
             this.groupControl1.Text = "Datos del Caso:";
+            // 
+            // dgv_casos_nivelusuario
+            // 
+            this.dgv_casos_nivelusuario.Location = new System.Drawing.Point(747, 473);
+            this.dgv_casos_nivelusuario.MainView = this.gridView2;
+            this.dgv_casos_nivelusuario.Name = "dgv_casos_nivelusuario";
+            this.dgv_casos_nivelusuario.Size = new System.Drawing.Size(555, 253);
+            this.dgv_casos_nivelusuario.TabIndex = 188;
+            this.dgv_casos_nivelusuario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.dgv_casos_nivelusuario;
+            this.gridView2.Name = "gridView2";
             // 
             // cmb_empresa
             // 
@@ -127,14 +142,14 @@
             this.cmb_empresa.TabIndex = 187;
             this.cmb_empresa.SelectedIndexChanged += new System.EventHandler(this.cmb_empresa_SelectedIndexChanged_1);
             // 
-            // dgv_empleado
+            // dgv_casos
             // 
-            this.dgv_empleado.Location = new System.Drawing.Point(785, 153);
-            this.dgv_empleado.MainView = this.gridView1;
-            this.dgv_empleado.Name = "dgv_empleado";
-            this.dgv_empleado.Size = new System.Drawing.Size(526, 303);
-            this.dgv_empleado.TabIndex = 185;
-            this.dgv_empleado.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgv_casos.Location = new System.Drawing.Point(758, 153);
+            this.dgv_casos.MainView = this.gridView1;
+            this.dgv_casos.Name = "dgv_casos";
+            this.dgv_casos.Size = new System.Drawing.Size(526, 314);
+            this.dgv_casos.TabIndex = 185;
+            this.dgv_casos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
             // 
             // gridView1
@@ -144,7 +159,7 @@
             this.gridView1.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.Black;
             this.gridView1.Appearance.ColumnFilterButton.Options.UseBackColor = true;
             this.gridView1.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
-            this.gridView1.GridControl = this.dgv_empleado;
+            this.gridView1.GridControl = this.dgv_casos;
             this.gridView1.Name = "gridView1";
             this.gridView1.OptionsView.RowAutoHeight = true;
             this.gridView1.PaintStyleName = "Skin";
@@ -249,6 +264,7 @@
             this.btn_actualizar.Size = new System.Drawing.Size(56, 59);
             this.btn_actualizar.TabIndex = 177;
             this.btn_actualizar.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
             // btn_guardar
             // 
@@ -265,6 +281,7 @@
             this.btn_guardar.Size = new System.Drawing.Size(58, 59);
             this.btn_guardar.TabIndex = 172;
             this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // btn_buscar
             // 
@@ -313,6 +330,7 @@
             this.btn_anterior.Size = new System.Drawing.Size(30, 26);
             this.btn_anterior.TabIndex = 178;
             this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
             // 
             // btn_editar
             // 
@@ -362,6 +380,7 @@
             this.btn_siguiente.Size = new System.Drawing.Size(30, 26);
             this.btn_siguiente.TabIndex = 179;
             this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
             // cmb_responsable
             // 
@@ -406,39 +425,11 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(83, 490);
+            this.label6.Location = new System.Drawing.Point(93, 454);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 24;
             this.label6.Text = "Estado del caso:";
-            // 
-            // tb_etapa
-            // 
-            this.tb_etapa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tb_etapa.EditValue = null;
-            this.tb_etapa.Location = new System.Drawing.Point(220, 462);
-            this.tb_etapa.Name = "tb_etapa";
-            this.tb_etapa.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
-            this.tb_etapa.Properties.Appearance.BackColor2 = System.Drawing.SystemColors.Control;
-            this.tb_etapa.Properties.Appearance.Options.UseBackColor = true;
-            this.tb_etapa.Properties.LabelAppearance.Options.UseTextOptions = true;
-            this.tb_etapa.Properties.LabelAppearance.TextOptions.HAlignment = DevExpress.Utils.HorzAlignment.Center;
-            trackBarLabel1.Label = "0";
-            trackBarLabel2.Label = "1";
-            trackBarLabel2.Value = 1;
-            trackBarLabel3.Label = "2";
-            trackBarLabel3.Value = 2;
-            trackBarLabel4.Label = "3";
-            trackBarLabel4.Value = 3;
-            this.tb_etapa.Properties.Labels.AddRange(new DevExpress.XtraEditors.Repository.TrackBarLabel[] {
-            trackBarLabel1,
-            trackBarLabel2,
-            trackBarLabel3,
-            trackBarLabel4});
-            this.tb_etapa.Properties.Maximum = 3;
-            this.tb_etapa.Properties.ShowLabels = true;
-            this.tb_etapa.Size = new System.Drawing.Size(519, 72);
-            this.tb_etapa.TabIndex = 22;
             // 
             // btn_actualizar_emp
             // 
@@ -588,11 +579,33 @@
             this.label3.TabIndex = 11;
             this.label3.Text = "Categoría";
             // 
+            // switch_caso
+            // 
+            this.switch_caso.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.switch_caso.EditValue = null;
+            this.switch_caso.Location = new System.Drawing.Point(220, 438);
+            this.switch_caso.Name = "switch_caso";
+            this.switch_caso.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
+            this.switch_caso.Properties.Appearance.BackColor2 = System.Drawing.SystemColors.Control;
+            this.switch_caso.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.switch_caso.Properties.Appearance.ForeColor = System.Drawing.Color.Black;
+            this.switch_caso.Properties.Appearance.Options.UseBackColor = true;
+            this.switch_caso.Properties.Appearance.Options.UseFont = true;
+            this.switch_caso.Properties.Appearance.Options.UseForeColor = true;
+            this.switch_caso.Properties.AutoHeight = false;
+            this.switch_caso.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
+            this.switch_caso.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
+            this.switch_caso.Properties.OffText = "Abierto";
+            this.switch_caso.Properties.OnText = "Cerrado";
+            this.switch_caso.Size = new System.Drawing.Size(119, 45);
+            this.switch_caso.TabIndex = 22;
+            this.switch_caso.Toggled += new System.EventHandler(this.switch_caso_Toggled);
+            // 
             // frm_NuevoCaso
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1042, 570);
+            this.ClientSize = new System.Drawing.Size(1143, 649);
             this.Controls.Add(this.groupControl1);
             this.Name = "frm_NuevoCaso";
             this.Text = "Nuevo Caso";
@@ -601,13 +614,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_empleado)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_casos_nivelusuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tb_etapa.Properties)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tb_etapa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha_cierre.Properties.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtp_fecha_cierre.Properties)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.switch_caso.Properties)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -618,7 +632,6 @@
         private System.Windows.Forms.ComboBox cmb_cliente;
         private System.Windows.Forms.ComboBox cmb_ente;
         private System.Windows.Forms.Label label6;
-        private DevExpress.XtraEditors.TrackBarControl tb_etapa;
         private DevExpress.XtraEditors.SimpleButton btn_actualizar_emp;
         private DevExpress.XtraEditors.SimpleButton btn_actualizar_ente;
         private DevExpress.XtraEditors.DateEdit dtp_fecha_cierre;
@@ -648,8 +661,11 @@
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_siguiente;
-        private DevExpress.XtraGrid.GridControl dgv_empleado;
+        private DevExpress.XtraGrid.GridControl dgv_casos;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.ComboBox cmb_empresa;
+        private DevExpress.XtraEditors.ToggleSwitch switch_caso;
+        private DevExpress.XtraGrid.GridControl dgv_casos_nivelusuario;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }
