@@ -265,6 +265,7 @@
             this.btn_guardar.Size = new System.Drawing.Size(58, 59);
             this.btn_guardar.TabIndex = 172;
             this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // btn_buscar
             // 

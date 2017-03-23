@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using seguridad;
 
 namespace crm
 {
@@ -27,6 +28,17 @@ namespace crm
         frm_empresa emp = new frm_empresa();
         Form_inicio ini = new Form_inicio();
         frm_NuevoEmpleado empleado_form = new frm_NuevoEmpleado();
+        Form_Casos caso = new Form_Casos();
+        Historial bitacora = new Historial();
+        agregarapp ap = new agregarapp();
+        Modificar_aplicacion modap = new Modificar_aplicacion();
+        FormAsignarPermisosUsuario crearu = new FormAsignarPermisosUsuario();
+        Form_EditarPrivilegios edi = new Form_EditarPrivilegios();
+        FormDeshabilitarUsuario desh = new FormDeshabilitarUsuario();
+        FormAsignacionPerfil asper = new FormAsignacionPerfil();
+        Form_EditarPerfil edper = new Form_EditarPerfil();
+        FormEliminarPerfil elper = new FormEliminarPerfil();
+        CambioPass camb = new CambioPass();
  
         private void LimpiarMDI()
         {
@@ -83,6 +95,17 @@ namespace crm
             emp = null;
             ini = null;
             empleado_form = null;
+            caso = null;
+            bitacora = null;
+            ap = null;
+            modap = null;
+            crearu = null;
+            edi = null;
+            desh = null;
+            asper = null;
+            edper = null;
+            elper = null;
+            camb = null;
 
 
             if (ini == null)
@@ -293,6 +316,196 @@ namespace crm
         private void frm_NuevoEmpleado_FormClosed(object sender, FormClosedEventArgs e)
         {
             empleado_form = null;
+        }
+
+        private void casosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LimpiarMDI();
+            if (caso == null)
+            {
+                caso = new Form_Casos();
+                caso.MdiParent = this;
+
+                caso.FormClosed += new FormClosedEventHandler(Form_Casos_FormClosed);
+                caso.Show();
+            }
+        }
+
+        private void Form_Casos_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            caso = null;
+        }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //LimpiarMDI();
+            if (bitacora == null)
+            {
+                bitacora = new Historial();
+                bitacora.MdiParent = this;
+
+                bitacora.FormClosed += new FormClosedEventHandler(Historial_FormClosed);
+                bitacora.Show();
+            }
+        }
+
+        private void Historial_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            bitacora = null;
+        }
+
+        private void agregarAplicaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (ap == null)
+            {
+                ap = new agregarapp();
+                ap.MdiParent = this;
+
+                ap.FormClosed += new FormClosedEventHandler(agregarap_FormClosed);
+                ap.Show();
+            }
+        }
+
+        private void agregarap_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            ap = null;
+        }
+
+        private void modificarAplicaciónToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (modap == null)
+            {
+                modap = new Modificar_aplicacion();
+                modap.MdiParent = this;
+                modap.FormClosed += new FormClosedEventHandler(ModificarAplicacion_FormClosed);
+                modap.Show();
+            }
+        }
+
+        private void ModificarAplicacion_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            modap = null;
+        }
+
+        private void crearToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (crearu == null)
+            {
+                crearu = new FormAsignarPermisosUsuario();
+                crearu.MdiParent = this;
+
+                crearu.FormClosed += new FormClosedEventHandler(FormAsignarPermisosUsuario_FormClosed);
+                crearu.Show();
+            }
+        }
+
+        private void FormAsignarPermisosUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            crearu = null;
+        }
+
+        private void editarPermisosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (edi == null)
+            {
+                edi = new Form_EditarPrivilegios();
+                edi.MdiParent = this;
+
+                edi.FormClosed += new FormClosedEventHandler(FormEditarPrivilegios_FormClosed);
+                edi.Show();
+            }
+        }
+
+        private void FormEditarPrivilegios_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            edi = null;
+        }
+
+        private void deshabilitarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (desh == null)
+            {
+                desh = new FormDeshabilitarUsuario();
+                desh.MdiParent = this;
+                desh.FormClosed += new FormClosedEventHandler(FormDeshabilitarUsuario_FormClosed);
+                desh.Show();
+            }
+        }
+
+        private void FormDeshabilitarUsuario_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            desh = null;
+        }
+
+        private void crearPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (asper == null)
+            {
+                asper = new FormAsignacionPerfil();
+                asper.MdiParent = this;
+                asper.FormClosed += new FormClosedEventHandler(FormAsignacionPerfil_FormClosed);
+                asper.Show();
+            }
+        }
+
+        private void FormAsignacionPerfil_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            asper = null;
+        }
+
+        private void editarPerfilToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (edper == null)
+            {
+                edper = new Form_EditarPerfil();
+                edper.MdiParent = this;
+                edper.FormClosed += new FormClosedEventHandler(Form_EditarPerfil_FormClosed);
+                edper.Show();
+            }
+        }
+
+        private void Form_EditarPerfil_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            edper = null;
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (elper == null)
+            {
+                elper = new FormEliminarPerfil();
+                elper.MdiParent = this;
+                elper.FormClosed += new FormClosedEventHandler(FormEliminarPerfil_FormClosed);
+                elper.Show();
+            }
+        }
+
+        private void FormEliminarPerfil_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            elper = null;
+        }
+
+        private void gToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            if (camb == null)
+            {
+                camb = new CambioPass();
+                camb.MdiParent = this;
+                camb.FormClosed += new FormClosedEventHandler(CambioPass_FormClosed);
+                camb.Show();
+            }
+        }
+
+        private void CambioPass_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            camb = null;
+        }
+
+        private void sToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Login f = new Login();
+            f.Show();
+            this.Close();
         }
     }
 }

@@ -129,6 +129,12 @@
     <Compile Include="FormNuevoNegocio.Designer.cs">
       <DependentUpon>FormNuevoNegocio.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_Casos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Casos.Designer.cs">
+      <DependentUpon>Form_Casos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_categoria_neg.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +233,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevoNegocio.resx">
       <DependentUpon>FormNuevoNegocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Casos.resx">
+      <DependentUpon>Form_Casos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_categoria_neg.resx">
       <DependentUpon>Form_categoria_neg.cs</DependentUpon>
