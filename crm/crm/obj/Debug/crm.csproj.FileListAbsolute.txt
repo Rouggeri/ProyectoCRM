@@ -752,8 +752,15 @@ C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_nueva_moneda.resources
 >>>>>>> e239d58720aa1c0096b02df4e53031a21a9e9ab4
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.Form_categoria_neg.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_NuevoCaso.resources
+<<<<<<< HEAD
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.FormDetallesNegocio.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_categoria_caso.resources
+>>>>>>> accc61a9cddd69e37ab5877afd3ca73ec479b76a
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_CasoNuevo.resources
+=======
 C:\ProyectoCRM\crm\crm\bin\Debug\seguridad.dll
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.FormDetallesNegocio.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_categoria_caso.resources
 >>>>>>> accc61a9cddd69e37ab5877afd3ca73ec479b76a
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.Form_Casos.resources
+>>>>>>> 4aa5b785a48dd1956c65091fcb19d240d0736deb

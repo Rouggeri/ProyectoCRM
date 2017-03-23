@@ -223,7 +223,7 @@ namespace crm
         public DataTable cargar_clientes_SinEmpresa()
         {
             DataTable carga = new DataTable();
-            string cadena = "select id_cliente, nombres from tbl_cliente where estado = 'activo' and id_empresa = '' ";
+            string cadena = "select id_cliente, nombres from tbl_cliente where estado = 'activo' and id_empresa = '4'; ";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
@@ -256,6 +256,29 @@ namespace crm
             return categoria;
         }
 
+        //----------------------------------- 6. Insertar en tabla de casos
+        public void Insertar_NuevoCaso(string id_empleado,string id_cliente, string id_empresa, string titulo, string estado_caso, string fecha_limite, string
+            descripcion, string id_cat_caso)
+        {
+            string cadena = "insert into caso (id_empleado,id_cliente,id_empresa,titulo,estado_caso,fecha_asignacion,fecha_limite,descripcion,id_cat_caso,estado)values('"+id_empleado+"','"+id_cliente+"','"+id_empresa+"','"+titulo+"','"+estado_caso+"',sysdate(),'"+fecha_limite+"','"+descripcion+"','"+id_cat_caso+"','activo')";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //------------------------------------ 7. Seleccionar casos
+        public DataTable cargar_casos()
+        {
+            DataTable categoria = new DataTable();
+            //string cadena = " select id_empleado,id_cliente,id_empresa,titulo,estado_caso,fecha_asignacion,fecha_limite,fecha_finalizacion,descripcion,id_cat_caso from caso where estado = 'activo'";
+            string cadena = "select e.nombre,cl.nombres,cl.apellidos,c.titulo,c.descripcion, emp.nombres,emp.apellidos, cat.nombre_caso,c.estado_caso,c.fecha_asignacion,c.fecha_limite , e.id_empresa,cl.id_cliente,emp.id_empleado,cat.id_cat_caso  from empresa e, caso c, tbl_cliente cl, tbl_empleado emp, categoria_caso cat where cl.id_cliente = c.id_cliente and e.id_empresa = c.id_empresa and emp.id_empleado = c.id_empleado and cat.id_cat_caso = c.id_cat_caso and c.estado_caso = 'Abierto'";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(categoria);
+            categoria.Rows.InsertAt(categoria.NewRow(), 0);
+            return categoria;
+        }
 
 
         // -------------------------------------- frm_categoria_caso
