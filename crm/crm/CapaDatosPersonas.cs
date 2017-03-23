@@ -286,7 +286,7 @@ namespace crm
         // 1. insertar nueva categoria
         public void Insertar_NuevaCategoria_Caso(string categoria)
         {
-            string cadena = "insert into categoria_caso (nombre_caso,estado) values ('"+categoria+"','activo')";
+            string cadena = "insert into categoria_caso (id_cat_caso,nombre_caso,estado) values (null,'"+categoria+"','activo')";
             OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             cmd.ExecuteNonQuery();

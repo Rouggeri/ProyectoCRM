@@ -245,6 +245,7 @@ namespace crm
 
         }
 
+<<<<<<< HEAD
         private void btn_siguiente_Click(object sender, EventArgs e)
         {
        
@@ -332,6 +333,11 @@ namespace crm
             dgv_casos.DataSource = dt_casos;
 
             
+=======
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+
+>>>>>>> 4aa5b785a48dd1956c65091fcb19d240d0736deb
         }
     }
     
