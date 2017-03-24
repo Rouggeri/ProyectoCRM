@@ -272,13 +272,47 @@ namespace crm
         {
             DataTable categoria = new DataTable();
             //string cadena = " select id_empleado,id_cliente,id_empresa,titulo,estado_caso,fecha_asignacion,fecha_limite,fecha_finalizacion,descripcion,id_cat_caso from caso where estado = 'activo'";
-            string cadena = "select e.nombre,cl.nombres,cl.apellidos,c.titulo,c.descripcion, emp.nombres,emp.apellidos, cat.nombre_caso,c.estado_caso,c.fecha_asignacion,c.fecha_limite , e.id_empresa,cl.id_cliente,emp.id_empleado,cat.id_cat_caso  from empresa e, caso c, tbl_cliente cl, tbl_empleado emp, categoria_caso cat where cl.id_cliente = c.id_cliente and e.id_empresa = c.id_empresa and emp.id_empleado = c.id_empleado and cat.id_cat_caso = c.id_cat_caso and c.estado_caso = 'Abierto'";
+            string cadena = "select e.nombre,cl.nombres,cl.apellidos,c.titulo,c.descripcion, emp.nombres,emp.apellidos, cat.nombre_caso,c.estado_caso,c.fecha_asignacion,c.fecha_limite , e.id_empresa,cl.id_cliente,emp.id_empleado,cat.id_cat_caso,c.id_caso  from empresa e, caso c, tbl_cliente cl, tbl_empleado emp, categoria_caso cat where cl.id_cliente = c.id_cliente and e.id_empresa = c.id_empresa and emp.id_empleado = c.id_empleado and cat.id_cat_caso = c.id_cat_caso and c.estado_caso = 'Abierto' and c.estado = 'activo'";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(categoria);
             categoria.Rows.InsertAt(categoria.NewRow(), 0);
             return categoria;
         }
+
+        // ------------------------------------- 8. Modificar un caso
+        public void modificar_caso(string id_empleado, string id_cliente, string id_empresa, string titulo, string estado_caso, string fecha_limite, string
+            descripcion, string id_cat_caso, string id_caso)
+        {
+            string cadena = "update caso set id_empleado='"+id_empleado+"',id_cliente='"+id_cliente+"', id_empresa='"+id_empresa+"', titulo='"+titulo+"',estado_caso='"+estado_caso+"',fecha_limite='"+fecha_limite+"',descripcion='"+descripcion+"',id_cat_caso='"+id_cat_caso+"' where id_caso = '"+id_caso+"';";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        // -------------------------------------- 9. Eliminar un caso
+        public void eliminar_caso(string id)
+        {
+            string cadena = "update caso set estado = 'inactivo' where id_caso='" + id + "';";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        // -------------------------------------- 10. Cerrar un caso
+        public void cerrar_caso(string id)
+        {
+            string cadena = "update caso set estado = 'inactivo',estado_caso='cerrado' where id_caso='" + id + "';";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+
+
 
 
         // -------------------------------------- frm_categoria_caso

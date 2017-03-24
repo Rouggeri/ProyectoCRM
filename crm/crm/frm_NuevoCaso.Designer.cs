@@ -30,8 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_NuevoCaso));
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.dgv_casos_nivelusuario = new DevExpress.XtraGrid.GridControl();
-            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.cmb_empresa = new System.Windows.Forms.ComboBox();
             this.dgv_casos = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -71,8 +69,6 @@
             this.switch_caso = new DevExpress.XtraEditors.ToggleSwitch();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_casos_nivelusuario)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -85,7 +81,6 @@
             // 
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
             this.groupControl1.CaptionLocation = DevExpress.Utils.Locations.Top;
-            this.groupControl1.Controls.Add(this.dgv_casos_nivelusuario);
             this.groupControl1.Controls.Add(this.cmb_empresa);
             this.groupControl1.Controls.Add(this.dgv_casos);
             this.groupControl1.Controls.Add(this.panel1);
@@ -113,30 +108,16 @@
             this.groupControl1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1143, 649);
+            this.groupControl1.Size = new System.Drawing.Size(1021, 649);
             this.groupControl1.TabIndex = 23;
             this.groupControl1.Text = "Datos del Caso:";
-            // 
-            // dgv_casos_nivelusuario
-            // 
-            this.dgv_casos_nivelusuario.Location = new System.Drawing.Point(747, 473);
-            this.dgv_casos_nivelusuario.MainView = this.gridView2;
-            this.dgv_casos_nivelusuario.Name = "dgv_casos_nivelusuario";
-            this.dgv_casos_nivelusuario.Size = new System.Drawing.Size(555, 253);
-            this.dgv_casos_nivelusuario.TabIndex = 188;
-            this.dgv_casos_nivelusuario.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView2});
-            // 
-            // gridView2
-            // 
-            this.gridView2.GridControl = this.dgv_casos_nivelusuario;
-            this.gridView2.Name = "gridView2";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // cmb_empresa
             // 
             this.cmb_empresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_empresa.FormattingEnabled = true;
-            this.cmb_empresa.Location = new System.Drawing.Point(317, 197);
+            this.cmb_empresa.Location = new System.Drawing.Point(273, 212);
             this.cmb_empresa.Name = "cmb_empresa";
             this.cmb_empresa.Size = new System.Drawing.Size(129, 21);
             this.cmb_empresa.TabIndex = 187;
@@ -144,13 +125,14 @@
             // 
             // dgv_casos
             // 
-            this.dgv_casos.Location = new System.Drawing.Point(758, 153);
+            this.dgv_casos.Location = new System.Drawing.Point(24, 504);
             this.dgv_casos.MainView = this.gridView1;
             this.dgv_casos.Name = "dgv_casos";
-            this.dgv_casos.Size = new System.Drawing.Size(526, 314);
+            this.dgv_casos.Size = new System.Drawing.Size(988, 160);
             this.dgv_casos.TabIndex = 185;
             this.dgv_casos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
+            this.dgv_casos.Click += new System.EventHandler(this.dgv_casos_Click);
             // 
             // gridView1
             // 
@@ -178,7 +160,7 @@
             this.panel1.Controls.Add(this.btn_editar);
             this.panel1.Controls.Add(this.btn_eliminar);
             this.panel1.Controls.Add(this.btn_siguiente);
-            this.panel1.Location = new System.Drawing.Point(324, 43);
+            this.panel1.Location = new System.Drawing.Point(67, 65);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(630, 77);
@@ -215,6 +197,7 @@
             this.btn_nuevo.Size = new System.Drawing.Size(58, 59);
             this.btn_nuevo.TabIndex = 171;
             this.btn_nuevo.UseVisualStyleBackColor = true;
+            this.btn_nuevo.Click += new System.EventHandler(this.btn_nuevo_Click);
             // 
             // btn_cancelar
             // 
@@ -231,6 +214,7 @@
             this.btn_cancelar.Size = new System.Drawing.Size(56, 59);
             this.btn_cancelar.TabIndex = 176;
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_ultimo
             // 
@@ -347,6 +331,7 @@
             this.btn_editar.Size = new System.Drawing.Size(58, 59);
             this.btn_editar.TabIndex = 173;
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_eliminar
             // 
@@ -386,7 +371,7 @@
             // 
             this.cmb_responsable.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_responsable.FormattingEnabled = true;
-            this.cmb_responsable.Location = new System.Drawing.Point(220, 401);
+            this.cmb_responsable.Location = new System.Drawing.Point(176, 416);
             this.cmb_responsable.Name = "cmb_responsable";
             this.cmb_responsable.Size = new System.Drawing.Size(387, 21);
             this.cmb_responsable.TabIndex = 35;
@@ -395,7 +380,7 @@
             // 
             this.cmb_categoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_categoria.FormattingEnabled = true;
-            this.cmb_categoria.Location = new System.Drawing.Point(220, 325);
+            this.cmb_categoria.Location = new System.Drawing.Point(176, 340);
             this.cmb_categoria.Name = "cmb_categoria";
             this.cmb_categoria.Size = new System.Drawing.Size(386, 21);
             this.cmb_categoria.TabIndex = 34;
@@ -404,7 +389,7 @@
             // 
             this.cmb_cliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmb_cliente.FormattingEnabled = true;
-            this.cmb_cliente.Location = new System.Drawing.Point(459, 197);
+            this.cmb_cliente.Location = new System.Drawing.Point(415, 212);
             this.cmb_cliente.Name = "cmb_cliente";
             this.cmb_cliente.Size = new System.Drawing.Size(148, 21);
             this.cmb_cliente.TabIndex = 31;
@@ -416,7 +401,7 @@
             this.cmb_ente.Items.AddRange(new object[] {
             "Persona",
             "Empresa"});
-            this.cmb_ente.Location = new System.Drawing.Point(220, 197);
+            this.cmb_ente.Location = new System.Drawing.Point(176, 212);
             this.cmb_ente.Name = "cmb_ente";
             this.cmb_ente.Size = new System.Drawing.Size(86, 21);
             this.cmb_ente.TabIndex = 30;
@@ -425,7 +410,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(93, 454);
+            this.label6.Location = new System.Drawing.Point(49, 469);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(86, 13);
             this.label6.TabIndex = 24;
@@ -435,7 +420,7 @@
             // 
             this.btn_actualizar_emp.Image = ((System.Drawing.Image)(resources.GetObject("btn_actualizar_emp.Image")));
             this.btn_actualizar_emp.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
-            this.btn_actualizar_emp.Location = new System.Drawing.Point(680, 398);
+            this.btn_actualizar_emp.Location = new System.Drawing.Point(636, 415);
             this.btn_actualizar_emp.Name = "btn_actualizar_emp";
             this.btn_actualizar_emp.Size = new System.Drawing.Size(61, 23);
             this.btn_actualizar_emp.TabIndex = 19;
@@ -446,7 +431,7 @@
             // 
             this.btn_actualizar_ente.Image = ((System.Drawing.Image)(resources.GetObject("btn_actualizar_ente.Image")));
             this.btn_actualizar_ente.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
-            this.btn_actualizar_ente.Location = new System.Drawing.Point(680, 195);
+            this.btn_actualizar_ente.Location = new System.Drawing.Point(636, 210);
             this.btn_actualizar_ente.Name = "btn_actualizar_ente";
             this.btn_actualizar_ente.Size = new System.Drawing.Size(61, 23);
             this.btn_actualizar_ente.TabIndex = 21;
@@ -456,7 +441,7 @@
             // dtp_fecha_cierre
             // 
             this.dtp_fecha_cierre.EditValue = null;
-            this.dtp_fecha_cierre.Location = new System.Drawing.Point(220, 365);
+            this.dtp_fecha_cierre.Location = new System.Drawing.Point(176, 380);
             this.dtp_fecha_cierre.Name = "dtp_fecha_cierre";
             this.dtp_fecha_cierre.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
@@ -470,7 +455,7 @@
             this.btn_nuevo_ente.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_nuevo_ente.Image = ((System.Drawing.Image)(resources.GetObject("btn_nuevo_ente.Image")));
             this.btn_nuevo_ente.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
-            this.btn_nuevo_ente.Location = new System.Drawing.Point(613, 195);
+            this.btn_nuevo_ente.Location = new System.Drawing.Point(569, 210);
             this.btn_nuevo_ente.Name = "btn_nuevo_ente";
             this.btn_nuevo_ente.Size = new System.Drawing.Size(61, 23);
             this.btn_nuevo_ente.TabIndex = 20;
@@ -480,7 +465,7 @@
             // lbl_titulo
             // 
             this.lbl_titulo.AutoSize = true;
-            this.lbl_titulo.Location = new System.Drawing.Point(146, 161);
+            this.lbl_titulo.Location = new System.Drawing.Point(102, 176);
             this.lbl_titulo.Name = "lbl_titulo";
             this.lbl_titulo.Size = new System.Drawing.Size(33, 13);
             this.lbl_titulo.TabIndex = 1;
@@ -488,7 +473,7 @@
             // 
             // labelControl1
             // 
-            this.labelControl1.Location = new System.Drawing.Point(68, 205);
+            this.labelControl1.Location = new System.Drawing.Point(24, 220);
             this.labelControl1.Name = "labelControl1";
             this.labelControl1.Size = new System.Drawing.Size(111, 13);
             this.labelControl1.TabIndex = 2;
@@ -498,7 +483,7 @@
             // 
             this.btn_nuevo_emp.Image = ((System.Drawing.Image)(resources.GetObject("btn_nuevo_emp.Image")));
             this.btn_nuevo_emp.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
-            this.btn_nuevo_emp.Location = new System.Drawing.Point(613, 399);
+            this.btn_nuevo_emp.Location = new System.Drawing.Point(569, 416);
             this.btn_nuevo_emp.Name = "btn_nuevo_emp";
             this.btn_nuevo_emp.Size = new System.Drawing.Size(61, 23);
             this.btn_nuevo_emp.TabIndex = 18;
@@ -507,7 +492,7 @@
             // 
             // txt_titulo
             // 
-            this.txt_titulo.Location = new System.Drawing.Point(220, 153);
+            this.txt_titulo.Location = new System.Drawing.Point(176, 168);
             this.txt_titulo.Name = "txt_titulo";
             this.txt_titulo.Size = new System.Drawing.Size(519, 21);
             this.txt_titulo.TabIndex = 3;
@@ -515,7 +500,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 409);
+            this.label5.Location = new System.Drawing.Point(20, 424);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(114, 13);
             this.label5.TabIndex = 16;
@@ -524,7 +509,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(51, 368);
+            this.label4.Location = new System.Drawing.Point(7, 383);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(127, 13);
             this.label4.TabIndex = 15;
@@ -533,7 +518,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(118, 241);
+            this.label1.Location = new System.Drawing.Point(74, 256);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 13);
             this.label1.TabIndex = 6;
@@ -543,7 +528,7 @@
             // 
             this.btn_actualizar_cat.Image = ((System.Drawing.Image)(resources.GetObject("btn_actualizar_cat.Image")));
             this.btn_actualizar_cat.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
-            this.btn_actualizar_cat.Location = new System.Drawing.Point(679, 323);
+            this.btn_actualizar_cat.Location = new System.Drawing.Point(636, 338);
             this.btn_actualizar_cat.Name = "btn_actualizar_cat";
             this.btn_actualizar_cat.Size = new System.Drawing.Size(61, 23);
             this.btn_actualizar_cat.TabIndex = 14;
@@ -552,7 +537,7 @@
             // 
             // txt_descripcion
             // 
-            this.txt_descripcion.Location = new System.Drawing.Point(220, 241);
+            this.txt_descripcion.Location = new System.Drawing.Point(176, 256);
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(519, 60);
             this.txt_descripcion.TabIndex = 7;
@@ -563,7 +548,7 @@
             this.btn_nueva_categoria.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_nueva_categoria.Image = ((System.Drawing.Image)(resources.GetObject("btn_nueva_categoria.Image")));
             this.btn_nueva_categoria.ImageLocation = DevExpress.XtraEditors.ImageLocation.BottomCenter;
-            this.btn_nueva_categoria.Location = new System.Drawing.Point(612, 323);
+            this.btn_nueva_categoria.Location = new System.Drawing.Point(569, 338);
             this.btn_nueva_categoria.Name = "btn_nueva_categoria";
             this.btn_nueva_categoria.Size = new System.Drawing.Size(61, 23);
             this.btn_nueva_categoria.TabIndex = 13;
@@ -573,7 +558,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(123, 333);
+            this.label3.Location = new System.Drawing.Point(79, 348);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(54, 13);
             this.label3.TabIndex = 11;
@@ -583,7 +568,7 @@
             // 
             this.switch_caso.Cursor = System.Windows.Forms.Cursors.Hand;
             this.switch_caso.EditValue = null;
-            this.switch_caso.Location = new System.Drawing.Point(220, 438);
+            this.switch_caso.Location = new System.Drawing.Point(176, 453);
             this.switch_caso.Name = "switch_caso";
             this.switch_caso.Properties.Appearance.BackColor = System.Drawing.SystemColors.Control;
             this.switch_caso.Properties.Appearance.BackColor2 = System.Drawing.SystemColors.Control;
@@ -595,9 +580,9 @@
             this.switch_caso.Properties.AutoHeight = false;
             this.switch_caso.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Default;
             this.switch_caso.Properties.GlyphAlignment = DevExpress.Utils.HorzAlignment.Default;
-            this.switch_caso.Properties.OffText = "Abierto";
-            this.switch_caso.Properties.OnText = "Cerrado";
-            this.switch_caso.Size = new System.Drawing.Size(119, 45);
+            this.switch_caso.Properties.OffText = "Cerrado";
+            this.switch_caso.Properties.OnText = "Abierto";
+            this.switch_caso.Size = new System.Drawing.Size(132, 45);
             this.switch_caso.TabIndex = 22;
             this.switch_caso.Toggled += new System.EventHandler(this.switch_caso_Toggled);
             // 
@@ -605,17 +590,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1143, 649);
+            this.ClientSize = new System.Drawing.Size(1021, 649);
             this.Controls.Add(this.groupControl1);
             this.Name = "frm_NuevoCaso";
             this.Text = "Nuevo Caso";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frm_NuevoCaso_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_casos_nivelusuario)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.panel1.ResumeLayout(false);
@@ -665,7 +647,5 @@
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.ComboBox cmb_empresa;
         private DevExpress.XtraEditors.ToggleSwitch switch_caso;
-        private DevExpress.XtraGrid.GridControl dgv_casos_nivelusuario;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }
