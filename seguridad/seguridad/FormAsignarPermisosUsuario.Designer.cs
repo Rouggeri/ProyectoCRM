@@ -397,7 +397,7 @@
             this.btn_guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_guardar.FlatAppearance.BorderSize = 0;
             this.btn_guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_guardar.Location = new System.Drawing.Point(342, 684);
+            this.btn_guardar.Location = new System.Drawing.Point(804, 15);
             this.btn_guardar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(58, 57);
@@ -410,7 +410,7 @@
             this.btn_reporte.BackgroundImage = global::seguridad.Properties.Resources.crystal;
             this.btn_reporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_reporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reporte.Location = new System.Drawing.Point(489, 684);
+            this.btn_reporte.Location = new System.Drawing.Point(884, 15);
             this.btn_reporte.Margin = new System.Windows.Forms.Padding(4);
             this.btn_reporte.Name = "btn_reporte";
             this.btn_reporte.Size = new System.Drawing.Size(53, 59);
@@ -422,7 +422,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(818, 741);
+            this.ClientSize = new System.Drawing.Size(1034, 733);
             this.Controls.Add(this.btn_reporte);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btn_guardar);

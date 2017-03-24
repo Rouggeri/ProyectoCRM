@@ -17,6 +17,7 @@ namespace crm
         {
             InitializeComponent();
         }
+        CapaDatosPersonas peticionescapa = new CapaDatosPersonas();
         string id_form = "102";
         private void btn_nuevocaso_Click(object sender, EventArgs e)
         {
@@ -38,6 +39,30 @@ namespace crm
             {
                 btn_guardar.Enabled = false; btn_eliminar.Enabled = false; btn_editar.Enabled = false; btn_nuevo.Enabled = false; btn_actualizar.Enabled = false; btn_cancelar.Enabled = false; btn_buscar.Enabled = false;
             }
+
+            // carga de datos en formulario
+            // Cargar GridView de casos
+            DataTable dt_casos = new DataTable();
+            dt_casos = peticionescapa.cargar_casos();
+            dgv_casos.DataSource = dt_casos;
+            // columnas ocultas
+            gridView1.Columns["id_empresa"].Visible = false;
+            gridView1.Columns["id_empleado"].Visible = false;
+            gridView1.Columns["id_cliente"].Visible = false;
+            gridView1.Columns["id_cat_caso"].Visible = false;
+            gridView1.Columns["id_caso"].Visible = false;
+
+            // headers de las columnas
+            gridView1.Columns["nombre"].Caption = "Empresa";
+            gridView1.Columns["nombres"].Caption = "Nombre del cliente";
+            gridView1.Columns["apellidos"].Caption = "Apellido del cliente";
+            gridView1.Columns["nombres1"].Caption = "Nombre del encargado";
+            gridView1.Columns["apellidos1"].Caption = "Apellido del encargado";
+            gridView1.Columns["fecha_asignacion"].Caption = "Asignacion";
+            gridView1.Columns["fecha_limite"].Caption = "Fecha limite";
+            gridView1.Columns["nombre_caso"].Caption = "Categoria";
+            gridView1.Columns["estado_caso"].Caption = "Estado";
+
 
 
         }

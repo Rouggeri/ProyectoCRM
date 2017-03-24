@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FuncionesNavegador;
+using DevExpress.XtraGrid.Views.Grid;
+
 
 namespace crm
 {
@@ -23,6 +25,7 @@ namespace crm
         string open = "Abierto";
         string close = "Cerrado";
         string estado = "";
+        string var_idcaso="";
 
         // formulario de Nuevo Caso
         private void frm_NuevoCaso_Load(object sender, EventArgs e)
@@ -60,7 +63,27 @@ namespace crm
                 DataTable dt_casos = new DataTable();
                 dt_casos = peticionescapa.cargar_casos();
                 dgv_casos.DataSource = dt_casos;
+                // columnas ocultas
                 gridView1.Columns["id_empresa"].Visible = false;
+                gridView1.Columns["id_empleado"].Visible = false;
+                gridView1.Columns["id_cliente"].Visible = false;
+                gridView1.Columns["id_cat_caso"].Visible = false;
+                gridView1.Columns["id_caso"].Visible = false;
+
+                // headers de las columnas
+                gridView1.Columns["nombre"].Caption = "Empresa";
+                gridView1.Columns["nombres"].Caption = "Nombre del cliente";
+                gridView1.Columns["apellidos"].Caption = "Apellido del cliente";
+                gridView1.Columns["nombres1"].Caption = "Nombre del encargado";
+                gridView1.Columns["apellidos1"].Caption = "Apellido del encargado";
+                gridView1.Columns["fecha_asignacion"].Caption = "Asignacion";
+                gridView1.Columns["fecha_limite"].Caption = "Fecha limite";
+                gridView1.Columns["nombre_caso"].Caption = "Categoria";
+                gridView1.Columns["estado_caso"].Caption = "Estado";
+                
+
+                //gridView1.Columns["id_cat_caso"].Visible = false;
+
             }
             catch (Exception ex)
             {
@@ -156,7 +179,7 @@ namespace crm
         {
             string opcion = cmb_ente.Text;
 
-            MessageBox.Show(opcion);
+            //MessageBox.Show(opcion);
 
             if (cmb_ente.Text == "")
             {
@@ -257,6 +280,17 @@ namespace crm
         private void btn_eliminar_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                peticionescapa.eliminar_caso(var_idcaso);
+                MessageBox.Show("Caso eliminado correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
         }
 
 
@@ -265,7 +299,7 @@ namespace crm
        
 
 
-            MessageBox.Show("holii");
+            //MessageBox.Show("holii");
             
             
 
@@ -277,28 +311,53 @@ namespace crm
             //switch_caso toggle = (ToggleSwitch)sender;
             //toggle.Toggled += ToggleSwitch_Toggled;
 
-            if (switch_caso.IsOn)
+
+            if (var_idcaso == "")
             {
-                switch_caso.BackColor = Color.Red;
-                estado = close;
+                MessageBox.Show("No se ha seleccionado ningun registro", "Atención",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                
             }
             else
             {
-                switch_caso.BackColor = Color.MediumSeaGreen;
-                estado = open;
+
+                if (switch_caso.IsOn)
+                {
+                    switch_caso.BackColor = Color.MediumSeaGreen;
+                    estado = open;
+                }
+                else
+                {
+
+
+                    var decision = MessageBox.Show("¿Desea dar por cerrado el caso?", "Cerrar caso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (decision == DialogResult.Yes)
+                    {
+                        switch_caso.BackColor = Color.Red;
+                        estado = close;
+                        // envio de variables para cerrar el caso en la base de datos mysql
+                        peticionescapa.cerrar_caso(var_idcaso);
+                        MessageBox.Show("Caso cerrado satisfactoriamente", "Caso cerrado", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else if (decision == DialogResult.No)
+                    {
+                        switch_caso.IsOn = true;
+                        switch_caso.BackColor = Color.MediumSeaGreen;
+                        estado = open;
+                    }
+                }
             }
         }
 
         private void btn_anterior_Click(object sender, EventArgs e)
         {
-            if (switch_caso.IsOn)
-            {
-                estado = close;
-            }
-            else
-            {
-                estado = open;
-            }
+            //if (switch_caso.IsOn)
+            //{
+            //    estado = close;
+            //}
+            //else
+            //{
+            //    estado = open;
+            //}
 
 
         }
@@ -318,7 +377,7 @@ namespace crm
                     valor_empresa = "4";
                 }
 
-
+                // conversion de fecha para que sea aceptada por mysql
                 fecha = dtp_fecha_cierre.DateTime.ToString("yyyy-MM-dd");
                 if (txt_titulo.Text.Trim() == "" || txt_descripcion.Text.Trim() == "" ||cmb_responsable.Text==""||cmb_categoria.Text==""||cmb_cliente.Text=="" )
                 {
@@ -346,9 +405,147 @@ namespace crm
             dt_casos = peticionescapa.cargar_casos();
             dgv_casos.DataSource = dt_casos;
 
-        } 
+            gridView1.Columns["id_empresa"].Visible = false;
+            gridView1.Columns["id_empleado"].Visible = false;
+            gridView1.Columns["id_cliente"].Visible = false;
+            gridView1.Columns["id_cat_caso"].Visible = false;
 
-      
+            // headers de las columnas
+            gridView1.Columns["nombre"].Caption = "Empresa";
+            gridView1.Columns["nombres"].Caption = "Nombre_cliente";
+            gridView1.Columns["apellidos"].Caption = "Apellido_cliente";
+            gridView1.Columns["nombres1"].Caption = "Nombre_encargado";
+            gridView1.Columns["apellidos1"].Caption = "Apellido_encargado";
+            gridView1.Columns["fecha_asignacion"].Caption = "Asignacion";
+            gridView1.Columns["fecha_limite"].Caption = "Fecha_limite";
+
+        }
+
+
+        // grid view de casos
+        private void dgv_casos_Click(object sender, EventArgs e)
+        {
+            string valor_empresa = "";
+            string fechaCierre = "";
+            try
+            {
+                // Crear vector:
+                int[] vector = ((GridView)dgv_casos.MainView).GetSelectedRows();
+                // Seleccionar las areas que tomará el vector del grid
+                DataRowView Empresa = (DataRowView)(((GridView)dgv_casos.MainView).GetRow(vector[0]));
+                DataRowView Nombre_encargado = (DataRowView)(((GridView)dgv_casos.MainView).GetRow(vector[0]));
+                DataRowView Nombre_cliente = (DataRowView)(((GridView)dgv_casos.MainView).GetRow(vector[0]));
+                DataRowView titulo = (DataRowView)(((GridView)dgv_casos.MainView).GetRow(vector[0]));
+                DataRowView descripcion = (DataRowView)(((GridView)dgv_casos.MainView).GetRow(vector[0]));
+                DataRowView fecha_cierre = (DataRowView)(((GridView)dgv_casos.MainView).GetRow(vector[0]));
+                DataRowView id_caso = (DataRowView)(((GridView)dgv_casos.MainView).GetRow(vector[0]));
+                DataRowView categoria = (DataRowView)(((GridView)dgv_casos.MainView).GetRow(vector[0]));
+
+
+                // definir si el cliente esta ligado a una empresa o no? :
+                valor_empresa = Empresa["nombre"].ToString();
+
+                if (valor_empresa == "")
+                {
+                    cmb_ente.Text = "Persona";
+                }
+                else 
+                {
+                    cmb_ente.Text = "Empresa";
+                }
+
+                // convertir fecha para que sea detectada en el calendario de c#:
+                //fechaCierre = dtp_fecha_cierre.DateTime.ToString("yyyy-MM-dd");
+
+                // asignacion de partes de vectores en cajas de texto o combo boxes
+                cmb_empresa.Text = valor_empresa;
+                cmb_responsable.Text = Nombre_encargado["nombres1"].ToString();
+                cmb_cliente.Text = Nombre_cliente["nombres"].ToString();
+                txt_titulo.Text = titulo["titulo"].ToString();
+                txt_descripcion.Text = descripcion["descripcion"].ToString();
+                dtp_fecha_cierre.Text = fecha_cierre["fecha_limite"].ToString();
+                var_idcaso = id_caso["id_caso"].ToString();
+                cmb_categoria.Text = categoria["nombre_caso"].ToString();
+
+                //MessageBox.Show(var_idcaso);
+
+
+
+                //MessageBox.Show(cmb_responsable.SelectedValue.ToString());
+
+                // activacion de switch
+                switch_caso.IsOn = true;
+
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+
+        // boton para editar registros
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string valor_empresa = cmb_empresa.SelectedValue.ToString();
+
+                if (valor_empresa == "")
+                {
+                    valor_empresa = "4";
+                }
+
+                // conversion de fecha para que sea aceptada por mysql
+                fecha = dtp_fecha_cierre.DateTime.ToString("yyyy-MM-dd");
+                if (txt_titulo.Text.Trim() == "" || txt_descripcion.Text.Trim() == "" || cmb_responsable.Text == "" || cmb_categoria.Text == "" || cmb_cliente.Text == "")
+                {
+                    MessageBox.Show("Uno o más campos estan vacios", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                else
+                {
+                    peticionescapa.modificar_caso(cmb_responsable.SelectedValue.ToString(), cmb_cliente.SelectedValue.ToString(), valor_empresa
+                    , txt_titulo.Text.Trim(), estado, fecha, txt_descripcion.Text.Trim(), cmb_categoria.SelectedValue.ToString(),var_idcaso);
+                    MessageBox.Show("Caso modificado correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+
+        // boton de nuevo caso
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            txt_descripcion.Text = "";
+            txt_titulo.Text = "";
+            switch_caso.IsOn = false;
+        }
+
+
+        // boton de eliminar 
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            //    try
+            //    {
+            //        peticionescapa.eliminar_caso(var_idcaso);
+            //        MessageBox.Show("Caso eliminado correctamente", "Mensaje de confirmación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            //    }
+            //    catch(Exception ex)
+            //    {
+            //        MessageBox.Show(ex.Message, "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            //    }
+        }
     }
     
 }
