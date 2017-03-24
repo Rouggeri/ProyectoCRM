@@ -17,7 +17,7 @@ namespace crm
         {
             InitializeComponent();
         }
-
+        string tipo;
         FormActividadesCalendario cal = new FormActividadesCalendario();
         FormContactos con = new FormContactos();
         FormNegociaciones neg = new FormNegociaciones();
@@ -81,8 +81,12 @@ namespace crm
             //    MessageBox.Show(ex.Message);
 
             //}
-
-
+            tipo = OpBD.VerificarTipoUsuario();
+            if(tipo != "administrador")
+            {
+                estadisticasToolStripMenuItem.Enabled = false;
+                seguridadToolStripMenuItem.Enabled = false;
+            }
 
 
             cal = null;
@@ -120,16 +124,20 @@ namespace crm
 
         private void actividadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-           // ClearAllMDIs();
-            LimpiarMDI();
-            if (cal == null)
+            if (tipo == "administrador")
             {
-                cal = new FormActividadesCalendario();
-                cal.MdiParent = this;
+                // ClearAllMDIs();
+                LimpiarMDI();
+                if (cal == null)
+                {
+                    cal = new FormActividadesCalendario();
+                    cal.MdiParent = this;
 
-                cal.FormClosed += new FormClosedEventHandler(FormActividadesCalendario_FormClosed);
-                cal.Show();
+                    cal.FormClosed += new FormClosedEventHandler(FormActividadesCalendario_FormClosed);
+                    cal.Show();
+                }
             }
+            else { MessageBox.Show("No posee los permisos necesarios para acceder a este modulo"); }
         }
 
       
@@ -320,15 +328,18 @@ namespace crm
 
         private void casosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //LimpiarMDI();
-            if (caso == null)
-            {
-                caso = new Form_Casos();
-                caso.MdiParent = this;
+            
+                //LimpiarMDI();
+                if (caso == null)
+                {
+                    caso = new Form_Casos();
+                    caso.MdiParent = this;
 
-                caso.FormClosed += new FormClosedEventHandler(Form_Casos_FormClosed);
-                caso.Show();
-            }
+                    caso.FormClosed += new FormClosedEventHandler(Form_Casos_FormClosed);
+                    caso.Show();
+                }
+            
+           
         }
 
         private void Form_Casos_FormClosed(object sender, FormClosedEventArgs e)

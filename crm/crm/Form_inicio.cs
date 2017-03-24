@@ -41,6 +41,19 @@ namespace crm
             item_ventas.BackgroundImage = Image.FromFile("ventas.png");
             //ITEM CASOS
             itemcasos.BackgroundImage = Image.FromFile("casos.png");
+            //ITEM COBROS
+            item_cobros.BackgroundImage = Image.FromFile("cobros.png");
+
+            //**********************************************************
+
+            string tipo = OpBD.VerificarTipoUsuario();
+            if (tipo != "administrador")
+            {
+                item_calendario.Enabled = false;
+                item_clientes.Enabled = false;
+                item_personal.Enabled = false;
+                item_pronosticos.Enabled = false;
+            }
         }
 
         private void item_negocios_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
@@ -88,6 +101,13 @@ namespace crm
         private void item_productos_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {
 
+        }
+
+        private void itemcasos_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            Form_Casos f = new Form_Casos();
+            f.MdiParent = this.MdiParent;
+            f.Show();
         }
     }
 }

@@ -232,5 +232,25 @@ namespace crm
 
 
 
+
+        public static string VerificarTipoUsuario()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                OdbcConnection con = seguridad.Conexion.ConexionPermisos();
+                OdbcCommand comando = new OdbcCommand("select tipo from usuario where usuario = '"+seguridad.Conexion.User+"'", con);
+                OdbcDataAdapter ad = new OdbcDataAdapter(comando);
+                ad.Fill(dt);
+
+                DataRow row = dt.Rows[0];
+                string tipo = row[0].ToString();
+                return tipo;
+            }
+            catch { return "error"; }
+        }
+
+
+
     }
 }
