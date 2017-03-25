@@ -149,6 +149,7 @@
             this.btn_actualizar.Size = new System.Drawing.Size(56, 59);
             this.btn_actualizar.TabIndex = 177;
             this.btn_actualizar.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
             // btn_guardar
             // 

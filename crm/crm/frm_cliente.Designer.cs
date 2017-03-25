@@ -155,6 +155,7 @@
             this.cmb_empresa.Name = "cmb_empresa";
             this.cmb_empresa.Size = new System.Drawing.Size(132, 24);
             this.cmb_empresa.TabIndex = 13;
+            this.cmb_empresa.SelectedIndexChanged += new System.EventHandler(this.cmb_empresa_SelectedIndexChanged);
             // 
             // label1
             // 

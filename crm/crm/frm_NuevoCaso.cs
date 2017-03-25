@@ -312,13 +312,13 @@ namespace crm
             //toggle.Toggled += ToggleSwitch_Toggled;
 
 
-            if (var_idcaso == "")
-            {
-                MessageBox.Show("No se ha seleccionado ningun registro", "Atención",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            //if (var_idcaso == "")
+            //{
+            //    MessageBox.Show("No se ha seleccionado ningun registro", "Atención",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
                 if (switch_caso.IsOn)
                 {
@@ -345,7 +345,7 @@ namespace crm
                         estado = open;
                     }
                 }
-            }
+            //}
         }
 
         private void btn_anterior_Click(object sender, EventArgs e)
@@ -379,9 +379,10 @@ namespace crm
 
                 // conversion de fecha para que sea aceptada por mysql
                 fecha = dtp_fecha_cierre.DateTime.ToString("yyyy-MM-dd");
-                if (txt_titulo.Text.Trim() == "" || txt_descripcion.Text.Trim() == "" ||cmb_responsable.Text==""||cmb_categoria.Text==""||cmb_cliente.Text=="" )
+                if (txt_titulo.Text.Trim() == "" || txt_descripcion.Text.Trim() == "" ||cmb_responsable.Text==""||cmb_categoria.Text==""||cmb_cliente.Text=="" || switch_caso.IsOn == false)
                 {
                     MessageBox.Show("Uno o más campos estan vacios","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    switch_caso.IsOn = false;
                 }
                 else
                 {

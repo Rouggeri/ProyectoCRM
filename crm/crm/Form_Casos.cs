@@ -73,5 +73,29 @@ namespace crm
             f.MdiParent = this.MdiParent;
             f.Show();
         }
+
+        private void btn_actualizar_Click(object sender, EventArgs e)
+        {
+            DataTable dt_casos = new DataTable();
+            dt_casos = peticionescapa.cargar_casos();
+            dgv_casos.DataSource = dt_casos;
+            // columnas ocultas
+            gridView1.Columns["id_empresa"].Visible = false;
+            gridView1.Columns["id_empleado"].Visible = false;
+            gridView1.Columns["id_cliente"].Visible = false;
+            gridView1.Columns["id_cat_caso"].Visible = false;
+            gridView1.Columns["id_caso"].Visible = false;
+
+            // headers de las columnas
+            gridView1.Columns["nombre"].Caption = "Empresa";
+            gridView1.Columns["nombres"].Caption = "Nombre del cliente";
+            gridView1.Columns["apellidos"].Caption = "Apellido del cliente";
+            gridView1.Columns["nombres1"].Caption = "Nombre del encargado";
+            gridView1.Columns["apellidos1"].Caption = "Apellido del encargado";
+            gridView1.Columns["fecha_asignacion"].Caption = "Asignacion";
+            gridView1.Columns["fecha_limite"].Caption = "Fecha limite";
+            gridView1.Columns["nombre_caso"].Caption = "Categoria";
+            gridView1.Columns["estado_caso"].Caption = "Estado";
+        }
     }
 }

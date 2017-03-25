@@ -247,5 +247,10 @@ namespace crm
         {
             MessageBox.Show( cmb_empresa.SelectedValue.ToString());
         }
+
+        private void cmb_empresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
