@@ -263,5 +263,12 @@ namespace crm
             frm_moneda moneda = new frm_moneda();
             moneda.Show();
         }
+
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frm_estadistica_personal personal = new frm_estadistica_personal();
+            personal.Show();
+        }
     }
 }

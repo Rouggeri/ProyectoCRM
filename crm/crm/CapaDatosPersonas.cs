@@ -358,5 +358,18 @@ namespace crm
             con.Close();
         }
 
+
+        // -------------------------------- frm_estadistica_personal
+
+        // 1. seleccionar datos personales de empleados
+        public DataTable consultar_empleado_especifico(string id)
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select id_empleado,nombres,apellidos,correo,foto from tbl_empleado where id_empleado = '"+id+"'";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
     }
 }
