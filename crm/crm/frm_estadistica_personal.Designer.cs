@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
             this.label1 = new System.Windows.Forms.Label();
             this.Grafíca = new DevExpress.XtraEditors.GroupControl();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lbl_apellidos = new System.Windows.Forms.Label();
+            this.lbl_email = new System.Windows.Forms.Label();
+            this.lbl_nombres = new System.Windows.Forms.Label();
+            this.pcb_foto = new System.Windows.Forms.PictureBox();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -43,13 +44,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.btn_mensual = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_semanal = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ayer = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_hoy = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_semana_pasada = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_mes_pasado = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_eshta_semana = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.label44 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
@@ -79,14 +80,14 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lbl_cant_almuerzo2 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
+            this.lbl_cant_almuerzo1 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
@@ -131,6 +132,8 @@
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -139,11 +142,12 @@
             this.asignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_usuarios = new System.Windows.Forms.ComboBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.dgv_prueba = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.Grafíca)).BeginInit();
             this.Grafíca.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_foto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.tabNavigationPage1.SuspendLayout();
@@ -164,10 +168,13 @@
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.tabNavigationPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_prueba)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -182,9 +189,10 @@
             // 
             // Grafíca
             // 
-            this.Grafíca.Controls.Add(this.label9);
-            this.Grafíca.Controls.Add(this.label8);
-            this.Grafíca.Controls.Add(this.pictureBox1);
+            this.Grafíca.Controls.Add(this.lbl_apellidos);
+            this.Grafíca.Controls.Add(this.lbl_email);
+            this.Grafíca.Controls.Add(this.lbl_nombres);
+            this.Grafíca.Controls.Add(this.pcb_foto);
             this.Grafíca.Controls.Add(this.linkLabel1);
             this.Grafíca.Controls.Add(this.label7);
             this.Grafíca.Controls.Add(this.label6);
@@ -197,34 +205,44 @@
             this.Grafíca.TabIndex = 4;
             this.Grafíca.Text = "Perfil";
             // 
-            // label9
+            // lbl_apellidos
             // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(126, 147);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(152, 16);
-            this.label9.TabIndex = 9;
-            this.label9.Text = "marvinyoque@gmail.com";
+            this.lbl_apellidos.AutoSize = true;
+            this.lbl_apellidos.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_apellidos.Location = new System.Drawing.Point(126, 94);
+            this.lbl_apellidos.Name = "lbl_apellidos";
+            this.lbl_apellidos.Size = new System.Drawing.Size(85, 16);
+            this.lbl_apellidos.TabIndex = 10;
+            this.lbl_apellidos.Text = "Marvin Yoque";
             // 
-            // label8
+            // lbl_email
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(126, 75);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(85, 16);
-            this.label8.TabIndex = 8;
-            this.label8.Text = "Marvin Yoque";
+            this.lbl_email.AutoSize = true;
+            this.lbl_email.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email.Location = new System.Drawing.Point(126, 151);
+            this.lbl_email.Name = "lbl_email";
+            this.lbl_email.Size = new System.Drawing.Size(152, 16);
+            this.lbl_email.TabIndex = 9;
+            this.lbl_email.Text = "marvinyoque@gmail.com";
             // 
-            // pictureBox1
+            // lbl_nombres
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(8, 39);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(95, 101);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 7;
-            this.pictureBox1.TabStop = false;
+            this.lbl_nombres.AutoSize = true;
+            this.lbl_nombres.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nombres.Location = new System.Drawing.Point(126, 75);
+            this.lbl_nombres.Name = "lbl_nombres";
+            this.lbl_nombres.Size = new System.Drawing.Size(85, 16);
+            this.lbl_nombres.TabIndex = 8;
+            this.lbl_nombres.Text = "Marvin Yoque";
+            // 
+            // pcb_foto
+            // 
+            this.pcb_foto.Location = new System.Drawing.Point(8, 39);
+            this.pcb_foto.Name = "pcb_foto";
+            this.pcb_foto.Size = new System.Drawing.Size(95, 101);
+            this.pcb_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_foto.TabIndex = 7;
+            this.pcb_foto.TabStop = false;
             // 
             // linkLabel1
             // 
@@ -232,7 +250,7 @@
             this.linkLabel1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkArea = new System.Windows.Forms.LinkArea(0, 6);
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
-            this.linkLabel1.Location = new System.Drawing.Point(103, 179);
+            this.linkLabel1.Location = new System.Drawing.Point(103, 183);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(41, 16);
             this.linkLabel1.TabIndex = 6;
@@ -243,7 +261,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(5, 179);
+            this.label7.Location = new System.Drawing.Point(5, 183);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(101, 16);
             this.label7.TabIndex = 5;
@@ -253,7 +271,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(126, 124);
+            this.label6.Location = new System.Drawing.Point(126, 128);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(80, 16);
             this.label6.TabIndex = 4;
@@ -263,7 +281,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(126, 111);
+            this.label5.Location = new System.Drawing.Point(126, 115);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(52, 16);
             this.label5.TabIndex = 3;
@@ -302,7 +320,7 @@
             this.tabNavigationPage3});
             this.tabPane1.RegularSize = new System.Drawing.Size(676, 467);
             this.tabPane1.SelectedPage = this.tabNavigationPage2;
-            this.tabPane1.SelectedPageIndex = 2;
+            this.tabPane1.SelectedPageIndex = 0;
             this.tabPane1.Size = new System.Drawing.Size(676, 467);
             this.tabPane1.TabIndex = 6;
             this.tabPane1.Text = "tabPane1";
@@ -310,16 +328,27 @@
             // tabNavigationPage1
             // 
             this.tabNavigationPage1.Caption = "Estadísticas";
+            this.tabNavigationPage1.Controls.Add(this.btn_mensual);
             this.tabNavigationPage1.Controls.Add(this.simpleButton6);
-            this.tabNavigationPage1.Controls.Add(this.simpleButton5);
-            this.tabNavigationPage1.Controls.Add(this.simpleButton4);
-            this.tabNavigationPage1.Controls.Add(this.simpleButton3);
-            this.tabNavigationPage1.Controls.Add(this.simpleButton2);
-            this.tabNavigationPage1.Controls.Add(this.simpleButton1);
-            this.tabNavigationPage1.Controls.Add(this.btn_semanal);
+            this.tabNavigationPage1.Controls.Add(this.btn_ayer);
+            this.tabNavigationPage1.Controls.Add(this.btn_hoy);
+            this.tabNavigationPage1.Controls.Add(this.btn_semana_pasada);
+            this.tabNavigationPage1.Controls.Add(this.btn_mes_pasado);
+            this.tabNavigationPage1.Controls.Add(this.btn_eshta_semana);
             this.tabNavigationPage1.Controls.Add(this.panelControl1);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(658, 422);
+            // 
+            // btn_mensual
+            // 
+            this.btn_mensual.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mensual.Appearance.Options.UseFont = true;
+            this.btn_mensual.Location = new System.Drawing.Point(323, 15);
+            this.btn_mensual.Name = "btn_mensual";
+            this.btn_mensual.Size = new System.Drawing.Size(68, 23);
+            this.btn_mensual.TabIndex = 106;
+            this.btn_mensual.Text = "Este mes";
+            this.btn_mensual.Click += new System.EventHandler(this.btn_mensual_Click);
             // 
             // simpleButton6
             // 
@@ -331,65 +360,60 @@
             this.simpleButton6.TabIndex = 16;
             this.simpleButton6.Text = "Periodo personalizado";
             // 
-            // simpleButton5
+            // btn_ayer
             // 
-            this.simpleButton5.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton5.Appearance.Options.UseFont = true;
-            this.simpleButton5.Location = new System.Drawing.Point(59, 15);
-            this.simpleButton5.Name = "simpleButton5";
-            this.simpleButton5.Size = new System.Drawing.Size(39, 23);
-            this.simpleButton5.TabIndex = 15;
-            this.simpleButton5.Text = "Ayer";
+            this.btn_ayer.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ayer.Appearance.Options.UseFont = true;
+            this.btn_ayer.Location = new System.Drawing.Point(66, 15);
+            this.btn_ayer.Name = "btn_ayer";
+            this.btn_ayer.Size = new System.Drawing.Size(39, 23);
+            this.btn_ayer.TabIndex = 15;
+            this.btn_ayer.Text = "Ayer";
+            this.btn_ayer.Click += new System.EventHandler(this.btn_ayer_Click);
             // 
-            // simpleButton4
+            // btn_hoy
             // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Location = new System.Drawing.Point(9, 15);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(34, 23);
-            this.simpleButton4.TabIndex = 14;
-            this.simpleButton4.Text = "Hoy";
+            this.btn_hoy.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_hoy.Appearance.Options.UseFont = true;
+            this.btn_hoy.Location = new System.Drawing.Point(9, 15);
+            this.btn_hoy.Name = "btn_hoy";
+            this.btn_hoy.Size = new System.Drawing.Size(34, 23);
+            this.btn_hoy.TabIndex = 14;
+            this.btn_hoy.Text = "Hoy";
+            this.btn_hoy.Click += new System.EventHandler(this.btn_hoy_Click);
             // 
-            // simpleButton3
+            // btn_semana_pasada
             // 
-            this.simpleButton3.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton3.Appearance.Options.UseFont = true;
-            this.simpleButton3.Location = new System.Drawing.Point(217, 15);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(101, 23);
-            this.simpleButton3.TabIndex = 13;
-            this.simpleButton3.Text = "Semana pasada";
+            this.btn_semana_pasada.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_semana_pasada.Appearance.Options.UseFont = true;
+            this.btn_semana_pasada.Location = new System.Drawing.Point(217, 15);
+            this.btn_semana_pasada.Name = "btn_semana_pasada";
+            this.btn_semana_pasada.Size = new System.Drawing.Size(101, 23);
+            this.btn_semana_pasada.TabIndex = 13;
+            this.btn_semana_pasada.Text = "Semana pasada";
+            this.btn_semana_pasada.Click += new System.EventHandler(this.btn_semana_pasada_Click);
             // 
-            // simpleButton2
+            // btn_mes_pasado
             // 
-            this.simpleButton2.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton2.Appearance.Options.UseFont = true;
-            this.simpleButton2.Location = new System.Drawing.Point(324, 15);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(66, 23);
-            this.simpleButton2.TabIndex = 12;
-            this.simpleButton2.Text = "Este mes";
+            this.btn_mes_pasado.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mes_pasado.Appearance.Options.UseFont = true;
+            this.btn_mes_pasado.Location = new System.Drawing.Point(396, 15);
+            this.btn_mes_pasado.Name = "btn_mes_pasado";
+            this.btn_mes_pasado.Size = new System.Drawing.Size(84, 23);
+            this.btn_mes_pasado.TabIndex = 11;
+            this.btn_mes_pasado.Text = "Mes pasado";
+            this.btn_mes_pasado.Click += new System.EventHandler(this.btn_mes_pasado_Click);
             // 
-            // simpleButton1
+            // btn_eshta_semana
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(396, 15);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(84, 23);
-            this.simpleButton1.TabIndex = 11;
-            this.simpleButton1.Text = "Mes pasado";
-            // 
-            // btn_semanal
-            // 
-            this.btn_semanal.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_semanal.Appearance.Options.UseFont = true;
-            this.btn_semanal.Location = new System.Drawing.Point(118, 15);
-            this.btn_semanal.Name = "btn_semanal";
-            this.btn_semanal.Size = new System.Drawing.Size(90, 23);
-            this.btn_semanal.TabIndex = 10;
-            this.btn_semanal.Text = "Esta Semana";
+            this.btn_eshta_semana.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eshta_semana.Appearance.Options.UseFont = true;
+            this.btn_eshta_semana.Location = new System.Drawing.Point(118, 15);
+            this.btn_eshta_semana.Name = "btn_eshta_semana";
+            this.btn_eshta_semana.Size = new System.Drawing.Size(90, 23);
+            this.btn_eshta_semana.TabIndex = 10;
+            this.btn_eshta_semana.Text = "Esta Semana";
+            this.btn_eshta_semana.Click += new System.EventHandler(this.btn_eshta_semana_Click);
             // 
             // panelControl1
             // 
@@ -421,14 +445,14 @@
             this.panelControl1.Controls.Add(this.label21);
             this.panelControl1.Controls.Add(this.label22);
             this.panelControl1.Controls.Add(this.label13);
-            this.panelControl1.Controls.Add(this.label14);
+            this.panelControl1.Controls.Add(this.lbl_cant_almuerzo2);
             this.panelControl1.Controls.Add(this.label15);
             this.panelControl1.Controls.Add(this.label16);
             this.panelControl1.Controls.Add(this.label17);
             this.panelControl1.Controls.Add(this.label12);
             this.panelControl1.Controls.Add(this.label11);
             this.panelControl1.Controls.Add(this.label10);
-            this.panelControl1.Controls.Add(this.label45);
+            this.panelControl1.Controls.Add(this.lbl_cant_almuerzo1);
             this.panelControl1.Controls.Add(this.label70);
             this.panelControl1.Controls.Add(this.label71);
             this.panelControl1.Controls.Add(this.label72);
@@ -730,15 +754,15 @@
             this.label13.TabIndex = 78;
             this.label13.Text = "cantidad";
             // 
-            // label14
+            // lbl_cant_almuerzo2
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(209, 221);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 16);
-            this.label14.TabIndex = 77;
-            this.label14.Text = "cantidad";
+            this.lbl_cant_almuerzo2.AutoSize = true;
+            this.lbl_cant_almuerzo2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cant_almuerzo2.Location = new System.Drawing.Point(209, 221);
+            this.lbl_cant_almuerzo2.Name = "lbl_cant_almuerzo2";
+            this.lbl_cant_almuerzo2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_cant_almuerzo2.TabIndex = 77;
+            this.lbl_cant_almuerzo2.Text = "cantidad";
             // 
             // label15
             // 
@@ -799,15 +823,15 @@
             this.label10.Size = new System.Drawing.Size(0, 16);
             this.label10.TabIndex = 71;
             // 
-            // label45
+            // lbl_cant_almuerzo1
             // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(54, 221);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(32, 16);
-            this.label45.TabIndex = 70;
-            this.label45.Text = "cant";
+            this.lbl_cant_almuerzo1.AutoSize = true;
+            this.lbl_cant_almuerzo1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cant_almuerzo1.Location = new System.Drawing.Point(54, 221);
+            this.lbl_cant_almuerzo1.Name = "lbl_cant_almuerzo1";
+            this.lbl_cant_almuerzo1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_cant_almuerzo1.TabIndex = 70;
+            this.lbl_cant_almuerzo1.Text = "cant";
             // 
             // label70
             // 
@@ -1240,21 +1264,37 @@
             // tabNavigationPage3
             // 
             this.tabNavigationPage3.Caption = "Actividades";
+            this.tabNavigationPage3.Controls.Add(this.gridControl1);
             this.tabNavigationPage3.Controls.Add(this.chartControl1);
             this.tabNavigationPage3.Controls.Add(this.label2);
             this.tabNavigationPage3.Controls.Add(this.dataGridView1);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
             this.tabNavigationPage3.Size = new System.Drawing.Size(658, 422);
             // 
+            // gridControl1
+            // 
+            this.gridControl1.Location = new System.Drawing.Point(61, 18);
+            this.gridControl1.MainView = this.gridView1;
+            this.gridControl1.Name = "gridControl1";
+            this.gridControl1.Size = new System.Drawing.Size(544, 145);
+            this.gridControl1.TabIndex = 4;
+            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.gridControl1;
+            this.gridView1.Name = "gridView1";
+            // 
             // chartControl1
             // 
-            this.chartControl1.Location = new System.Drawing.Point(85, 200);
+            this.chartControl1.Location = new System.Drawing.Point(61, 200);
             this.chartControl1.Name = "chartControl1";
-            series1.Name = "Serie1";
-            series1.View = pieSeriesView1;
+            series2.Name = "Serie1";
+            series2.View = pieSeriesView2;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl1.Size = new System.Drawing.Size(492, 200);
+        series2};
+            this.chartControl1.Size = new System.Drawing.Size(544, 200);
             this.chartControl1.TabIndex = 3;
             // 
             // label2
@@ -1276,7 +1316,7 @@
             this.asignada,
             this.vencimiento,
             this.completo});
-            this.dataGridView1.Location = new System.Drawing.Point(61, 15);
+            this.dataGridView1.Location = new System.Drawing.Point(43, 123);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(544, 143);
             this.dataGridView1.TabIndex = 1;
@@ -1306,13 +1346,14 @@
             this.completo.HeaderText = "Completo";
             this.completo.Name = "completo";
             // 
-            // comboBox1
+            // cmb_usuarios
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(90, 36);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 7;
+            this.cmb_usuarios.FormattingEnabled = true;
+            this.cmb_usuarios.Location = new System.Drawing.Point(90, 36);
+            this.cmb_usuarios.Name = "cmb_usuarios";
+            this.cmb_usuarios.Size = new System.Drawing.Size(121, 21);
+            this.cmb_usuarios.TabIndex = 7;
+            this.cmb_usuarios.SelectedIndexChanged += new System.EventHandler(this.cmb_usuarios_SelectedIndexChanged);
             // 
             // linkLabel2
             // 
@@ -1325,13 +1366,22 @@
             this.linkLabel2.Text = "Nuevo Caso";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // dgv_prueba
+            // 
+            this.dgv_prueba.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_prueba.Location = new System.Drawing.Point(12, 346);
+            this.dgv_prueba.Name = "dgv_prueba";
+            this.dgv_prueba.Size = new System.Drawing.Size(301, 150);
+            this.dgv_prueba.TabIndex = 9;
+            // 
             // frm_estadistica_personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 516);
+            this.Controls.Add(this.dgv_prueba);
             this.Controls.Add(this.linkLabel2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_usuarios);
             this.Controls.Add(this.tabPane1);
             this.Controls.Add(this.Grafíca);
             this.Controls.Add(this.label1);
@@ -1341,7 +1391,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grafíca)).EndInit();
             this.Grafíca.ResumeLayout(false);
             this.Grafíca.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_foto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).EndInit();
             this.tabPane1.ResumeLayout(false);
             this.tabNavigationPage1.ResumeLayout(false);
@@ -1370,10 +1420,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.tabNavigationPage3.ResumeLayout(false);
             this.tabNavigationPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_prueba)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1387,7 +1440,7 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pcb_foto;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -1401,15 +1454,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn asignada;
         private System.Windows.Forms.DataGridViewTextBoxColumn vencimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn completo;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbl_email;
+        private System.Windows.Forms.Label lbl_nombres;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
-        private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
-        private DevExpress.XtraEditors.SimpleButton btn_semanal;
+        private DevExpress.XtraEditors.SimpleButton btn_ayer;
+        private DevExpress.XtraEditors.SimpleButton btn_hoy;
+        private DevExpress.XtraEditors.SimpleButton btn_semana_pasada;
+        private DevExpress.XtraEditors.SimpleButton btn_mes_pasado;
+        private DevExpress.XtraEditors.SimpleButton btn_eshta_semana;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl6;
         private System.Windows.Forms.Label label58;
@@ -1473,14 +1525,14 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbl_cant_almuerzo2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label lbl_cant_almuerzo1;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label72;
@@ -1489,8 +1541,13 @@
         private System.Windows.Forms.Label label75;
         private System.Windows.Forms.Label label76;
         private System.Windows.Forms.Label label77;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_usuarios;
         private DevExpress.XtraCharts.ChartControl chartControl1;
         private System.Windows.Forms.LinkLabel linkLabel2;
+        private DevExpress.XtraGrid.GridControl gridControl1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private System.Windows.Forms.Label lbl_apellidos;
+        private DevExpress.XtraEditors.SimpleButton btn_mensual;
+        private System.Windows.Forms.DataGridView dgv_prueba;
     }
 }

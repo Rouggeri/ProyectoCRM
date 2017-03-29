@@ -103,7 +103,7 @@ namespace crm
         // habiliar combo box de empresas y clientes segun opcion seleccionada
         private void cmb_ente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmb_ente.SelectedItem == "Empresa")
+            if (cmb_ente.SelectedItem.ToString() == "Empresa")
             {
                 DataTable dt_empresas = new DataTable();
                 dt_empresas = peticionescapa.cargar_empresas();
@@ -113,7 +113,7 @@ namespace crm
                 cmb_empresa.Enabled = true;
 
             }
-            else if(cmb_ente.SelectedItem == "Persona")
+            else if(cmb_ente.SelectedItem.ToString() == "Persona")
                 {
 
                 DataTable dt_empresas = new DataTable();
@@ -214,7 +214,7 @@ namespace crm
         // boton actualizar ente (empresa o empleado)
         private void btn_actualizar_ente_Click(object sender, EventArgs e)
         {
-            if (cmb_ente.SelectedItem == "Empresa")
+            if (cmb_ente.SelectedItem.ToString() == "Empresa")
             {
                 DataTable dt_empresas = new DataTable();
                 dt_empresas = peticionescapa.cargar_empresas();
@@ -224,7 +224,7 @@ namespace crm
                 cmb_empresa.Enabled = true;
 
             }
-            else if (cmb_ente.SelectedItem == "Persona")
+            else if (cmb_ente.SelectedItem.ToString() == "Persona")
             {
 
                 // Limpiar combo box de empresa ya que no se va a usar
@@ -312,13 +312,13 @@ namespace crm
             //toggle.Toggled += ToggleSwitch_Toggled;
 
 
-            if (var_idcaso == "")
-            {
-                MessageBox.Show("No se ha seleccionado ningun registro", "Atención",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+            //if (var_idcaso == "")
+            //{
+            //    MessageBox.Show("No se ha seleccionado ningun registro", "Atención",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
                 
-            }
-            else
-            {
+            //}
+            //else
+            //{
 
                 if (switch_caso.IsOn)
                 {
@@ -345,7 +345,7 @@ namespace crm
                         estado = open;
                     }
                 }
-            }
+            //}
         }
 
         private void btn_anterior_Click(object sender, EventArgs e)
@@ -379,9 +379,10 @@ namespace crm
 
                 // conversion de fecha para que sea aceptada por mysql
                 fecha = dtp_fecha_cierre.DateTime.ToString("yyyy-MM-dd");
-                if (txt_titulo.Text.Trim() == "" || txt_descripcion.Text.Trim() == "" ||cmb_responsable.Text==""||cmb_categoria.Text==""||cmb_cliente.Text=="" )
+                if (txt_titulo.Text.Trim() == "" || txt_descripcion.Text.Trim() == "" ||cmb_responsable.Text==""||cmb_categoria.Text==""||cmb_cliente.Text=="" || switch_caso.IsOn == false)
                 {
                     MessageBox.Show("Uno o más campos estan vacios","Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Exclamation);
+                    switch_caso.IsOn = false;
                 }
                 else
                 {
@@ -426,7 +427,7 @@ namespace crm
         private void dgv_casos_Click(object sender, EventArgs e)
         {
             string valor_empresa = "";
-            string fechaCierre = "";
+            //string fechaCierre = "";
             try
             {
                 // Crear vector:

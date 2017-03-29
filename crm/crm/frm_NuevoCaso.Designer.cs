@@ -496,6 +496,7 @@
             this.txt_titulo.Name = "txt_titulo";
             this.txt_titulo.Size = new System.Drawing.Size(519, 21);
             this.txt_titulo.TabIndex = 3;
+            this.txt_titulo.Text = "Titulo aqui";
             // 
             // label5
             // 
