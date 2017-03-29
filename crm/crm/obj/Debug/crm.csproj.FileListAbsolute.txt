@@ -23,7 +23,6 @@ C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.Core.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.Extensions.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraVerticalGrid.v15.2.dll
-C:\ProyectoCRM\crm\crm\bin\Debug\MySql.Data.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.Utils.v15.2.UI.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraTreeList.v15.2.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraNavBar.v15.2.dll

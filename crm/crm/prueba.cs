@@ -16,5 +16,10 @@ namespace crm
         {
             InitializeComponent();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Clash Royale me pela la verga");
+        }
     }
 }
