@@ -29,25 +29,12 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNegociaciones));
-            DevExpress.XtraEditors.TileItemElement tileItemElement1 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement2 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement3 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement4 = new DevExpress.XtraEditors.TileItemElement();
-            DevExpress.XtraEditors.TileItemElement tileItemElement5 = new DevExpress.XtraEditors.TileItemElement();
             this.dgv_negocios = new DevExpress.XtraGrid.GridControl();
             this.dgv_neg = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.navigationPane1 = new DevExpress.XtraBars.Navigation.NavigationPane();
             this.pag_lista = new DevExpress.XtraBars.Navigation.NavigationPage();
             this.pag_estado = new DevExpress.XtraBars.Navigation.NavigationPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.tileestado = new DevExpress.XtraEditors.TileControl();
-            this.tileGroup5 = new DevExpress.XtraEditors.TileGroup();
-            this.tileItem3 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem7 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem4 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem5 = new DevExpress.XtraEditors.TileItem();
-            this.tileItem6 = new DevExpress.XtraEditors.TileItem();
             this.label2 = new System.Windows.Forms.Label();
             this.tileGroup1 = new DevExpress.XtraEditors.TileGroup();
             this.tileGroup2 = new DevExpress.XtraEditors.TileGroup();
@@ -65,6 +52,16 @@
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
+            this.tileBar0 = new DevExpress.XtraBars.Navigation.TileBar();
+            this.grupo_preparacion = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl3 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl4 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl5 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl6 = new DevExpress.XtraEditors.GroupControl();
+            this.tileBar1 = new DevExpress.XtraBars.Navigation.TileBar();
+            this.tileBar2 = new DevExpress.XtraBars.Navigation.TileBar();
+            this.tileBar3 = new DevExpress.XtraBars.Navigation.TileBar();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_negocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_neg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -72,6 +69,16 @@
             this.pag_lista.SuspendLayout();
             this.pag_estado.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.grupo_preparacion)).BeginInit();
+            this.grupo_preparacion.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).BeginInit();
+            this.groupControl3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).BeginInit();
+            this.groupControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).BeginInit();
             this.SuspendLayout();
             // 
             // dgv_negocios
@@ -80,7 +87,7 @@
             this.dgv_negocios.Location = new System.Drawing.Point(0, 0);
             this.dgv_negocios.MainView = this.dgv_neg;
             this.dgv_negocios.Name = "dgv_negocios";
-            this.dgv_negocios.Size = new System.Drawing.Size(944, 427);
+            this.dgv_negocios.Size = new System.Drawing.Size(947, 427);
             this.dgv_negocios.TabIndex = 0;
             this.dgv_negocios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgv_neg});
@@ -109,10 +116,10 @@
             this.navigationPane1.Pages.AddRange(new DevExpress.XtraBars.Navigation.NavigationPageBase[] {
             this.pag_lista,
             this.pag_estado});
-            this.navigationPane1.RegularSize = new System.Drawing.Size(1010, 487);
+            this.navigationPane1.RegularSize = new System.Drawing.Size(1013, 487);
             this.navigationPane1.SelectedPage = this.pag_estado;
-            this.navigationPane1.SelectedPageIndex = 0;
-            this.navigationPane1.Size = new System.Drawing.Size(1010, 487);
+            this.navigationPane1.SelectedPageIndex = 1;
+            this.navigationPane1.Size = new System.Drawing.Size(1013, 487);
             this.navigationPane1.TabIndex = 4;
             this.navigationPane1.Text = "Negociaciones";
             // 
@@ -123,87 +130,18 @@
             this.pag_lista.Image = ((System.Drawing.Image)(resources.GetObject("pag_lista.Image")));
             this.pag_lista.Name = "pag_lista";
             this.pag_lista.PageText = "";
-            this.pag_lista.Size = new System.Drawing.Size(944, 427);
+            this.pag_lista.Size = new System.Drawing.Size(947, 427);
             // 
             // pag_estado
             // 
             this.pag_estado.Caption = "Estado";
-            this.pag_estado.Controls.Add(this.button1);
-            this.pag_estado.Controls.Add(this.tileestado);
+            this.pag_estado.Controls.Add(this.groupControl5);
+            this.pag_estado.Controls.Add(this.groupControl3);
+            this.pag_estado.Controls.Add(this.groupControl2);
+            this.pag_estado.Controls.Add(this.grupo_preparacion);
             this.pag_estado.Image = ((System.Drawing.Image)(resources.GetObject("pag_estado.Image")));
             this.pag_estado.Name = "pag_estado";
-            this.pag_estado.Size = new System.Drawing.Size(944, 427);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(515, 17);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // tileestado
-            // 
-            this.tileestado.AllowSelectedItem = true;
-            this.tileestado.DragSize = new System.Drawing.Size(0, 0);
-            this.tileestado.Groups.Add(this.tileGroup5);
-            this.tileestado.Location = new System.Drawing.Point(49, 62);
-            this.tileestado.MaxId = 7;
-            this.tileestado.Name = "tileestado";
-            this.tileestado.Orientation = System.Windows.Forms.Orientation.Vertical;
-            this.tileestado.Size = new System.Drawing.Size(843, 371);
-            this.tileestado.TabIndex = 0;
-            this.tileestado.Text = "tileControl1";
-            // 
-            // tileGroup5
-            // 
-            this.tileGroup5.Items.Add(this.tileItem3);
-            this.tileGroup5.Items.Add(this.tileItem7);
-            this.tileGroup5.Items.Add(this.tileItem4);
-            this.tileGroup5.Items.Add(this.tileItem5);
-            this.tileGroup5.Items.Add(this.tileItem6);
-            this.tileGroup5.Name = "tileGroup5";
-            // 
-            // tileItem3
-            // 
-            tileItemElement1.Text = "tileItem3";
-            this.tileItem3.Elements.Add(tileItemElement1);
-            this.tileItem3.Id = 2;
-            this.tileItem3.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem3.Name = "tileItem3";
-            // 
-            // tileItem7
-            // 
-            tileItemElement2.Text = "tileItem7";
-            this.tileItem7.Elements.Add(tileItemElement2);
-            this.tileItem7.Id = 6;
-            this.tileItem7.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem7.Name = "tileItem7";
-            // 
-            // tileItem4
-            // 
-            tileItemElement3.Text = "tileItem4";
-            this.tileItem4.Elements.Add(tileItemElement3);
-            this.tileItem4.Id = 3;
-            this.tileItem4.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem4.Name = "tileItem4";
-            // 
-            // tileItem5
-            // 
-            tileItemElement4.Text = "tileItem5";
-            this.tileItem5.Elements.Add(tileItemElement4);
-            this.tileItem5.Id = 4;
-            this.tileItem5.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem5.Name = "tileItem5";
-            // 
-            // tileItem6
-            // 
-            tileItemElement5.Text = "tileItem6";
-            this.tileItem6.Elements.Add(tileItemElement5);
-            this.tileItem6.Id = 5;
-            this.tileItem6.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
-            this.tileItem6.Name = "tileItem6";
+            this.pag_estado.Size = new System.Drawing.Size(947, 427);
             // 
             // label2
             // 
@@ -439,11 +377,140 @@
             this.btn_siguiente.TabIndex = 179;
             this.btn_siguiente.UseVisualStyleBackColor = true;
             // 
+            // tileBar0
+            // 
+            this.tileBar0.AllowDrag = false;
+            this.tileBar0.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tileBar0.AppearanceItem.Normal.Options.UseFont = true;
+            this.tileBar0.AppearanceText.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold);
+            this.tileBar0.AppearanceText.Options.UseFont = true;
+            this.tileBar0.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            this.tileBar0.ItemSize = 80;
+            this.tileBar0.Location = new System.Drawing.Point(5, 37);
+            this.tileBar0.MaxId = 3;
+            this.tileBar0.Name = "tileBar0";
+            this.tileBar0.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileBar0.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
+            this.tileBar0.Size = new System.Drawing.Size(220, 379);
+            this.tileBar0.TabIndex = 0;
+            this.tileBar0.Text = "tileBar0";
+            // 
+            // grupo_preparacion
+            // 
+            this.grupo_preparacion.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grupo_preparacion.AppearanceCaption.Options.UseFont = true;
+            this.grupo_preparacion.CaptionImage = ((System.Drawing.Image)(resources.GetObject("grupo_preparacion.CaptionImage")));
+            this.grupo_preparacion.Controls.Add(this.tileBar0);
+            this.grupo_preparacion.Location = new System.Drawing.Point(3, 3);
+            this.grupo_preparacion.Name = "grupo_preparacion";
+            this.grupo_preparacion.Size = new System.Drawing.Size(230, 421);
+            this.grupo_preparacion.TabIndex = 1;
+            this.grupo_preparacion.Text = "Preparación o análisis";
+            // 
+            // groupControl2
+            // 
+            this.groupControl2.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl2.AppearanceCaption.Options.UseFont = true;
+            this.groupControl2.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl2.CaptionImage")));
+            this.groupControl2.Controls.Add(this.tileBar1);
+            this.groupControl2.Location = new System.Drawing.Point(239, 3);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(230, 421);
+            this.groupControl2.TabIndex = 2;
+            this.groupControl2.Text = "Discusión";
+            // 
+            // groupControl3
+            // 
+            this.groupControl3.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl3.AppearanceCaption.Options.UseFont = true;
+            this.groupControl3.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl3.CaptionImage")));
+            this.groupControl3.Controls.Add(this.tileBar2);
+            this.groupControl3.Controls.Add(this.groupControl4);
+            this.groupControl3.Location = new System.Drawing.Point(475, 3);
+            this.groupControl3.Name = "groupControl3";
+            this.groupControl3.Size = new System.Drawing.Size(230, 421);
+            this.groupControl3.TabIndex = 3;
+            this.groupControl3.Text = "Propuesta realizada";
+            // 
+            // groupControl4
+            // 
+            this.groupControl4.Location = new System.Drawing.Point(236, 0);
+            this.groupControl4.Name = "groupControl4";
+            this.groupControl4.Size = new System.Drawing.Size(230, 239);
+            this.groupControl4.TabIndex = 4;
+            this.groupControl4.Text = "groupControl4";
+            // 
+            // groupControl5
+            // 
+            this.groupControl5.AppearanceCaption.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupControl5.AppearanceCaption.Options.UseFont = true;
+            this.groupControl5.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl5.CaptionImage")));
+            this.groupControl5.Controls.Add(this.tileBar3);
+            this.groupControl5.Controls.Add(this.groupControl6);
+            this.groupControl5.Location = new System.Drawing.Point(711, 3);
+            this.groupControl5.Name = "groupControl5";
+            this.groupControl5.Size = new System.Drawing.Size(230, 421);
+            this.groupControl5.TabIndex = 5;
+            this.groupControl5.Text = "Cierre y acuerdo";
+            // 
+            // groupControl6
+            // 
+            this.groupControl6.Location = new System.Drawing.Point(236, 0);
+            this.groupControl6.Name = "groupControl6";
+            this.groupControl6.Size = new System.Drawing.Size(230, 239);
+            this.groupControl6.TabIndex = 4;
+            this.groupControl6.Text = "groupControl6";
+            // 
+            // tileBar1
+            // 
+            this.tileBar1.AllowDrag = false;
+            this.tileBar1.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tileBar1.AppearanceItem.Normal.Options.UseFont = true;
+            this.tileBar1.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            this.tileBar1.ItemSize = 80;
+            this.tileBar1.Location = new System.Drawing.Point(5, 37);
+            this.tileBar1.Name = "tileBar1";
+            this.tileBar1.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileBar1.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
+            this.tileBar1.Size = new System.Drawing.Size(220, 379);
+            this.tileBar1.TabIndex = 1;
+            this.tileBar1.Text = "tileBar2";
+            // 
+            // tileBar2
+            // 
+            this.tileBar2.AllowDrag = false;
+            this.tileBar2.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tileBar2.AppearanceItem.Normal.Options.UseFont = true;
+            this.tileBar2.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            this.tileBar2.ItemSize = 80;
+            this.tileBar2.Location = new System.Drawing.Point(5, 37);
+            this.tileBar2.Name = "tileBar2";
+            this.tileBar2.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileBar2.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
+            this.tileBar2.Size = new System.Drawing.Size(220, 379);
+            this.tileBar2.TabIndex = 2;
+            this.tileBar2.Text = "tileBar3";
+            // 
+            // tileBar3
+            // 
+            this.tileBar3.AllowDrag = false;
+            this.tileBar3.AppearanceItem.Normal.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tileBar3.AppearanceItem.Normal.Options.UseFont = true;
+            this.tileBar3.DropDownOptions.BeakColor = System.Drawing.Color.Empty;
+            this.tileBar3.ItemSize = 80;
+            this.tileBar3.Location = new System.Drawing.Point(5, 37);
+            this.tileBar3.Name = "tileBar3";
+            this.tileBar3.Orientation = System.Windows.Forms.Orientation.Vertical;
+            this.tileBar3.ScrollMode = DevExpress.XtraEditors.TileControlScrollMode.ScrollButtons;
+            this.tileBar3.Size = new System.Drawing.Size(220, 379);
+            this.tileBar3.TabIndex = 5;
+            this.tileBar3.Text = "tileBar4";
+            // 
             // FormNegociaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1014, 589);
+            this.ClientSize = new System.Drawing.Size(1026, 591);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.navigationPane1);
@@ -458,6 +525,16 @@
             this.pag_lista.ResumeLayout(false);
             this.pag_estado.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grupo_preparacion)).EndInit();
+            this.grupo_preparacion.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl3)).EndInit();
+            this.groupControl3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
+            this.groupControl5.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -475,14 +552,6 @@
         private DevExpress.XtraEditors.TileGroup tileGroup1;
         private DevExpress.XtraEditors.TileGroup tileGroup2;
         private DevExpress.XtraEditors.TileGroup tileGroup3;
-        private DevExpress.XtraEditors.TileControl tileestado;
-        private DevExpress.XtraEditors.TileGroup tileGroup5;
-        private DevExpress.XtraEditors.TileItem tileItem3;
-        private DevExpress.XtraEditors.TileItem tileItem4;
-        private DevExpress.XtraEditors.TileItem tileItem5;
-        private DevExpress.XtraEditors.TileItem tileItem6;
-        private DevExpress.XtraEditors.TileItem tileItem7;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btn_nuevo;
@@ -496,5 +565,15 @@
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_siguiente;
+        private DevExpress.XtraEditors.GroupControl groupControl5;
+        private DevExpress.XtraEditors.GroupControl groupControl6;
+        private DevExpress.XtraEditors.GroupControl groupControl3;
+        private DevExpress.XtraEditors.GroupControl groupControl4;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
+        private DevExpress.XtraEditors.GroupControl grupo_preparacion;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar0;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar3;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar2;
+        private DevExpress.XtraBars.Navigation.TileBar tileBar1;
     }
 }
