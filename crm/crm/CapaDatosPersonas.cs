@@ -371,5 +371,23 @@ namespace crm
             adap.Fill(carga);
             return carga;
         }
+
+        // 2. seleccionar datos de los negocios para estadisticas
+//        select ta.id_tarea, nego.id_negocio, nego.titulo, nego.valor, nego.status, ta.id_tipo , ti.tipo, cat.id_cat, cat.nombre_cat, nego.id_empleado
+//from tbl_negocio nego, tbl_tarea ta, Tipo_tarea ti, categoria_neg cat
+
+//where nego.id_negocio = ta.id_negocio and ti.id_tipo = ta.id_tipo and nego.id_cat = cat.id_cat and nego.id_empleado = '1'-- and ti.tipo = 'Almuerzo'
+
+//and nego.fecha_inicio between '2017/03/27' and '2017/03/27';
+        public DataTable consultar_negocios(string id_empleado, string fecha_ini, string fecha_fin)
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select ta.id_tarea, nego.id_negocio, nego.titulo, nego.valor, nego.status, ta.id_tipo , ti.tipo, cat.id_cat, cat.nombre_cat, nego.id_empleado from tbl_negocio nego, tbl_tarea ta, Tipo_tarea ti, categoria_neg cat where nego.id_negocio = ta.id_negocio and ti.id_tipo = ta.id_tipo and nego.id_cat = cat.id_cat and nego.id_empleado = '"+id_empleado+"' and nego.fecha_inicio between '"+fecha_ini+"' and '"+fecha_fin+"'; ";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
+
     }
 }

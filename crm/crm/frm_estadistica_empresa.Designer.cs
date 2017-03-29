@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
             this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
             this.label58 = new System.Windows.Forms.Label();
@@ -111,16 +111,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.Grafíca = new DevExpress.XtraEditors.GroupControl();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton5 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton4 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_hoy = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_semanal = new DevExpress.XtraEditors.SimpleButton();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label45 = new System.Windows.Forms.Label();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
@@ -141,8 +141,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.Grafíca)).BeginInit();
             this.Grafíca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
             this.SuspendLayout();
             // 
             // panelControl1
@@ -989,7 +989,7 @@
             this.groupBox1.Controls.Add(this.Grafíca);
             this.groupBox1.Controls.Add(this.simpleButton6);
             this.groupBox1.Controls.Add(this.simpleButton5);
-            this.groupBox1.Controls.Add(this.simpleButton4);
+            this.groupBox1.Controls.Add(this.btn_hoy);
             this.groupBox1.Controls.Add(this.simpleButton3);
             this.groupBox1.Controls.Add(this.simpleButton2);
             this.groupBox1.Controls.Add(this.simpleButton1);
@@ -1013,6 +1013,19 @@
             this.Grafíca.TabIndex = 3;
             this.Grafíca.Text = "Grafíca";
             // 
+            // chartControl1
+            // 
+            this.chartControl1.AppearanceNameSerializable = "Light";
+            this.chartControl1.Location = new System.Drawing.Point(147, 53);
+            this.chartControl1.Name = "chartControl1";
+            this.chartControl1.PaletteName = "Default";
+            series2.Name = "Serie1";
+            series2.View = pieSeriesView2;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series2};
+            this.chartControl1.Size = new System.Drawing.Size(300, 200);
+            this.chartControl1.TabIndex = 0;
+            // 
             // simpleButton6
             // 
             this.simpleButton6.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1033,15 +1046,16 @@
             this.simpleButton5.TabIndex = 7;
             this.simpleButton5.Text = "Ayer";
             // 
-            // simpleButton4
+            // btn_hoy
             // 
-            this.simpleButton4.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton4.Appearance.Options.UseFont = true;
-            this.simpleButton4.Location = new System.Drawing.Point(21, 33);
-            this.simpleButton4.Name = "simpleButton4";
-            this.simpleButton4.Size = new System.Drawing.Size(34, 23);
-            this.simpleButton4.TabIndex = 6;
-            this.simpleButton4.Text = "Hoy";
+            this.btn_hoy.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_hoy.Appearance.Options.UseFont = true;
+            this.btn_hoy.Location = new System.Drawing.Point(21, 33);
+            this.btn_hoy.Name = "btn_hoy";
+            this.btn_hoy.Size = new System.Drawing.Size(34, 23);
+            this.btn_hoy.TabIndex = 6;
+            this.btn_hoy.Text = "Hoy";
+            this.btn_hoy.Click += new System.EventHandler(this.btn_hoy_Click);
             // 
             // simpleButton3
             // 
@@ -1102,19 +1116,6 @@
             this.label45.TabIndex = 62;
             this.label45.Text = "Estadísticas";
             // 
-            // chartControl1
-            // 
-            this.chartControl1.AppearanceNameSerializable = "Light";
-            this.chartControl1.Location = new System.Drawing.Point(147, 53);
-            this.chartControl1.Name = "chartControl1";
-            this.chartControl1.PaletteName = "Default";
-            series1.Name = "Serie1";
-            series1.View = pieSeriesView1;
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
-            this.chartControl1.Size = new System.Drawing.Size(300, 200);
-            this.chartControl1.TabIndex = 0;
-            // 
             // frm_estadistica_empresa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1153,8 +1154,8 @@
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.Grafíca)).EndInit();
             this.Grafíca.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -1218,7 +1219,7 @@
         private System.Windows.Forms.ComboBox comboBox1;
         private DevExpress.XtraEditors.SimpleButton simpleButton6;
         private DevExpress.XtraEditors.SimpleButton simpleButton5;
-        private DevExpress.XtraEditors.SimpleButton simpleButton4;
+        private DevExpress.XtraEditors.SimpleButton btn_hoy;
         private DevExpress.XtraEditors.SimpleButton simpleButton3;
         private DevExpress.XtraEditors.SimpleButton simpleButton2;
         private DevExpress.XtraEditors.SimpleButton simpleButton1;

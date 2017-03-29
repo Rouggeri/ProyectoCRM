@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
             this.label1 = new System.Windows.Forms.Label();
             this.Grafíca = new DevExpress.XtraEditors.GroupControl();
             this.lbl_apellidos = new System.Windows.Forms.Label();
@@ -44,14 +44,14 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tabPane1 = new DevExpress.XtraBars.Navigation.TabPane();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.btn_mensual = new DevExpress.XtraEditors.SimpleButton();
             this.simpleButton6 = new DevExpress.XtraEditors.SimpleButton();
             this.btn_ayer = new DevExpress.XtraEditors.SimpleButton();
             this.btn_hoy = new DevExpress.XtraEditors.SimpleButton();
             this.btn_semana_pasada = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_mes_pasado = new DevExpress.XtraEditors.SimpleButton();
             this.btn_eshta_semana = new DevExpress.XtraEditors.SimpleButton();
             this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.btn_mensual = new DevExpress.XtraEditors.SimpleButton();
             this.label44 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
@@ -80,14 +80,14 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.label14 = new System.Windows.Forms.Label();
+            this.lbl_cant_almuerzo2 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
+            this.lbl_cant_almuerzo1 = new System.Windows.Forms.Label();
             this.label70 = new System.Windows.Forms.Label();
             this.label71 = new System.Windows.Forms.Label();
             this.label72 = new System.Windows.Forms.Label();
@@ -142,9 +142,9 @@
             this.asignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.cmb_usuarios = new System.Windows.Forms.ComboBox();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.dgv_prueba = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.Grafíca)).BeginInit();
             this.Grafíca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_foto)).BeginInit();
@@ -171,9 +171,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_prueba)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -332,11 +333,22 @@
             this.tabNavigationPage1.Controls.Add(this.btn_ayer);
             this.tabNavigationPage1.Controls.Add(this.btn_hoy);
             this.tabNavigationPage1.Controls.Add(this.btn_semana_pasada);
-            this.tabNavigationPage1.Controls.Add(this.simpleButton1);
+            this.tabNavigationPage1.Controls.Add(this.btn_mes_pasado);
             this.tabNavigationPage1.Controls.Add(this.btn_eshta_semana);
             this.tabNavigationPage1.Controls.Add(this.panelControl1);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(658, 422);
+            // 
+            // btn_mensual
+            // 
+            this.btn_mensual.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mensual.Appearance.Options.UseFont = true;
+            this.btn_mensual.Location = new System.Drawing.Point(323, 15);
+            this.btn_mensual.Name = "btn_mensual";
+            this.btn_mensual.Size = new System.Drawing.Size(68, 23);
+            this.btn_mensual.TabIndex = 106;
+            this.btn_mensual.Text = "Este mes";
+            this.btn_mensual.Click += new System.EventHandler(this.btn_mensual_Click);
             // 
             // simpleButton6
             // 
@@ -381,15 +393,16 @@
             this.btn_semana_pasada.Text = "Semana pasada";
             this.btn_semana_pasada.Click += new System.EventHandler(this.btn_semana_pasada_Click);
             // 
-            // simpleButton1
+            // btn_mes_pasado
             // 
-            this.simpleButton1.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.simpleButton1.Appearance.Options.UseFont = true;
-            this.simpleButton1.Location = new System.Drawing.Point(396, 15);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(84, 23);
-            this.simpleButton1.TabIndex = 11;
-            this.simpleButton1.Text = "Mes pasado";
+            this.btn_mes_pasado.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mes_pasado.Appearance.Options.UseFont = true;
+            this.btn_mes_pasado.Location = new System.Drawing.Point(396, 15);
+            this.btn_mes_pasado.Name = "btn_mes_pasado";
+            this.btn_mes_pasado.Size = new System.Drawing.Size(84, 23);
+            this.btn_mes_pasado.TabIndex = 11;
+            this.btn_mes_pasado.Text = "Mes pasado";
+            this.btn_mes_pasado.Click += new System.EventHandler(this.btn_mes_pasado_Click);
             // 
             // btn_eshta_semana
             // 
@@ -432,14 +445,14 @@
             this.panelControl1.Controls.Add(this.label21);
             this.panelControl1.Controls.Add(this.label22);
             this.panelControl1.Controls.Add(this.label13);
-            this.panelControl1.Controls.Add(this.label14);
+            this.panelControl1.Controls.Add(this.lbl_cant_almuerzo2);
             this.panelControl1.Controls.Add(this.label15);
             this.panelControl1.Controls.Add(this.label16);
             this.panelControl1.Controls.Add(this.label17);
             this.panelControl1.Controls.Add(this.label12);
             this.panelControl1.Controls.Add(this.label11);
             this.panelControl1.Controls.Add(this.label10);
-            this.panelControl1.Controls.Add(this.label45);
+            this.panelControl1.Controls.Add(this.lbl_cant_almuerzo1);
             this.panelControl1.Controls.Add(this.label70);
             this.panelControl1.Controls.Add(this.label71);
             this.panelControl1.Controls.Add(this.label72);
@@ -461,17 +474,6 @@
             this.panelControl1.Name = "panelControl1";
             this.panelControl1.Size = new System.Drawing.Size(645, 365);
             this.panelControl1.TabIndex = 9;
-            // 
-            // btn_mensual
-            // 
-            this.btn_mensual.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mensual.Appearance.Options.UseFont = true;
-            this.btn_mensual.Location = new System.Drawing.Point(322, 15);
-            this.btn_mensual.Name = "btn_mensual";
-            this.btn_mensual.Size = new System.Drawing.Size(68, 23);
-            this.btn_mensual.TabIndex = 106;
-            this.btn_mensual.Text = "Este mes";
-            this.btn_mensual.Click += new System.EventHandler(this.btn_mensual_Click);
             // 
             // label44
             // 
@@ -752,15 +754,15 @@
             this.label13.TabIndex = 78;
             this.label13.Text = "cantidad";
             // 
-            // label14
+            // lbl_cant_almuerzo2
             // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(209, 221);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(56, 16);
-            this.label14.TabIndex = 77;
-            this.label14.Text = "cantidad";
+            this.lbl_cant_almuerzo2.AutoSize = true;
+            this.lbl_cant_almuerzo2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cant_almuerzo2.Location = new System.Drawing.Point(209, 221);
+            this.lbl_cant_almuerzo2.Name = "lbl_cant_almuerzo2";
+            this.lbl_cant_almuerzo2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_cant_almuerzo2.TabIndex = 77;
+            this.lbl_cant_almuerzo2.Text = "cantidad";
             // 
             // label15
             // 
@@ -821,15 +823,15 @@
             this.label10.Size = new System.Drawing.Size(0, 16);
             this.label10.TabIndex = 71;
             // 
-            // label45
+            // lbl_cant_almuerzo1
             // 
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label45.Location = new System.Drawing.Point(54, 221);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(32, 16);
-            this.label45.TabIndex = 70;
-            this.label45.Text = "cant";
+            this.lbl_cant_almuerzo1.AutoSize = true;
+            this.lbl_cant_almuerzo1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cant_almuerzo1.Location = new System.Drawing.Point(54, 221);
+            this.lbl_cant_almuerzo1.Name = "lbl_cant_almuerzo1";
+            this.lbl_cant_almuerzo1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_cant_almuerzo1.TabIndex = 70;
+            this.lbl_cant_almuerzo1.Text = "cant";
             // 
             // label70
             // 
@@ -1288,10 +1290,10 @@
             // 
             this.chartControl1.Location = new System.Drawing.Point(61, 200);
             this.chartControl1.Name = "chartControl1";
-            series1.Name = "Serie1";
-            series1.View = pieSeriesView1;
+            series2.Name = "Serie1";
+            series2.View = pieSeriesView2;
             this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series1};
+        series2};
             this.chartControl1.Size = new System.Drawing.Size(544, 200);
             this.chartControl1.TabIndex = 3;
             // 
@@ -1344,16 +1346,6 @@
             this.completo.HeaderText = "Completo";
             this.completo.Name = "completo";
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(227, 37);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 106;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // cmb_usuarios
             // 
             this.cmb_usuarios.FormattingEnabled = true;
@@ -1374,12 +1366,20 @@
             this.linkLabel2.Text = "Nuevo Caso";
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
+            // dgv_prueba
+            // 
+            this.dgv_prueba.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_prueba.Location = new System.Drawing.Point(12, 346);
+            this.dgv_prueba.Name = "dgv_prueba";
+            this.dgv_prueba.Size = new System.Drawing.Size(301, 150);
+            this.dgv_prueba.TabIndex = 9;
+            // 
             // frm_estadistica_personal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(994, 516);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.dgv_prueba);
             this.Controls.Add(this.linkLabel2);
             this.Controls.Add(this.cmb_usuarios);
             this.Controls.Add(this.tabPane1);
@@ -1422,10 +1422,11 @@
             this.tabNavigationPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_prueba)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1459,7 +1460,7 @@
         private DevExpress.XtraEditors.SimpleButton btn_ayer;
         private DevExpress.XtraEditors.SimpleButton btn_hoy;
         private DevExpress.XtraEditors.SimpleButton btn_semana_pasada;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.SimpleButton btn_mes_pasado;
         private DevExpress.XtraEditors.SimpleButton btn_eshta_semana;
         private DevExpress.XtraEditors.PanelControl panelControl1;
         private DevExpress.XtraEditors.PanelControl panelControl6;
@@ -1524,14 +1525,14 @@
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.Label lbl_cant_almuerzo2;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label lbl_cant_almuerzo1;
         private System.Windows.Forms.Label label70;
         private System.Windows.Forms.Label label71;
         private System.Windows.Forms.Label label72;
@@ -1546,7 +1547,7 @@
         private DevExpress.XtraGrid.GridControl gridControl1;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
         private System.Windows.Forms.Label lbl_apellidos;
-        private System.Windows.Forms.Button button1;
         private DevExpress.XtraEditors.SimpleButton btn_mensual;
+        private System.Windows.Forms.DataGridView dgv_prueba;
     }
 }
