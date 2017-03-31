@@ -382,7 +382,7 @@ namespace crm
         public DataTable consultar_negocios(string id_empleado, string fecha_ini, string fecha_fin)
         {
             DataTable carga = new DataTable();
-            string cadena = "select ta.id_tarea, nego.id_negocio, nego.titulo, nego.valor, nego.status, ta.id_tipo , ti.tipo, cat.id_cat, cat.nombre_cat, nego.id_empleado from tbl_negocio nego, tbl_tarea ta, Tipo_tarea ti, categoria_neg cat where nego.id_negocio = ta.id_negocio and ti.id_tipo = ta.id_tipo and nego.id_cat = cat.id_cat and nego.id_empleado = '"+id_empleado+"' and nego.fecha_inicio between '"+fecha_ini+"' and '"+fecha_fin+"'; ";
+            string cadena = "select ta.id_tarea, nego.id_negocio, nego.titulo, nego.valor, nego.status, ta.id_tipo , ti.tipo, cat.id_cat, cat.nombre_cat,ta.estado_tarea, nego.id_empleado, cli.id_cliente, cli.nombres, cli.apellidos, empre.nombre from tbl_negocio nego, tbl_tarea ta, Tipo_tarea ti, categoria_neg cat, tbl_cliente cli,  empresa empre where nego.id_negocio = ta.id_negocio and ti.id_tipo = ta.id_tipo and nego.id_cat = cat.id_cat and cli.id_cliente = nego.id_cliente and empre.id_empresa = nego.id_empresa and nego.id_empleado = '" + id_empleado+"' and nego.fecha_inicio between '"+fecha_ini+"' and '"+fecha_fin+"'; ";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
