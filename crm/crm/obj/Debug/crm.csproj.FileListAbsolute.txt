@@ -23,7 +23,6 @@ C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.Core.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.Extensions.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraVerticalGrid.v15.2.dll
-C:\ProyectoCRM\crm\crm\bin\Debug\MySql.Data.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.Utils.v15.2.UI.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraTreeList.v15.2.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraNavBar.v15.2.dll
@@ -193,6 +192,32 @@ C:\ProyectoCRM\crm\crm\obj\Debug\crm.Properties.Resources.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.prueba.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.csproj.GenerateResource.Cache
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe.licenses
+<<<<<<< HEAD
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_cliente.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_empresa.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.Form_inicio.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_NuevoEmpleado.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_moneda.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_nueva_moneda.resources
+>>>>>>> e239d58720aa1c0096b02df4e53031a21a9e9ab4
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.Form_categoria_neg.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_NuevoCaso.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.FormDetallesNegocio.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_categoria_caso.resources
+>>>>>>> accc61a9cddd69e37ab5877afd3ca73ec479b76a
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_CasoNuevo.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.Form_Casos.resources
+>>>>>>> 4aa5b785a48dd1956c65091fcb19d240d0736deb
+C:\ProyectoCRM\crm\crm\bin\Debug\FuncionesNavegador.pdb
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.prueba.resources
+C:\ProyectoCRM\crm\crm\bin\Debug\FuncionesNavegador.dll
+C:\ProyectoCRM\crm\crm\bin\Debug\seguridad.dll
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.FormTareasNegocio.resources
+=======
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.pdb
+<<<<<<< HEAD
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_busqueda_fecha_personalizada.resources
+=======
+>>>>>>> 30401490697392e8f38743645005abfa0220d172
+>>>>>>> d4e76abe4e32e765982f9c9fb96a51062d054448

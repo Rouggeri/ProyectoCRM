@@ -33,7 +33,12 @@ namespace crm
                 cbo_cat.ValueMember = "id_cat";
                 cbo_cat.DisplayMember = "nombre_cat";
                 //LLENAR EMPLEADOS
-                cbo_empleado.DataSource = OpBD.SeleccionarEmpleados();
+                DataTable dt_empleados = OpBD.SeleccionarEmpleados();
+                DataRow row_emp = dt_empleados.NewRow();
+                row_emp[0] = 0;
+                row_emp[1] = "<Ninguno>";
+                dt_empleados.Rows.InsertAt(row_emp, 0);
+                cbo_empleado.DataSource = dt_empleados;
                 cbo_empleado.ValueMember = "id_empleado";
                 cbo_empleado.DisplayMember = "Empleado";
             }

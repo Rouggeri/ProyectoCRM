@@ -10,16 +10,17 @@ using System.Windows.Forms;
 
 namespace crm
 {
-    public partial class prueba : Form
+    public partial class FormTareasNegocio : Form
     {
-        public prueba()
+        public FormTareasNegocio()
         {
             InitializeComponent();
         }
-
-        private void button1_Click(object sender, EventArgs e)
+        public string titulo;
+        private void FormTareasNegocio_Load(object sender, EventArgs e)
         {
-            MessageBox.Show("Clash Royale me pela la verga");
+            this.Text = "Tareas de "+titulo;
+            //dateNavigator1.EditValue;
         }
     }
 }

@@ -52,7 +52,85 @@ namespace crm
                 dgv_neg.RowClick += Dgv_neg_RowClick;
             }
             dgv_neg.OptionsBehavior.ReadOnly = true;
-            
+
+
+            //************************ESTADOS********************
+            DataTable dt_etapa0 = OpBD.SeleccionarNegociosEtapa0();
+            ObtenerNegociosPorEtapa(dt_etapa0,tileBar0);
+
+
+            DataTable dt_etapa1= OpBD.SeleccionarNegociosEtapa1();
+            ObtenerNegociosPorEtapa(dt_etapa1, tileBar1);
+            DataTable dt_etapa2=OpBD.SeleccionarNegociosEtapa2();
+            ObtenerNegociosPorEtapa(dt_etapa2, tileBar2);
+            DataTable dt_etapa3=OpBD.SeleccionarNegociosEtapa3();
+            ObtenerNegociosPorEtapa(dt_etapa3, tileBar3);
+
+
+
+        }
+
+        private void ObtenerNegociosPorEtapa(DataTable dt_etapa, DevExpress.XtraBars.Navigation.TileBar tilebar)
+        {
+            if (dt_etapa != null && dt_etapa.Rows.Count > 0)
+            {
+                tilebar.Groups.Add(new DevExpress.XtraEditors.TileGroup());
+
+                foreach (DataRow row_n in dt_etapa.Rows)
+                {
+                    string id_neg = row_n[0].ToString();
+                    string titulo_neg = row_n[1].ToString();
+                    string cliente;
+                      if(String.IsNullOrEmpty(row_n[2].ToString()))
+                        {
+                        cliente = row_n[3].ToString();
+                       }
+                      else{
+                        cliente = row_n[2].ToString();
+                          }
+                    
+
+                    DevExpress.XtraBars.Navigation.TileBarItem item1 = new DevExpress.XtraBars.Navigation.TileBarItem() { Text = titulo_neg+"("+cliente+")", Tag = id_neg };
+                    item1.AppearanceItem.Normal.TextOptions.Trimming = DevExpress.Utils.Trimming.None;
+                    item1.TextAlignment = DevExpress.XtraEditors.TileItemContentAlignment.TopLeft;
+                    item1.AppearanceItem.Normal.BackColor = Color.DarkSeaGreen;
+                    item1.AppearanceItem.Normal.ForeColor = Color.Black;
+                    item1.ItemClick += Item1_ItemClick;
+                    tilebar.Groups[0].Items.Add(item1);
+
+                 
+                }
+
+            }
+
+        }
+
+        private void Item1_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
+        {
+            string id_negocio = e.Item.Tag.ToString();
+            DataTable dt = OpBD.SeleccionarNegocioEspecifico(id_negocio);
+            DataRow row = dt.Rows[0];
+            string id = row[0].ToString();
+            string titulo = row[1].ToString();
+            string persona = row[2].ToString();
+            string empresa = row[3].ToString();
+            string moneda = row[4].ToString();
+            string valor = row[5].ToString();
+            string fecha_cierre = row[6].ToString();
+            string categoria = row[7].ToString();
+
+            FormDetallesNegocio f = new FormDetallesNegocio();
+            f.id_negocio = id;
+            f.titulo = titulo;
+            f.nombre_persona = persona;
+            f.nombre_empresa = empresa;
+            f.moneda = moneda;
+            f.valor = valor;
+            f.fecha_cierre = fecha_cierre;
+            f.categoria = categoria;
+
+            f.MdiParent = this.MdiParent;
+            f.Show();
         }
 
         private void Dgv_neg_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)

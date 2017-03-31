@@ -367,14 +367,15 @@ namespace crm
 
         private void agregarAplicaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (ap == null)
-            {
-                ap = new agregarapp();
-                ap.MdiParent = this;
+            //AGREGAR APLICACION
+        //    if (ap == null)
+        //    {
+        //        ap = new agregarapp();
+        //        ap.MdiParent = this;
 
-                ap.FormClosed += new FormClosedEventHandler(agregarap_FormClosed);
-                ap.Show();
-            }
+        //        ap.FormClosed += new FormClosedEventHandler(agregarap_FormClosed);
+        //        ap.Show();
+        //    }
         }
 
         private void agregarap_FormClosed(object sender, FormClosedEventArgs e)
@@ -384,13 +385,14 @@ namespace crm
 
         private void modificarAplicaciónToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (modap == null)
-            {
-                modap = new Modificar_aplicacion();
-                modap.MdiParent = this;
-                modap.FormClosed += new FormClosedEventHandler(ModificarAplicacion_FormClosed);
-                modap.Show();
-            }
+            //MODIFICAR APLICACION 
+            //if (modap == null)
+            //{
+            //    modap = new Modificar_aplicacion();
+            //    modap.MdiParent = this;
+            //    modap.FormClosed += new FormClosedEventHandler(ModificarAplicacion_FormClosed);
+            //    modap.Show();
+            //}
         }
 
         private void ModificarAplicacion_FormClosed(object sender, FormClosedEventArgs e)
