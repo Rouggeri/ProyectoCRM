@@ -56,6 +56,10 @@ namespace crm
         string var_fecha_perz_fin="";
         //--------------------------------------------- Estado para tomar las variables de inicio y fin de fecha
         DataTable dt_nego_ganado = new DataTable();
+        DataTable dt_nego_perdido = new DataTable();
+        DataTable dt_nego_proceso = new DataTable();
+
+              
 
 
 
@@ -72,6 +76,128 @@ namespace crm
             cmb_usuarios.DataSource = empleados;
             cmb_usuarios.DisplayMember = "nombres";
             cmb_usuarios.ValueMember = "id_empleado";
+
+
+
+            // -----------------------------------------------
+            //creacion de nuevo datatable hijo de negocios en proceso
+            DataColumn column_nego_proces = new DataColumn();
+
+
+            column_nego_proces.DataType = System.Type.GetType("System.String");
+            column_nego_proces.ColumnName = "Titulo";
+            dt_nego_proceso.Columns.Add(column_nego_proces);
+
+
+            column_nego_proces = new DataColumn();
+            column_nego_proces.DataType = System.Type.GetType("System.String");
+            column_nego_proces.ColumnName = "Categoria";
+            dt_nego_proceso.Columns.Add(column_nego_proces);
+
+
+            column_nego_proces = new DataColumn();
+            column_nego_proces.DataType = System.Type.GetType("System.String");
+            column_nego_proces.ColumnName = "Tipo de tarea";
+            dt_nego_proceso.Columns.Add(column_nego_proces);
+
+            column_nego_proces = new DataColumn();
+            column_nego_proces.DataType = System.Type.GetType("System.String");
+            column_nego_proces.ColumnName = "Usuario";
+            dt_nego_proceso.Columns.Add(column_nego_proces);
+
+            column_nego_proces = new DataColumn();
+            column_nego_proces.DataType = System.Type.GetType("System.String");
+            column_nego_proces.ColumnName = "Apellidos";
+            dt_nego_proceso.Columns.Add(column_nego_proces);
+
+            column_nego_proces = new DataColumn();
+            column_nego_proces.DataType = System.Type.GetType("System.String");
+            column_nego_proces.ColumnName = "Empresa";
+            dt_nego_proceso.Columns.Add(column_nego_proces);
+
+            column_nego_proces = new DataColumn();
+            column_nego_proces.DataType = System.Type.GetType("System.String");
+            column_nego_proces.ColumnName = "Monto";
+            dt_nego_proceso.Columns.Add(column_nego_proces);
+
+            // creacion de nuevo datatable hijo de negocios perdidos
+            DataColumn column_nego = new DataColumn();
+            DataRow row1 = dt_nego_perdido.NewRow();
+            column_nego.DataType = System.Type.GetType("System.String");
+            column_nego.ColumnName = "Titulo";
+            dt_nego_perdido.Columns.Add(column_nego);
+
+            column_nego = new DataColumn();
+            column_nego.DataType = System.Type.GetType("System.String");
+            column_nego.ColumnName = "Categoria";
+            dt_nego_perdido.Columns.Add(column_nego);
+
+
+            column_nego = new DataColumn();
+            column_nego.DataType = System.Type.GetType("System.String");
+            column_nego.ColumnName = "Tipo de tarea";
+            dt_nego_perdido.Columns.Add(column_nego);
+
+            column_nego = new DataColumn();
+            column_nego.DataType = System.Type.GetType("System.String");
+            column_nego.ColumnName = "Usuario";
+            dt_nego_perdido.Columns.Add(column_nego);
+
+            column_nego = new DataColumn();
+            column_nego.DataType = System.Type.GetType("System.String");
+            column_nego.ColumnName = "Apellidos";
+            dt_nego_perdido.Columns.Add(column_nego);
+
+            column_nego = new DataColumn();
+            column_nego.DataType = System.Type.GetType("System.String");
+            column_nego.ColumnName = "Empresa";
+            dt_nego_perdido.Columns.Add(column_nego);
+
+            column_nego = new DataColumn();
+            column_nego.DataType = System.Type.GetType("System.String");
+            column_nego.ColumnName = "Monto";
+            dt_nego_perdido.Columns.Add(column_nego);
+
+
+            // creacion de nuevo datatable hijo de negocios ganados
+            DataColumn column_nego_ganados = new DataColumn();
+            column_nego_ganados.DataType = System.Type.GetType("System.String");
+            column_nego_ganados.ColumnName = "Titulo";
+            dt_nego_ganado.Columns.Add(column_nego_ganados);
+
+            column_nego_ganados = new DataColumn();
+            column_nego_ganados.DataType = System.Type.GetType("System.String");
+            column_nego_ganados.ColumnName = "Categoria";
+            dt_nego_ganado.Columns.Add(column_nego_ganados);
+
+
+            column_nego_ganados = new DataColumn();
+            column_nego_ganados.DataType = System.Type.GetType("System.String");
+            column_nego_ganados.ColumnName = "Tipo de tarea";
+            dt_nego_ganado.Columns.Add(column_nego_ganados);
+
+            column_nego_ganados = new DataColumn();
+            column_nego_ganados.DataType = System.Type.GetType("System.String");
+            column_nego_ganados.ColumnName = "Usuario";
+            dt_nego_ganado.Columns.Add(column_nego_ganados);
+
+            column_nego_ganados = new DataColumn();
+            column_nego_ganados.DataType = System.Type.GetType("System.String");
+            column_nego_ganados.ColumnName = "Apellidos";
+            dt_nego_ganado.Columns.Add(column_nego_ganados);
+
+            column_nego_ganados = new DataColumn();
+            column_nego_ganados.DataType = System.Type.GetType("System.String");
+            column_nego_ganados.ColumnName = "Empresa";
+            dt_nego_ganado.Columns.Add(column_nego_ganados);
+
+            column_nego_ganados = new DataColumn();
+            column_nego_ganados.DataType = System.Type.GetType("System.String");
+            column_nego_ganados.ColumnName = "Monto";
+            dt_nego_ganado.Columns.Add(column_nego_ganados);
+
+           
+
         }
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -84,7 +210,7 @@ namespace crm
         // combobox de usuarios
         private void cmb_usuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            
             try
             {
                 var_id_usuario = cmb_usuarios.SelectedValue.ToString();
@@ -97,7 +223,7 @@ namespace crm
 
                 else
                 {
-
+                    
                     DataTable datos_usuario = new DataTable();
                     datos_usuario = CapaDatos.consultar_empleado_especifico(var_id_usuario);
                     DataRow fila = datos_usuario.Rows[0];
@@ -106,7 +232,22 @@ namespace crm
                     lbl_email.Text = fila["correo"].ToString();
                     pcb_foto.ImageLocation = fila["foto"].ToString();
 
+                    // ---------------------------------------------------- CARGA DE CASOS EN PESTAÑA DE CASOS ------------------------------------------
 
+                    // limpiar grid de casos
+                    dgv_casos.DataSource = "";
+
+
+
+
+                    // headers de las columnas
+                    gridView1.Columns["titulo"].Caption = "Caso";
+                    gridView1.Columns["nombres"].Caption = "Usuario";
+                    gridView1.Columns["apellidos"].Caption = "Apellidos";
+                    gridView1.Columns["nombre"].Caption = "Empresa";
+                    gridView1.Columns["fecha_limite"].Caption = "Fecha limite";
+                    gridView1.Columns["estado"].Caption = "Estado";
+                    gridView1.Columns["nombres1"].Caption = "Encargado";
 
                 }
             }
@@ -115,7 +256,12 @@ namespace crm
                 MessageBox.Show(ex.Message,"ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
             //DataRow casilla = datos_usuario.Rows[];
-            
+
+            // carga de gridcasos
+            DataTable casos = new DataTable();
+            casos = CapaDatos.consultar_caso(var_id_usuario);
+            dgv_casos.DataSource = casos;
+
         }
 
 
@@ -150,6 +296,10 @@ namespace crm
             cont_llamada_realiz = 0; cont_llamada_pen = 0;
             cont_reunion_realiz = 0; cont_reunion_pen = 0;
             cont_plazo_realiz = 0; cont_plazo_pen = 0;
+            // limpiar datatables de negocios ganados, perdidos y en proceso:
+            dt_nego_ganado.Rows.Clear();
+            dt_nego_perdido.Rows.Clear();
+            dt_nego_proceso.Rows.Clear();
 
 
             // -------------------- Envio de datos a clase capadatos
@@ -167,22 +317,60 @@ namespace crm
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
 
-                    // creacion de nuevo datatable hijo
-                    DataRow row = dt_nego_ganado.NewRow();
+                    //// creacion de nuevo datatable hijo
+                    //DataRow row = dt_nego_ganado.NewRow();
+                    //row["Titulo"] = columna["titulo"].ToString();
+                    //dt_nego_ganado.Rows.Add(row);
+
+                    DataRow row = dt_nego_proceso.NewRow();
+
                     row["Titulo"] = columna["titulo"].ToString();
-                    dt_nego_ganado.Rows.Add(row);
-                   
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_proceso.Rows.Add(row);
+
+
+
+
 
                 }
                 else if (columna["status"].ToString() == "perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
+
+
+                    DataRow row = dt_nego_perdido.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_perdido.Rows.Add(row);
                 }
                 else if (columna["status"].ToString() == "ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
+
+                    DataRow row = dt_nego_ganado.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_ganado.Rows.Add(row);
                 }
             }
             // grid de negocios ganados
@@ -333,6 +521,10 @@ namespace crm
             cont_llamada_realiz = 0; cont_llamada_pen = 0;
             cont_reunion_realiz = 0; cont_reunion_pen = 0;
             cont_plazo_realiz = 0; cont_plazo_pen = 0;
+            // limpiar datatables de negocios ganados, perdidos y en proceso:
+            dt_nego_ganado.Rows.Clear();
+            dt_nego_perdido.Rows.Clear();
+            dt_nego_proceso.Rows.Clear();
 
 
             // -------------------- Envio de datos a clase capadatos
@@ -349,16 +541,55 @@ namespace crm
                 {
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
+
+                    DataRow row = dt_nego_proceso.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_proceso.Rows.Add(row);
                 }
                 else if (columna["status"].ToString() == "perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
+
+
+                    //Insercion de registros en  datatable hijo de negocios perdidos
+                    DataRow row = dt_nego_perdido.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_perdido.Rows.Add(row);
+
+
                 }
                 else if (columna["status"].ToString() == "ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
+
+                    //Insercion de registros en  datatable hijo de negocios ganados
+                    DataRow row = dt_nego_ganado.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_ganado.Rows.Add(row);
                 }
             }
             // etiquetas de procesos iniciados:
@@ -493,6 +724,11 @@ namespace crm
              cont_reunion_realiz = 0;  cont_reunion_pen = 0;
              cont_plazo_realiz = 0;  cont_plazo_pen = 0;
 
+            // limpiar datatables de negocios ganados, perdidos y en proceso:
+            dt_nego_ganado.Rows.Clear();
+            dt_nego_perdido.Rows.Clear();
+            dt_nego_proceso.Rows.Clear();
+            
 
 
             nombre = calendario.GetDayOfWeek(fecha_hoy).ToString();
@@ -551,30 +787,73 @@ namespace crm
                 {
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
+
+
+                    //Insercion de registros en  datatable hijo de negocios en proceso
+                    DataRow row = dt_nego_proceso.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_proceso.Rows.Add(row);
+
+
+
                 }
                 else if (columna["status"].ToString() == "perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
+
+
+
+                    //Insercion de registros en  datatable hijo de negocios perdidos
+                    DataRow row = dt_nego_perdido.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_perdido.Rows.Add(row);
+
+
+
                 }
                 else if (columna["status"].ToString() == "ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
-                    
-                    // creacion de nuevo datatable hijo
-                    DataColumn column_nego = new DataColumn();
+
+
+                    //Insercion de registros en  datatable hijo de negocios ganados
                     DataRow row = dt_nego_ganado.NewRow();
-                    column_nego.DataType = System.Type.GetType("System.String");
-                    column_nego.ColumnName = "Titulo";
-                    dt_nego_ganado.Columns.Add(column_nego);
+
                     row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
                     dt_nego_ganado.Rows.Add(row);
+
+
 
                 }
             }
             // grid con los negocios ganados
             dgv_negocios_ganados.DataSource = dt_nego_ganado;
+            dgv_nego_perdidos.DataSource = dt_nego_perdido;
+            dgv_negos_proceso.DataSource = dt_nego_proceso;
+            
             // etiquetas de procesos iniciados:
             lbl_neg_ini1.Text = cont_proceso.ToString();
             lbl_neg_ini2.Text = cont_proceso.ToString();
@@ -707,6 +986,10 @@ namespace crm
             cont_llamada_realiz = 0; cont_llamada_pen = 0;
             cont_reunion_realiz = 0; cont_reunion_pen = 0;
             cont_plazo_realiz = 0; cont_plazo_pen = 0;
+            // limpiar datatables de negocios ganados, perdidos y en proceso:
+            dt_nego_ganado.Rows.Clear();
+            dt_nego_perdido.Rows.Clear();
+            dt_nego_proceso.Rows.Clear();
 
 
 
@@ -782,16 +1065,54 @@ namespace crm
                 {
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
+
+                    DataRow row = dt_nego_proceso.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_proceso.Rows.Add(row);
+
                 }
                 else if (columna["status"].ToString() == "perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
+
+                    //Insercion de registros en  datatable hijo de negocios perdidos
+                    DataRow row = dt_nego_perdido.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_perdido.Rows.Add(row);
                 }
                 else if (columna["status"].ToString() == "ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
+
+
+                    //Insercion de registros en  datatable hijo de negocios ganados
+                    DataRow row = dt_nego_ganado.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_ganado.Rows.Add(row);
                 }
             }
             // etiquetas de procesos iniciados:
@@ -934,6 +1255,11 @@ namespace crm
             cont_llamada_realiz = 0; cont_llamada_pen = 0;
             cont_reunion_realiz = 0; cont_reunion_pen = 0;
             cont_plazo_realiz = 0; cont_plazo_pen = 0;
+            // limpiar datatables de negocios ganados, perdidos y en proceso:
+            dt_nego_ganado.Rows.Clear();
+            dt_nego_perdido.Rows.Clear();
+            dt_nego_proceso.Rows.Clear();
+
 
 
 
@@ -951,16 +1277,55 @@ namespace crm
                 {
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
+
+
+                    DataRow row = dt_nego_proceso.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_proceso.Rows.Add(row);
                 }
                 else if (columna["status"].ToString() == "perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
+
+                    //Insercion de registros en  datatable hijo de negocios perdidos
+                    DataRow row = dt_nego_perdido.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_perdido.Rows.Add(row);
+
                 }
                 else if (columna["status"].ToString() == "ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
+
+
+                    //Insercion de registros en  datatable hijo de negocios ganados
+                    DataRow row = dt_nego_ganado.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_ganado.Rows.Add(row);
                 }
             }
             // etiquetas de procesos iniciados:
@@ -1102,6 +1467,10 @@ namespace crm
             cont_llamada_realiz = 0; cont_llamada_pen = 0;
             cont_reunion_realiz = 0; cont_reunion_pen = 0;
             cont_plazo_realiz = 0; cont_plazo_pen = 0;
+            // limpiar datatables de negocios ganados, perdidos y en proceso:
+            dt_nego_ganado.Rows.Clear();
+            dt_nego_perdido.Rows.Clear();
+            dt_nego_proceso.Rows.Clear();
 
 
 
@@ -1119,16 +1488,52 @@ namespace crm
                 {
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
+
+                    DataRow row = dt_nego_proceso.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_proceso.Rows.Add(row);
                 }
                 else if (columna["status"].ToString() == "perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
+
+                    //Insercion de registros en  datatable hijo de negocios perdidos
+                    DataRow row = dt_nego_perdido.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_perdido.Rows.Add(row);
                 }
                 else if (columna["status"].ToString() == "ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
+
+                    //Insercion de registros en  datatable hijo de negocios ganados
+                    DataRow row = dt_nego_ganado.NewRow();
+
+                    row["Titulo"] = columna["titulo"].ToString();
+                    row["Categoria"] = columna["nombre_cat"].ToString();
+                    row["Tipo de tarea"] = columna["tipo"].ToString();
+
+                    row["Usuario"] = columna["nombres"].ToString();
+                    row["Apellidos"] = columna["apellidos"].ToString();
+                    row["Empresa"] = columna["nombre"].ToString();
+                    row["Monto"] = columna["valor"].ToString();
+                    dt_nego_ganado.Rows.Add(row);
                 }
             }
             // etiquetas de procesos iniciados:
@@ -1269,6 +1674,10 @@ namespace crm
                 cont_llamada_realiz = 0; cont_llamada_pen = 0;
                 cont_reunion_realiz = 0; cont_reunion_pen = 0;
                 cont_plazo_realiz = 0; cont_plazo_pen = 0;
+                // limpiar datatables de negocios ganados, perdidos y en proceso:
+                dt_nego_ganado.Rows.Clear();
+                dt_nego_perdido.Rows.Clear();
+                dt_nego_proceso.Rows.Clear();
 
 
 
@@ -1286,16 +1695,55 @@ namespace crm
                     {
                         cont_proceso = cont_proceso + 1;
                         monto_proceso += Convert.ToDouble(columna["valor"]);
+
+                        DataRow row = dt_nego_proceso.NewRow();
+
+                        row["Titulo"] = columna["titulo"].ToString();
+                        row["Categoria"] = columna["nombre_cat"].ToString();
+                        row["Tipo de tarea"] = columna["tipo"].ToString();
+                        row["Usuario"] = columna["nombres"].ToString();
+                        row["Apellidos"] = columna["apellidos"].ToString();
+                        row["Empresa"] = columna["nombre"].ToString();
+                        row["Monto"] = columna["valor"].ToString();
+                        dt_nego_proceso.Rows.Add(row);
+
                     }
                     else if (columna["status"].ToString() == "perdido")
                     {
                         cont_perdido = cont_perdido + 1;
                         monto_perdido += Convert.ToDouble(columna["valor"]);
+
+
+                        //Insercion de registros en  datatable hijo de negocios perdidos
+                        DataRow row = dt_nego_perdido.NewRow();
+
+                        row["Titulo"] = columna["titulo"].ToString();
+                        row["Categoria"] = columna["nombre_cat"].ToString();
+                        row["Tipo de tarea"] = columna["tipo"].ToString();
+                        row["Usuario"] = columna["nombres"].ToString();
+                        row["Apellidos"] = columna["apellidos"].ToString();
+                        row["Empresa"] = columna["nombre"].ToString();
+                        row["Monto"] = columna["valor"].ToString();
+                        dt_nego_perdido.Rows.Add(row);
                     }
                     else if (columna["status"].ToString() == "ganado")
                     {
                         cont_ganado = cont_ganado + 1;
                         monto_ganado += Convert.ToDouble(columna["valor"]);
+
+
+                        //Insercion de registros en  datatable hijo de negocios ganados
+                        DataRow row = dt_nego_ganado.NewRow();
+
+                        row["Titulo"] = columna["titulo"].ToString();
+                        row["Categoria"] = columna["nombre_cat"].ToString();
+                        row["Tipo de tarea"] = columna["tipo"].ToString();
+
+                        row["Usuario"] = columna["nombres"].ToString();
+                        row["Apellidos"] = columna["apellidos"].ToString();
+                        row["Empresa"] = columna["nombre"].ToString();
+                        row["Monto"] = columna["valor"].ToString();
+                        dt_nego_ganado.Rows.Add(row);
                     }
                 }
                 // etiquetas de procesos iniciados:
@@ -1421,10 +1869,38 @@ namespace crm
         // etiqueta que muestra formulario con descripcion de negocios ganados
         private void lbl_negocios_ganados_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("negocios ganados");
-            
-            
-            
+            string titulo = "Negocios Ganados";
+
+            frm_estadistica_negocio_descripcion negocio_descripcion = new frm_estadistica_negocio_descripcion();
+            negocio_descripcion.Show();
+            negocio_descripcion.lbl_titulo.Text = titulo;
+            negocio_descripcion.dgv_detalle_negocio.DataSource = dt_nego_ganado;
+
+
+
+        }
+        // etiqueta que muestra formulario con descripcion de negocios perdidos
+
+        private void lbl_negocios_perdidos_Click(object sender, EventArgs e)
+        {
+            string titulo = "Negocios Perdidos";
+
+            frm_estadistica_negocio_descripcion negocio_descripcion = new frm_estadistica_negocio_descripcion();
+            negocio_descripcion.Show();
+            negocio_descripcion.lbl_titulo.Text = titulo;
+            negocio_descripcion.dgv_detalle_negocio.DataSource = dt_nego_perdido;
+        }
+
+        // etiqueta que muestra formulario con descripcion de negocios en proceso
+
+        private void lbl_negocios_iniciados_Click(object sender, EventArgs e)
+        {
+            string titulo = "Negocios Perdidos";
+
+            frm_estadistica_negocio_descripcion negocio_descripcion = new frm_estadistica_negocio_descripcion();
+            negocio_descripcion.Show();
+            negocio_descripcion.lbl_titulo.Text = titulo;
+            negocio_descripcion.dgv_detalle_negocio.DataSource = dt_nego_proceso;
         }
     }
 }
