@@ -254,5 +254,18 @@ namespace crm
             f.titulo = titulo;
             f.Show();
         }
+
+        private void btn_perdida_Click(object sender, EventArgs e)
+        {
+           
+            OpBD o = new OpBD();
+            int res = o.ActualizarEstatus("Perdida",id_negocio,titulo);
+            if(res == 1)
+            {
+               // MessageBox.Show("exito");
+                lbl_estado.Text = "Perdida";
+            }
+            
+        }
     }
 }

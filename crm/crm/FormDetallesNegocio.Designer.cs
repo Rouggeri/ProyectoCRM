@@ -171,6 +171,7 @@
             this.btn_perdida.TabIndex = 19;
             this.btn_perdida.Text = "Perdida";
             this.btn_perdida.ToolTip = "Marcar negociación como perdida.";
+            this.btn_perdida.Click += new System.EventHandler(this.btn_perdida_Click);
             this.btn_perdida.MouseLeave += new System.EventHandler(this.btn_perdida_MouseLeave);
             this.btn_perdida.MouseHover += new System.EventHandler(this.btn_perdida_MouseHover);
             // 

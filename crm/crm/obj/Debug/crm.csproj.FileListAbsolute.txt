@@ -195,6 +195,18 @@ C:\ProyectoCRM\crm\crm\obj\Debug\crm.Properties.Resources.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.prueba.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.csproj.GenerateResource.Cache
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe.licenses
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> e239d58720aa1c0096b02df4e53031a21a9e9ab4
+>>>>>>> accc61a9cddd69e37ab5877afd3ca73ec479b76a
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_CasoNuevo.resources
+>>>>>>> 4aa5b785a48dd1956c65091fcb19d240d0736deb
+C:\ProyectoCRM\crm\crm\bin\Debug\FuncionesNavegador.dll
+C:\ProyectoCRM\crm\crm\bin\Debug\seguridad.dll
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.FormTareasNegocio.resources
+=======
+>>>>>>> ff18b29957737943c9a1bdb60296417d69678a37
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.pdb
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_estadistica_negocio_descripcion.resources

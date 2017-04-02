@@ -398,5 +398,132 @@ namespace crm
 
 
 
+
+        //public static DataTable PermisosDeUsuario(string id_negocio)
+        //{
+        //    try
+        //    {
+        //        DataTable dt = new DataTable();
+        //        OdbcConnection con = seguridad.Conexion.ConexionPermisos();
+        //        OdbcCommand comando = new OdbcCommand("select ins, from notas where id_negocio = '" + id_negocio + "'", con);
+        //        OdbcDataAdapter ad = new OdbcDataAdapter(comando);
+        //        ad.Fill(dt);
+        //        return dt;
+        //    }
+        //    catch { return null; }
+        //}
+
+        public int ActualizarEstatus(string estatus, string id_negocio, string nombre)
+        {
+            try
+            {
+
+                OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+                string query = "update tbl_negocio set status = '" + estatus + "' where id_negocio = " +id_negocio + " ";
+                OdbcCommand cmd = new OdbcCommand(query, con);
+                cmd.ExecuteNonQuery();
+                try
+                {
+                    bita.Insertar("Actualizacion del estado del negocio: " + nombre, "negocio");
+                }
+                catch { MessageBox.Show("Error en bitacora"); }
+
+                con.Close();
+                return 1;
+            }
+            catch { return 0; }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        //public static void DesbloquearMDI(MenuStrip MenuMDI)
+        //{
+
+        //    DataTable dt_permisos = new DataTable();
+        //    OdbcConnection con = seguridad.Conexion.ConexionPermisos();
+        //    OdbcCommand comando = new OdbcCommand("select p.id_aplicacion, a.id_modulo from usuario_privilegios p inner join aplicacion a on p.id_aplicacion = a.id_aplicacion where p.usuario = '"+seguridad.Conexion.User+"' ", con);
+        //    OdbcDataAdapter ad = new OdbcDataAdapter(comando);
+        //    ad.Fill(dt_permisos);
+
+        //    foreach (ToolStripMenuItem menu_principal in MenuMDI.Items)
+        //    {
+        //        string modulo_menu = "0";
+        //        if (menu_principal.Tag != null)
+        //        {
+        //             modulo_menu = menu_principal.Tag.ToString();
+        //        }
+        //        foreach (DataRow row_aplicaciones in dt_permisos.Rows)
+        //        {
+        //            string modulo_aplicacion = row_aplicaciones[1].ToString();
+        //            if (modulo_aplicacion == modulo_menu)
+        //            {
+        //                menu_principal.Enabled = true;
+        //                break;
+        //            }
+        //        }
+        //    }
+
+        //    foreach (ToolStripMenuItem menu_principal in MenuMDI.Items)
+        //    {
+
+        //        foreach (ToolStripMenuItem sub_menu in menu_principal.DropDownItems)
+        //        {
+        //            string aplicacion_menu = "0";
+        //            if (sub_menu.Tag != null)
+        //            {
+        //                aplicacion_menu = sub_menu.Tag.ToString();
+        //            }
+        //            foreach (DataRow row_aplicaciones in dt_permisos.Rows)
+        //            {
+        //                string aplicacion = row_aplicaciones[0].ToString();
+        //                if (aplicacion == aplicacion_menu)
+        //                {
+        //                    sub_menu.Enabled = true;
+        //                    break;
+        //                }
+        //            }
+
+
+        //        }
+
+        //    }
+
+
+
+
+
+        //}
+
+
+
+
+
+
+
+
+
+
+
+
     }
 }

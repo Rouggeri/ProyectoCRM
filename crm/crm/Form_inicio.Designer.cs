@@ -267,6 +267,7 @@
             this.item_ventas.Id = 21;
             this.item_ventas.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.item_ventas.Name = "item_ventas";
+            this.item_ventas.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_ventas_ItemClick);
             // 
             // item_cobros
             // 
@@ -280,6 +281,7 @@
             this.item_cobros.Id = 25;
             this.item_cobros.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.item_cobros.Name = "item_cobros";
+            this.item_cobros.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_cobros_ItemClick);
             // 
             // label1
             // 
