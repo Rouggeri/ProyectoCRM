@@ -30,6 +30,8 @@
         {
             this.dgw_permisos = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.trv_aplicaciones = new System.Windows.Forms.TreeView();
             this.btn_aceptar = new System.Windows.Forms.Button();
             this.chlb_permisos = new System.Windows.Forms.CheckedListBox();
             this.chlb_aplicaciones = new System.Windows.Forms.CheckedListBox();
@@ -48,8 +50,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.btn_Guardar = new System.Windows.Forms.Button();
             this.btn_reporte = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.trv_aplicaciones = new System.Windows.Forms.TreeView();
             ((System.ComponentModel.ISupportInitialize)(this.dgw_permisos)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -86,6 +86,25 @@
             this.groupBox3.TabIndex = 21;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Asignar permisos nuevos:";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(280, 155);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(104, 29);
+            this.button1.TabIndex = 27;
+            this.button1.Text = "Mover";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // trv_aplicaciones
+            // 
+            this.trv_aplicaciones.Location = new System.Drawing.Point(18, 24);
+            this.trv_aplicaciones.Name = "trv_aplicaciones";
+            this.trv_aplicaciones.Size = new System.Drawing.Size(285, 109);
+            this.trv_aplicaciones.TabIndex = 42;
+            this.trv_aplicaciones.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trv_aplicaciones_AfterCheck);
             // 
             // btn_aceptar
             // 
@@ -273,7 +292,7 @@
             this.btn_Guardar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_Guardar.FlatAppearance.BorderSize = 0;
             this.btn_Guardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_Guardar.Location = new System.Drawing.Point(324, 677);
+            this.btn_Guardar.Location = new System.Drawing.Point(798, 276);
             this.btn_Guardar.Margin = new System.Windows.Forms.Padding(4);
             this.btn_Guardar.Name = "btn_Guardar";
             this.btn_Guardar.Size = new System.Drawing.Size(65, 66);
@@ -287,7 +306,7 @@
             this.btn_reporte.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btn_reporte.FlatAppearance.BorderSize = 0;
             this.btn_reporte.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_reporte.Location = new System.Drawing.Point(424, 677);
+            this.btn_reporte.Location = new System.Drawing.Point(898, 276);
             this.btn_reporte.Margin = new System.Windows.Forms.Padding(4);
             this.btn_reporte.Name = "btn_reporte";
             this.btn_reporte.Size = new System.Drawing.Size(58, 51);
@@ -295,30 +314,11 @@
             this.btn_reporte.UseVisualStyleBackColor = true;
             this.btn_reporte.Click += new System.EventHandler(this.btn_reporte_Click);
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(280, 155);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(104, 29);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Mover";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // trv_aplicaciones
-            // 
-            this.trv_aplicaciones.Location = new System.Drawing.Point(18, 24);
-            this.trv_aplicaciones.Name = "trv_aplicaciones";
-            this.trv_aplicaciones.Size = new System.Drawing.Size(285, 109);
-            this.trv_aplicaciones.TabIndex = 42;
-            this.trv_aplicaciones.AfterCheck += new System.Windows.Forms.TreeViewEventHandler(this.trv_aplicaciones_AfterCheck);
-            // 
             // Form_EditarPrivilegios
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(835, 741);
+            this.ClientSize = new System.Drawing.Size(1007, 741);
             this.Controls.Add(this.btn_reporte);
             this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.chlb_aplicaciones);
