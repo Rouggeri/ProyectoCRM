@@ -24,8 +24,9 @@ namespace crm
         {
             InitializeComponent();
         }
+        // ---------------------- MARVIN ROUGGERI YOQUE LOPEZ 0901-13-281
 
-        
+
         CapaDatosPersonas CapaDatos = new CapaDatosPersonas();
         // -------------------------------------AREA DE VARIABLES
 
@@ -236,11 +237,13 @@ namespace crm
 
                     // limpiar grid de casos
                     dgv_casos.DataSource = "";
+                    // limpiar grid de historial
+                    dgv_historial_actualizaciones.DataSource = "";
 
 
 
 
-                    // headers de las columnas
+                    // headers de las columnas del grid de casos
                     gridView1.Columns["titulo"].Caption = "Caso";
                     gridView1.Columns["nombres"].Caption = "Usuario";
                     gridView1.Columns["apellidos"].Caption = "Apellidos";
@@ -248,6 +251,17 @@ namespace crm
                     gridView1.Columns["fecha_limite"].Caption = "Fecha limite";
                     gridView1.Columns["estado"].Caption = "Estado";
                     gridView1.Columns["nombres1"].Caption = "Encargado";
+
+                    // headers de las columnas del grid de tareas (historial)
+                    gridView2.Columns["id_tarea"].Visible = false;
+                    gridView2.Columns["id_empleado"].Visible = false;
+                    gridView2.Columns["tipo"].Caption = "Tarea";
+                    gridView2.Columns["titulo"].Caption = "Negociación";
+                    gridView2.Columns["titulo1"].Caption = "Caso";
+                    gridView2.Columns["estado_tarea"].Caption = "Estado";
+                    gridView2.Columns["criticidad"].Caption = "Criticidad";
+                    gridView2.Columns["fecha_asignacion"].Caption = "Fecha de asignación";
+                    gridView2.Columns["fecha_establecida"].Caption = "Fecha límite";
 
                 }
             }
@@ -261,6 +275,11 @@ namespace crm
             DataTable casos = new DataTable();
             casos = CapaDatos.consultar_caso(var_id_usuario);
             dgv_casos.DataSource = casos;
+
+            // carga de gridhistorial (tareas) que contienen todas las negociaciones y tareas en general
+            DataTable tareas = new DataTable();
+            tareas = CapaDatos.consultar_tareas(var_id_usuario);
+            dgv_historial_actualizaciones.DataSource = tareas;
 
         }
 

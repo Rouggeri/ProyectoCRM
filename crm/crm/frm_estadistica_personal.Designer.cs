@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Series series3 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView3 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
             this.label1 = new System.Windows.Forms.Label();
             this.Grafíca = new DevExpress.XtraEditors.GroupControl();
             this.lbl_apellidos = new System.Windows.Forms.Label();
@@ -47,139 +47,141 @@
             this.dgv_prueba = new System.Windows.Forms.DataGridView();
             this.lbl_fecha_fin = new System.Windows.Forms.Label();
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.asignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.con = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label2 = new System.Windows.Forms.Label();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
             this.dgv_casos = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.label2 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.con = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.asignada = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vencimiento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.completo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgv_historial_actualizaciones = new DevExpress.XtraGrid.GridControl();
+            this.gridView2 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.tabNavigationPage1 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
-            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
-            this.lbl_negocios_ganados = new DevExpress.XtraEditors.LabelControl();
-            this.lbl_negocios_perdidos = new DevExpress.XtraEditors.LabelControl();
-            this.lbl_negocios_iniciados = new DevExpress.XtraEditors.LabelControl();
-            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
-            this.label49 = new System.Windows.Forms.Label();
-            this.label46 = new System.Windows.Forms.Label();
-            this.lbl_neg_ganado1 = new System.Windows.Forms.Label();
-            this.lbl_neg_ganado2 = new System.Windows.Forms.Label();
-            this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
-            this.label68 = new System.Windows.Forms.Label();
-            this.lbl_monto_gan2 = new System.Windows.Forms.Label();
-            this.lbl_monto_gan1 = new System.Windows.Forms.Label();
-            this.label69 = new System.Windows.Forms.Label();
-            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
-            this.label57 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.lbl_neg_perdido2 = new System.Windows.Forms.Label();
-            this.lbl_neg_perdido1 = new System.Windows.Forms.Label();
-            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
-            this.label65 = new System.Windows.Forms.Label();
-            this.label64 = new System.Windows.Forms.Label();
-            this.lbl_monto_per2 = new System.Windows.Forms.Label();
-            this.lbl_monto_per1 = new System.Windows.Forms.Label();
-            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.lbl_neg_ini2 = new System.Windows.Forms.Label();
-            this.lbl_neg_ini1 = new System.Windows.Forms.Label();
-            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
-            this.label61 = new System.Windows.Forms.Label();
-            this.label60 = new System.Windows.Forms.Label();
-            this.lbl_monto_ini2 = new System.Windows.Forms.Label();
-            this.lbl_monto_ini1 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.lbl_reu_com1 = new System.Windows.Forms.Label();
-            this.lbl_tarea_com1 = new System.Windows.Forms.Label();
-            this.lbl_plazo_com1 = new System.Windows.Forms.Label();
-            this.lbl_almu_com1 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.lbl_llama_com1 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.lbl_reu_com2 = new System.Windows.Forms.Label();
-            this.lbl_tarea_com2 = new System.Windows.Forms.Label();
-            this.lbl_plazo_com2 = new System.Windows.Forms.Label();
-            this.lbl_almu_com2 = new System.Windows.Forms.Label();
-            this.lbl_llama_com2 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label19 = new System.Windows.Forms.Label();
-            this.label18 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.label42 = new System.Windows.Forms.Label();
-            this.label41 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.lbl_reu_pen1 = new System.Windows.Forms.Label();
-            this.lbl_tarea_pen1 = new System.Windows.Forms.Label();
-            this.lbl_plazo_pen1 = new System.Windows.Forms.Label();
-            this.lbl_almu_pen1 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.lbl_llama_pen1 = new System.Windows.Forms.Label();
-            this.lbl_reu_pen2 = new System.Windows.Forms.Label();
-            this.lbl_tarea_pen2 = new System.Windows.Forms.Label();
-            this.lbl_plazo_pen2 = new System.Windows.Forms.Label();
-            this.lbl_almu_pen2 = new System.Windows.Forms.Label();
-            this.lbl_llama_pen2 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label44 = new System.Windows.Forms.Label();
-            this.dgv_negocios_ganados = new System.Windows.Forms.DataGridView();
-            this.dgv_nego_perdidos = new System.Windows.Forms.DataGridView();
-            this.dgv_negos_proceso = new System.Windows.Forms.DataGridView();
-            this.btn_eshta_semana = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_mes_pasado = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_semana_pasada = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_hoy = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_ayer = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_periodo_personalizado = new DevExpress.XtraEditors.SimpleButton();
             this.btn_mensual = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_periodo_personalizado = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_ayer = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_hoy = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_semana_pasada = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_mes_pasado = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_eshta_semana = new DevExpress.XtraEditors.SimpleButton();
+            this.panelControl1 = new DevExpress.XtraEditors.PanelControl();
+            this.dgv_negos_proceso = new System.Windows.Forms.DataGridView();
+            this.dgv_nego_perdidos = new System.Windows.Forms.DataGridView();
+            this.dgv_negocios_ganados = new System.Windows.Forms.DataGridView();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.lbl_llama_pen2 = new System.Windows.Forms.Label();
+            this.lbl_almu_pen2 = new System.Windows.Forms.Label();
+            this.lbl_plazo_pen2 = new System.Windows.Forms.Label();
+            this.lbl_tarea_pen2 = new System.Windows.Forms.Label();
+            this.lbl_reu_pen2 = new System.Windows.Forms.Label();
+            this.lbl_llama_pen1 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.lbl_almu_pen1 = new System.Windows.Forms.Label();
+            this.lbl_plazo_pen1 = new System.Windows.Forms.Label();
+            this.lbl_tarea_pen1 = new System.Windows.Forms.Label();
+            this.lbl_reu_pen1 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.lbl_llama_com2 = new System.Windows.Forms.Label();
+            this.lbl_almu_com2 = new System.Windows.Forms.Label();
+            this.lbl_plazo_com2 = new System.Windows.Forms.Label();
+            this.lbl_tarea_com2 = new System.Windows.Forms.Label();
+            this.lbl_reu_com2 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lbl_llama_com1 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbl_almu_com1 = new System.Windows.Forms.Label();
+            this.lbl_plazo_com1 = new System.Windows.Forms.Label();
+            this.lbl_tarea_com1 = new System.Windows.Forms.Label();
+            this.lbl_reu_com1 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.panelControl6 = new DevExpress.XtraEditors.PanelControl();
+            this.lbl_monto_ini1 = new System.Windows.Forms.Label();
+            this.lbl_monto_ini2 = new System.Windows.Forms.Label();
+            this.label60 = new System.Windows.Forms.Label();
+            this.label61 = new System.Windows.Forms.Label();
+            this.panelControl4 = new DevExpress.XtraEditors.PanelControl();
+            this.lbl_neg_ini1 = new System.Windows.Forms.Label();
+            this.lbl_neg_ini2 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.panelControl7 = new DevExpress.XtraEditors.PanelControl();
+            this.lbl_monto_per1 = new System.Windows.Forms.Label();
+            this.lbl_monto_per2 = new System.Windows.Forms.Label();
+            this.label64 = new System.Windows.Forms.Label();
+            this.label65 = new System.Windows.Forms.Label();
+            this.panelControl5 = new DevExpress.XtraEditors.PanelControl();
+            this.lbl_neg_perdido1 = new System.Windows.Forms.Label();
+            this.lbl_neg_perdido2 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
+            this.panelControl8 = new DevExpress.XtraEditors.PanelControl();
+            this.label69 = new System.Windows.Forms.Label();
+            this.lbl_monto_gan1 = new System.Windows.Forms.Label();
+            this.lbl_monto_gan2 = new System.Windows.Forms.Label();
+            this.label68 = new System.Windows.Forms.Label();
+            this.panelControl3 = new DevExpress.XtraEditors.PanelControl();
+            this.lbl_neg_ganado2 = new System.Windows.Forms.Label();
+            this.lbl_neg_ganado1 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label49 = new System.Windows.Forms.Label();
+            this.lbl_negocios_iniciados = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_negocios_perdidos = new DevExpress.XtraEditors.LabelControl();
+            this.lbl_negocios_ganados = new DevExpress.XtraEditors.LabelControl();
             this.tab_casos = new DevExpress.XtraBars.Navigation.TabPane();
             ((System.ComponentModel.ISupportInitialize)(this.Grafíca)).BeginInit();
             this.Grafíca.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_foto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_prueba)).BeginInit();
             this.tabNavigationPage3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_historial_actualizaciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).BeginInit();
             this.tabNavigationPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).BeginInit();
             this.panelControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
-            this.panelControl3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
-            this.panelControl8.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
-            this.panelControl5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
-            this.panelControl7.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
-            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_negos_proceso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nego_perdidos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_negocios_ganados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).BeginInit();
             this.panelControl6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_negocios_ganados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_nego_perdidos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_negos_proceso)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).BeginInit();
+            this.panelControl4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).BeginInit();
+            this.panelControl7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).BeginInit();
+            this.panelControl5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).BeginInit();
+            this.panelControl8.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).BeginInit();
+            this.panelControl3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab_casos)).BeginInit();
             this.tab_casos.SuspendLayout();
             this.SuspendLayout();
@@ -332,6 +334,7 @@
             this.linkLabel2.TabIndex = 8;
             this.linkLabel2.TabStop = true;
             this.linkLabel2.Text = "Nuevo Caso";
+            this.linkLabel2.Visible = false;
             this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
             // 
             // dgv_prueba
@@ -351,6 +354,7 @@
             this.lbl_fecha_fin.Size = new System.Drawing.Size(35, 13);
             this.lbl_fecha_fin.TabIndex = 10;
             this.lbl_fecha_fin.Text = "label8";
+            this.lbl_fecha_fin.Visible = false;
             // 
             // tabNavigationPage3
             // 
@@ -361,6 +365,42 @@
             this.tabNavigationPage3.Controls.Add(this.dataGridView1);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
             this.tabNavigationPage3.Size = new System.Drawing.Size(658, 422);
+            // 
+            // dgv_casos
+            // 
+            this.dgv_casos.Location = new System.Drawing.Point(17, 28);
+            this.dgv_casos.MainView = this.gridView1;
+            this.dgv_casos.Name = "dgv_casos";
+            this.dgv_casos.Size = new System.Drawing.Size(629, 143);
+            this.dgv_casos.TabIndex = 4;
+            this.dgv_casos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.dgv_casos;
+            this.gridView1.Name = "gridView1";
+            // 
+            // chartControl1
+            // 
+            this.chartControl1.Location = new System.Drawing.Point(17, 200);
+            this.chartControl1.Name = "chartControl1";
+            series2.Name = "Serie1";
+            series2.View = pieSeriesView2;
+            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series2};
+            this.chartControl1.Size = new System.Drawing.Size(629, 200);
+            this.chartControl1.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(58, 184);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(221, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Grafica correspondiente a actividades";
             // 
             // dataGridView1
             // 
@@ -377,81 +417,52 @@
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.Visible = false;
             // 
-            // completo
+            // asunto
             // 
-            this.completo.HeaderText = "Completo";
-            this.completo.Name = "completo";
-            // 
-            // vencimiento
-            // 
-            this.vencimiento.HeaderText = "Vencimiento";
-            this.vencimiento.Name = "vencimiento";
-            // 
-            // asignada
-            // 
-            this.asignada.HeaderText = "Asignada a";
-            this.asignada.Name = "asignada";
+            this.asunto.HeaderText = "Asunto";
+            this.asunto.Name = "asunto";
             // 
             // con
             // 
             this.con.HeaderText = "Con";
             this.con.Name = "con";
             // 
-            // asunto
+            // asignada
             // 
-            this.asunto.HeaderText = "Asunto";
-            this.asunto.Name = "asunto";
+            this.asignada.HeaderText = "Asignada a";
+            this.asignada.Name = "asignada";
             // 
-            // label2
+            // vencimiento
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(58, 184);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(221, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Grafica correspondiente a actividades";
+            this.vencimiento.HeaderText = "Vencimiento";
+            this.vencimiento.Name = "vencimiento";
             // 
-            // chartControl1
+            // completo
             // 
-            this.chartControl1.Location = new System.Drawing.Point(61, 200);
-            this.chartControl1.Name = "chartControl1";
-            series3.Name = "Serie1";
-            series3.View = pieSeriesView3;
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series3};
-            this.chartControl1.Size = new System.Drawing.Size(544, 200);
-            this.chartControl1.TabIndex = 3;
-            // 
-            // dgv_casos
-            // 
-            this.dgv_casos.Location = new System.Drawing.Point(61, 28);
-            this.dgv_casos.MainView = this.gridView1;
-            this.dgv_casos.Name = "dgv_casos";
-            this.dgv_casos.Size = new System.Drawing.Size(544, 143);
-            this.dgv_casos.TabIndex = 4;
-            this.dgv_casos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
-            // 
-            // gridView1
-            // 
-            this.gridView1.GridControl = this.dgv_casos;
-            this.gridView1.Name = "gridView1";
+            this.completo.HeaderText = "Completo";
+            this.completo.Name = "completo";
             // 
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "Actualizaciones";
-            this.tabNavigationPage2.Controls.Add(this.dataGridView2);
+            this.tabNavigationPage2.Controls.Add(this.dgv_historial_actualizaciones);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(658, 422);
             // 
-            // dataGridView2
+            // dgv_historial_actualizaciones
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(18, 25);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(618, 375);
-            this.dataGridView2.TabIndex = 0;
+            this.dgv_historial_actualizaciones.Location = new System.Drawing.Point(19, 13);
+            this.dgv_historial_actualizaciones.MainView = this.gridView2;
+            this.dgv_historial_actualizaciones.Name = "dgv_historial_actualizaciones";
+            this.dgv_historial_actualizaciones.Size = new System.Drawing.Size(623, 392);
+            this.dgv_historial_actualizaciones.TabIndex = 5;
+            this.dgv_historial_actualizaciones.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView2});
+            // 
+            // gridView2
+            // 
+            this.gridView2.GridControl = this.dgv_historial_actualizaciones;
+            this.gridView2.Name = "gridView2";
             // 
             // tabNavigationPage1
             // 
@@ -466,6 +477,83 @@
             this.tabNavigationPage1.Controls.Add(this.panelControl1);
             this.tabNavigationPage1.Name = "tabNavigationPage1";
             this.tabNavigationPage1.Size = new System.Drawing.Size(658, 422);
+            // 
+            // btn_mensual
+            // 
+            this.btn_mensual.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mensual.Appearance.Options.UseFont = true;
+            this.btn_mensual.Location = new System.Drawing.Point(323, 15);
+            this.btn_mensual.Name = "btn_mensual";
+            this.btn_mensual.Size = new System.Drawing.Size(68, 23);
+            this.btn_mensual.TabIndex = 106;
+            this.btn_mensual.Text = "Este mes";
+            this.btn_mensual.Click += new System.EventHandler(this.btn_mensual_Click);
+            // 
+            // btn_periodo_personalizado
+            // 
+            this.btn_periodo_personalizado.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_periodo_personalizado.Appearance.Options.UseFont = true;
+            this.btn_periodo_personalizado.Location = new System.Drawing.Point(500, 15);
+            this.btn_periodo_personalizado.Name = "btn_periodo_personalizado";
+            this.btn_periodo_personalizado.Size = new System.Drawing.Size(154, 23);
+            this.btn_periodo_personalizado.TabIndex = 16;
+            this.btn_periodo_personalizado.Text = "Periodo personalizado";
+            this.btn_periodo_personalizado.Click += new System.EventHandler(this.btn_periodo_personalizado_Click);
+            // 
+            // btn_ayer
+            // 
+            this.btn_ayer.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_ayer.Appearance.Options.UseFont = true;
+            this.btn_ayer.Location = new System.Drawing.Point(66, 15);
+            this.btn_ayer.Name = "btn_ayer";
+            this.btn_ayer.Size = new System.Drawing.Size(39, 23);
+            this.btn_ayer.TabIndex = 15;
+            this.btn_ayer.Text = "Ayer";
+            this.btn_ayer.Click += new System.EventHandler(this.btn_ayer_Click);
+            // 
+            // btn_hoy
+            // 
+            this.btn_hoy.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_hoy.Appearance.Options.UseFont = true;
+            this.btn_hoy.Location = new System.Drawing.Point(9, 15);
+            this.btn_hoy.Name = "btn_hoy";
+            this.btn_hoy.Size = new System.Drawing.Size(34, 23);
+            this.btn_hoy.TabIndex = 14;
+            this.btn_hoy.Text = "Hoy";
+            this.btn_hoy.Click += new System.EventHandler(this.btn_hoy_Click);
+            // 
+            // btn_semana_pasada
+            // 
+            this.btn_semana_pasada.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_semana_pasada.Appearance.Options.UseFont = true;
+            this.btn_semana_pasada.Location = new System.Drawing.Point(217, 15);
+            this.btn_semana_pasada.Name = "btn_semana_pasada";
+            this.btn_semana_pasada.Size = new System.Drawing.Size(101, 23);
+            this.btn_semana_pasada.TabIndex = 13;
+            this.btn_semana_pasada.Text = "Semana pasada";
+            this.btn_semana_pasada.Click += new System.EventHandler(this.btn_semana_pasada_Click);
+            // 
+            // btn_mes_pasado
+            // 
+            this.btn_mes_pasado.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_mes_pasado.Appearance.Options.UseFont = true;
+            this.btn_mes_pasado.Location = new System.Drawing.Point(396, 15);
+            this.btn_mes_pasado.Name = "btn_mes_pasado";
+            this.btn_mes_pasado.Size = new System.Drawing.Size(84, 23);
+            this.btn_mes_pasado.TabIndex = 11;
+            this.btn_mes_pasado.Text = "Mes pasado";
+            this.btn_mes_pasado.Click += new System.EventHandler(this.btn_mes_pasado_Click);
+            // 
+            // btn_eshta_semana
+            // 
+            this.btn_eshta_semana.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_eshta_semana.Appearance.Options.UseFont = true;
+            this.btn_eshta_semana.Location = new System.Drawing.Point(118, 15);
+            this.btn_eshta_semana.Name = "btn_eshta_semana";
+            this.btn_eshta_semana.Size = new System.Drawing.Size(90, 23);
+            this.btn_eshta_semana.TabIndex = 10;
+            this.btn_eshta_semana.Text = "Esta Semana";
+            this.btn_eshta_semana.Click += new System.EventHandler(this.btn_eshta_semana_Click);
             // 
             // panelControl1
             // 
@@ -530,293 +618,470 @@
             this.panelControl1.Size = new System.Drawing.Size(645, 365);
             this.panelControl1.TabIndex = 9;
             // 
-            // lbl_negocios_ganados
+            // dgv_negos_proceso
             // 
-            this.lbl_negocios_ganados.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_negocios_ganados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_negocios_ganados.Location = new System.Drawing.Point(31, 33);
-            this.lbl_negocios_ganados.Name = "lbl_negocios_ganados";
-            this.lbl_negocios_ganados.Size = new System.Drawing.Size(116, 16);
-            this.lbl_negocios_ganados.TabIndex = 0;
-            this.lbl_negocios_ganados.Text = "Negocios Ganados";
-            this.lbl_negocios_ganados.Click += new System.EventHandler(this.lbl_negocios_ganados_Click);
+            this.dgv_negos_proceso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_negos_proceso.Location = new System.Drawing.Point(424, 287);
+            this.dgv_negos_proceso.Name = "dgv_negos_proceso";
+            this.dgv_negos_proceso.Size = new System.Drawing.Size(216, 73);
+            this.dgv_negos_proceso.TabIndex = 108;
+            this.dgv_negos_proceso.Visible = false;
             // 
-            // lbl_negocios_perdidos
+            // dgv_nego_perdidos
             // 
-            this.lbl_negocios_perdidos.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_negocios_perdidos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_negocios_perdidos.Location = new System.Drawing.Point(223, 33);
-            this.lbl_negocios_perdidos.Name = "lbl_negocios_perdidos";
-            this.lbl_negocios_perdidos.Size = new System.Drawing.Size(117, 16);
-            this.lbl_negocios_perdidos.TabIndex = 1;
-            this.lbl_negocios_perdidos.Text = "Negocios Perdidos";
-            this.lbl_negocios_perdidos.Click += new System.EventHandler(this.lbl_negocios_perdidos_Click);
+            this.dgv_nego_perdidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_nego_perdidos.Location = new System.Drawing.Point(248, 287);
+            this.dgv_nego_perdidos.Name = "dgv_nego_perdidos";
+            this.dgv_nego_perdidos.Size = new System.Drawing.Size(170, 73);
+            this.dgv_nego_perdidos.TabIndex = 107;
+            this.dgv_nego_perdidos.Visible = false;
             // 
-            // lbl_negocios_iniciados
+            // dgv_negocios_ganados
             // 
-            this.lbl_negocios_iniciados.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_negocios_iniciados.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbl_negocios_iniciados.Location = new System.Drawing.Point(435, 35);
-            this.lbl_negocios_iniciados.Name = "lbl_negocios_iniciados";
-            this.lbl_negocios_iniciados.Size = new System.Drawing.Size(118, 16);
-            this.lbl_negocios_iniciados.TabIndex = 2;
-            this.lbl_negocios_iniciados.Text = "Negocios Iniciados";
-            this.lbl_negocios_iniciados.Click += new System.EventHandler(this.lbl_negocios_iniciados_Click);
+            this.dgv_negocios_ganados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_negocios_ganados.Location = new System.Drawing.Point(8, 287);
+            this.dgv_negocios_ganados.Name = "dgv_negocios_ganados";
+            this.dgv_negocios_ganados.Size = new System.Drawing.Size(216, 73);
+            this.dgv_negocios_ganados.TabIndex = 106;
+            this.dgv_negocios_ganados.Visible = false;
             // 
-            // panelControl3
+            // label44
             // 
-            this.panelControl3.Controls.Add(this.lbl_neg_ganado2);
-            this.panelControl3.Controls.Add(this.lbl_neg_ganado1);
-            this.panelControl3.Controls.Add(this.label46);
-            this.panelControl3.Controls.Add(this.label49);
-            this.panelControl3.Location = new System.Drawing.Point(31, 55);
-            this.panelControl3.Name = "panelControl3";
-            this.panelControl3.Size = new System.Drawing.Size(168, 24);
-            this.panelControl3.TabIndex = 44;
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label44.Location = new System.Drawing.Point(444, 150);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(160, 16);
+            this.label44.TabIndex = 105;
+            this.label44.Text = "Actividades Pendientes";
             // 
-            // label49
+            // label23
             // 
-            this.label49.AutoSize = true;
-            this.label49.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label49.Location = new System.Drawing.Point(50, 2);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(59, 16);
-            this.label49.TabIndex = 40;
-            this.label49.Text = "Negocios";
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(556, 188);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(16, 16);
+            this.label23.TabIndex = 104;
+            this.label23.Text = "+";
             // 
-            // label46
+            // label24
             // 
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label46.Location = new System.Drawing.Point(105, 2);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(16, 16);
-            this.label46.TabIndex = 43;
-            this.label46.Text = "+";
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label24.Location = new System.Drawing.Point(556, 246);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(16, 16);
+            this.label24.TabIndex = 103;
+            this.label24.Text = "+";
             // 
-            // lbl_neg_ganado1
+            // label25
             // 
-            this.lbl_neg_ganado1.AutoSize = true;
-            this.lbl_neg_ganado1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_neg_ganado1.Location = new System.Drawing.Point(116, 2);
-            this.lbl_neg_ganado1.Name = "lbl_neg_ganado1";
-            this.lbl_neg_ganado1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_neg_ganado1.TabIndex = 42;
-            this.lbl_neg_ganado1.Text = "cant";
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(556, 232);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(16, 16);
+            this.label25.TabIndex = 102;
+            this.label25.Text = "+";
             // 
-            // lbl_neg_ganado2
+            // label26
             // 
-            this.lbl_neg_ganado2.AutoSize = true;
-            this.lbl_neg_ganado2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_neg_ganado2.Location = new System.Drawing.Point(7, 2);
-            this.lbl_neg_ganado2.Name = "lbl_neg_ganado2";
-            this.lbl_neg_ganado2.Size = new System.Drawing.Size(32, 16);
-            this.lbl_neg_ganado2.TabIndex = 41;
-            this.lbl_neg_ganado2.Text = "cant";
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(556, 218);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(16, 16);
+            this.label26.TabIndex = 101;
+            this.label26.Text = "+";
             // 
-            // panelControl8
+            // label27
             // 
-            this.panelControl8.Controls.Add(this.label69);
-            this.panelControl8.Controls.Add(this.lbl_monto_gan1);
-            this.panelControl8.Controls.Add(this.lbl_monto_gan2);
-            this.panelControl8.Controls.Add(this.label68);
-            this.panelControl8.Location = new System.Drawing.Point(31, 85);
-            this.panelControl8.Name = "panelControl8";
-            this.panelControl8.Size = new System.Drawing.Size(168, 24);
-            this.panelControl8.TabIndex = 46;
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(556, 204);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(16, 16);
+            this.label27.TabIndex = 100;
+            this.label27.Text = "+";
             // 
-            // label68
+            // lbl_llama_pen2
             // 
-            this.label68.AutoSize = true;
-            this.label68.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label68.Location = new System.Drawing.Point(99, 2);
-            this.label68.Name = "label68";
-            this.label68.Size = new System.Drawing.Size(16, 16);
-            this.label68.TabIndex = 43;
-            this.label68.Text = "+";
+            this.lbl_llama_pen2.AutoSize = true;
+            this.lbl_llama_pen2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_llama_pen2.Location = new System.Drawing.Point(578, 188);
+            this.lbl_llama_pen2.Name = "lbl_llama_pen2";
+            this.lbl_llama_pen2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_llama_pen2.TabIndex = 99;
+            this.lbl_llama_pen2.Text = "cantidad";
             // 
-            // lbl_monto_gan2
+            // lbl_almu_pen2
             // 
-            this.lbl_monto_gan2.AutoSize = true;
-            this.lbl_monto_gan2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_monto_gan2.Location = new System.Drawing.Point(110, 2);
-            this.lbl_monto_gan2.Name = "lbl_monto_gan2";
-            this.lbl_monto_gan2.Size = new System.Drawing.Size(32, 16);
-            this.lbl_monto_gan2.TabIndex = 42;
-            this.lbl_monto_gan2.Text = "cant";
+            this.lbl_almu_pen2.AutoSize = true;
+            this.lbl_almu_pen2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_almu_pen2.Location = new System.Drawing.Point(578, 246);
+            this.lbl_almu_pen2.Name = "lbl_almu_pen2";
+            this.lbl_almu_pen2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_almu_pen2.TabIndex = 98;
+            this.lbl_almu_pen2.Text = "cantidad";
             // 
-            // lbl_monto_gan1
+            // lbl_plazo_pen2
             // 
-            this.lbl_monto_gan1.AutoSize = true;
-            this.lbl_monto_gan1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_monto_gan1.Location = new System.Drawing.Point(7, 2);
-            this.lbl_monto_gan1.Name = "lbl_monto_gan1";
-            this.lbl_monto_gan1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_monto_gan1.TabIndex = 41;
-            this.lbl_monto_gan1.Text = "cant";
+            this.lbl_plazo_pen2.AutoSize = true;
+            this.lbl_plazo_pen2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_plazo_pen2.Location = new System.Drawing.Point(578, 232);
+            this.lbl_plazo_pen2.Name = "lbl_plazo_pen2";
+            this.lbl_plazo_pen2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_plazo_pen2.TabIndex = 97;
+            this.lbl_plazo_pen2.Text = "cantidad";
             // 
-            // label69
+            // lbl_tarea_pen2
             // 
-            this.label69.AutoSize = true;
-            this.label69.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label69.Location = new System.Drawing.Point(65, 2);
-            this.label69.Name = "label69";
-            this.label69.Size = new System.Drawing.Size(33, 16);
-            this.label69.TabIndex = 44;
-            this.label69.Text = "GTQ";
+            this.lbl_tarea_pen2.AutoSize = true;
+            this.lbl_tarea_pen2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tarea_pen2.Location = new System.Drawing.Point(578, 218);
+            this.lbl_tarea_pen2.Name = "lbl_tarea_pen2";
+            this.lbl_tarea_pen2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_tarea_pen2.TabIndex = 96;
+            this.lbl_tarea_pen2.Text = "cantidad";
             // 
-            // panelControl5
+            // lbl_reu_pen2
             // 
-            this.panelControl5.Controls.Add(this.lbl_neg_perdido1);
-            this.panelControl5.Controls.Add(this.lbl_neg_perdido2);
-            this.panelControl5.Controls.Add(this.label56);
-            this.panelControl5.Controls.Add(this.label57);
-            this.panelControl5.Location = new System.Drawing.Point(223, 55);
-            this.panelControl5.Name = "panelControl5";
-            this.panelControl5.Size = new System.Drawing.Size(170, 24);
-            this.panelControl5.TabIndex = 45;
+            this.lbl_reu_pen2.AutoSize = true;
+            this.lbl_reu_pen2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_reu_pen2.Location = new System.Drawing.Point(578, 204);
+            this.lbl_reu_pen2.Name = "lbl_reu_pen2";
+            this.lbl_reu_pen2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_reu_pen2.TabIndex = 95;
+            this.lbl_reu_pen2.Text = "cantidad";
             // 
-            // label57
+            // lbl_llama_pen1
             // 
-            this.label57.AutoSize = true;
-            this.label57.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label57.Location = new System.Drawing.Point(47, 2);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(59, 16);
-            this.label57.TabIndex = 40;
-            this.label57.Text = "Negocios";
+            this.lbl_llama_pen1.AutoSize = true;
+            this.lbl_llama_pen1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_llama_pen1.Location = new System.Drawing.Point(423, 188);
+            this.lbl_llama_pen1.Name = "lbl_llama_pen1";
+            this.lbl_llama_pen1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_llama_pen1.TabIndex = 94;
+            this.lbl_llama_pen1.Text = "cant";
             // 
-            // label56
+            // label34
             // 
-            this.label56.AutoSize = true;
-            this.label56.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label56.Location = new System.Drawing.Point(102, 2);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(16, 16);
-            this.label56.TabIndex = 43;
-            this.label56.Text = "+";
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(474, 246);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(0, 16);
+            this.label34.TabIndex = 93;
             // 
-            // lbl_neg_perdido2
+            // lbl_almu_pen1
             // 
-            this.lbl_neg_perdido2.AutoSize = true;
-            this.lbl_neg_perdido2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_neg_perdido2.Location = new System.Drawing.Point(113, 2);
-            this.lbl_neg_perdido2.Name = "lbl_neg_perdido2";
-            this.lbl_neg_perdido2.Size = new System.Drawing.Size(32, 16);
-            this.lbl_neg_perdido2.TabIndex = 42;
-            this.lbl_neg_perdido2.Text = "cant";
+            this.lbl_almu_pen1.AutoSize = true;
+            this.lbl_almu_pen1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_almu_pen1.Location = new System.Drawing.Point(423, 246);
+            this.lbl_almu_pen1.Name = "lbl_almu_pen1";
+            this.lbl_almu_pen1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_almu_pen1.TabIndex = 92;
+            this.lbl_almu_pen1.Text = "cant";
             // 
-            // lbl_neg_perdido1
+            // lbl_plazo_pen1
             // 
-            this.lbl_neg_perdido1.AutoSize = true;
-            this.lbl_neg_perdido1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_neg_perdido1.Location = new System.Drawing.Point(7, 2);
-            this.lbl_neg_perdido1.Name = "lbl_neg_perdido1";
-            this.lbl_neg_perdido1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_neg_perdido1.TabIndex = 41;
-            this.lbl_neg_perdido1.Text = "cant";
+            this.lbl_plazo_pen1.AutoSize = true;
+            this.lbl_plazo_pen1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_plazo_pen1.Location = new System.Drawing.Point(423, 232);
+            this.lbl_plazo_pen1.Name = "lbl_plazo_pen1";
+            this.lbl_plazo_pen1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_plazo_pen1.TabIndex = 91;
+            this.lbl_plazo_pen1.Text = "cant";
             // 
-            // panelControl7
+            // lbl_tarea_pen1
             // 
-            this.panelControl7.Controls.Add(this.lbl_monto_per1);
-            this.panelControl7.Controls.Add(this.lbl_monto_per2);
-            this.panelControl7.Controls.Add(this.label64);
-            this.panelControl7.Controls.Add(this.label65);
-            this.panelControl7.Location = new System.Drawing.Point(223, 85);
-            this.panelControl7.Name = "panelControl7";
-            this.panelControl7.Size = new System.Drawing.Size(170, 24);
-            this.panelControl7.TabIndex = 47;
+            this.lbl_tarea_pen1.AutoSize = true;
+            this.lbl_tarea_pen1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tarea_pen1.Location = new System.Drawing.Point(423, 218);
+            this.lbl_tarea_pen1.Name = "lbl_tarea_pen1";
+            this.lbl_tarea_pen1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_tarea_pen1.TabIndex = 90;
+            this.lbl_tarea_pen1.Text = "cant";
             // 
-            // label65
+            // lbl_reu_pen1
             // 
-            this.label65.AutoSize = true;
-            this.label65.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label65.Location = new System.Drawing.Point(68, 2);
-            this.label65.Name = "label65";
-            this.label65.Size = new System.Drawing.Size(33, 16);
-            this.label65.TabIndex = 40;
-            this.label65.Text = "GTQ";
+            this.lbl_reu_pen1.AutoSize = true;
+            this.lbl_reu_pen1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_reu_pen1.Location = new System.Drawing.Point(423, 204);
+            this.lbl_reu_pen1.Name = "lbl_reu_pen1";
+            this.lbl_reu_pen1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_reu_pen1.TabIndex = 89;
+            this.lbl_reu_pen1.Text = "cant";
             // 
-            // label64
+            // label39
             // 
-            this.label64.AutoSize = true;
-            this.label64.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label64.Location = new System.Drawing.Point(99, 2);
-            this.label64.Name = "label64";
-            this.label64.Size = new System.Drawing.Size(16, 16);
-            this.label64.TabIndex = 43;
-            this.label64.Text = "+";
+            this.label39.AutoSize = true;
+            this.label39.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label39.Location = new System.Drawing.Point(485, 246);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(62, 16);
+            this.label39.TabIndex = 88;
+            this.label39.Text = "Almuerzo";
             // 
-            // lbl_monto_per2
+            // label40
             // 
-            this.lbl_monto_per2.AutoSize = true;
-            this.lbl_monto_per2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_monto_per2.Location = new System.Drawing.Point(110, 2);
-            this.lbl_monto_per2.Name = "lbl_monto_per2";
-            this.lbl_monto_per2.Size = new System.Drawing.Size(32, 16);
-            this.lbl_monto_per2.TabIndex = 42;
-            this.lbl_monto_per2.Text = "cant";
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label40.Location = new System.Drawing.Point(485, 232);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(38, 16);
+            this.label40.TabIndex = 87;
+            this.label40.Text = "Plazo";
             // 
-            // lbl_monto_per1
+            // label41
             // 
-            this.lbl_monto_per1.AutoSize = true;
-            this.lbl_monto_per1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_monto_per1.Location = new System.Drawing.Point(7, 2);
-            this.lbl_monto_per1.Name = "lbl_monto_per1";
-            this.lbl_monto_per1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_monto_per1.TabIndex = 41;
-            this.lbl_monto_per1.Text = "cant";
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label41.Location = new System.Drawing.Point(485, 218);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(42, 16);
+            this.label41.TabIndex = 86;
+            this.label41.Text = "Tarea";
             // 
-            // panelControl4
+            // label42
             // 
-            this.panelControl4.Controls.Add(this.lbl_neg_ini1);
-            this.panelControl4.Controls.Add(this.lbl_neg_ini2);
-            this.panelControl4.Controls.Add(this.label52);
-            this.panelControl4.Controls.Add(this.label53);
-            this.panelControl4.Location = new System.Drawing.Point(435, 57);
-            this.panelControl4.Name = "panelControl4";
-            this.panelControl4.Size = new System.Drawing.Size(187, 24);
-            this.panelControl4.TabIndex = 45;
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label42.Location = new System.Drawing.Point(485, 204);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(54, 16);
+            this.label42.TabIndex = 85;
+            this.label42.Text = "Reunión";
             // 
-            // label53
+            // label43
             // 
-            this.label53.AutoSize = true;
-            this.label53.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label53.Location = new System.Drawing.Point(54, 2);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(59, 16);
-            this.label53.TabIndex = 40;
-            this.label53.Text = "Negocios";
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label43.Location = new System.Drawing.Point(485, 188);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(56, 16);
+            this.label43.TabIndex = 84;
+            this.label43.Text = "Llamada";
             // 
-            // label52
+            // label18
             // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label52.Location = new System.Drawing.Point(109, 2);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(16, 16);
-            this.label52.TabIndex = 43;
-            this.label52.Text = "+";
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(165, 192);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(16, 16);
+            this.label18.TabIndex = 83;
+            this.label18.Text = "+";
             // 
-            // lbl_neg_ini2
+            // label19
             // 
-            this.lbl_neg_ini2.AutoSize = true;
-            this.lbl_neg_ini2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_neg_ini2.Location = new System.Drawing.Point(120, 2);
-            this.lbl_neg_ini2.Name = "lbl_neg_ini2";
-            this.lbl_neg_ini2.Size = new System.Drawing.Size(32, 16);
-            this.lbl_neg_ini2.TabIndex = 42;
-            this.lbl_neg_ini2.Text = "cant";
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(165, 250);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(16, 16);
+            this.label19.TabIndex = 82;
+            this.label19.Text = "+";
             // 
-            // lbl_neg_ini1
+            // label20
             // 
-            this.lbl_neg_ini1.AutoSize = true;
-            this.lbl_neg_ini1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_neg_ini1.Location = new System.Drawing.Point(7, 2);
-            this.lbl_neg_ini1.Name = "lbl_neg_ini1";
-            this.lbl_neg_ini1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_neg_ini1.TabIndex = 41;
-            this.lbl_neg_ini1.Text = "cant";
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(165, 236);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(16, 16);
+            this.label20.TabIndex = 81;
+            this.label20.Text = "+";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(165, 222);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(16, 16);
+            this.label21.TabIndex = 80;
+            this.label21.Text = "+";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(165, 208);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(16, 16);
+            this.label22.TabIndex = 79;
+            this.label22.Text = "+";
+            // 
+            // lbl_llama_com2
+            // 
+            this.lbl_llama_com2.AutoSize = true;
+            this.lbl_llama_com2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_llama_com2.Location = new System.Drawing.Point(187, 192);
+            this.lbl_llama_com2.Name = "lbl_llama_com2";
+            this.lbl_llama_com2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_llama_com2.TabIndex = 78;
+            this.lbl_llama_com2.Text = "cantidad";
+            // 
+            // lbl_almu_com2
+            // 
+            this.lbl_almu_com2.AutoSize = true;
+            this.lbl_almu_com2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_almu_com2.Location = new System.Drawing.Point(187, 250);
+            this.lbl_almu_com2.Name = "lbl_almu_com2";
+            this.lbl_almu_com2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_almu_com2.TabIndex = 77;
+            this.lbl_almu_com2.Text = "cantidad";
+            // 
+            // lbl_plazo_com2
+            // 
+            this.lbl_plazo_com2.AutoSize = true;
+            this.lbl_plazo_com2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_plazo_com2.Location = new System.Drawing.Point(187, 236);
+            this.lbl_plazo_com2.Name = "lbl_plazo_com2";
+            this.lbl_plazo_com2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_plazo_com2.TabIndex = 76;
+            this.lbl_plazo_com2.Text = "cantidad";
+            // 
+            // lbl_tarea_com2
+            // 
+            this.lbl_tarea_com2.AutoSize = true;
+            this.lbl_tarea_com2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tarea_com2.Location = new System.Drawing.Point(187, 222);
+            this.lbl_tarea_com2.Name = "lbl_tarea_com2";
+            this.lbl_tarea_com2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_tarea_com2.TabIndex = 75;
+            this.lbl_tarea_com2.Text = "cantidad";
+            // 
+            // lbl_reu_com2
+            // 
+            this.lbl_reu_com2.AutoSize = true;
+            this.lbl_reu_com2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_reu_com2.Location = new System.Drawing.Point(187, 208);
+            this.lbl_reu_com2.Name = "lbl_reu_com2";
+            this.lbl_reu_com2.Size = new System.Drawing.Size(56, 16);
+            this.lbl_reu_com2.TabIndex = 74;
+            this.lbl_reu_com2.Text = "cantidad";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(53, 155);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(171, 16);
+            this.label12.TabIndex = 73;
+            this.label12.Text = "Actividades Completadas";
+            // 
+            // lbl_llama_com1
+            // 
+            this.lbl_llama_com1.AutoSize = true;
+            this.lbl_llama_com1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_llama_com1.Location = new System.Drawing.Point(32, 192);
+            this.lbl_llama_com1.Name = "lbl_llama_com1";
+            this.lbl_llama_com1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_llama_com1.TabIndex = 72;
+            this.lbl_llama_com1.Text = "cant";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(83, 250);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(0, 16);
+            this.label10.TabIndex = 71;
+            // 
+            // lbl_almu_com1
+            // 
+            this.lbl_almu_com1.AutoSize = true;
+            this.lbl_almu_com1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_almu_com1.Location = new System.Drawing.Point(32, 250);
+            this.lbl_almu_com1.Name = "lbl_almu_com1";
+            this.lbl_almu_com1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_almu_com1.TabIndex = 70;
+            this.lbl_almu_com1.Text = "cant";
+            // 
+            // lbl_plazo_com1
+            // 
+            this.lbl_plazo_com1.AutoSize = true;
+            this.lbl_plazo_com1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_plazo_com1.Location = new System.Drawing.Point(32, 236);
+            this.lbl_plazo_com1.Name = "lbl_plazo_com1";
+            this.lbl_plazo_com1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_plazo_com1.TabIndex = 69;
+            this.lbl_plazo_com1.Text = "cant";
+            // 
+            // lbl_tarea_com1
+            // 
+            this.lbl_tarea_com1.AutoSize = true;
+            this.lbl_tarea_com1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_tarea_com1.Location = new System.Drawing.Point(32, 222);
+            this.lbl_tarea_com1.Name = "lbl_tarea_com1";
+            this.lbl_tarea_com1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_tarea_com1.TabIndex = 68;
+            this.lbl_tarea_com1.Text = "cant";
+            // 
+            // lbl_reu_com1
+            // 
+            this.lbl_reu_com1.AutoSize = true;
+            this.lbl_reu_com1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_reu_com1.Location = new System.Drawing.Point(32, 208);
+            this.lbl_reu_com1.Name = "lbl_reu_com1";
+            this.lbl_reu_com1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_reu_com1.TabIndex = 67;
+            this.lbl_reu_com1.Text = "cant";
+            // 
+            // label73
+            // 
+            this.label73.AutoSize = true;
+            this.label73.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label73.Location = new System.Drawing.Point(94, 250);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(62, 16);
+            this.label73.TabIndex = 66;
+            this.label73.Text = "Almuerzo";
+            // 
+            // label74
+            // 
+            this.label74.AutoSize = true;
+            this.label74.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label74.Location = new System.Drawing.Point(94, 236);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(38, 16);
+            this.label74.TabIndex = 65;
+            this.label74.Text = "Plazo";
+            // 
+            // label75
+            // 
+            this.label75.AutoSize = true;
+            this.label75.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label75.Location = new System.Drawing.Point(94, 222);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(42, 16);
+            this.label75.TabIndex = 64;
+            this.label75.Text = "Tarea";
+            // 
+            // label76
+            // 
+            this.label76.AutoSize = true;
+            this.label76.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label76.Location = new System.Drawing.Point(94, 208);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(54, 16);
+            this.label76.TabIndex = 63;
+            this.label76.Text = "Reunión";
+            // 
+            // label77
+            // 
+            this.label77.AutoSize = true;
+            this.label77.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label77.Location = new System.Drawing.Point(94, 192);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(56, 16);
+            this.label77.TabIndex = 62;
+            this.label77.Text = "Llamada";
             // 
             // panelControl6
             // 
@@ -829,25 +1094,15 @@
             this.panelControl6.Size = new System.Drawing.Size(187, 24);
             this.panelControl6.TabIndex = 48;
             // 
-            // label61
+            // lbl_monto_ini1
             // 
-            this.label61.AutoSize = true;
-            this.label61.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label61.Location = new System.Drawing.Point(71, 2);
-            this.label61.Name = "label61";
-            this.label61.Size = new System.Drawing.Size(33, 16);
-            this.label61.TabIndex = 40;
-            this.label61.Text = "GTQ";
-            // 
-            // label60
-            // 
-            this.label60.AutoSize = true;
-            this.label60.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label60.Location = new System.Drawing.Point(106, 2);
-            this.label60.Name = "label60";
-            this.label60.Size = new System.Drawing.Size(16, 16);
-            this.label60.TabIndex = 43;
-            this.label60.Text = "+";
+            this.lbl_monto_ini1.AutoSize = true;
+            this.lbl_monto_ini1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_monto_ini1.Location = new System.Drawing.Point(7, 2);
+            this.lbl_monto_ini1.Name = "lbl_monto_ini1";
+            this.lbl_monto_ini1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_monto_ini1.TabIndex = 41;
+            this.lbl_monto_ini1.Text = "cant";
             // 
             // lbl_monto_ini2
             // 
@@ -859,557 +1114,313 @@
             this.lbl_monto_ini2.TabIndex = 42;
             this.lbl_monto_ini2.Text = "cant";
             // 
-            // lbl_monto_ini1
-            // 
-            this.lbl_monto_ini1.AutoSize = true;
-            this.lbl_monto_ini1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_monto_ini1.Location = new System.Drawing.Point(7, 2);
-            this.lbl_monto_ini1.Name = "lbl_monto_ini1";
-            this.lbl_monto_ini1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_monto_ini1.TabIndex = 41;
-            this.lbl_monto_ini1.Text = "cant";
-            // 
-            // label77
-            // 
-            this.label77.AutoSize = true;
-            this.label77.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label77.Location = new System.Drawing.Point(94, 192);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(56, 16);
-            this.label77.TabIndex = 62;
-            this.label77.Text = "Llamada";
-            // 
-            // label76
-            // 
-            this.label76.AutoSize = true;
-            this.label76.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label76.Location = new System.Drawing.Point(94, 208);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(54, 16);
-            this.label76.TabIndex = 63;
-            this.label76.Text = "Reunión";
-            // 
-            // label75
-            // 
-            this.label75.AutoSize = true;
-            this.label75.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label75.Location = new System.Drawing.Point(94, 222);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(42, 16);
-            this.label75.TabIndex = 64;
-            this.label75.Text = "Tarea";
-            // 
-            // label74
-            // 
-            this.label74.AutoSize = true;
-            this.label74.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label74.Location = new System.Drawing.Point(94, 236);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(38, 16);
-            this.label74.TabIndex = 65;
-            this.label74.Text = "Plazo";
-            // 
-            // label73
-            // 
-            this.label73.AutoSize = true;
-            this.label73.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label73.Location = new System.Drawing.Point(94, 250);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(62, 16);
-            this.label73.TabIndex = 66;
-            this.label73.Text = "Almuerzo";
-            // 
-            // lbl_reu_com1
-            // 
-            this.lbl_reu_com1.AutoSize = true;
-            this.lbl_reu_com1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_reu_com1.Location = new System.Drawing.Point(32, 208);
-            this.lbl_reu_com1.Name = "lbl_reu_com1";
-            this.lbl_reu_com1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_reu_com1.TabIndex = 67;
-            this.lbl_reu_com1.Text = "cant";
-            // 
-            // lbl_tarea_com1
-            // 
-            this.lbl_tarea_com1.AutoSize = true;
-            this.lbl_tarea_com1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tarea_com1.Location = new System.Drawing.Point(32, 222);
-            this.lbl_tarea_com1.Name = "lbl_tarea_com1";
-            this.lbl_tarea_com1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_tarea_com1.TabIndex = 68;
-            this.lbl_tarea_com1.Text = "cant";
-            // 
-            // lbl_plazo_com1
-            // 
-            this.lbl_plazo_com1.AutoSize = true;
-            this.lbl_plazo_com1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_plazo_com1.Location = new System.Drawing.Point(32, 236);
-            this.lbl_plazo_com1.Name = "lbl_plazo_com1";
-            this.lbl_plazo_com1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_plazo_com1.TabIndex = 69;
-            this.lbl_plazo_com1.Text = "cant";
-            // 
-            // lbl_almu_com1
-            // 
-            this.lbl_almu_com1.AutoSize = true;
-            this.lbl_almu_com1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_almu_com1.Location = new System.Drawing.Point(32, 250);
-            this.lbl_almu_com1.Name = "lbl_almu_com1";
-            this.lbl_almu_com1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_almu_com1.TabIndex = 70;
-            this.lbl_almu_com1.Text = "cant";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(83, 250);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(0, 16);
-            this.label10.TabIndex = 71;
-            // 
-            // lbl_llama_com1
-            // 
-            this.lbl_llama_com1.AutoSize = true;
-            this.lbl_llama_com1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_llama_com1.Location = new System.Drawing.Point(32, 192);
-            this.lbl_llama_com1.Name = "lbl_llama_com1";
-            this.lbl_llama_com1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_llama_com1.TabIndex = 72;
-            this.lbl_llama_com1.Text = "cant";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(53, 155);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(171, 16);
-            this.label12.TabIndex = 73;
-            this.label12.Text = "Actividades Completadas";
-            // 
-            // lbl_reu_com2
-            // 
-            this.lbl_reu_com2.AutoSize = true;
-            this.lbl_reu_com2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_reu_com2.Location = new System.Drawing.Point(187, 208);
-            this.lbl_reu_com2.Name = "lbl_reu_com2";
-            this.lbl_reu_com2.Size = new System.Drawing.Size(56, 16);
-            this.lbl_reu_com2.TabIndex = 74;
-            this.lbl_reu_com2.Text = "cantidad";
-            // 
-            // lbl_tarea_com2
-            // 
-            this.lbl_tarea_com2.AutoSize = true;
-            this.lbl_tarea_com2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tarea_com2.Location = new System.Drawing.Point(187, 222);
-            this.lbl_tarea_com2.Name = "lbl_tarea_com2";
-            this.lbl_tarea_com2.Size = new System.Drawing.Size(56, 16);
-            this.lbl_tarea_com2.TabIndex = 75;
-            this.lbl_tarea_com2.Text = "cantidad";
-            // 
-            // lbl_plazo_com2
-            // 
-            this.lbl_plazo_com2.AutoSize = true;
-            this.lbl_plazo_com2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_plazo_com2.Location = new System.Drawing.Point(187, 236);
-            this.lbl_plazo_com2.Name = "lbl_plazo_com2";
-            this.lbl_plazo_com2.Size = new System.Drawing.Size(56, 16);
-            this.lbl_plazo_com2.TabIndex = 76;
-            this.lbl_plazo_com2.Text = "cantidad";
-            // 
-            // lbl_almu_com2
-            // 
-            this.lbl_almu_com2.AutoSize = true;
-            this.lbl_almu_com2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_almu_com2.Location = new System.Drawing.Point(187, 250);
-            this.lbl_almu_com2.Name = "lbl_almu_com2";
-            this.lbl_almu_com2.Size = new System.Drawing.Size(56, 16);
-            this.lbl_almu_com2.TabIndex = 77;
-            this.lbl_almu_com2.Text = "cantidad";
-            // 
-            // lbl_llama_com2
-            // 
-            this.lbl_llama_com2.AutoSize = true;
-            this.lbl_llama_com2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_llama_com2.Location = new System.Drawing.Point(187, 192);
-            this.lbl_llama_com2.Name = "lbl_llama_com2";
-            this.lbl_llama_com2.Size = new System.Drawing.Size(56, 16);
-            this.lbl_llama_com2.TabIndex = 78;
-            this.lbl_llama_com2.Text = "cantidad";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(165, 208);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(16, 16);
-            this.label22.TabIndex = 79;
-            this.label22.Text = "+";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(165, 222);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(16, 16);
-            this.label21.TabIndex = 80;
-            this.label21.Text = "+";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(165, 236);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(16, 16);
-            this.label20.TabIndex = 81;
-            this.label20.Text = "+";
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(165, 250);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(16, 16);
-            this.label19.TabIndex = 82;
-            this.label19.Text = "+";
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(165, 192);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(16, 16);
-            this.label18.TabIndex = 83;
-            this.label18.Text = "+";
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(485, 188);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(56, 16);
-            this.label43.TabIndex = 84;
-            this.label43.Text = "Llamada";
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(485, 204);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(54, 16);
-            this.label42.TabIndex = 85;
-            this.label42.Text = "Reunión";
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(485, 218);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(42, 16);
-            this.label41.TabIndex = 86;
-            this.label41.Text = "Tarea";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(485, 232);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(38, 16);
-            this.label40.TabIndex = 87;
-            this.label40.Text = "Plazo";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label39.Location = new System.Drawing.Point(485, 246);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(62, 16);
-            this.label39.TabIndex = 88;
-            this.label39.Text = "Almuerzo";
-            // 
-            // lbl_reu_pen1
-            // 
-            this.lbl_reu_pen1.AutoSize = true;
-            this.lbl_reu_pen1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_reu_pen1.Location = new System.Drawing.Point(423, 204);
-            this.lbl_reu_pen1.Name = "lbl_reu_pen1";
-            this.lbl_reu_pen1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_reu_pen1.TabIndex = 89;
-            this.lbl_reu_pen1.Text = "cant";
-            // 
-            // lbl_tarea_pen1
-            // 
-            this.lbl_tarea_pen1.AutoSize = true;
-            this.lbl_tarea_pen1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tarea_pen1.Location = new System.Drawing.Point(423, 218);
-            this.lbl_tarea_pen1.Name = "lbl_tarea_pen1";
-            this.lbl_tarea_pen1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_tarea_pen1.TabIndex = 90;
-            this.lbl_tarea_pen1.Text = "cant";
-            // 
-            // lbl_plazo_pen1
-            // 
-            this.lbl_plazo_pen1.AutoSize = true;
-            this.lbl_plazo_pen1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_plazo_pen1.Location = new System.Drawing.Point(423, 232);
-            this.lbl_plazo_pen1.Name = "lbl_plazo_pen1";
-            this.lbl_plazo_pen1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_plazo_pen1.TabIndex = 91;
-            this.lbl_plazo_pen1.Text = "cant";
-            // 
-            // lbl_almu_pen1
-            // 
-            this.lbl_almu_pen1.AutoSize = true;
-            this.lbl_almu_pen1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_almu_pen1.Location = new System.Drawing.Point(423, 246);
-            this.lbl_almu_pen1.Name = "lbl_almu_pen1";
-            this.lbl_almu_pen1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_almu_pen1.TabIndex = 92;
-            this.lbl_almu_pen1.Text = "cant";
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(474, 246);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(0, 16);
-            this.label34.TabIndex = 93;
-            // 
-            // lbl_llama_pen1
-            // 
-            this.lbl_llama_pen1.AutoSize = true;
-            this.lbl_llama_pen1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_llama_pen1.Location = new System.Drawing.Point(423, 188);
-            this.lbl_llama_pen1.Name = "lbl_llama_pen1";
-            this.lbl_llama_pen1.Size = new System.Drawing.Size(32, 16);
-            this.lbl_llama_pen1.TabIndex = 94;
-            this.lbl_llama_pen1.Text = "cant";
-            // 
-            // lbl_reu_pen2
-            // 
-            this.lbl_reu_pen2.AutoSize = true;
-            this.lbl_reu_pen2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_reu_pen2.Location = new System.Drawing.Point(578, 204);
-            this.lbl_reu_pen2.Name = "lbl_reu_pen2";
-            this.lbl_reu_pen2.Size = new System.Drawing.Size(56, 16);
-            this.lbl_reu_pen2.TabIndex = 95;
-            this.lbl_reu_pen2.Text = "cantidad";
-            // 
-            // lbl_tarea_pen2
-            // 
-            this.lbl_tarea_pen2.AutoSize = true;
-            this.lbl_tarea_pen2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_tarea_pen2.Location = new System.Drawing.Point(578, 218);
-            this.lbl_tarea_pen2.Name = "lbl_tarea_pen2";
-            this.lbl_tarea_pen2.Size = new System.Drawing.Size(56, 16);
-            this.lbl_tarea_pen2.TabIndex = 96;
-            this.lbl_tarea_pen2.Text = "cantidad";
-            // 
-            // lbl_plazo_pen2
-            // 
-            this.lbl_plazo_pen2.AutoSize = true;
-            this.lbl_plazo_pen2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_plazo_pen2.Location = new System.Drawing.Point(578, 232);
-            this.lbl_plazo_pen2.Name = "lbl_plazo_pen2";
-            this.lbl_plazo_pen2.Size = new System.Drawing.Size(56, 16);
-            this.lbl_plazo_pen2.TabIndex = 97;
-            this.lbl_plazo_pen2.Text = "cantidad";
-            // 
-            // lbl_almu_pen2
-            // 
-            this.lbl_almu_pen2.AutoSize = true;
-            this.lbl_almu_pen2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_almu_pen2.Location = new System.Drawing.Point(578, 246);
-            this.lbl_almu_pen2.Name = "lbl_almu_pen2";
-            this.lbl_almu_pen2.Size = new System.Drawing.Size(56, 16);
-            this.lbl_almu_pen2.TabIndex = 98;
-            this.lbl_almu_pen2.Text = "cantidad";
-            // 
-            // lbl_llama_pen2
-            // 
-            this.lbl_llama_pen2.AutoSize = true;
-            this.lbl_llama_pen2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_llama_pen2.Location = new System.Drawing.Point(578, 188);
-            this.lbl_llama_pen2.Name = "lbl_llama_pen2";
-            this.lbl_llama_pen2.Size = new System.Drawing.Size(56, 16);
-            this.lbl_llama_pen2.TabIndex = 99;
-            this.lbl_llama_pen2.Text = "cantidad";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(556, 204);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(16, 16);
-            this.label27.TabIndex = 100;
-            this.label27.Text = "+";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(556, 218);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(16, 16);
-            this.label26.TabIndex = 101;
-            this.label26.Text = "+";
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(556, 232);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(16, 16);
-            this.label25.TabIndex = 102;
-            this.label25.Text = "+";
-            // 
-            // label24
-            // 
-            this.label24.AutoSize = true;
-            this.label24.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(556, 246);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(16, 16);
-            this.label24.TabIndex = 103;
-            this.label24.Text = "+";
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(556, 188);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(16, 16);
-            this.label23.TabIndex = 104;
-            this.label23.Text = "+";
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label44.Location = new System.Drawing.Point(444, 150);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(160, 16);
-            this.label44.TabIndex = 105;
-            this.label44.Text = "Actividades Pendientes";
-            // 
-            // dgv_negocios_ganados
-            // 
-            this.dgv_negocios_ganados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_negocios_ganados.Location = new System.Drawing.Point(8, 287);
-            this.dgv_negocios_ganados.Name = "dgv_negocios_ganados";
-            this.dgv_negocios_ganados.Size = new System.Drawing.Size(216, 73);
-            this.dgv_negocios_ganados.TabIndex = 106;
-            this.dgv_negocios_ganados.Visible = false;
-            // 
-            // dgv_nego_perdidos
-            // 
-            this.dgv_nego_perdidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_nego_perdidos.Location = new System.Drawing.Point(248, 287);
-            this.dgv_nego_perdidos.Name = "dgv_nego_perdidos";
-            this.dgv_nego_perdidos.Size = new System.Drawing.Size(170, 73);
-            this.dgv_nego_perdidos.TabIndex = 107;
-            this.dgv_nego_perdidos.Visible = false;
-            // 
-            // dgv_negos_proceso
-            // 
-            this.dgv_negos_proceso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_negos_proceso.Location = new System.Drawing.Point(424, 287);
-            this.dgv_negos_proceso.Name = "dgv_negos_proceso";
-            this.dgv_negos_proceso.Size = new System.Drawing.Size(216, 73);
-            this.dgv_negos_proceso.TabIndex = 108;
-            this.dgv_negos_proceso.Visible = false;
-            // 
-            // btn_eshta_semana
-            // 
-            this.btn_eshta_semana.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_eshta_semana.Appearance.Options.UseFont = true;
-            this.btn_eshta_semana.Location = new System.Drawing.Point(118, 15);
-            this.btn_eshta_semana.Name = "btn_eshta_semana";
-            this.btn_eshta_semana.Size = new System.Drawing.Size(90, 23);
-            this.btn_eshta_semana.TabIndex = 10;
-            this.btn_eshta_semana.Text = "Esta Semana";
-            this.btn_eshta_semana.Click += new System.EventHandler(this.btn_eshta_semana_Click);
-            // 
-            // btn_mes_pasado
-            // 
-            this.btn_mes_pasado.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mes_pasado.Appearance.Options.UseFont = true;
-            this.btn_mes_pasado.Location = new System.Drawing.Point(396, 15);
-            this.btn_mes_pasado.Name = "btn_mes_pasado";
-            this.btn_mes_pasado.Size = new System.Drawing.Size(84, 23);
-            this.btn_mes_pasado.TabIndex = 11;
-            this.btn_mes_pasado.Text = "Mes pasado";
-            this.btn_mes_pasado.Click += new System.EventHandler(this.btn_mes_pasado_Click);
-            // 
-            // btn_semana_pasada
-            // 
-            this.btn_semana_pasada.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_semana_pasada.Appearance.Options.UseFont = true;
-            this.btn_semana_pasada.Location = new System.Drawing.Point(217, 15);
-            this.btn_semana_pasada.Name = "btn_semana_pasada";
-            this.btn_semana_pasada.Size = new System.Drawing.Size(101, 23);
-            this.btn_semana_pasada.TabIndex = 13;
-            this.btn_semana_pasada.Text = "Semana pasada";
-            this.btn_semana_pasada.Click += new System.EventHandler(this.btn_semana_pasada_Click);
-            // 
-            // btn_hoy
-            // 
-            this.btn_hoy.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_hoy.Appearance.Options.UseFont = true;
-            this.btn_hoy.Location = new System.Drawing.Point(9, 15);
-            this.btn_hoy.Name = "btn_hoy";
-            this.btn_hoy.Size = new System.Drawing.Size(34, 23);
-            this.btn_hoy.TabIndex = 14;
-            this.btn_hoy.Text = "Hoy";
-            this.btn_hoy.Click += new System.EventHandler(this.btn_hoy_Click);
-            // 
-            // btn_ayer
-            // 
-            this.btn_ayer.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_ayer.Appearance.Options.UseFont = true;
-            this.btn_ayer.Location = new System.Drawing.Point(66, 15);
-            this.btn_ayer.Name = "btn_ayer";
-            this.btn_ayer.Size = new System.Drawing.Size(39, 23);
-            this.btn_ayer.TabIndex = 15;
-            this.btn_ayer.Text = "Ayer";
-            this.btn_ayer.Click += new System.EventHandler(this.btn_ayer_Click);
-            // 
-            // btn_periodo_personalizado
-            // 
-            this.btn_periodo_personalizado.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_periodo_personalizado.Appearance.Options.UseFont = true;
-            this.btn_periodo_personalizado.Location = new System.Drawing.Point(500, 15);
-            this.btn_periodo_personalizado.Name = "btn_periodo_personalizado";
-            this.btn_periodo_personalizado.Size = new System.Drawing.Size(154, 23);
-            this.btn_periodo_personalizado.TabIndex = 16;
-            this.btn_periodo_personalizado.Text = "Periodo personalizado";
-            this.btn_periodo_personalizado.Click += new System.EventHandler(this.btn_periodo_personalizado_Click);
-            // 
-            // btn_mensual
-            // 
-            this.btn_mensual.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btn_mensual.Appearance.Options.UseFont = true;
-            this.btn_mensual.Location = new System.Drawing.Point(323, 15);
-            this.btn_mensual.Name = "btn_mensual";
-            this.btn_mensual.Size = new System.Drawing.Size(68, 23);
-            this.btn_mensual.TabIndex = 106;
-            this.btn_mensual.Text = "Este mes";
-            this.btn_mensual.Click += new System.EventHandler(this.btn_mensual_Click);
+            // label60
+            // 
+            this.label60.AutoSize = true;
+            this.label60.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label60.Location = new System.Drawing.Point(106, 2);
+            this.label60.Name = "label60";
+            this.label60.Size = new System.Drawing.Size(16, 16);
+            this.label60.TabIndex = 43;
+            this.label60.Text = "+";
+            // 
+            // label61
+            // 
+            this.label61.AutoSize = true;
+            this.label61.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label61.Location = new System.Drawing.Point(71, 2);
+            this.label61.Name = "label61";
+            this.label61.Size = new System.Drawing.Size(33, 16);
+            this.label61.TabIndex = 40;
+            this.label61.Text = "GTQ";
+            // 
+            // panelControl4
+            // 
+            this.panelControl4.Controls.Add(this.lbl_neg_ini1);
+            this.panelControl4.Controls.Add(this.lbl_neg_ini2);
+            this.panelControl4.Controls.Add(this.label52);
+            this.panelControl4.Controls.Add(this.label53);
+            this.panelControl4.Location = new System.Drawing.Point(435, 57);
+            this.panelControl4.Name = "panelControl4";
+            this.panelControl4.Size = new System.Drawing.Size(187, 24);
+            this.panelControl4.TabIndex = 45;
+            // 
+            // lbl_neg_ini1
+            // 
+            this.lbl_neg_ini1.AutoSize = true;
+            this.lbl_neg_ini1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_neg_ini1.Location = new System.Drawing.Point(7, 2);
+            this.lbl_neg_ini1.Name = "lbl_neg_ini1";
+            this.lbl_neg_ini1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_neg_ini1.TabIndex = 41;
+            this.lbl_neg_ini1.Text = "cant";
+            // 
+            // lbl_neg_ini2
+            // 
+            this.lbl_neg_ini2.AutoSize = true;
+            this.lbl_neg_ini2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_neg_ini2.Location = new System.Drawing.Point(120, 2);
+            this.lbl_neg_ini2.Name = "lbl_neg_ini2";
+            this.lbl_neg_ini2.Size = new System.Drawing.Size(32, 16);
+            this.lbl_neg_ini2.TabIndex = 42;
+            this.lbl_neg_ini2.Text = "cant";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label52.Location = new System.Drawing.Point(109, 2);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(16, 16);
+            this.label52.TabIndex = 43;
+            this.label52.Text = "+";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label53.Location = new System.Drawing.Point(54, 2);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(59, 16);
+            this.label53.TabIndex = 40;
+            this.label53.Text = "Negocios";
+            // 
+            // panelControl7
+            // 
+            this.panelControl7.Controls.Add(this.lbl_monto_per1);
+            this.panelControl7.Controls.Add(this.lbl_monto_per2);
+            this.panelControl7.Controls.Add(this.label64);
+            this.panelControl7.Controls.Add(this.label65);
+            this.panelControl7.Location = new System.Drawing.Point(223, 85);
+            this.panelControl7.Name = "panelControl7";
+            this.panelControl7.Size = new System.Drawing.Size(170, 24);
+            this.panelControl7.TabIndex = 47;
+            // 
+            // lbl_monto_per1
+            // 
+            this.lbl_monto_per1.AutoSize = true;
+            this.lbl_monto_per1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_monto_per1.Location = new System.Drawing.Point(7, 2);
+            this.lbl_monto_per1.Name = "lbl_monto_per1";
+            this.lbl_monto_per1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_monto_per1.TabIndex = 41;
+            this.lbl_monto_per1.Text = "cant";
+            // 
+            // lbl_monto_per2
+            // 
+            this.lbl_monto_per2.AutoSize = true;
+            this.lbl_monto_per2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_monto_per2.Location = new System.Drawing.Point(110, 2);
+            this.lbl_monto_per2.Name = "lbl_monto_per2";
+            this.lbl_monto_per2.Size = new System.Drawing.Size(32, 16);
+            this.lbl_monto_per2.TabIndex = 42;
+            this.lbl_monto_per2.Text = "cant";
+            // 
+            // label64
+            // 
+            this.label64.AutoSize = true;
+            this.label64.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label64.Location = new System.Drawing.Point(99, 2);
+            this.label64.Name = "label64";
+            this.label64.Size = new System.Drawing.Size(16, 16);
+            this.label64.TabIndex = 43;
+            this.label64.Text = "+";
+            // 
+            // label65
+            // 
+            this.label65.AutoSize = true;
+            this.label65.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label65.Location = new System.Drawing.Point(68, 2);
+            this.label65.Name = "label65";
+            this.label65.Size = new System.Drawing.Size(33, 16);
+            this.label65.TabIndex = 40;
+            this.label65.Text = "GTQ";
+            // 
+            // panelControl5
+            // 
+            this.panelControl5.Controls.Add(this.lbl_neg_perdido1);
+            this.panelControl5.Controls.Add(this.lbl_neg_perdido2);
+            this.panelControl5.Controls.Add(this.label56);
+            this.panelControl5.Controls.Add(this.label57);
+            this.panelControl5.Location = new System.Drawing.Point(223, 55);
+            this.panelControl5.Name = "panelControl5";
+            this.panelControl5.Size = new System.Drawing.Size(170, 24);
+            this.panelControl5.TabIndex = 45;
+            // 
+            // lbl_neg_perdido1
+            // 
+            this.lbl_neg_perdido1.AutoSize = true;
+            this.lbl_neg_perdido1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_neg_perdido1.Location = new System.Drawing.Point(7, 2);
+            this.lbl_neg_perdido1.Name = "lbl_neg_perdido1";
+            this.lbl_neg_perdido1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_neg_perdido1.TabIndex = 41;
+            this.lbl_neg_perdido1.Text = "cant";
+            // 
+            // lbl_neg_perdido2
+            // 
+            this.lbl_neg_perdido2.AutoSize = true;
+            this.lbl_neg_perdido2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_neg_perdido2.Location = new System.Drawing.Point(113, 2);
+            this.lbl_neg_perdido2.Name = "lbl_neg_perdido2";
+            this.lbl_neg_perdido2.Size = new System.Drawing.Size(32, 16);
+            this.lbl_neg_perdido2.TabIndex = 42;
+            this.lbl_neg_perdido2.Text = "cant";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label56.Location = new System.Drawing.Point(102, 2);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(16, 16);
+            this.label56.TabIndex = 43;
+            this.label56.Text = "+";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label57.Location = new System.Drawing.Point(47, 2);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(59, 16);
+            this.label57.TabIndex = 40;
+            this.label57.Text = "Negocios";
+            // 
+            // panelControl8
+            // 
+            this.panelControl8.Controls.Add(this.label69);
+            this.panelControl8.Controls.Add(this.lbl_monto_gan1);
+            this.panelControl8.Controls.Add(this.lbl_monto_gan2);
+            this.panelControl8.Controls.Add(this.label68);
+            this.panelControl8.Location = new System.Drawing.Point(31, 85);
+            this.panelControl8.Name = "panelControl8";
+            this.panelControl8.Size = new System.Drawing.Size(168, 24);
+            this.panelControl8.TabIndex = 46;
+            // 
+            // label69
+            // 
+            this.label69.AutoSize = true;
+            this.label69.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label69.Location = new System.Drawing.Point(65, 2);
+            this.label69.Name = "label69";
+            this.label69.Size = new System.Drawing.Size(33, 16);
+            this.label69.TabIndex = 44;
+            this.label69.Text = "GTQ";
+            // 
+            // lbl_monto_gan1
+            // 
+            this.lbl_monto_gan1.AutoSize = true;
+            this.lbl_monto_gan1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_monto_gan1.Location = new System.Drawing.Point(7, 2);
+            this.lbl_monto_gan1.Name = "lbl_monto_gan1";
+            this.lbl_monto_gan1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_monto_gan1.TabIndex = 41;
+            this.lbl_monto_gan1.Text = "cant";
+            // 
+            // lbl_monto_gan2
+            // 
+            this.lbl_monto_gan2.AutoSize = true;
+            this.lbl_monto_gan2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_monto_gan2.Location = new System.Drawing.Point(110, 2);
+            this.lbl_monto_gan2.Name = "lbl_monto_gan2";
+            this.lbl_monto_gan2.Size = new System.Drawing.Size(32, 16);
+            this.lbl_monto_gan2.TabIndex = 42;
+            this.lbl_monto_gan2.Text = "cant";
+            // 
+            // label68
+            // 
+            this.label68.AutoSize = true;
+            this.label68.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label68.Location = new System.Drawing.Point(99, 2);
+            this.label68.Name = "label68";
+            this.label68.Size = new System.Drawing.Size(16, 16);
+            this.label68.TabIndex = 43;
+            this.label68.Text = "+";
+            // 
+            // panelControl3
+            // 
+            this.panelControl3.Controls.Add(this.lbl_neg_ganado2);
+            this.panelControl3.Controls.Add(this.lbl_neg_ganado1);
+            this.panelControl3.Controls.Add(this.label46);
+            this.panelControl3.Controls.Add(this.label49);
+            this.panelControl3.Location = new System.Drawing.Point(31, 55);
+            this.panelControl3.Name = "panelControl3";
+            this.panelControl3.Size = new System.Drawing.Size(168, 24);
+            this.panelControl3.TabIndex = 44;
+            // 
+            // lbl_neg_ganado2
+            // 
+            this.lbl_neg_ganado2.AutoSize = true;
+            this.lbl_neg_ganado2.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_neg_ganado2.Location = new System.Drawing.Point(7, 2);
+            this.lbl_neg_ganado2.Name = "lbl_neg_ganado2";
+            this.lbl_neg_ganado2.Size = new System.Drawing.Size(32, 16);
+            this.lbl_neg_ganado2.TabIndex = 41;
+            this.lbl_neg_ganado2.Text = "cant";
+            // 
+            // lbl_neg_ganado1
+            // 
+            this.lbl_neg_ganado1.AutoSize = true;
+            this.lbl_neg_ganado1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_neg_ganado1.Location = new System.Drawing.Point(116, 2);
+            this.lbl_neg_ganado1.Name = "lbl_neg_ganado1";
+            this.lbl_neg_ganado1.Size = new System.Drawing.Size(32, 16);
+            this.lbl_neg_ganado1.TabIndex = 42;
+            this.lbl_neg_ganado1.Text = "cant";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label46.Location = new System.Drawing.Point(105, 2);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(16, 16);
+            this.label46.TabIndex = 43;
+            this.label46.Text = "+";
+            // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label49.Location = new System.Drawing.Point(50, 2);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(59, 16);
+            this.label49.TabIndex = 40;
+            this.label49.Text = "Negocios";
+            // 
+            // lbl_negocios_iniciados
+            // 
+            this.lbl_negocios_iniciados.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_negocios_iniciados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_negocios_iniciados.Location = new System.Drawing.Point(435, 35);
+            this.lbl_negocios_iniciados.Name = "lbl_negocios_iniciados";
+            this.lbl_negocios_iniciados.Size = new System.Drawing.Size(118, 16);
+            this.lbl_negocios_iniciados.TabIndex = 2;
+            this.lbl_negocios_iniciados.Text = "Negocios Iniciados";
+            this.lbl_negocios_iniciados.Click += new System.EventHandler(this.lbl_negocios_iniciados_Click);
+            // 
+            // lbl_negocios_perdidos
+            // 
+            this.lbl_negocios_perdidos.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_negocios_perdidos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_negocios_perdidos.Location = new System.Drawing.Point(223, 33);
+            this.lbl_negocios_perdidos.Name = "lbl_negocios_perdidos";
+            this.lbl_negocios_perdidos.Size = new System.Drawing.Size(117, 16);
+            this.lbl_negocios_perdidos.TabIndex = 1;
+            this.lbl_negocios_perdidos.Text = "Negocios Perdidos";
+            this.lbl_negocios_perdidos.Click += new System.EventHandler(this.lbl_negocios_perdidos_Click);
+            // 
+            // lbl_negocios_ganados
+            // 
+            this.lbl_negocios_ganados.Appearance.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_negocios_ganados.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbl_negocios_ganados.Location = new System.Drawing.Point(31, 33);
+            this.lbl_negocios_ganados.Name = "lbl_negocios_ganados";
+            this.lbl_negocios_ganados.Size = new System.Drawing.Size(116, 16);
+            this.lbl_negocios_ganados.TabIndex = 0;
+            this.lbl_negocios_ganados.Text = "Negocios Ganados";
+            this.lbl_negocios_ganados.Click += new System.EventHandler(this.lbl_negocios_ganados_Click);
             // 
             // tab_casos
             // 
@@ -1424,7 +1435,7 @@
             this.tabNavigationPage3});
             this.tab_casos.RegularSize = new System.Drawing.Size(676, 467);
             this.tab_casos.SelectedPage = this.tabNavigationPage2;
-            this.tab_casos.SelectedPageIndex = 2;
+            this.tab_casos.SelectedPageIndex = 0;
             this.tab_casos.Size = new System.Drawing.Size(676, 467);
             this.tab_casos.TabIndex = 6;
             this.tab_casos.Text = "Casos";
@@ -1451,39 +1462,40 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_prueba)).EndInit();
             this.tabNavigationPage3.ResumeLayout(false);
             this.tabNavigationPage3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_historial_actualizaciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView2)).EndInit();
             this.tabNavigationPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.panelControl1)).EndInit();
             this.panelControl1.ResumeLayout(false);
             this.panelControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
-            this.panelControl3.ResumeLayout(false);
-            this.panelControl3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
-            this.panelControl8.ResumeLayout(false);
-            this.panelControl8.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
-            this.panelControl5.ResumeLayout(false);
-            this.panelControl5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
-            this.panelControl7.ResumeLayout(false);
-            this.panelControl7.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
-            this.panelControl4.ResumeLayout(false);
-            this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_negos_proceso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nego_perdidos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_negocios_ganados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.panelControl6)).EndInit();
             this.panelControl6.ResumeLayout(false);
             this.panelControl6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_negocios_ganados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_nego_perdidos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_negos_proceso)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl4)).EndInit();
+            this.panelControl4.ResumeLayout(false);
+            this.panelControl4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl7)).EndInit();
+            this.panelControl7.ResumeLayout(false);
+            this.panelControl7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl5)).EndInit();
+            this.panelControl5.ResumeLayout(false);
+            this.panelControl5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl8)).EndInit();
+            this.panelControl8.ResumeLayout(false);
+            this.panelControl8.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.panelControl3)).EndInit();
+            this.panelControl3.ResumeLayout(false);
+            this.panelControl3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tab_casos)).EndInit();
             this.tab_casos.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -1521,7 +1533,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn vencimiento;
         private System.Windows.Forms.DataGridViewTextBoxColumn completo;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage2;
-        private System.Windows.Forms.DataGridView dataGridView2;
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage1;
         public DevExpress.XtraEditors.SimpleButton btn_mensual;
         private DevExpress.XtraEditors.SimpleButton btn_periodo_personalizado;
@@ -1612,5 +1623,7 @@
         private DevExpress.XtraEditors.LabelControl lbl_negocios_perdidos;
         private DevExpress.XtraEditors.LabelControl lbl_negocios_ganados;
         private DevExpress.XtraBars.Navigation.TabPane tab_casos;
+        private DevExpress.XtraGrid.GridControl dgv_historial_actualizaciones;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView2;
     }
 }

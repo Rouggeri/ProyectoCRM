@@ -79,7 +79,7 @@
     </Reference>
     <Reference Include="seguridad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Users\Chrix\Desktop\9o semestre\IS\seguridad\seguridad\bin\Debug\seguridad.dll</HintPath>
+      <HintPath>..\..\seguridad\seguridad\seguridad\bin\Debug\seguridad.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />

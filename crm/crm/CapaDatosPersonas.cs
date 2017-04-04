@@ -11,6 +11,7 @@ namespace crm
 {
     public class CapaDatosPersonas
     {
+        // ---------------------- MARVIN ROUGGERI YOQUE LOPEZ 0901-13-281
         // -------------------------------- FRM_CLIENTE: 
 
         //1.  insertción de nuevo cliente
@@ -396,6 +397,19 @@ namespace crm
         {
             DataTable carga = new DataTable();
             string cadena = "select  ca.titulo, cl.nombres, cl.apellidos  ,empre.nombre, ca.fecha_limite, ca.estado , emple.nombres from caso ca, tbl_cliente cl , tbl_empleado emple, empresa empre where ca.id_cliente = cl.id_cliente and ca.id_empresa = empre.id_empresa and ca.id_empleado = emple.id_empleado and ca.id_empleado = '" + id_empleado+"'; ";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
+
+        // 4. seleccion de datos para tareas (historial)
+        
+
+        public DataTable consultar_tareas(string id_empleado)
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select tbl_tarea.id_tarea, tbl_tarea.id_empleado, Tipo_tarea.tipo, tbl_negocio.titulo, caso.titulo, tbl_tarea.estado_tarea, tbl_tarea.criticidad, tbl_tarea.fecha_asignacion, tbl_tarea.fecha_establecida from (tbl_tarea left join tbl_negocio on tbl_tarea.id_negocio = tbl_negocio.id_negocio) left join caso on caso.id_caso = tbl_tarea.id_caso left join Tipo_tarea on Tipo_tarea.id_tipo = tbl_tarea.id_tipo where tbl_tarea.id_empleado = '"+id_empleado+"';";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
