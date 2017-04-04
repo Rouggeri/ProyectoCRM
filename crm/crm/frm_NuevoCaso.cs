@@ -374,7 +374,7 @@ namespace crm
 
                 if (valor_empresa == "")
                 {
-                    valor_empresa = "4";
+                    valor_empresa = "0";
                 }
 
                 // conversion de fecha para que sea aceptada por mysql
@@ -500,7 +500,7 @@ namespace crm
 
                 if (valor_empresa == "")
                 {
-                    valor_empresa = "4";
+                    valor_empresa = "0";
                 }
 
                 // conversion de fecha para que sea aceptada por mysql

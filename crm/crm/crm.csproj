@@ -79,7 +79,7 @@
     </Reference>
     <Reference Include="seguridad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\Users\Chrix\Desktop\9o semestre\IS\seguridad\seguridad\bin\Debug\seguridad.dll</HintPath>
+      <HintPath>..\..\seguridad\seguridad\seguridad\bin\Debug\seguridad.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -96,6 +96,11 @@
   <ItemGroup>
     <Compile Include="CapaDatosPersonas.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="crmbdDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>crmbdDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +190,12 @@
     </Compile>
     <Compile Include="frm_estadistica_empresa.Designer.cs">
       <DependentUpon>frm_estadistica_empresa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_estadistica_negocio_descripcion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_estadistica_negocio_descripcion.Designer.cs">
+      <DependentUpon>frm_estadistica_negocio_descripcion.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_estadistica_personal.cs">
       <SubType>Form</SubType>
@@ -282,6 +293,9 @@
     <EmbeddedResource Include="frm_estadistica_empresa.resx">
       <DependentUpon>frm_estadistica_empresa.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_estadistica_negocio_descripcion.resx">
+      <DependentUpon>frm_estadistica_negocio_descripcion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_estadistica_personal.resx">
       <DependentUpon>frm_estadistica_personal.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,6 +331,17 @@
     <EmbeddedResource Include="prueba.resx">
       <DependentUpon>prueba.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="crmbdDataSet.xsc">
+      <DependentUpon>crmbdDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="crmbdDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>crmbdDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="crmbdDataSet.xss">
+      <DependentUpon>crmbdDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

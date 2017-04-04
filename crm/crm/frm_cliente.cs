@@ -153,7 +153,8 @@ namespace crm
 
                     if (valor_empresa == "")
                     {
-                        valor_empresa = "4";
+                        //valor_empresa = "4";
+                        valor_empresa = "0";
                     }
                     CapaDatosPersonas inserta = new CapaDatosPersonas();
                     inserta.InsertarNuevoCliente(txt_nombres.Text.Trim(), txt_apellidos.Text.Trim(),
