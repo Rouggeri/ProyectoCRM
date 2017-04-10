@@ -15,6 +15,13 @@ using System.Threading;
 using System.Net;
 using System.Xml;
 using System.Globalization;
+using DevExpress.XtraEditors;
+using DevExpress.XtraCharts;
+//using System.Windows.Forms.DataVisualization.Charting;
+
+
+
+
 
 namespace crm
 {
@@ -28,7 +35,12 @@ namespace crm
 
 
         CapaDatosPersonas CapaDatos = new CapaDatosPersonas();
-        // -------------------------------------AREA DE VARIABLES
+        // -------------------------------------AREA DE VARIABLES GLOBALES
+
+            // grafica de pie para desempeño del usuario
+        ChartControl pie = new ChartControl();
+
+
 
         string var_id_usuario = ""; // id de usuario para consultar en la base de datos, tomado del combobox
         // variables para determinar fecha y dia
@@ -59,10 +71,13 @@ namespace crm
         DataTable dt_nego_ganado = new DataTable();
         DataTable dt_nego_perdido = new DataTable();
         DataTable dt_nego_proceso = new DataTable();
+        // ---------------------------------------------------- VARIABLES DE CONTADOR DE CASOS PENDIENTES O REALIZADOS PARA GRAFICA DE PIE DE CASOS - RENDIMIENTO DE EMPLEADO
+        int cont_caso_fin = 0;
+        int cont_caso_reali = 0;
 
               
-
-
+        
+        // LOAD del formulario de estadisticas personales:
 
         private void frm_estadistica_personal_Load(object sender, EventArgs e)
         {
@@ -211,7 +226,19 @@ namespace crm
         // combobox de usuarios
         private void cmb_usuarios_SelectedIndexChanged(object sender, EventArgs e)
         {
+            // limpieza de variables para grafica de dona o pie:
+            pie.DataSource = null;
+            pie.Series.Clear();
+            //pie.Series.Clear();
+            // inicializaciòn de variables contadores de casos activos o inactivos
+            cont_caso_fin = 0;
+            cont_caso_reali = 0;
             
+            
+            //pie.Update();
+            //pie.Refresh();
+           
+
             try
             {
                 var_id_usuario = cmb_usuarios.SelectedValue.ToString();
@@ -281,6 +308,73 @@ namespace crm
             tareas = CapaDatos.consultar_tareas(var_id_usuario);
             dgv_historial_actualizaciones.DataSource = tareas;
 
+
+            // ----------------- creacion de grafica de pie para casos rendimientos -----------------------
+            // Fondo de grafica transparente y borde:
+            pie.BackColor = Color.Transparent;
+            pie.BorderOptions.Color = Color.Transparent;
+
+
+            // seleccion de numero de casos finalizados y no finalizados para hacer grafica de pie en CASOS
+            foreach (DataRow fila in casos.Rows)
+            {
+                if (fila["estado"].ToString() == "activo")
+                {
+                    cont_caso_reali = cont_caso_reali + 1;
+                }
+                else if (fila["estado"].ToString() == "inactivo")
+                {
+                    cont_caso_fin = cont_caso_fin + 1;
+                }
+            }
+            //if (cont_caso_fin == 0 || cont_caso_reali == 0)
+            //{
+            //    MessageBox.Show("Datos insuficientes para generar grafico");
+            //}
+            //else
+            //{
+                    
+                               
+                DataTable dt_pie = new DataTable();
+
+                dt_pie.Columns.Add("estado", typeof(string));
+                dt_pie.Columns.Add("cantidad", typeof(Int32));
+
+                
+                dt_pie.Rows.Add(new object[] { "Casos Finalizados", cont_caso_fin });
+                dt_pie.Rows.Add(new object[] { "Casos Activos", cont_caso_reali });
+
+
+                Series serie1 = new Series("pie", ViewType.Doughnut3D);
+
+                foreach (DataRow row in dt_pie.Rows)
+                {
+                    string estado = row["estado"].ToString();
+                    string cantidad = row["cantidad"].ToString();
+                    serie1.Points.Add(new SeriesPoint(estado, cantidad));
+                }
+                pie.Series.Add(serie1);
+                
+                serie1.PointOptions.ValueNumericOptions.Precision = 0;
+                serie1.PointOptions.PointView = PointView.ArgumentAndValues;
+
+                ((Pie3DSeriesView)serie1.View).Depth = 30;
+                ((Pie3DSeriesView)serie1.View).ExplodedPoints.Add(serie1.Points[0]);
+                ((Pie3DSeriesView)serie1.View).ExplodedDistancePercentage = 30;
+
+                ((SimpleDiagram3D)pie.Diagram).RotationType = RotationType.UseAngles;
+                ((SimpleDiagram3D)pie.Diagram).RotationAngleX = -35;
+
+                //ChartTitle titulo = new ChartTitle();
+                //titulo.Text = "Rendimiento de Usuario";
+                //pie.Titles.Add(titulo);
+                pie.Legend.Visible = true;
+
+                pie.Dock = DockStyle.Fill;
+                blanco.Controls.Add(pie);
+
+                
+            //}
         }
 
 

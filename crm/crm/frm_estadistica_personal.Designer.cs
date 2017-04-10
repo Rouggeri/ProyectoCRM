@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DevExpress.XtraCharts.Series series2 = new DevExpress.XtraCharts.Series();
-            DevExpress.XtraCharts.PieSeriesView pieSeriesView2 = new DevExpress.XtraCharts.PieSeriesView();
+            DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
+            DevExpress.XtraCharts.PieSeriesLabel pieSeriesLabel1 = new DevExpress.XtraCharts.PieSeriesLabel();
+            DevExpress.XtraCharts.PieSeriesView pieSeriesView1 = new DevExpress.XtraCharts.PieSeriesView();
             this.label1 = new System.Windows.Forms.Label();
             this.Grafíca = new DevExpress.XtraEditors.GroupControl();
             this.lbl_apellidos = new System.Windows.Forms.Label();
@@ -49,7 +50,7 @@
             this.tabNavigationPage3 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.dgv_casos = new DevExpress.XtraGrid.GridControl();
             this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.chartControl1 = new DevExpress.XtraCharts.ChartControl();
+            this.blanco = new DevExpress.XtraCharts.ChartControl();
             this.label2 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.asunto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -157,9 +158,10 @@
             this.tabNavigationPage3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blanco)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.tabNavigationPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_historial_actualizaciones)).BeginInit();
@@ -328,7 +330,7 @@
             // linkLabel2
             // 
             this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Location = new System.Drawing.Point(628, 18);
+            this.linkLabel2.Location = new System.Drawing.Point(9, 569);
             this.linkLabel2.Name = "linkLabel2";
             this.linkLabel2.Size = new System.Drawing.Size(65, 13);
             this.linkLabel2.TabIndex = 8;
@@ -342,14 +344,14 @@
             this.dgv_prueba.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_prueba.Location = new System.Drawing.Point(12, 346);
             this.dgv_prueba.Name = "dgv_prueba";
-            this.dgv_prueba.Size = new System.Drawing.Size(301, 150);
+            this.dgv_prueba.Size = new System.Drawing.Size(10, 10);
             this.dgv_prueba.TabIndex = 9;
             this.dgv_prueba.Visible = false;
             // 
             // lbl_fecha_fin
             // 
             this.lbl_fecha_fin.AutoSize = true;
-            this.lbl_fecha_fin.Location = new System.Drawing.Point(747, 18);
+            this.lbl_fecha_fin.Location = new System.Drawing.Point(9, 582);
             this.lbl_fecha_fin.Name = "lbl_fecha_fin";
             this.lbl_fecha_fin.Size = new System.Drawing.Size(35, 13);
             this.lbl_fecha_fin.TabIndex = 10;
@@ -360,7 +362,7 @@
             // 
             this.tabNavigationPage3.Caption = "Casos";
             this.tabNavigationPage3.Controls.Add(this.dgv_casos);
-            this.tabNavigationPage3.Controls.Add(this.chartControl1);
+            this.tabNavigationPage3.Controls.Add(this.blanco);
             this.tabNavigationPage3.Controls.Add(this.label2);
             this.tabNavigationPage3.Controls.Add(this.dataGridView1);
             this.tabNavigationPage3.Name = "tabNavigationPage3";
@@ -368,10 +370,10 @@
             // 
             // dgv_casos
             // 
-            this.dgv_casos.Location = new System.Drawing.Point(17, 28);
+            this.dgv_casos.Location = new System.Drawing.Point(61, 28);
             this.dgv_casos.MainView = this.gridView1;
             this.dgv_casos.Name = "dgv_casos";
-            this.dgv_casos.Size = new System.Drawing.Size(629, 143);
+            this.dgv_casos.Size = new System.Drawing.Size(585, 143);
             this.dgv_casos.TabIndex = 4;
             this.dgv_casos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gridView1});
@@ -381,16 +383,20 @@
             this.gridView1.GridControl = this.dgv_casos;
             this.gridView1.Name = "gridView1";
             // 
-            // chartControl1
+            // blanco
             // 
-            this.chartControl1.Location = new System.Drawing.Point(17, 200);
-            this.chartControl1.Name = "chartControl1";
-            series2.Name = "Serie1";
-            series2.View = pieSeriesView2;
-            this.chartControl1.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
-        series2};
-            this.chartControl1.Size = new System.Drawing.Size(629, 200);
-            this.chartControl1.TabIndex = 3;
+            this.blanco.BackColor = System.Drawing.Color.White;
+            this.blanco.Legend.BackColor = System.Drawing.Color.White;
+            this.blanco.Location = new System.Drawing.Point(61, 200);
+            this.blanco.Name = "blanco";
+            pieSeriesLabel1.BackColor = System.Drawing.Color.White;
+            series1.Label = pieSeriesLabel1;
+            series1.Name = "Serie1";
+            series1.View = pieSeriesView1;
+            this.blanco.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
+        series1};
+            this.blanco.Size = new System.Drawing.Size(585, 207);
+            this.blanco.TabIndex = 3;
             // 
             // label2
             // 
@@ -398,9 +404,9 @@
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(58, 184);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(221, 13);
+            this.label2.Size = new System.Drawing.Size(188, 13);
             this.label2.TabIndex = 2;
-            this.label2.Text = "Grafica correspondiente a actividades";
+            this.label2.Text = "Grafica correspondiente a casos";
             // 
             // dataGridView1
             // 
@@ -623,7 +629,7 @@
             this.dgv_negos_proceso.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_negos_proceso.Location = new System.Drawing.Point(424, 287);
             this.dgv_negos_proceso.Name = "dgv_negos_proceso";
-            this.dgv_negos_proceso.Size = new System.Drawing.Size(216, 73);
+            this.dgv_negos_proceso.Size = new System.Drawing.Size(10, 10);
             this.dgv_negos_proceso.TabIndex = 108;
             this.dgv_negos_proceso.Visible = false;
             // 
@@ -632,7 +638,7 @@
             this.dgv_nego_perdidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_nego_perdidos.Location = new System.Drawing.Point(248, 287);
             this.dgv_nego_perdidos.Name = "dgv_nego_perdidos";
-            this.dgv_nego_perdidos.Size = new System.Drawing.Size(170, 73);
+            this.dgv_nego_perdidos.Size = new System.Drawing.Size(10, 10);
             this.dgv_nego_perdidos.TabIndex = 107;
             this.dgv_nego_perdidos.Visible = false;
             // 
@@ -641,7 +647,7 @@
             this.dgv_negocios_ganados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv_negocios_ganados.Location = new System.Drawing.Point(8, 287);
             this.dgv_negocios_ganados.Name = "dgv_negocios_ganados";
-            this.dgv_negocios_ganados.Size = new System.Drawing.Size(216, 73);
+            this.dgv_negocios_ganados.Size = new System.Drawing.Size(10, 10);
             this.dgv_negocios_ganados.TabIndex = 106;
             this.dgv_negocios_ganados.Visible = false;
             // 
@@ -1464,9 +1470,10 @@
             this.tabNavigationPage3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(pieSeriesView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(series2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.chartControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(pieSeriesView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(series1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.blanco)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.tabNavigationPage2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_historial_actualizaciones)).EndInit();
@@ -1524,7 +1531,7 @@
         private DevExpress.XtraBars.Navigation.TabNavigationPage tabNavigationPage3;
         private DevExpress.XtraGrid.GridControl dgv_casos;
         private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
-        private DevExpress.XtraCharts.ChartControl chartControl1;
+        private DevExpress.XtraCharts.ChartControl blanco;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn asunto;
