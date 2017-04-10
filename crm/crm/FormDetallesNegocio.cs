@@ -83,6 +83,18 @@ namespace crm
 
             lbl_encargado.Text = nombre_empleado;
             lbl_estado.Text = estado;
+            if(estado == "Perdida")
+            {
+                btn_perdida.ForeColor = Color.White;
+                
+            }else if(estado == "Proceso")
+                  {
+                btn_proceso.ForeColor = Color.White;
+                 }
+            else if(estado == "Ganada")
+                         {
+                         btn_Ganada.ForeColor = Color.White;
+                          }
 
             rtxt_notas.ForeColor = Color.Gray;
             rtxt_notas.Text = "Agrege una nota acerca de " + titulo; ;
@@ -93,6 +105,21 @@ namespace crm
             ObtenerNotas();
             btn_eliminar_nota.Enabled = false;
             btn_eliminar_nota.Visible = false;
+
+            //---------------------tareas--------------
+
+             DataTable dt_tareasneg= OpBD.SeleccionarTareasNEG(id_negocio);
+            if (dt_tareasneg != null)
+            {
+                gridControl_tareas.DataSource = dt_tareasneg;
+                dgv_tareas.Columns[0].Caption = "Descripción";
+                dgv_tareas.Columns[1].Caption = "Fecha";
+                dgv_tareas.Columns[2].Caption = "Tipo";
+                dgv_tareas.Columns[3].Caption = "Empleado";
+                dgv_tareas.Columns[4].Caption = "Estado";
+                dgv_tareas.Columns[5].Caption = "Criticidad";
+                dgv_tareas.Columns[6].Visible = false;
+            }
         }
 
         private void richTextBox1_Click(object sender, EventArgs e)
@@ -252,6 +279,7 @@ namespace crm
         {
             FormTareasNegocio f = new FormTareasNegocio();
             f.titulo = titulo;
+            f.id_negocio = id_negocio;
             f.Show();
         }
 
@@ -264,8 +292,97 @@ namespace crm
             {
                // MessageBox.Show("exito");
                 lbl_estado.Text = "Perdida";
+                btn_perdida.ForeColor = Color.White;
+
+                btn_proceso.ForeColor = Color.Black;
+                btn_Ganada.ForeColor = Color.Black;
             }
             
+        }
+
+        private void btn_proceso_Click(object sender, EventArgs e)
+        {
+            OpBD o = new OpBD();
+            int res = o.ActualizarEstatus("Proceso", id_negocio, titulo);
+            if (res == 1)
+            {
+                // MessageBox.Show("exito");
+                lbl_estado.Text = "Proceso";
+                btn_proceso.ForeColor = Color.White;
+
+                btn_perdida.ForeColor = Color.Black;
+                btn_Ganada.ForeColor = Color.Black;
+            }
+        }
+
+        private void btn_Ganada_Click(object sender, EventArgs e)
+        {
+            OpBD o = new OpBD();
+            int res = o.ActualizarEstatus("Ganada", id_negocio, titulo);
+            if (res == 1)
+            {
+                // MessageBox.Show("exito");
+                lbl_estado.Text = "Ganada";
+                btn_Ganada.ForeColor = Color.White;
+
+                btn_proceso.ForeColor = Color.Black;
+                btn_perdida.ForeColor = Color.Black;
+            }
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            DataRow fila = dgv_tareas.GetFocusedDataRow();
+            string eliminada = fila[6].ToString();
+
+            OpBD o = new OpBD();
+           int res = o.EliminarTarea(eliminada,titulo);
+            if(res == 1)
+                {
+                DataTable dt_tareasneg = OpBD.SeleccionarTareasNEG(id_negocio);
+                if (dt_tareasneg != null)
+                {
+                    gridControl_tareas.DataSource = dt_tareasneg;
+                    dgv_tareas.Columns[0].Caption = "Descripción";
+                    dgv_tareas.Columns[1].Caption = "Fecha";
+                    dgv_tareas.Columns[2].Caption = "Tipo";
+                    dgv_tareas.Columns[3].Caption = "Empleado";
+                    dgv_tareas.Columns[4].Caption = "Estado";
+                    dgv_tareas.Columns[5].Caption = "Criticidad";
+                    dgv_tareas.Columns[6].Visible = false;
+                }
+                MessageBox.Show("Eliminacion exitosa");
+            }else
+            {
+                MessageBox.Show("No se elimino");
+            }
+
+
+        }
+
+        private void btn_modificar_Click(object sender, EventArgs e)
+        {
+            DataRow fila = dgv_tareas.GetFocusedDataRow();
+            string id_tarea = fila[6].ToString();
+            string descripcion = fila[0].ToString();
+            string fecha = fila[1].ToString();
+            string tipo = fila[2].ToString();
+            string empleado = fila[3].ToString();
+            string estado = fila[4].ToString();
+            string criticidad = fila[5].ToString();
+
+            string[] fecha_hora = fecha.Split(' ');
+            DateTime solo_fecha = Convert.ToDateTime(fecha_hora[0]);
+            DateTime solo_hora = Convert.ToDateTime(fecha_hora[1]);
+
+            //MessageBox.Show(solo_fecha.ToString() + solo_hora.ToString());
+
+            FormTareasNegocio f = new FormTareasNegocio();
+            f.te_hora.EditValue = solo_hora;
+            f.dn_fecha.EditValue = solo_fecha;
+            f.txt_descripcion.Text = descripcion;
+
+            f.Show();
         }
     }
 }

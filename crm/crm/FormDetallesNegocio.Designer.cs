@@ -43,8 +43,8 @@
             this.rtxt_notas = new System.Windows.Forms.RichTextBox();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
             this.btn_nueva_tarea = new DevExpress.XtraEditors.SimpleButton();
-            this.gridControl1 = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gridControl_tareas = new DevExpress.XtraGrid.GridControl();
+            this.dgv_tareas = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.lbl_encargado = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.lbl_etapa = new System.Windows.Forms.Label();
@@ -60,14 +60,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_valor = new System.Windows.Forms.Label();
             this.lbl_cliente = new System.Windows.Forms.Label();
+            this.btn_modificar = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_eliminar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
             this.tabPane1.SuspendLayout();
             this.Notas_page.SuspendLayout();
             this.tabNavigationPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_tareas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tareas)).BeginInit();
             this.SuspendLayout();
             // 
             // groupControl1
@@ -138,6 +140,7 @@
             this.btn_Ganada.TabIndex = 21;
             this.btn_Ganada.Text = "Ganada";
             this.btn_Ganada.ToolTip = "Marcar negociación como ganada.";
+            this.btn_Ganada.Click += new System.EventHandler(this.btn_Ganada_Click);
             this.btn_Ganada.MouseLeave += new System.EventHandler(this.btn_Ganada_MouseLeave);
             this.btn_Ganada.MouseHover += new System.EventHandler(this.btn_Ganada_MouseHover);
             // 
@@ -155,6 +158,7 @@
             this.btn_proceso.TabIndex = 20;
             this.btn_proceso.Text = "En proceso";
             this.btn_proceso.ToolTip = "Marcar negociación como en desarrollo.";
+            this.btn_proceso.Click += new System.EventHandler(this.btn_proceso_Click);
             this.btn_proceso.MouseLeave += new System.EventHandler(this.btn_proceso_MouseLeave);
             this.btn_proceso.MouseHover += new System.EventHandler(this.btn_proceso_MouseHover);
             // 
@@ -188,7 +192,7 @@
             this.tabNavigationPage2});
             this.tabPane1.RegularSize = new System.Drawing.Size(511, 392);
             this.tabPane1.SelectedPage = this.Notas_page;
-            this.tabPane1.SelectedPageIndex = 0;
+            this.tabPane1.SelectedPageIndex = 1;
             this.tabPane1.Size = new System.Drawing.Size(511, 392);
             this.tabPane1.TabIndex = 18;
             this.tabPane1.Text = "tabPane1";
@@ -212,7 +216,7 @@
             this.btn_eliminar_nota.Appearance.Options.UseBorderColor = true;
             this.btn_eliminar_nota.Appearance.Options.UseForeColor = true;
             this.btn_eliminar_nota.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminar_nota.Image")));
-            this.btn_eliminar_nota.Location = new System.Drawing.Point(127, 103);
+            this.btn_eliminar_nota.Location = new System.Drawing.Point(139, 103);
             this.btn_eliminar_nota.Name = "btn_eliminar_nota";
             this.btn_eliminar_nota.Size = new System.Drawing.Size(75, 23);
             this.btn_eliminar_nota.TabIndex = 3;
@@ -258,8 +262,10 @@
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "Tareas";
+            this.tabNavigationPage2.Controls.Add(this.btn_eliminar);
+            this.tabNavigationPage2.Controls.Add(this.btn_modificar);
             this.tabNavigationPage2.Controls.Add(this.btn_nueva_tarea);
-            this.tabNavigationPage2.Controls.Add(this.gridControl1);
+            this.tabNavigationPage2.Controls.Add(this.gridControl_tareas);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(493, 347);
             // 
@@ -273,22 +279,22 @@
             this.btn_nueva_tarea.Text = "Nueva tarea";
             this.btn_nueva_tarea.Click += new System.EventHandler(this.btn_nueva_tarea_Click);
             // 
-            // gridControl1
+            // gridControl_tareas
             // 
-            this.gridControl1.Location = new System.Drawing.Point(23, 16);
-            this.gridControl1.MainView = this.gridView1;
-            this.gridControl1.Name = "gridControl1";
-            this.gridControl1.Size = new System.Drawing.Size(451, 201);
-            this.gridControl1.TabIndex = 0;
-            this.gridControl1.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gridControl_tareas.Location = new System.Drawing.Point(23, 16);
+            this.gridControl_tareas.MainView = this.dgv_tareas;
+            this.gridControl_tareas.Name = "gridControl_tareas";
+            this.gridControl_tareas.Size = new System.Drawing.Size(451, 201);
+            this.gridControl_tareas.TabIndex = 0;
+            this.gridControl_tareas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.dgv_tareas});
             // 
-            // gridView1
+            // dgv_tareas
             // 
-            this.gridView1.GridControl = this.gridControl1;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.ShowFooter = true;
-            this.gridView1.OptionsView.ShowGroupPanel = false;
+            this.dgv_tareas.GridControl = this.gridControl_tareas;
+            this.dgv_tareas.Name = "dgv_tareas";
+            this.dgv_tareas.OptionsView.ShowFooter = true;
+            this.dgv_tareas.OptionsView.ShowGroupPanel = false;
             // 
             // lbl_encargado
             // 
@@ -441,6 +447,26 @@
             this.lbl_cliente.TabIndex = 0;
             this.lbl_cliente.Text = "label1";
             // 
+            // btn_modificar
+            // 
+            this.btn_modificar.Image = ((System.Drawing.Image)(resources.GetObject("btn_modificar.Image")));
+            this.btn_modificar.Location = new System.Drawing.Point(240, 223);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(100, 28);
+            this.btn_modificar.TabIndex = 2;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminar.Image")));
+            this.btn_eliminar.Location = new System.Drawing.Point(134, 223);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(100, 28);
+            this.btn_eliminar.TabIndex = 3;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
             // FormDetallesNegocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -456,8 +482,8 @@
             this.tabPane1.ResumeLayout(false);
             this.Notas_page.ResumeLayout(false);
             this.tabNavigationPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gridControl1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridControl_tareas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tareas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -493,7 +519,9 @@
         private DevExpress.XtraEditors.SimpleButton btn_guardar_nota;
         private DevExpress.XtraEditors.SimpleButton btn_eliminar_nota;
         private DevExpress.XtraEditors.SimpleButton btn_nueva_tarea;
-        private DevExpress.XtraGrid.GridControl gridControl1;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.GridControl gridControl_tareas;
+        private DevExpress.XtraGrid.Views.Grid.GridView dgv_tareas;
+        private DevExpress.XtraEditors.SimpleButton btn_modificar;
+        private DevExpress.XtraEditors.SimpleButton btn_eliminar;
     }
 }

@@ -234,7 +234,7 @@ namespace crm
 
                 OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
                 string query = "insert into tbl_negocio(id_negocio, etapa_negocio, id_cliente, id_empleado, titulo, detalles, id_moneda, valor, fecha_est_cierre, fecha_inicio, id_cat, id_empresa, estado, status)" +
-                   " values ( null ," + etapa + ", " + perem + "," + empleado + ",'" + titulo + "','" + detalles + "'," + moneda + ","+valor+",'"+fecha+"',curdate(),"+cat+",0,'activo', 'En Proceso')";
+                   " values ( null ," + etapa + ", " + perem + "," + empleado + ",'" + titulo + "','" + detalles + "'," + moneda + ","+valor+",'"+fecha+"',curdate(),"+cat+",0,'activo', 'Proceso')";
                 OdbcCommand cmd = new OdbcCommand(query, con);
                 cmd.ExecuteNonQuery();
                 try
@@ -256,7 +256,7 @@ namespace crm
 
                 OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
                 string query = "insert into tbl_negocio(id_negocio, etapa_negocio, id_empresa, id_empleado, titulo, detalles, id_moneda, valor, fecha_est_cierre, fecha_inicio, id_cat, id_cliente ,estado, status)" +
-                   " values ( null ," + etapa + ", " + perem + "," + empleado + ",'" + titulo + "','" + detalles + "'," + moneda + "," + valor + ",'" + fecha + "',curdate()," + cat + ",0,'activo', 'En Proceso')";
+                   " values ( null ," + etapa + ", " + perem + "," + empleado + ",'" + titulo + "','" + detalles + "'," + moneda + "," + valor + ",'" + fecha + "',curdate()," + cat + ",0,'activo', 'Proceso')";
                 OdbcCommand cmd = new OdbcCommand(query, con);
                 cmd.ExecuteNonQuery();
                 try
@@ -438,13 +438,81 @@ namespace crm
 
 
 
+        public int InsertarTarea(string descripcion, string fechahora, int id_empleado, string tipo, string id_negocio, string titulo, string criticidad)
+        {
+            try
+            {
+
+                OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+                string query = "insert into tbl_tarea(id_tarea, estado_tarea, id_empleado, fecha_asignacion, fecha_establecida, descripcion_tarea, id_negocio, estado, id_tipo, id_caso, origen, criticidad)" +
+                   " values ( null ,'Pendiente'," +id_empleado + ",curdate(),'"+fechahora+"','"+descripcion+"',"+id_negocio+", 'activo', "+tipo+",0, 'negocio', '"+criticidad+"')";
+                OdbcCommand cmd = new OdbcCommand(query, con);
+                cmd.ExecuteNonQuery();
+                try
+                {
+                    bita.Insertar("Registro de tarea en el negocio: " + titulo , "tbl_tarea");
+                }
+                catch { MessageBox.Show("Error en bitacora"); }
+
+                con.Close();
+                return 1;
+            }
+            catch { return 0; }
+        }
+
+
+        public static DataTable SeleccionarTareasNEG(string id_negocio)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+                OdbcCommand comando = new OdbcCommand("select t.descripcion_tarea, t.fecha_establecida, tt.tipo, concat(e.nombres,' ', e.apellidos) as empleado, t.estado_tarea, t.criticidad, t.id_tarea from tbl_tarea t left join tbl_empleado e on t.id_empleado = e.id_empleado inner join tipo_tarea tt on t.id_tipo = tt.id_tipo where t.estado = 'activo' and t.id_negocio = "+id_negocio+"", con);
+                OdbcDataAdapter ad = new OdbcDataAdapter(comando);
+                ad.Fill(dt);
+                return dt;
+            }
+            catch { return null; }
+        }
+
+
+        public static DataTable SeleccionarTipoTarea()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+                OdbcCommand comando = new OdbcCommand("select * from tipo_tarea", con);
+                OdbcDataAdapter ad = new OdbcDataAdapter(comando);
+                ad.Fill(dt);
+                return dt;
+            }
+            catch { return null; }
+        }
 
 
 
 
+        public int EliminarTarea(string tarea, string titulo)
+        {
+            try
+            {
 
+                OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+                string query = "update tbl_tarea set estado = 'inactivo' where id_tarea = " + tarea + " ";
+                OdbcCommand cmd = new OdbcCommand(query, con);
+                cmd.ExecuteNonQuery();
+                try
+                {
+                    bita.Insertar("eliminación de tarea  del negocio: " + titulo, "tarea");
+                }
+                catch { MessageBox.Show("Error en bitacora"); }
 
-
+                con.Close();
+                return 1;
+            }
+            catch { return 0; }
+        }
 
 
 

@@ -198,7 +198,13 @@ C:\ProyectoCRM\crm\crm\obj\Debug\crm.csproj.GenerateResource.Cache
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe.licenses
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.pdb
+<<<<<<< HEAD
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_busqueda_fecha_personalizada.resources
+>>>>>>> 30401490697392e8f38743645005abfa0220d172
+>>>>>>> d4e76abe4e32e765982f9c9fb96a51062d054448
+=======
 C:\ProyectoCRM\crm\crm\bin\Debug\seguridad.dll
+<<<<<<< HEAD
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.Charts.Designer.v15.2.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.ExpressApp.Chart.v15.2.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.ExpressApp.Chart.Web.v15.2.dll
@@ -353,3 +359,6 @@ C:\ProyectoCRM\crm\crm\bin\Debug\de\DevExpress.Xpo.v15.2.resources.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\es\DevExpress.Xpo.v15.2.resources.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\ja\DevExpress.Xpo.v15.2.resources.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\ru\DevExpress.Xpo.v15.2.resources.dll
+=======
+>>>>>>> bcd4fedbd59d4383d5ddb2a664b7a88b64da4e57
+>>>>>>> e08d10f24dd15198f6dd80f51b87d9a7d4d66a14
