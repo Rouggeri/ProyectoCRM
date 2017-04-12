@@ -69,6 +69,7 @@
             this.Controls.Add(this.dgv_detalle_negocio);
             this.Name = "frm_estadistica_negocio_descripcion";
             this.Text = "Descripcion de Negocio";
+            this.Load += new System.EventHandler(this.frm_estadistica_negocio_descripcion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_detalle_negocio)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             this.ResumeLayout(false);

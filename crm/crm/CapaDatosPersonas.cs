@@ -450,5 +450,111 @@ namespace crm
             adap.Fill(carga);
             return carga;
         }
+
+        // ------------------------------------- frm_pronostico
+        // consulta de negocios importantes de prioridad ALTA:
+        public DataTable Consulta_Negocios_importantes_proyecciones()
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select ta.id_tarea, ti.tipo,nego.titulo,ta.estado_tarea, ta.criticidad, ta.fecha_asignacion, ta.fecha_establecida, nego.valor, emple.id_empleado, emple.nombres, emple.apellidos , empre.id_empresa, empre.nombre, clt.id_cliente, clt.nombres, clt.apellidos  from tbl_tarea ta, Tipo_tarea ti, tbl_negocio nego, tbl_empleado emple, empresa empre, tbl_cliente clt  where ta.id_negocio = nego.id_negocio and ta.id_tipo = ti.id_tipo and ta.id_empleado = emple.id_empleado and nego.id_empresa = empre.id_empresa  and nego.id_cliente = clt.id_cliente and ta.estado_tarea ='pendiente' and ta.criticidad = 'Alta'; ";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
+
+        // Consulta de negocios para el dia de hoy
+        
+
+        public DataTable Consulta_Negocios_Hoy(string hoy)
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select ta.id_tarea, ti.tipo,nego.titulo,ta.estado_tarea, ta.criticidad, ta.fecha_asignacion, ta.fecha_establecida, nego.valor, emple.id_empleado, emple.nombres, emple.apellidos, empre.id_empresa, empre.nombre, clt.id_cliente, clt.nombres, clt.apellidos from tbl_tarea ta, Tipo_tarea ti, tbl_negocio nego, tbl_empleado emple, empresa empre, tbl_cliente clt where ta.id_negocio = nego.id_negocio and ta.id_tipo = ti.id_tipo and ta.id_empleado = emple.id_empleado and nego.id_empresa = empre.id_empresa and nego.id_cliente = clt.id_cliente and ta.estado_tarea ='pendiente' and ta.fecha_asignacion = '"+hoy+"'; ";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
+
+        // Consulta de actualizaciones recientes con respecto a tareas
+
+        public DataTable Consulta_Actualizaciones()
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select ta.id_tarea, ti.tipo,nego.titulo,ta.estado_tarea, ta.criticidad, ta.fecha_asignacion, ta.fecha_establecida, nego.valor, emple.id_empleado, emple.nombres, emple.apellidos , empre.id_empresa, empre.nombre, clt.id_cliente, clt.nombres, clt.apellidos  from tbl_tarea ta, Tipo_tarea ti, tbl_negocio nego, tbl_empleado emple, empresa empre, tbl_cliente clt  where ta.id_negocio = nego.id_negocio and ta.id_tipo = ti.id_tipo and ta.id_empleado = emple.id_empleado and nego.id_empresa = empre.id_empresa  and nego.id_cliente = clt.id_cliente order by fecha_asignacion desc; ";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
+
+        // Consulta de negocios del mes
+        public DataTable Consulta_Negocios_Mes(string fecha_ini, string fecha_fin)
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select * from tbl_negocio where fecha_est_cierre between '"+fecha_ini+"' and '"+fecha_fin+"' order by fecha_est_cierre asc;";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
+
+        // consulta de negocios por estado
+        public DataTable consultar_negocios_proceso(string fecha_ini, string fecha_fin, string estado)
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select nego.titulo,nego.valor, clt.nombres, clt.apellidos, empre.nombre,emple.nombres, emple.apellidos,nego.status,  nego.fecha_est_cierre from tbl_negocio nego , tbl_empleado emple, tbl_cliente clt, empresa empre where status = '"+estado+"' and emple.id_empleado = nego.id_empleado and clt.id_cliente = nego.id_cliente and empre.id_empresa = nego.id_empresa and nego.fecha_est_cierre between '"+fecha_ini+"' and '"+fecha_fin+"'   order by nego.fecha_est_cierre asc;";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
+
+
+        // ------------------------------------ frm_meta_mantenimiento --------------------------------
+
+        // consulta de monto de meta mensual
+        public DataTable consultar_meta()
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select max(id_estadistica), meta from tbl_estadistica;";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
+
+
+        // consulta de monto de meta mensual
+        public DataTable consultar_meta_registro()
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select id_estadistica, meta, fecha_inicio,fecha_fin from tbl_estadistica order by id_estadistica desc;";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+        }
+
+
+        // Insercion en tabla tbl_estadistica
+        public void Insertar_Nueva_meta(string meta,string fecha_ini, string fecha_fin)
+        {
+            string cadena = "insert into tbl_estadistica (meta,fecha_inicio,fecha_fin)values ('"+meta+"','"+fecha_ini+"','"+fecha_fin+"');";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        // Modificar en tabla tbl_estadistica
+        public void modificar_meta_registro(string id_meta, string monto)
+        {
+            string cadena = "update tbl_estadistica set meta='"+monto+"' where id_estadistica='"+id_meta+"';";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
     }
 }
