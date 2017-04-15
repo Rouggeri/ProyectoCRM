@@ -48,8 +48,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Charts.Designer.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Charts.v15.2.Core, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Data.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.ExpressApp.Chart.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Chart.Web.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.ExpressApp.Chart.Win.v15.2, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="DevExpress.Office.v15.2.Core, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v15.2.Core, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="DevExpress.Pdf.v15.2.Drawing, Version=15.2.7.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
@@ -83,6 +87,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -95,7 +100,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CapaDatosPersonas.cs" />
+<<<<<<< HEAD
     <Compile Include="CapaNegociod.cs" />
+=======
+    <Compile Include="cls_grafica_pie.cs" />
+>>>>>>> a213176eec77a5e3f5038dc4f02e51652697242e
     <Compile Include="Conexion.cs" />
     <Compile Include="crmbdDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -192,6 +201,12 @@
     <Compile Include="frm_cliente.Designer.cs">
       <DependentUpon>frm_cliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_detalle_tareas_importantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_detalle_tareas_importantes.Designer.cs">
+      <DependentUpon>frm_detalle_tareas_importantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_empresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +230,12 @@
     </Compile>
     <Compile Include="frm_estadistica_personal.Designer.cs">
       <DependentUpon>frm_estadistica_personal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_meta_mantenimiento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_meta_mantenimiento.Designer.cs">
+      <DependentUpon>frm_meta_mantenimiento.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_moneda.cs">
       <SubType>Form</SubType>
@@ -245,6 +266,12 @@
     </Compile>
     <Compile Include="frm_pronostico.Designer.cs">
       <DependentUpon>frm_pronostico.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_pronostico_ventas_secundario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_pronostico_ventas_secundario.Designer.cs">
+      <DependentUpon>frm_pronostico_ventas_secundario.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -306,6 +333,9 @@
     <EmbeddedResource Include="frm_cliente.resx">
       <DependentUpon>frm_cliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_detalle_tareas_importantes.resx">
+      <DependentUpon>frm_detalle_tareas_importantes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_empresa.resx">
       <DependentUpon>frm_empresa.cs</DependentUpon>
     </EmbeddedResource>
@@ -317,6 +347,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_estadistica_personal.resx">
       <DependentUpon>frm_estadistica_personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_meta_mantenimiento.resx">
+      <DependentUpon>frm_meta_mantenimiento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_moneda.resx">
       <DependentUpon>frm_moneda.cs</DependentUpon>
@@ -332,6 +365,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_pronostico.resx">
       <DependentUpon>frm_pronostico.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_pronostico_ventas_secundario.resx">
+      <DependentUpon>frm_pronostico_ventas_secundario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>

@@ -16,5 +16,10 @@ namespace crm
         {
             InitializeComponent();
         }
+
+        private void frm_estadistica_negocio_descripcion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
