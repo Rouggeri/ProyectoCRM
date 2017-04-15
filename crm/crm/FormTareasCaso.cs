@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace crm
 {
-    public partial class FormTareasNegocio : Form
+    public partial class FormTareasCaso : Form
     {
-        public FormTareasNegocio()
+        public FormTareasCaso()
         {
             InitializeComponent();
         }
         public string titulo;
-        public string id_negocio;
+        public string id_caso;
 
         public string empleado;
         public string id_tarea;
         public string tipo;
-
-        private void FormTareasNegocio_Load(object sender, EventArgs e)
+        private void FormTareasCaso_Load(object sender, EventArgs e)
         {
-            this.Text = "Tareas de "+titulo;
+            this.Text = "Tareas de " + titulo;
             //dateNavigator1.EditValue;
 
             //LLENAR EMPLEADOS
@@ -45,14 +44,14 @@ namespace crm
             //Tipos
             DataTable dt_tipos = OpBD.SeleccionarTipoTarea();
             if (dt_tipos != null)
-            {  
+            {
                 cbo_tareas.DataSource = dt_tipos;
                 cbo_tareas.ValueMember = "id_tipo";
                 cbo_tareas.DisplayMember = "tipo";
             }
 
             //------------------------------------
-            if(btn_guardar.Text=="Actualizar")
+            if (btn_guardar.Text == "Actualizar")
             {
                 int indice_empleado = cbo_empleado.FindString(empleado);
                 cbo_empleado.SelectedIndex = indice_empleado;
@@ -80,7 +79,7 @@ namespace crm
                     string criticidad = cbo_criticidad.SelectedItem.ToString();
 
                     OpBD o = new OpBD();
-                    int res = o.InsertarTarea(descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado, tipo, id_negocio, titulo, criticidad);
+                    int res = o.InsertarTareaCaso(descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado, tipo, id_caso, titulo, criticidad);
                     if (res == 1)
                     {
                         MessageBox.Show("Tarea asignada con exito");
@@ -92,7 +91,8 @@ namespace crm
                 else { MessageBox.Show("Debe llenar todos los campos"); }
 
 
-            }else if (btn_guardar.Text == "Actualizar")
+            }
+            else if (btn_guardar.Text == "Actualizar")
             {
                 if (!String.IsNullOrEmpty(txt_descripcion.Text.Trim()) && cbo_criticidad.SelectedItem != null)
                 {
@@ -105,23 +105,17 @@ namespace crm
                     string criticidad = cbo_criticidad.SelectedItem.ToString();
 
                     OpBD oa = new OpBD();
-                    int res = oa.ActualizarTarea(id_tarea,descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado.ToString(),tipo,criticidad,titulo);
+                    int res = oa.ActualizarTareaCaso(id_tarea, descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado.ToString(), tipo, criticidad, titulo);
 
                     if (res == 1)
                     {
                         MessageBox.Show("actualización realizada con exito");
-                    } else { MessageBox.Show("Actualización no realizada"); }
+                    }
+                    else { MessageBox.Show("Actualización no realizada"); }
                 }
                 else { MessageBox.Show("Debe llenar todos los campos"); }
 
             }
-
-
         }
-
-
-
-
-
     }
 }

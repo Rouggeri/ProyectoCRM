@@ -199,9 +199,11 @@ C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe.licenses
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.pdb
 <<<<<<< HEAD
-C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_busqueda_fecha_personalizada.resources
 >>>>>>> 30401490697392e8f38743645005abfa0220d172
 >>>>>>> d4e76abe4e32e765982f9c9fb96a51062d054448
 =======
 C:\ProyectoCRM\crm\crm\bin\Debug\seguridad.dll
 >>>>>>> bcd4fedbd59d4383d5ddb2a664b7a88b64da4e57
+C:\ProyectoCRM\crm\crm\bin\Debug\FuncionesNavegador.dll
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.FormDetallesCaso.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.FormTareasCaso.resources

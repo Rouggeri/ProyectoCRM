@@ -50,6 +50,8 @@ namespace crm
                     dgv_neg.Columns[6].Caption = "Fecha de cierre estimada";
                     dgv_neg.Columns[7].Caption = "Categoría";
 
+                    dgv_neg.Columns[5].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
+                    dgv_neg.Columns[5].DisplayFormat.FormatString = "n2";
                     dgv_neg.Columns[0].Width = 28;
                     dgv_neg.RowClick += Dgv_neg_RowClick;
                 }
@@ -182,5 +184,149 @@ namespace crm
             f.MdiParent = this.MdiParent;
             f.Show();
         }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_eliminar_Click(object sender, EventArgs e)
+        {
+            DataRow row = dgv_neg.GetFocusedDataRow();
+
+            if (row != null)
+            {
+                
+                if (MessageBox.Show("¿Esta seguro de que desea eliminar la negociación?","Eliminar negociación",MessageBoxButtons.YesNo)==DialogResult.Yes)
+                {
+                    string id_negocio = row[0].ToString();
+                    string titulo = row[1].ToString();
+
+                    OpBD o = new OpBD();
+                    int res = o.EliminarNegociacion(id_negocio, titulo);
+
+                    if (res == 1)
+                    {
+                        MessageBox.Show("Negociación eliminada con exito");
+
+                        dgv_negocios.DataSource = OpBD.SeleccionarNegocios();
+                        if (dgv_negocios.DataSource != null)
+                        {
+                            dgv_neg.Columns[0].Caption = "No.";
+                            dgv_neg.Columns[1].Caption = "Titulo";
+                            dgv_neg.Columns[2].Caption = "Persona";
+                            dgv_neg.Columns[3].Caption = "Organización";
+                            dgv_neg.Columns[4].Caption = "Moneda";
+                            dgv_neg.Columns[5].Caption = "Valor";
+                            dgv_neg.Columns[6].Caption = "Fecha de cierre estimada";
+                            dgv_neg.Columns[7].Caption = "Categoría";
+
+                            dgv_neg.Columns[0].Width = 28;
+                            dgv_neg.RowClick += Dgv_neg_RowClick;
+                        }
+                    }
+                    else { MessageBox.Show("Eliminación no realizada"); }
+
+                }
+
+            }
+
+
+
+
+        }
+
+        private void btn_anterior_Click(object sender, EventArgs e)
+        {
+            CapaNegociod fn = new CapaNegociod();
+            fn.Anterior(dgv_neg);
+
+
+
+
+            //int indice = dgv_neg.FocusedRowHandle;
+            //MessageBox.Show(indice.ToString());
+        }
+
+        private void btn_siguiente_Click(object sender, EventArgs e)
+        {
+            CapaNegociod fn = new CapaNegociod();
+            fn.Siguiente(dgv_neg);
+        }
+
+        private void btn_primero_Click(object sender, EventArgs e)
+        {
+            CapaNegociod fn = new CapaNegociod();
+            fn.Primero(dgv_neg);
+        }
+
+        private void btn_ultimo_Click(object sender, EventArgs e)
+        {
+            CapaNegociod fn = new CapaNegociod();
+            fn.Ultimo(dgv_neg);
+        }
+
+        private void btn_actualizar_Click(object sender, EventArgs e)
+        {
+            dgv_negocios.DataSource = OpBD.SeleccionarNegocios();
+            //if (dgv_negocios.DataSource != null)
+            //{
+            //    dgv_neg.Columns[0].Caption = "No.";
+            //    dgv_neg.Columns[1].Caption = "Titulo";
+            //    dgv_neg.Columns[2].Caption = "Persona";
+            //    dgv_neg.Columns[3].Caption = "Organización";
+            //    dgv_neg.Columns[4].Caption = "Moneda";
+            //    dgv_neg.Columns[5].Caption = "Valor";
+            //    dgv_neg.Columns[6].Caption = "Fecha de cierre estimada";
+            //    dgv_neg.Columns[7].Caption = "Categoría";
+
+            //    dgv_neg.Columns[0].Width = 28;
+            //    dgv_neg.RowClick += Dgv_neg_RowClick;
+            //}
+
+            tileBar0.Groups.Clear();
+            tileBar1.Groups.Clear();
+            tileBar2.Groups.Clear();
+            tileBar3.Groups.Clear();
+
+            //************************ESTADOS********************
+            DataTable dt_etapa0 = OpBD.SeleccionarNegociosEtapa0();
+            ObtenerNegociosPorEtapa(dt_etapa0, tileBar0);
+
+
+            DataTable dt_etapa1 = OpBD.SeleccionarNegociosEtapa1();
+            ObtenerNegociosPorEtapa(dt_etapa1, tileBar1);
+            DataTable dt_etapa2 = OpBD.SeleccionarNegociosEtapa2();
+            ObtenerNegociosPorEtapa(dt_etapa2, tileBar2);
+            DataTable dt_etapa3 = OpBD.SeleccionarNegociosEtapa3();
+            ObtenerNegociosPorEtapa(dt_etapa3, tileBar3);
+        }
+
+        private void btn_editar_Click(object sender, EventArgs e)
+        {
+            DataRow row = dgv_neg.GetFocusedDataRow();
+            string id_negocio = row[0].ToString();
+            string titulo = row[1].ToString();
+            string persona = row[2].ToString();
+            string empresa = row[3].ToString();
+            string moneda = row[4].ToString();
+            string valor = row[5].ToString();
+            string fecha_cierre = row[6].ToString();
+            string categoria = row[7].ToString();
+            FormNuevoNegocio f = new FormNuevoNegocio();
+            f.id_negocio_e = id_negocio;
+            f.titulo_e = titulo;
+            f.persona_e = persona;
+            f.empresa_e = empresa;
+            f.moneda_e = moneda;
+            f.valor_e = valor;
+            f.fecha_cierre_e = fecha_cierre;
+            f.categoria_e = categoria;
+            f.btn_guardar.Text = "Actualizar";
+
+            f.MdiParent = this.MdiParent;
+            f.Show();
+        }
+
     }
 }

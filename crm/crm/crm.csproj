@@ -95,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CapaDatosPersonas.cs" />
+    <Compile Include="CapaNegociod.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="crmbdDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -119,6 +120,12 @@
     <Compile Include="FormContactos.Designer.cs">
       <DependentUpon>FormContactos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDetallesCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetallesCaso.Designer.cs">
+      <DependentUpon>FormDetallesCaso.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDetallesNegocio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -136,6 +143,12 @@
     </Compile>
     <Compile Include="FormNuevoNegocio.Designer.cs">
       <DependentUpon>FormNuevoNegocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTareasCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTareasCaso.Designer.cs">
+      <DependentUpon>FormTareasCaso.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTareasNegocio.cs">
       <SubType>Form</SubType>
@@ -257,6 +270,9 @@
     <EmbeddedResource Include="FormContactos.resx">
       <DependentUpon>FormContactos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDetallesCaso.resx">
+      <DependentUpon>FormDetallesCaso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDetallesNegocio.resx">
       <DependentUpon>FormDetallesNegocio.cs</DependentUpon>
     </EmbeddedResource>
@@ -265,6 +281,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevoNegocio.resx">
       <DependentUpon>FormNuevoNegocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTareasCaso.resx">
+      <DependentUpon>FormTareasCaso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTareasNegocio.resx">
       <DependentUpon>FormTareasNegocio.cs</DependentUpon>
