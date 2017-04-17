@@ -79,8 +79,11 @@ namespace crm
                     string tipo = cbo_tareas.SelectedValue.ToString();
                     string criticidad = cbo_criticidad.SelectedItem.ToString();
 
+                    DateTime hora_ter = Convert.ToDateTime(te_hora_fin.EditValue);
+                    DateTime fechahora_terminacion = new DateTime(fecha_establecida.Year, fecha_establecida.Month, fecha_establecida.Day, hora_ter.Hour, hora_ter.Minute, hora_ter.Second);
+
                     OpBD o = new OpBD();
-                    int res = o.InsertarTarea(descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado, tipo, id_negocio, titulo, criticidad);
+                    int res = o.InsertarTarea(descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado, tipo, id_negocio, titulo, criticidad,fechahora_terminacion.ToString("yyyy-MM-dd HH:mm:ss"));
                     if (res == 1)
                     {
                         MessageBox.Show("Tarea asignada con exito");
@@ -104,8 +107,11 @@ namespace crm
                     string tipo = cbo_tareas.SelectedValue.ToString();
                     string criticidad = cbo_criticidad.SelectedItem.ToString();
 
+                    DateTime hora_ter = Convert.ToDateTime(te_hora_fin.EditValue);
+                    DateTime fechahora_terminacion = new DateTime(fecha_establecida.Year, fecha_establecida.Month, fecha_establecida.Day, hora_ter.Hour, hora_ter.Minute, hora_ter.Second);
+
                     OpBD oa = new OpBD();
-                    int res = oa.ActualizarTarea(id_tarea,descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado.ToString(),tipo,criticidad,titulo);
+                    int res = oa.ActualizarTarea(id_tarea,descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado.ToString(),tipo,criticidad,titulo,fechahora_terminacion.ToString("yyyy-MM-dd HH:mm:ss"));
 
                     if (res == 1)
                     {

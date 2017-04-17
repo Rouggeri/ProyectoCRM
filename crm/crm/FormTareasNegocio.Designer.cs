@@ -47,12 +47,16 @@
             this.separatorControl1 = new DevExpress.XtraEditors.SeparatorControl();
             this.label6 = new System.Windows.Forms.Label();
             this.cbo_criticidad = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.te_hora_fin = new DevExpress.XtraEditors.TimeEdit();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dn_fecha)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dn_fecha.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.te_hora.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_hora_fin.Properties)).BeginInit();
             this.SuspendLayout();
             // 
             // txt_descripcion
@@ -80,7 +84,7 @@
             // te_hora
             // 
             this.te_hora.EditValue = new System.DateTime(2017, 3, 26, 0, 0, 0, 0);
-            this.te_hora.Location = new System.Drawing.Point(30, 172);
+            this.te_hora.Location = new System.Drawing.Point(30, 192);
             this.te_hora.Name = "te_hora";
             this.te_hora.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.te_hora.Properties.Appearance.Options.UseFont = true;
@@ -267,11 +271,48 @@
             this.cbo_criticidad.Size = new System.Drawing.Size(294, 21);
             this.cbo_criticidad.TabIndex = 49;
             // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.Color.Gray;
+            this.label8.Location = new System.Drawing.Point(32, 221);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(100, 13);
+            this.label8.TabIndex = 72;
+            this.label8.Text = "Hora de finalización";
+            // 
+            // te_hora_fin
+            // 
+            this.te_hora_fin.EditValue = new System.DateTime(2017, 3, 26, 0, 0, 0, 0);
+            this.te_hora_fin.Location = new System.Drawing.Point(30, 237);
+            this.te_hora_fin.Name = "te_hora_fin";
+            this.te_hora_fin.Properties.Appearance.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.te_hora_fin.Properties.Appearance.Options.UseFont = true;
+            this.te_hora_fin.Properties.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Office2003;
+            this.te_hora_fin.Properties.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.te_hora_fin.Properties.TimeEditStyle = DevExpress.XtraEditors.Repository.TimeEditStyle.TouchUI;
+            this.te_hora_fin.Size = new System.Drawing.Size(165, 26);
+            this.te_hora_fin.TabIndex = 71;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.Color.Gray;
+            this.label7.Location = new System.Drawing.Point(32, 176);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 13);
+            this.label7.TabIndex = 73;
+            this.label7.Text = "Hora de inicio";
+            // 
             // FormTareasNegocio
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(486, 561);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.te_hora_fin);
             this.Controls.Add(this.cbo_criticidad);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.separatorControl1);
@@ -300,6 +341,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit1.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureEdit2.Properties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.separatorControl1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.te_hora_fin.Properties)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -324,5 +366,8 @@
         public DevExpress.XtraEditors.SeparatorControl separatorControl1;
         public System.Windows.Forms.Label label6;
         public System.Windows.Forms.ComboBox cbo_criticidad;
+        private System.Windows.Forms.Label label8;
+        public DevExpress.XtraEditors.TimeEdit te_hora_fin;
+        private System.Windows.Forms.Label label7;
     }
 }

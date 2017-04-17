@@ -81,6 +81,7 @@ namespace crm
                 dgv_tareas.Columns[5].Caption = "Criticidad";
                 dgv_tareas.Columns[6].Visible = false;
                 dgv_tareas.Columns[7].Visible = false;
+                dgv_tareas.Columns[8].Visible = false;
 
                 dgv_tareas.Columns[0].Width = 115;
                 dgv_tareas.Columns[1].Width = 70;
@@ -267,16 +268,21 @@ namespace crm
             string empleado = fila[7].ToString();
             string estado = fila[4].ToString();
             string criticidad = fila[5].ToString();
+            string hora_fin = fila[8].ToString();
 
             string[] fecha_hora = fecha.Split(' ');
             DateTime solo_fecha = Convert.ToDateTime(fecha_hora[0]);
             DateTime solo_hora = Convert.ToDateTime(fecha_hora[1]);
+
+            string[] hora_fin_Vec = hora_fin.Split(' ');
+            DateTime hora_terminacion = Convert.ToDateTime(hora_fin_Vec[1]);
 
             //MessageBox.Show(solo_fecha.ToString() + solo_hora.ToString());
 
             FormTareasCaso f = new FormTareasCaso();
             f.te_hora.EditValue = solo_hora;
             f.dn_fecha.EditValue = solo_fecha;
+            f.te_hora_fin.EditValue = hora_terminacion;
             f.txt_descripcion.Text = descripcion;
             f.cbo_criticidad.SelectedItem = criticidad;
             f.empleado = empleado;

@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -99,12 +99,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDatosCalendarioDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDatosCalendarioDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CapaDatosPersonas.cs" />
-<<<<<<< HEAD
     <Compile Include="CapaNegociod.cs" />
-=======
     <Compile Include="cls_grafica_pie.cs" />
->>>>>>> a213176eec77a5e3f5038dc4f02e51652697242e
     <Compile Include="Conexion.cs" />
     <Compile Include="crmbdDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -386,6 +388,17 @@
     <EmbeddedResource Include="prueba.resx">
       <DependentUpon>prueba.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BaseDatosCalendarioDataSet.xsc">
+      <DependentUpon>BaseDatosCalendarioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BaseDatosCalendarioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaseDatosCalendarioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaseDatosCalendarioDataSet.xss">
+      <DependentUpon>BaseDatosCalendarioDataSet.xsd</DependentUpon>
+    </None>
     <None Include="crmbdDataSet.xsc">
       <DependentUpon>crmbdDataSet.xsd</DependentUpon>
     </None>
@@ -424,6 +437,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\imprimir1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BaseDatosCalendario.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaseDatosCalendario_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>BaseDatosCalendario.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

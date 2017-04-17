@@ -616,14 +616,14 @@ namespace crm
 
 
 
-        public int InsertarTarea(string descripcion, string fechahora, int id_empleado, string tipo, string id_negocio, string titulo, string criticidad)
+        public int InsertarTarea(string descripcion, string fechahora, int id_empleado, string tipo, string id_negocio, string titulo, string criticidad, string hora_terminacion)
         {
             try
             {
 
                 OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
-                string query = "insert into tbl_tarea(id_tarea, estado_tarea, id_empleado, fecha_asignacion, fecha_establecida, descripcion_tarea, id_negocio, estado, id_tipo, id_caso, origen, criticidad)" +
-                   " values ( null ,'Pendiente'," +id_empleado + ",curdate(),'"+fechahora+"','"+descripcion+"',"+id_negocio+", 'activo', "+tipo+",0, 'negocio', '"+criticidad+"')";
+                string query = "insert into tbl_tarea(id_tarea, estado_tarea, id_empleado, fecha_asignacion, fecha_establecida, descripcion_tarea, id_negocio, estado, id_tipo, id_caso, origen, criticidad, hora_fin)" +
+                   " values ( null ,'Pendiente'," +id_empleado + ",curdate(),'"+fechahora+"','"+descripcion+"',"+id_negocio+", 'activo', "+tipo+",0, 'negocio', '"+criticidad+"', '"+hora_terminacion+"')";
                 OdbcCommand cmd = new OdbcCommand(query, con);
                 cmd.ExecuteNonQuery();
                 try
@@ -638,14 +638,14 @@ namespace crm
             catch { return 0; }
         }
 
-        public int InsertarTareaCaso(string descripcion, string fechahora, int id_empleado, string tipo, string id_caso, string titulo, string criticidad)
+        public int InsertarTareaCaso(string descripcion, string fechahora, int id_empleado, string tipo, string id_caso, string titulo, string criticidad, string hora_terminacion)
         {
             try
             {
 
                 OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
-                string query = "insert into tbl_tarea(id_tarea, estado_tarea, id_empleado, fecha_asignacion, fecha_establecida, descripcion_tarea, id_negocio, estado, id_tipo, id_caso, origen, criticidad)" +
-                   " values ( null ,'Pendiente'," + id_empleado + ",curdate(),'" + fechahora + "','" + descripcion + "',0, 'activo', " + tipo + ","+id_caso+", 'negocio', '" + criticidad + "')";
+                string query = "insert into tbl_tarea(id_tarea, estado_tarea, id_empleado, fecha_asignacion, fecha_establecida, descripcion_tarea, id_negocio, estado, id_tipo, id_caso, origen, criticidad, hora_fin)" +
+                   " values ( null ,'Pendiente'," + id_empleado + ",curdate(),'" + fechahora + "','" + descripcion + "',0, 'activo', " + tipo + ","+id_caso+", 'caso', '" + criticidad + "','"+hora_terminacion+"')";
                 OdbcCommand cmd = new OdbcCommand(query, con);
                 cmd.ExecuteNonQuery();
                 try
@@ -667,7 +667,7 @@ namespace crm
             {
                 DataTable dt = new DataTable();
                 OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
-                OdbcCommand comando = new OdbcCommand("select t.descripcion_tarea, t.fecha_establecida, tt.tipo, concat(e.nombres,' ', e.apellidos) as empleado, t.estado_tarea, t.criticidad, t.id_tarea, concat(e.id_empleado,' - ',e.nombres,' ',e.apellidos) as Emp from tbl_tarea t left join tbl_empleado e on t.id_empleado = e.id_empleado inner join tipo_tarea tt on t.id_tipo = tt.id_tipo where t.estado = 'activo' and t.id_negocio = " + id_negocio+"", con);
+                OdbcCommand comando = new OdbcCommand("select t.descripcion_tarea, t.fecha_establecida, tt.tipo, concat(e.nombres,' ', e.apellidos) as empleado, t.estado_tarea, t.criticidad, t.id_tarea, concat(e.id_empleado,' - ',e.nombres,' ',e.apellidos) as Emp, t.hora_fin from tbl_tarea t left join tbl_empleado e on t.id_empleado = e.id_empleado inner join tipo_tarea tt on t.id_tipo = tt.id_tipo where t.estado = 'activo' and t.id_negocio = " + id_negocio+"", con);
                 OdbcDataAdapter ad = new OdbcDataAdapter(comando);
                 ad.Fill(dt);
                 return dt;
@@ -681,7 +681,7 @@ namespace crm
             {
                 DataTable dt = new DataTable();
                 OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
-                OdbcCommand comando = new OdbcCommand("select t.descripcion_tarea, t.fecha_establecida, tt.tipo, concat(e.nombres,' ', e.apellidos) as empleado, t.estado_tarea, t.criticidad, t.id_tarea, concat(e.id_empleado,' - ',e.nombres,' ',e.apellidos) as Emp from tbl_tarea t left join tbl_empleado e on t.id_empleado = e.id_empleado inner join tipo_tarea tt on t.id_tipo = tt.id_tipo where t.estado = 'activo' and t.id_caso = " + id_caso + "", con);
+                OdbcCommand comando = new OdbcCommand("select t.descripcion_tarea, t.fecha_establecida, tt.tipo, concat(e.nombres,' ', e.apellidos) as empleado, t.estado_tarea, t.criticidad, t.id_tarea, concat(e.id_empleado,' - ',e.nombres,' ',e.apellidos) as Emp, t.hora_fin from tbl_tarea t left join tbl_empleado e on t.id_empleado = e.id_empleado inner join tipo_tarea tt on t.id_tipo = tt.id_tipo where t.estado = 'activo' and t.id_caso = " + id_caso + "", con);
                 OdbcDataAdapter ad = new OdbcDataAdapter(comando);
                 ad.Fill(dt);
                 return dt;
@@ -750,13 +750,13 @@ namespace crm
         }
 
 
-        public int ActualizarTarea(string id_tarea, string descripcion, string fechahora, string empleado, string tipo, string criticidad, string titulo )
+        public int ActualizarTarea(string id_tarea, string descripcion, string fechahora, string empleado, string tipo, string criticidad, string titulo, string hora_terminacion )
         {
             try
             {
 
                 OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
-                string query = "update tbl_tarea set descripcion_tarea = '"+descripcion+"', fecha_establecida = '"+fechahora+"', id_empleado = "+empleado+", id_tipo = "+tipo+", criticidad = '"+criticidad+"' where id_tarea = " + id_tarea + " ";
+                string query = "update tbl_tarea set descripcion_tarea = '"+descripcion+"', fecha_establecida = '"+fechahora+"', id_empleado = "+empleado+", id_tipo = "+tipo+", criticidad = '"+criticidad+"', hora_fin = '"+hora_terminacion+"' where id_tarea = " + id_tarea + " ";
                 OdbcCommand cmd = new OdbcCommand(query, con);
                 cmd.ExecuteNonQuery();
                 try
@@ -772,13 +772,13 @@ namespace crm
         }
 
 
-        public int ActualizarTareaCaso(string id_tarea, string descripcion, string fechahora, string empleado, string tipo, string criticidad, string titulo)
+        public int ActualizarTareaCaso(string id_tarea, string descripcion, string fechahora, string empleado, string tipo, string criticidad, string titulo, string hora_terminacion)
         {
             try
             {
 
                 OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
-                string query = "update tbl_tarea set descripcion_tarea = '" + descripcion + "', fecha_establecida = '" + fechahora + "', id_empleado = " + empleado + ", id_tipo = " + tipo + ", criticidad = '" + criticidad + "' where id_tarea = " + id_tarea + " ";
+                string query = "update tbl_tarea set descripcion_tarea = '" + descripcion + "', fecha_establecida = '" + fechahora + "', id_empleado = " + empleado + ", id_tipo = " + tipo + ", criticidad = '" + criticidad + "', hora_fin = '"+hora_terminacion+"' where id_tarea = " + id_tarea + " ";
                 OdbcCommand cmd = new OdbcCommand(query, con);
                 cmd.ExecuteNonQuery();
                 try
@@ -1242,6 +1242,20 @@ namespace crm
                 return 1;
             }
             catch { return 0; }
+        }
+
+        public static DataTable SeleccionarTareasCalendario()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+                OdbcCommand comando = new OdbcCommand("select t.descripcion_tarea, t.fecha_establecida, t.hora_fin, t.estado_tarea, t.origen, t.id_tipo, ti.tipo, n.titulo, c.titulo from tbl_tarea t inner join tipo_tarea ti on t.id_tipo = ti.id_tipo left join tbl_negocio n on t.id_negocio = n.id_negocio left join caso c on t.id_caso = c.id_caso where t.estado = 'activo' ", con);
+                OdbcDataAdapter ad = new OdbcDataAdapter(comando);
+                ad.Fill(dt);
+                return dt;
+            }
+            catch { return null; }
         }
 
     }

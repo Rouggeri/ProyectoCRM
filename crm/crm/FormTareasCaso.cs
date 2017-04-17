@@ -74,12 +74,16 @@ namespace crm
                     DateTime fecha_establecida = Convert.ToDateTime(dn_fecha.EditValue);
                     DateTime hora = Convert.ToDateTime(te_hora.EditValue);
                     DateTime fechahora_final = new DateTime(fecha_establecida.Year, fecha_establecida.Month, fecha_establecida.Day, hora.Hour, hora.Minute, hora.Second);
+
+                    DateTime hora_ter = Convert.ToDateTime(te_hora_fin.EditValue);
+                    DateTime fechahora_terminacion = new DateTime(fecha_establecida.Year, fecha_establecida.Month, fecha_establecida.Day, hora_ter.Hour, hora_ter.Minute, hora_ter.Second);
+
                     int id_empleado = Convert.ToInt32(cbo_empleado.SelectedValue);
                     string tipo = cbo_tareas.SelectedValue.ToString();
                     string criticidad = cbo_criticidad.SelectedItem.ToString();
 
                     OpBD o = new OpBD();
-                    int res = o.InsertarTareaCaso(descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado, tipo, id_caso, titulo, criticidad);
+                    int res = o.InsertarTareaCaso(descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado, tipo, id_caso, titulo, criticidad,fechahora_terminacion.ToString("yyyy-MM-dd HH:mm:ss"));
                     if (res == 1)
                     {
                         MessageBox.Show("Tarea asignada con exito");
@@ -104,8 +108,11 @@ namespace crm
                     string tipo = cbo_tareas.SelectedValue.ToString();
                     string criticidad = cbo_criticidad.SelectedItem.ToString();
 
+                    DateTime hora_ter = Convert.ToDateTime(te_hora_fin.EditValue);
+                    DateTime fechahora_terminacion = new DateTime(fecha_establecida.Year, fecha_establecida.Month, fecha_establecida.Day, hora_ter.Hour, hora_ter.Minute, hora_ter.Second);
+
                     OpBD oa = new OpBD();
-                    int res = oa.ActualizarTareaCaso(id_tarea, descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado.ToString(), tipo, criticidad, titulo);
+                    int res = oa.ActualizarTareaCaso(id_tarea, descripcion, fechahora_final.ToString("yyyy-MM-dd HH:mm:ss"), id_empleado.ToString(), tipo, criticidad, titulo,fechahora_terminacion.ToString("yyyy-MM-dd HH:mm:ss"));
 
                     if (res == 1)
                     {
