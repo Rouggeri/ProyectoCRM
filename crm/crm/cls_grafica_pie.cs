@@ -19,6 +19,7 @@ namespace crm
         ChartControl pie = new ChartControl();
         Series serie1 = new Series("pie", ViewType.Doughnut3D);
 
+
         //ChartControl pie_retorno = new ChartControl();
 
         public DataTable dt_grafica_pie_caso(string nego_gana, string nego_perdido, string nego_ini)
@@ -44,7 +45,7 @@ namespace crm
             // inicializacion de variables de chartcontrol
             pie.DataSource = null;
             pie.Series.Clear();
-
+            pie.Titles.Clear();
             // Formato para retorno de grafica
             pie.Legend.BackColor = Color.Transparent; // fondo transparente
             pie.Legend.Border.Color = Color.Transparent;
@@ -82,9 +83,9 @@ namespace crm
             ((SimpleDiagram3D)pie.Diagram).RotationAngleX = -35;
             ((SimpleDiagram3D)pie.Diagram).ZoomPercent = 200;
 
-            //ChartTitle titulo = new ChartTitle();
-            //titulo.Text = "Rendimiento de Usuario";
-            //pie.Titles.Add(titulo);
+            ChartTitle titulo = new ChartTitle();
+            titulo.Text = "Rendimiento empresarial";
+            pie.Titles.Add(titulo);
             pie.Legend.Visible = true;
 
 

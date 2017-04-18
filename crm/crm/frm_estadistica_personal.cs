@@ -229,6 +229,7 @@ namespace crm
             // limpieza de variables para grafica de dona o pie:
             pie.DataSource = null;
             pie.Series.Clear();
+            pie.Titles.Clear();
             //pie.Series.Clear();
             // inicializaciòn de variables contadores de casos activos o inactivos
             cont_caso_fin = 0;
@@ -365,10 +366,10 @@ namespace crm
                 ((SimpleDiagram3D)pie.Diagram).RotationType = RotationType.UseAngles;
                 ((SimpleDiagram3D)pie.Diagram).RotationAngleX = -35;
 
-                //ChartTitle titulo = new ChartTitle();
-                //titulo.Text = "Rendimiento de Usuario";
-                //pie.Titles.Add(titulo);
-                pie.Legend.Visible = true;
+            ChartTitle titulo = new ChartTitle();
+            titulo.Text = "Rendimiento de Usuario";
+            pie.Titles.Add(titulo);
+            pie.Legend.Visible = true;
 
                 pie.Dock = DockStyle.Fill;
                 blanco.Controls.Add(pie);
@@ -391,7 +392,7 @@ namespace crm
             //MessageBox.Show(fecha_hoy.ToString("yyyy-MM-dd"));
             nombre = calendario.GetDayOfWeek(fecha_hoy).ToString();
 
-            MessageBox.Show("Hoy es: " + nombre + " con fecha: " + fecha_hoy.ToString("yyyy-MM-dd"));
+            //MessageBox.Show("Hoy es: " + nombre + " con fecha: " + fecha_hoy.ToString("yyyy-MM-dd"));
 
 
             //-------------------------------------------------------------------------------------------- Busqueda de negocios y tareas correspondientes:
@@ -425,7 +426,7 @@ namespace crm
                 //cont_perdido = 0;
                 //cont_proceso = 0;
 
-                if (columna["status"].ToString() == "proceso")
+                if (columna["status"].ToString() == "proceso" || columna["status"].ToString() == "Proceso")
                 {
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
@@ -451,7 +452,7 @@ namespace crm
 
 
                 }
-                else if (columna["status"].ToString() == "perdido")
+                else if (columna["status"].ToString() == "perdido" || columna["status"].ToString() == "Perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
@@ -468,7 +469,7 @@ namespace crm
                     row["Monto"] = columna["valor"].ToString();
                     dt_nego_perdido.Rows.Add(row);
                 }
-                else if (columna["status"].ToString() == "ganado")
+                else if (columna["status"].ToString() == "ganado" || columna["status"].ToString() == "Ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
@@ -513,11 +514,11 @@ namespace crm
                 {
 
                     // recorrer columna de estado_tarea para determinar si la tarea esta pendiente o realizada
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_llamada_pen = cont_llamada_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_llamada_realiz = cont_llamada_realiz + 1;
                     }
@@ -526,13 +527,13 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Reunion")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_reunion_pen = cont_reunion_pen + 1;
                         //MessageBox.Show("estoy en reunion pendiente");
 
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         //MessageBox.Show("estoy en reunion realizado");
 
@@ -543,11 +544,11 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Tarea")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_tarea_pen = cont_tarea_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_tarea_realiz = cont_tarea_realiz + 1;
                     }
@@ -557,11 +558,11 @@ namespace crm
                 {
 
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_plazo_pen = cont_plazo_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_plazo_realiz = cont_plazo_realiz + 1;
                     }
@@ -570,12 +571,12 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Almuerzo")
                 {
                     //cont_almuerzo_pen = cont_almuerzo_pen+1;
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_almuerzo_pen = cont_almuerzo_pen + 1;
                         //MessageBox.Show("estoy en almuerzo pendiente");
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_almuerzo_realiz = cont_almuerzo_realiz + 1;
                         //MessageBox.Show("estoy en almuerzo realizado");
@@ -617,7 +618,7 @@ namespace crm
              DateTime fecha_ayer = fecha_hoy.AddDays(-1);
             nombre = calendario.GetDayOfWeek(fecha_ayer).ToString();
             //MessageBox.Show(fecha_ayer.ToString("yyyy-MM-dd"),nombre);
-            MessageBox.Show("Ayer fue: " + nombre + " con fecha: " + fecha_ayer.ToString("yyyy-MM-dd"));
+            //MessageBox.Show("Ayer fue: " + nombre + " con fecha: " + fecha_ayer.ToString("yyyy-MM-dd"));
 
             //-------------------------------------------------------------------------------------------- Busqueda de negocios y tareas correspondientes:
             // variables de contadores negocio:
@@ -650,7 +651,7 @@ namespace crm
                 //cont_perdido = 0;
                 //cont_proceso = 0;
 
-                if (columna["status"].ToString() == "proceso")
+                if (columna["status"].ToString() == "proceso" || columna["status"].ToString() == "Proceso")
                 {
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
@@ -666,7 +667,7 @@ namespace crm
                     row["Monto"] = columna["valor"].ToString();
                     dt_nego_proceso.Rows.Add(row);
                 }
-                else if (columna["status"].ToString() == "perdido")
+                else if (columna["status"].ToString() == "perdido" || columna["status"].ToString() == "Perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
@@ -686,7 +687,7 @@ namespace crm
 
 
                 }
-                else if (columna["status"].ToString() == "ganado")
+                else if (columna["status"].ToString() == "ganado" || columna["status"].ToString() == "Ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
@@ -730,11 +731,11 @@ namespace crm
                 {
 
                     // recorrer columna de estado_tarea para determinar si la tarea esta pendiente o realizada
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_llamada_pen = cont_llamada_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_llamada_realiz = cont_llamada_realiz + 1;
                     }
@@ -743,13 +744,13 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Reunion")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_reunion_pen = cont_reunion_pen + 1;
                         //MessageBox.Show("estoy en reunion pendiente");
 
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         //MessageBox.Show("estoy en reunion realizado");
 
@@ -760,11 +761,11 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Tarea")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_tarea_pen = cont_tarea_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_tarea_realiz = cont_tarea_realiz + 1;
                     }
@@ -774,11 +775,11 @@ namespace crm
                 {
 
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_plazo_pen = cont_plazo_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_plazo_realiz = cont_plazo_realiz + 1;
                     }
@@ -787,12 +788,12 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Almuerzo")
                 {
                     //cont_almuerzo_pen = cont_almuerzo_pen+1;
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_almuerzo_pen = cont_almuerzo_pen + 1;
                         //MessageBox.Show("estoy en almuerzo pendiente");
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_almuerzo_realiz = cont_almuerzo_realiz + 1;
                         //MessageBox.Show("estoy en almuerzo realizado");
@@ -883,7 +884,7 @@ namespace crm
 
             }
             nombre_inicio = calendario.GetDayOfWeek(fecha_inicio).ToString();
-            MessageBox.Show("Toma de inicio de datos: " + nombre_inicio + ", " + fecha_inicio.ToString("yyyy-MM-dd") + " al " + nombre + ", " + fecha_hoy.ToString("yyyy-MM-dd"));
+            //MessageBox.Show("Toma de inicio de datos: " + nombre_inicio + ", " + fecha_inicio.ToString("yyyy-MM-dd") + " al " + nombre + ", " + fecha_hoy.ToString("yyyy-MM-dd"));
 
 
             // -------------------- Envio de datos a clase capadatos
@@ -896,7 +897,7 @@ namespace crm
                 //cont_perdido = 0;
                 //cont_proceso = 0;
                     
-                if (columna["status"].ToString() == "proceso")
+                if (columna["status"].ToString() == "proceso" || columna["status"].ToString() == "Proceso")
                 {
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
@@ -917,7 +918,7 @@ namespace crm
 
 
                 }
-                else if (columna["status"].ToString() == "perdido")
+                else if (columna["status"].ToString() == "perdido" || columna["status"].ToString() == "Perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
@@ -939,7 +940,7 @@ namespace crm
 
 
                 }
-                else if (columna["status"].ToString() == "ganado")
+                else if (columna["status"].ToString() == "ganado" || columna["status"].ToString() == "Ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
@@ -992,11 +993,11 @@ namespace crm
                 {
 
                     // recorrer columna de estado_tarea para determinar si la tarea esta pendiente o realizada
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_llamada_pen = cont_llamada_pen+1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_llamada_realiz = cont_llamada_realiz+1;
                     }
@@ -1005,13 +1006,13 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Reunion")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_reunion_pen = cont_reunion_pen + 1;
                         //MessageBox.Show("estoy en reunion pendiente");
 
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         //MessageBox.Show("estoy en reunion realizado");
 
@@ -1022,11 +1023,11 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Tarea")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_tarea_pen = cont_tarea_pen+1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_tarea_realiz = cont_tarea_realiz+1;
                     }
@@ -1036,11 +1037,11 @@ namespace crm
                 {
 
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_plazo_pen = cont_plazo_pen+1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_plazo_realiz = cont_plazo_realiz+1;
                     }
@@ -1049,12 +1050,12 @@ namespace crm
                 else if(colum["tipo"].ToString() == "Almuerzo")
                 {
                     //cont_almuerzo_pen = cont_almuerzo_pen+1;
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_almuerzo_pen = cont_almuerzo_pen+1;
                         //MessageBox.Show("estoy en almuerzo pendiente");
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_almuerzo_realiz = cont_almuerzo_realiz+1;
                         //MessageBox.Show("estoy en almuerzo realizado");
@@ -1160,7 +1161,7 @@ namespace crm
 
             }
             nombre_inicio = calendario.GetDayOfWeek(fecha_inicio).ToString();
-            MessageBox.Show("Toma de inicio de datos: " + nombre_inicio + ", " + fecha_inicio.ToString("yyyy-MM-dd") + " al " + "Domingo" + ", " + fecha_fin_semana.ToString("yyyy-MM-dd"));
+            //MessageBox.Show("Toma de inicio de datos: " + nombre_inicio + ", " + fecha_inicio.ToString("yyyy-MM-dd") + " al " + "Domingo" + ", " + fecha_fin_semana.ToString("yyyy-MM-dd"));
 
 
 
@@ -1174,7 +1175,7 @@ namespace crm
                 //cont_perdido = 0;
                 //cont_proceso = 0;
 
-                if (columna["status"].ToString() == "proceso")
+                if (columna["status"].ToString() == "proceso" || columna["status"].ToString() == "Proceso")
                 {
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
@@ -1191,7 +1192,7 @@ namespace crm
                     dt_nego_proceso.Rows.Add(row);
 
                 }
-                else if (columna["status"].ToString() == "perdido")
+                else if (columna["status"].ToString() == "perdido" || columna["status"].ToString() == "Perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
@@ -1208,7 +1209,7 @@ namespace crm
                     row["Monto"] = columna["valor"].ToString();
                     dt_nego_perdido.Rows.Add(row);
                 }
-                else if (columna["status"].ToString() == "ganado")
+                else if (columna["status"].ToString() == "ganado" || columna["status"].ToString() == "Ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
@@ -1253,11 +1254,11 @@ namespace crm
                 {
 
                     // recorrer columna de estado_tarea para determinar si la tarea esta pendiente o realizada
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_llamada_pen = cont_llamada_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_llamada_realiz = cont_llamada_realiz + 1;
                     }
@@ -1266,13 +1267,13 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Reunion")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_reunion_pen = cont_reunion_pen + 1;
                         //MessageBox.Show("estoy en reunion pendiente");
 
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         //MessageBox.Show("estoy en reunion realizado");
 
@@ -1283,11 +1284,11 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Tarea")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_tarea_pen = cont_tarea_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_tarea_realiz = cont_tarea_realiz + 1;
                     }
@@ -1297,11 +1298,11 @@ namespace crm
                 {
 
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_plazo_pen = cont_plazo_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_plazo_realiz = cont_plazo_realiz + 1;
                     }
@@ -1310,12 +1311,12 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Almuerzo")
                 {
                     //cont_almuerzo_pen = cont_almuerzo_pen+1;
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_almuerzo_pen = cont_almuerzo_pen + 1;
                         //MessageBox.Show("estoy en almuerzo pendiente");
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_almuerzo_realiz = cont_almuerzo_realiz + 1;
                         //MessageBox.Show("estoy en almuerzo realizado");
@@ -1351,7 +1352,7 @@ namespace crm
             
             DateTime fecha_inicio_mes = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1);
             string nombre_inicio_mes = calendario.GetDayOfWeek(fecha_inicio_mes).ToString(); ;
-            MessageBox.Show("Toma de inicio de datos: " + nombre_inicio_mes + ", " + fecha_inicio_mes.ToString("yyyy-MM-dd") + " al " + nombre + ", " + fecha_hoy.ToString("yyyy-MM-dd"));
+            //MessageBox.Show("Toma de inicio de datos: " + nombre_inicio_mes + ", " + fecha_inicio_mes.ToString("yyyy-MM-dd") + " al " + nombre + ", " + fecha_hoy.ToString("yyyy-MM-dd"));
 
             //-------------------------------------------------------------------------------------------- Busqueda de negocios y tareas correspondientes:
             // variables de contadores negocio:
@@ -1386,7 +1387,7 @@ namespace crm
                 //cont_perdido = 0;
                 //cont_proceso = 0;
 
-                if (columna["status"].ToString() == "proceso")
+                if (columna["status"].ToString() == "proceso" || columna["status"].ToString() == "Proceso")
                 {
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
@@ -1403,7 +1404,7 @@ namespace crm
                     row["Monto"] = columna["valor"].ToString();
                     dt_nego_proceso.Rows.Add(row);
                 }
-                else if (columna["status"].ToString() == "perdido")
+                else if (columna["status"].ToString() == "perdido" || columna["status"].ToString() == "Perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
@@ -1421,7 +1422,7 @@ namespace crm
                     dt_nego_perdido.Rows.Add(row);
 
                 }
-                else if (columna["status"].ToString() == "ganado")
+                else if (columna["status"].ToString() == "ganado" || columna["status"].ToString() == "Ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
@@ -1466,11 +1467,11 @@ namespace crm
                 {
 
                     // recorrer columna de estado_tarea para determinar si la tarea esta pendiente o realizada
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_llamada_pen = cont_llamada_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_llamada_realiz = cont_llamada_realiz + 1;
                     }
@@ -1479,13 +1480,13 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Reunion")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_reunion_pen = cont_reunion_pen + 1;
                         //MessageBox.Show("estoy en reunion pendiente");
 
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         //MessageBox.Show("estoy en reunion realizado");
 
@@ -1496,11 +1497,11 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Tarea")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_tarea_pen = cont_tarea_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_tarea_realiz = cont_tarea_realiz + 1;
                     }
@@ -1510,11 +1511,11 @@ namespace crm
                 {
 
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_plazo_pen = cont_plazo_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_plazo_realiz = cont_plazo_realiz + 1;
                     }
@@ -1523,12 +1524,12 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Almuerzo")
                 {
                     //cont_almuerzo_pen = cont_almuerzo_pen+1;
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_almuerzo_pen = cont_almuerzo_pen + 1;
                         //MessageBox.Show("estoy en almuerzo pendiente");
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_almuerzo_realiz = cont_almuerzo_realiz + 1;
                         //MessageBox.Show("estoy en almuerzo realizado");
@@ -1561,7 +1562,7 @@ namespace crm
             DateTime fecha_referencia = new DateTime(DateTime.Now.Year, DateTime.Now.Month, 1); // fecha de inicio de este mes
             DateTime fecha_inicio_mes = fecha_referencia.AddMonths(-1); // fecha de inicio del mes anterior
             DateTime fecha_fin_mes = fecha_inicio_mes.AddMonths(1).AddDays(-1); // fecha de fin de mes anterior
-            MessageBox.Show("inicio: "+fecha_inicio_mes.ToString("yyy-MM-dd")+" fin: "+fecha_fin_mes.ToString("yyy-MM-dd"));
+            //MessageBox.Show("inicio: "+fecha_inicio_mes.ToString("yyy-MM-dd")+" fin: "+fecha_fin_mes.ToString("yyy-MM-dd"));
 
 
 
@@ -1597,7 +1598,7 @@ namespace crm
                 //cont_perdido = 0;
                 //cont_proceso = 0;
 
-                if (columna["status"].ToString() == "proceso")
+                if (columna["status"].ToString() == "proceso" || columna["status"].ToString() == "Proceso")
                 {
                     cont_proceso = cont_proceso + 1;
                     monto_proceso += Convert.ToDouble(columna["valor"]);
@@ -1613,7 +1614,7 @@ namespace crm
                     row["Monto"] = columna["valor"].ToString();
                     dt_nego_proceso.Rows.Add(row);
                 }
-                else if (columna["status"].ToString() == "perdido")
+                else if (columna["status"].ToString() == "perdido" || columna["status"].ToString() == "Perdido")
                 {
                     cont_perdido = cont_perdido + 1;
                     monto_perdido += Convert.ToDouble(columna["valor"]);
@@ -1630,7 +1631,7 @@ namespace crm
                     row["Monto"] = columna["valor"].ToString();
                     dt_nego_perdido.Rows.Add(row);
                 }
-                else if (columna["status"].ToString() == "ganado")
+                else if (columna["status"].ToString() == "ganado" || columna["status"].ToString() == "Ganado")
                 {
                     cont_ganado = cont_ganado + 1;
                     monto_ganado += Convert.ToDouble(columna["valor"]);
@@ -1674,11 +1675,11 @@ namespace crm
                 {
 
                     // recorrer columna de estado_tarea para determinar si la tarea esta pendiente o realizada
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_llamada_pen = cont_llamada_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_llamada_realiz = cont_llamada_realiz + 1;
                     }
@@ -1687,13 +1688,13 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Reunion")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_reunion_pen = cont_reunion_pen + 1;
                         //MessageBox.Show("estoy en reunion pendiente");
 
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         //MessageBox.Show("estoy en reunion realizado");
 
@@ -1704,11 +1705,11 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Tarea")
                 {
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_tarea_pen = cont_tarea_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_tarea_realiz = cont_tarea_realiz + 1;
                     }
@@ -1718,11 +1719,11 @@ namespace crm
                 {
 
 
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_plazo_pen = cont_plazo_pen + 1;
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_plazo_realiz = cont_plazo_realiz + 1;
                     }
@@ -1731,12 +1732,12 @@ namespace crm
                 else if (colum["tipo"].ToString() == "Almuerzo")
                 {
                     //cont_almuerzo_pen = cont_almuerzo_pen+1;
-                    if (colum["estado_tarea"].ToString() == "pendiente")
+                    if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                     {
                         cont_almuerzo_pen = cont_almuerzo_pen + 1;
                         //MessageBox.Show("estoy en almuerzo pendiente");
                     }
-                    else if (colum["estado_tarea"].ToString() == "realizado")
+                    else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                     {
                         cont_almuerzo_realiz = cont_almuerzo_realiz + 1;
                         //MessageBox.Show("estoy en almuerzo realizado");
@@ -1804,7 +1805,7 @@ namespace crm
                     //cont_perdido = 0;
                     //cont_proceso = 0;
 
-                    if (columna["status"].ToString() == "proceso")
+                    if (columna["status"].ToString() == "proceso" || columna["status"].ToString() == "Proceso")
                     {
                         cont_proceso = cont_proceso + 1;
                         monto_proceso += Convert.ToDouble(columna["valor"]);
@@ -1821,7 +1822,7 @@ namespace crm
                         dt_nego_proceso.Rows.Add(row);
 
                     }
-                    else if (columna["status"].ToString() == "perdido")
+                    else if (columna["status"].ToString() == "perdido" || columna["status"].ToString() == "Perdido")
                     {
                         cont_perdido = cont_perdido + 1;
                         monto_perdido += Convert.ToDouble(columna["valor"]);
@@ -1839,7 +1840,7 @@ namespace crm
                         row["Monto"] = columna["valor"].ToString();
                         dt_nego_perdido.Rows.Add(row);
                     }
-                    else if (columna["status"].ToString() == "ganado")
+                    else if (columna["status"].ToString() == "ganado" || columna["status"].ToString() == "Ganado")
                     {
                         cont_ganado = cont_ganado + 1;
                         monto_ganado += Convert.ToDouble(columna["valor"]);
@@ -1884,11 +1885,11 @@ namespace crm
                     {
 
                         // recorrer columna de estado_tarea para determinar si la tarea esta pendiente o realizada
-                        if (colum["estado_tarea"].ToString() == "pendiente")
+                        if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                         {
                             cont_llamada_pen = cont_llamada_pen + 1;
                         }
-                        else if (colum["estado_tarea"].ToString() == "realizado")
+                        else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                         {
                             cont_llamada_realiz = cont_llamada_realiz + 1;
                         }
@@ -1897,13 +1898,13 @@ namespace crm
                     else if (colum["tipo"].ToString() == "Reunion")
                     {
 
-                        if (colum["estado_tarea"].ToString() == "pendiente")
+                        if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                         {
                             cont_reunion_pen = cont_reunion_pen + 1;
                             //MessageBox.Show("estoy en reunion pendiente");
 
                         }
-                        else if (colum["estado_tarea"].ToString() == "realizado")
+                        else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                         {
                             //MessageBox.Show("estoy en reunion realizado");
 
@@ -1914,11 +1915,11 @@ namespace crm
                     else if (colum["tipo"].ToString() == "Tarea")
                     {
 
-                        if (colum["estado_tarea"].ToString() == "pendiente")
+                        if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                         {
                             cont_tarea_pen = cont_tarea_pen + 1;
                         }
-                        else if (colum["estado_tarea"].ToString() == "realizado")
+                        else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                         {
                             cont_tarea_realiz = cont_tarea_realiz + 1;
                         }
@@ -1928,11 +1929,11 @@ namespace crm
                     {
 
 
-                        if (colum["estado_tarea"].ToString() == "pendiente")
+                        if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                         {
                             cont_plazo_pen = cont_plazo_pen + 1;
                         }
-                        else if (colum["estado_tarea"].ToString() == "realizado")
+                        else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                         {
                             cont_plazo_realiz = cont_plazo_realiz + 1;
                         }
@@ -1941,12 +1942,12 @@ namespace crm
                     else if (colum["tipo"].ToString() == "Almuerzo")
                     {
                         //cont_almuerzo_pen = cont_almuerzo_pen+1;
-                        if (colum["estado_tarea"].ToString() == "pendiente")
+                        if (colum["estado_tarea"].ToString() == "pendiente" || colum["estado_tarea"].ToString() == "Pendiente")
                         {
                             cont_almuerzo_pen = cont_almuerzo_pen + 1;
                             //MessageBox.Show("estoy en almuerzo pendiente");
                         }
-                        else if (colum["estado_tarea"].ToString() == "realizado")
+                        else if (colum["estado_tarea"].ToString() == "realizado" || colum["estado_tarea"].ToString() == "Realizado")
                         {
                             cont_almuerzo_realiz = cont_almuerzo_realiz + 1;
                             //MessageBox.Show("estoy en almuerzo realizado");

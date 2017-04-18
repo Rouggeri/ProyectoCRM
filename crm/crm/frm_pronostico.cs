@@ -481,7 +481,7 @@ namespace crm
             // -------------------------------- negocios en proceso -------------------------
             foreach (DataRow row in dt_negos_mes.Rows) // for each para negocios que estan en proceso
             {
-                if (row["status"].ToString() == "proceso")
+                if (row["status"].ToString() == "proceso" || row["status"].ToString() == "Proceso")
                 {
                     DataRow rows = dt_nego_pro.NewRow();
 
@@ -524,7 +524,7 @@ namespace crm
             // -------------------------------- negocios en ganados -------------------------
             foreach (DataRow row in dt_negos_mes.Rows) // for each para negocios que estan en proceso
             {
-                if (row["status"].ToString() == "ganado")
+                if (row["status"].ToString() == "ganado" || row["status"].ToString() == "Ganado")
                 {
                     DataRow rows = dt_nego_gana.NewRow();
 
@@ -571,7 +571,7 @@ namespace crm
             // -------------------------------- negocios perdidos -------------------------
             foreach (DataRow row in dt_negos_mes.Rows) // for each para negocios que estan en proceso
             {
-                if (row["status"].ToString() == "perdido")
+                if (row["status"].ToString() == "perdido" || row["status"].ToString() == "Perdido")
                 {
                     DataRow rows = dt_nego_per.NewRow();
 
@@ -666,9 +666,9 @@ namespace crm
 
 
             // ****************************************** CARGA DE DATATABLES CON NEGOCIOS GANADOS, PERDIDOS, O EN PROCESO************************
-            dt_negos_proceso = CapaDatos.consultar_negocios_proceso(fecha_inicio_mes.ToString("yyyy-MM-dd"), hoy.ToString("yyyy-MM-dd"), "proceso");
-            dt_negos_ganados = CapaDatos.consultar_negocios_proceso(fecha_inicio_mes.ToString("yyyy-MM-dd"), hoy.ToString("yyyy-MM-dd"), "ganado");
-            dt_negos_perdidos = CapaDatos.consultar_negocios_proceso(fecha_inicio_mes.ToString("yyyy-MM-dd"), hoy.ToString("yyyy-MM-dd"), "perdido");
+            dt_negos_proceso = CapaDatos.consultar_negocios_proceso(fecha_inicio_mes.ToString("yyyy-MM-dd"), hoy.ToString("yyyy-MM-dd"), "Proceso");
+            dt_negos_ganados = CapaDatos.consultar_negocios_proceso(fecha_inicio_mes.ToString("yyyy-MM-dd"), hoy.ToString("yyyy-MM-dd"), "Ganado");
+            dt_negos_perdidos = CapaDatos.consultar_negocios_proceso(fecha_inicio_mes.ToString("yyyy-MM-dd"), hoy.ToString("yyyy-MM-dd"), "Perdido");
 
             // cambio de headers para datatable de negocios en proceso
             dt_negos_proceso.Columns["titulo"].ColumnName = "Titulo de negociación";
@@ -791,7 +791,7 @@ namespace crm
                 // -------------------------------- negocios en proceso -------------------------
                 foreach (DataRow row in dt_negos_mes.Rows) // for each para negocios que estan en proceso
                 {
-                    if (row["status"].ToString() == "proceso")
+                    if (row["status"].ToString() == "proceso" || row["status"].ToString() == "Proceso")
                     {
                         DataRow rows = dt_nego_pro.NewRow();
 
@@ -834,7 +834,7 @@ namespace crm
                 // -------------------------------- negocios en ganados -------------------------
                 foreach (DataRow row in dt_negos_mes.Rows) // for each para negocios que estan en proceso
                 {
-                    if (row["status"].ToString() == "ganado")
+                    if (row["status"].ToString() == "ganado" || row["status"].ToString() == "Ganado")
                     {
                         DataRow rows = dt_nego_gana.NewRow();
 
@@ -881,7 +881,7 @@ namespace crm
                 // -------------------------------- negocios perdidos -------------------------
                 foreach (DataRow row in dt_negos_mes.Rows) // for each para negocios que estan en proceso
                 {
-                    if (row["status"].ToString() == "perdido")
+                    if (row["status"].ToString() == "perdido" || row["status"].ToString() == "Perdido")
                     {
                         DataRow rows = dt_nego_per.NewRow();
 
@@ -1009,7 +1009,7 @@ namespace crm
                 // -------------------------------- negocios en proceso -------------------------
                 foreach (DataRow row in dt_negos_mes.Rows) // for each para negocios que estan en proceso
                 {
-                    if (row["status"].ToString() == "proceso")
+                    if (row["status"].ToString() == "proceso" || row["status"].ToString() == "Proceso")
                     {
                         DataRow rows = dt_nego_pro.NewRow();
 
@@ -1052,7 +1052,7 @@ namespace crm
                 // -------------------------------- negocios en ganados -------------------------
                 foreach (DataRow row in dt_negos_mes.Rows) // for each para negocios que estan en proceso
                 {
-                    if (row["status"].ToString() == "ganado")
+                    if (row["status"].ToString() == "ganado" || row["status"].ToString() == "Ganado")
                     {
                         DataRow rows = dt_nego_gana.NewRow();
 
@@ -1099,7 +1099,7 @@ namespace crm
                 // -------------------------------- negocios perdidos -------------------------
                 foreach (DataRow row in dt_negos_mes.Rows) // for each para negocios que estan en proceso
                 {
-                    if (row["status"].ToString() == "perdido")
+                    if (row["status"].ToString() == "perdido" || row["status"].ToString() == "Perdido")
                     {
                         DataRow rows = dt_nego_per.NewRow();
 
