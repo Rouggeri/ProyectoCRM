@@ -118,7 +118,7 @@
             this.pag_estado});
             this.navigationPane1.RegularSize = new System.Drawing.Size(1013, 526);
             this.navigationPane1.SelectedPage = this.pag_estado;
-            this.navigationPane1.SelectedPageIndex = 1;
+            this.navigationPane1.SelectedPageIndex = 0;
             this.navigationPane1.Size = new System.Drawing.Size(1013, 526);
             this.navigationPane1.TabIndex = 4;
             this.navigationPane1.Text = "Negociaciones";
@@ -377,6 +377,7 @@
             this.btn_ultimo.Size = new System.Drawing.Size(19, 26);
             this.btn_ultimo.TabIndex = 181;
             this.btn_ultimo.UseVisualStyleBackColor = true;
+            this.btn_ultimo.Click += new System.EventHandler(this.btn_ultimo_Click);
             // 
             // btn_actualizar
             // 
@@ -393,6 +394,7 @@
             this.btn_actualizar.Size = new System.Drawing.Size(45, 50);
             this.btn_actualizar.TabIndex = 177;
             this.btn_actualizar.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
             // btn_guardar
             // 
@@ -409,6 +411,7 @@
             this.btn_guardar.Size = new System.Drawing.Size(44, 50);
             this.btn_guardar.TabIndex = 3;
             this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // btn_buscar
             // 
@@ -441,6 +444,7 @@
             this.btn_primero.Size = new System.Drawing.Size(19, 26);
             this.btn_primero.TabIndex = 180;
             this.btn_primero.UseVisualStyleBackColor = true;
+            this.btn_primero.Click += new System.EventHandler(this.btn_primero_Click);
             // 
             // btn_anterior
             // 
@@ -457,6 +461,7 @@
             this.btn_anterior.Size = new System.Drawing.Size(19, 21);
             this.btn_anterior.TabIndex = 178;
             this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
             // 
             // btn_editar
             // 
@@ -473,6 +478,7 @@
             this.btn_editar.Size = new System.Drawing.Size(51, 50);
             this.btn_editar.TabIndex = 5;
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_eliminar
             // 
@@ -489,6 +495,7 @@
             this.btn_eliminar.Size = new System.Drawing.Size(51, 51);
             this.btn_eliminar.TabIndex = 6;
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_siguiente
             // 
@@ -505,6 +512,7 @@
             this.btn_siguiente.Size = new System.Drawing.Size(19, 21);
             this.btn_siguiente.TabIndex = 179;
             this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
             // FormNegociaciones
             // 

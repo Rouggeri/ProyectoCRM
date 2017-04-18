@@ -18,6 +18,9 @@ namespace crm
             InitializeComponent();
         }
         string id_form = "108";
+        public string id_empresa;
+        public string nombre_empresa;
+        public bool actualizar;
         private void frm_empresa_Load(object sender, EventArgs e)
         {
 
@@ -39,6 +42,28 @@ namespace crm
                 cbo_pais.Properties.DisplayMember = "nombre";
                 cbo_pais.Properties.PopulateColumns();
                 cbo_pais.Properties.Columns[0].Visible = false;
+
+                if(actualizar == true)
+                {
+                    DataTable dt_emp = OpBD.SeleccionarDatosRestantesEmpresa(id_empresa);
+               
+                    if (dt_emp != null)
+                    {
+                        DataRow row_emp = dt_emp.Rows[0];
+                        string direccion = row_emp[0].ToString();
+                        string correo = row_emp[1].ToString();
+                        string telefono1 = row_emp[2].ToString();
+                        string telefono2 = row_emp[3].ToString();
+                        string pais = row_emp[4].ToString();
+
+                        txt_nombre.Text = nombre_empresa;
+                        txt_telefono1.Text = telefono1;
+                        txt_telefono2.Text = telefono2;
+                        txt_email.Text = correo;
+                        txt_direccion.Text = direccion;
+                        cbo_pais.EditValue = cbo_pais.Properties.GetKeyValueByDisplayText(pais);
+                    }
+                }
             }
             catch(Exception exep) { MessageBox.Show(exep.Message); }
 
@@ -64,20 +89,41 @@ namespace crm
 
         private void btn_save_Click(object sender, EventArgs e)
         {
-            string nombre = txt_nombre.Text.Trim();
-            string telefono1 = txt_telefono1.Text.Trim();
-            string telefono2 = txt_telefono2.Text.Trim();
-            string email = txt_email.Text.Trim();
-            string direccion = txt_direccion.Text.Trim();
-            int pais = Convert.ToInt32(cbo_pais.EditValue);
-
-            OpBD o = new OpBD();
-            int res = o.InsertarEmpresa(nombre, direccion, email, telefono1, telefono2, pais);
-            if (res == 1)
+            if (actualizar==false)
             {
-                MessageBox.Show("Empresa registrada");
+
+                string nombre = txt_nombre.Text.Trim();
+                string telefono1 = txt_telefono1.Text.Trim();
+                string telefono2 = txt_telefono2.Text.Trim();
+                string email = txt_email.Text.Trim();
+                string direccion = txt_direccion.Text.Trim();
+                int pais = Convert.ToInt32(cbo_pais.EditValue);
+
+                OpBD o = new OpBD();
+                int res = o.InsertarEmpresa(nombre, direccion, email, telefono1, telefono2, pais);
+                if (res == 1)
+                {
+                    MessageBox.Show("Empresa registrada");
+                }
+                else { MessageBox.Show("No se registro la empresa"); }
+
+            }else if(actualizar ==true)
+            {
+                string nombre = txt_nombre.Text.Trim();
+                string telefono1 = txt_telefono1.Text.Trim();
+                string telefono2 = txt_telefono2.Text.Trim();
+                string email = txt_email.Text.Trim();
+                string direccion = txt_direccion.Text.Trim();
+                int pais = Convert.ToInt32(cbo_pais.EditValue);
+
+                OpBD o = new OpBD();
+                int res = o.ActualizarEmpresa(nombre, direccion, email, telefono1, telefono2, pais, id_empresa);
+                if (res == 1)
+                {
+                    MessageBox.Show("Empresa actualizada");
+                }
+                else { MessageBox.Show("No se actualizo la empresa"); }
             }
-            else { MessageBox.Show("No se registro la empresa"); }
         }
     }
 }

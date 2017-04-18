@@ -53,7 +53,8 @@ namespace crm
                 lbl_cliente.Text = nombre_empresa;
                 }
 
-            lbl_valor.Text = moneda +" "+ valor;
+            decimal valor2 = Convert.ToDecimal(valor);
+            lbl_valor.Text = moneda +" "+ valor2.ToString("#,###.##"); ;
 
             string[] fecha_inicio_separado = fecha_inicio.Split(' ');
             lbl_fecha_ini.Text = fecha_inicio_separado[0];
@@ -119,6 +120,15 @@ namespace crm
                 dgv_tareas.Columns[4].Caption = "Estado";
                 dgv_tareas.Columns[5].Caption = "Criticidad";
                 dgv_tareas.Columns[6].Visible = false;
+                dgv_tareas.Columns[7].Visible = false;
+                dgv_tareas.Columns[8].Visible = false;
+
+                dgv_tareas.Columns[0].Width = 115;
+                dgv_tareas.Columns[1].Width = 70;
+                dgv_tareas.Columns[2].Width = 58;
+                dgv_tareas.Columns[3].Width = 90;
+                dgv_tareas.Columns[4].Width = 60;
+                dgv_tareas.Columns[5].Width = 47;
             }
         }
 
@@ -274,7 +284,7 @@ namespace crm
             }
             else { MessageBox.Show("No se pudo eliminar la nota"); }
         }
-
+        //---------------------------------------------------------------------------
         private void btn_nueva_tarea_Click(object sender, EventArgs e)
         {
             FormTareasNegocio f = new FormTareasNegocio();
@@ -367,22 +377,61 @@ namespace crm
             string descripcion = fila[0].ToString();
             string fecha = fila[1].ToString();
             string tipo = fila[2].ToString();
-            string empleado = fila[3].ToString();
+            string empleado = fila[7].ToString();
             string estado = fila[4].ToString();
             string criticidad = fila[5].ToString();
+            string hora_fin = fila[8].ToString();
 
             string[] fecha_hora = fecha.Split(' ');
             DateTime solo_fecha = Convert.ToDateTime(fecha_hora[0]);
             DateTime solo_hora = Convert.ToDateTime(fecha_hora[1]);
+
+            string[] hora_fin_Vec = hora_fin.Split(' ');
+            DateTime hora_terminacion = Convert.ToDateTime(hora_fin_Vec[1]);
 
             //MessageBox.Show(solo_fecha.ToString() + solo_hora.ToString());
 
             FormTareasNegocio f = new FormTareasNegocio();
             f.te_hora.EditValue = solo_hora;
             f.dn_fecha.EditValue = solo_fecha;
+            f.te_hora_fin.EditValue = hora_terminacion;
             f.txt_descripcion.Text = descripcion;
+            f.cbo_criticidad.SelectedItem = criticidad;
+            f.empleado = empleado;
+            f.id_tarea = id_tarea;
+            f.tipo = tipo;
 
+            f.btn_guardar.Text = "Actualizar";
             f.Show();
+        }
+
+        private void btn_refrescar_Click(object sender, EventArgs e)
+        {
+            DataTable dt_tareasneg = OpBD.SeleccionarTareasNEG(id_negocio);
+            if (dt_tareasneg != null)
+            {
+                gridControl_tareas.DataSource = dt_tareasneg;
+                dgv_tareas.Columns[0].Caption = "Descripción";
+                dgv_tareas.Columns[1].Caption = "Fecha";
+                dgv_tareas.Columns[2].Caption = "Tipo";
+                dgv_tareas.Columns[3].Caption = "Empleado";
+                dgv_tareas.Columns[4].Caption = "Estado";
+                dgv_tareas.Columns[5].Caption = "Criticidad";
+                dgv_tareas.Columns[6].Visible = false;
+                dgv_tareas.Columns[7].Visible = false;
+
+                dgv_tareas.Columns[0].Width = 115;
+                dgv_tareas.Columns[1].Width = 70;
+                dgv_tareas.Columns[2].Width = 58;
+                dgv_tareas.Columns[3].Width = 90;
+                dgv_tareas.Columns[4].Width = 60;
+                dgv_tareas.Columns[5].Width = 47;
+            }
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publicar\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -99,7 +99,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseDatosCalendarioDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BaseDatosCalendarioDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="CapaDatosPersonas.cs" />
+    <Compile Include="CapaNegociod.cs" />
     <Compile Include="cls_grafica_pie.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="crmbdDataSet.Designer.cs">
@@ -125,6 +131,12 @@
     <Compile Include="FormContactos.Designer.cs">
       <DependentUpon>FormContactos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDetallesCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDetallesCaso.Designer.cs">
+      <DependentUpon>FormDetallesCaso.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormDetallesNegocio.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +154,12 @@
     </Compile>
     <Compile Include="FormNuevoNegocio.Designer.cs">
       <DependentUpon>FormNuevoNegocio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTareasCaso.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTareasCaso.Designer.cs">
+      <DependentUpon>FormTareasCaso.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTareasNegocio.cs">
       <SubType>Form</SubType>
@@ -281,6 +299,9 @@
     <EmbeddedResource Include="FormContactos.resx">
       <DependentUpon>FormContactos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormDetallesCaso.resx">
+      <DependentUpon>FormDetallesCaso.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormDetallesNegocio.resx">
       <DependentUpon>FormDetallesNegocio.cs</DependentUpon>
     </EmbeddedResource>
@@ -289,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNuevoNegocio.resx">
       <DependentUpon>FormNuevoNegocio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTareasCaso.resx">
+      <DependentUpon>FormTareasCaso.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTareasNegocio.resx">
       <DependentUpon>FormTareasNegocio.cs</DependentUpon>
@@ -364,6 +388,17 @@
     <EmbeddedResource Include="prueba.resx">
       <DependentUpon>prueba.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="BaseDatosCalendarioDataSet.xsc">
+      <DependentUpon>BaseDatosCalendarioDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BaseDatosCalendarioDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BaseDatosCalendarioDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BaseDatosCalendarioDataSet.xss">
+      <DependentUpon>BaseDatosCalendarioDataSet.xsd</DependentUpon>
+    </None>
     <None Include="crmbdDataSet.xsc">
       <DependentUpon>crmbdDataSet.xsd</DependentUpon>
     </None>
@@ -402,6 +437,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="bin\Debug\imprimir1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="BaseDatosCalendario.mdf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="BaseDatosCalendario_log.ldf">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <DependentUpon>BaseDatosCalendario.mdf</DependentUpon>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -47,7 +47,7 @@ namespace crm
         //4. Carga de combobox con empresas
         public DataTable SeleccionarEmpresas()
         {
-            String cadena = "select id_empresa,nombre from empresa";
+            String cadena = "select id_empresa,nombre from empresa where estado = 'activo'";
             DataTable contenedor = new DataTable();
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);

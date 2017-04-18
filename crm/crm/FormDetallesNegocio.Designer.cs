@@ -42,6 +42,8 @@
             this.btn_guardar_nota = new DevExpress.XtraEditors.SimpleButton();
             this.rtxt_notas = new System.Windows.Forms.RichTextBox();
             this.tabNavigationPage2 = new DevExpress.XtraBars.Navigation.TabNavigationPage();
+            this.btn_eliminar = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_modificar = new DevExpress.XtraEditors.SimpleButton();
             this.btn_nueva_tarea = new DevExpress.XtraEditors.SimpleButton();
             this.gridControl_tareas = new DevExpress.XtraGrid.GridControl();
             this.dgv_tareas = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -60,8 +62,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.lbl_valor = new System.Windows.Forms.Label();
             this.lbl_cliente = new System.Windows.Forms.Label();
-            this.btn_modificar = new DevExpress.XtraEditors.SimpleButton();
-            this.btn_eliminar = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_refrescar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tabPane1)).BeginInit();
@@ -106,6 +107,7 @@
             this.groupControl1.Size = new System.Drawing.Size(1010, 619);
             this.groupControl1.TabIndex = 0;
             this.groupControl1.Text = "groupControl1";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // lbl_estado
             // 
@@ -192,7 +194,7 @@
             this.tabNavigationPage2});
             this.tabPane1.RegularSize = new System.Drawing.Size(511, 392);
             this.tabPane1.SelectedPage = this.Notas_page;
-            this.tabPane1.SelectedPageIndex = 1;
+            this.tabPane1.SelectedPageIndex = 0;
             this.tabPane1.Size = new System.Drawing.Size(511, 392);
             this.tabPane1.TabIndex = 18;
             this.tabPane1.Text = "tabPane1";
@@ -216,7 +218,7 @@
             this.btn_eliminar_nota.Appearance.Options.UseBorderColor = true;
             this.btn_eliminar_nota.Appearance.Options.UseForeColor = true;
             this.btn_eliminar_nota.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminar_nota.Image")));
-            this.btn_eliminar_nota.Location = new System.Drawing.Point(139, 103);
+            this.btn_eliminar_nota.Location = new System.Drawing.Point(121, 103);
             this.btn_eliminar_nota.Name = "btn_eliminar_nota";
             this.btn_eliminar_nota.Size = new System.Drawing.Size(75, 23);
             this.btn_eliminar_nota.TabIndex = 3;
@@ -262,12 +264,35 @@
             // tabNavigationPage2
             // 
             this.tabNavigationPage2.Caption = "Tareas";
+            this.tabNavigationPage2.Controls.Add(this.btn_refrescar);
             this.tabNavigationPage2.Controls.Add(this.btn_eliminar);
             this.tabNavigationPage2.Controls.Add(this.btn_modificar);
             this.tabNavigationPage2.Controls.Add(this.btn_nueva_tarea);
             this.tabNavigationPage2.Controls.Add(this.gridControl_tareas);
             this.tabNavigationPage2.Name = "tabNavigationPage2";
             this.tabNavigationPage2.Size = new System.Drawing.Size(493, 347);
+            // 
+            // btn_eliminar
+            // 
+            this.btn_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminar.Image")));
+            this.btn_eliminar.Location = new System.Drawing.Point(134, 223);
+            this.btn_eliminar.Name = "btn_eliminar";
+            this.btn_eliminar.Size = new System.Drawing.Size(100, 28);
+            this.btn_eliminar.TabIndex = 3;
+            this.btn_eliminar.Text = "Eliminar";
+            this.btn_eliminar.ToolTip = "Eliminar tarea seleccionada";
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            // 
+            // btn_modificar
+            // 
+            this.btn_modificar.Image = ((System.Drawing.Image)(resources.GetObject("btn_modificar.Image")));
+            this.btn_modificar.Location = new System.Drawing.Point(240, 223);
+            this.btn_modificar.Name = "btn_modificar";
+            this.btn_modificar.Size = new System.Drawing.Size(100, 28);
+            this.btn_modificar.TabIndex = 2;
+            this.btn_modificar.Text = "Modificar";
+            this.btn_modificar.ToolTip = "Modificar tarea seleccionada";
+            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
             // 
             // btn_nueva_tarea
             // 
@@ -277,14 +302,15 @@
             this.btn_nueva_tarea.Size = new System.Drawing.Size(105, 28);
             this.btn_nueva_tarea.TabIndex = 1;
             this.btn_nueva_tarea.Text = "Nueva tarea";
+            this.btn_nueva_tarea.ToolTip = "Agregar nueva tarea";
             this.btn_nueva_tarea.Click += new System.EventHandler(this.btn_nueva_tarea_Click);
             // 
             // gridControl_tareas
             // 
-            this.gridControl_tareas.Location = new System.Drawing.Point(23, 16);
+            this.gridControl_tareas.Location = new System.Drawing.Point(13, 16);
             this.gridControl_tareas.MainView = this.dgv_tareas;
             this.gridControl_tareas.Name = "gridControl_tareas";
-            this.gridControl_tareas.Size = new System.Drawing.Size(451, 201);
+            this.gridControl_tareas.Size = new System.Drawing.Size(477, 201);
             this.gridControl_tareas.TabIndex = 0;
             this.gridControl_tareas.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgv_tareas});
@@ -447,25 +473,16 @@
             this.lbl_cliente.TabIndex = 0;
             this.lbl_cliente.Text = "label1";
             // 
-            // btn_modificar
+            // btn_refrescar
             // 
-            this.btn_modificar.Image = ((System.Drawing.Image)(resources.GetObject("btn_modificar.Image")));
-            this.btn_modificar.Location = new System.Drawing.Point(240, 223);
-            this.btn_modificar.Name = "btn_modificar";
-            this.btn_modificar.Size = new System.Drawing.Size(100, 28);
-            this.btn_modificar.TabIndex = 2;
-            this.btn_modificar.Text = "Modificar";
-            this.btn_modificar.Click += new System.EventHandler(this.btn_modificar_Click);
-            // 
-            // btn_eliminar
-            // 
-            this.btn_eliminar.Image = ((System.Drawing.Image)(resources.GetObject("btn_eliminar.Image")));
-            this.btn_eliminar.Location = new System.Drawing.Point(134, 223);
-            this.btn_eliminar.Name = "btn_eliminar";
-            this.btn_eliminar.Size = new System.Drawing.Size(100, 28);
-            this.btn_eliminar.TabIndex = 3;
-            this.btn_eliminar.Text = "Eliminar";
-            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
+            this.btn_refrescar.Image = ((System.Drawing.Image)(resources.GetObject("btn_refrescar.Image")));
+            this.btn_refrescar.ImageLocation = DevExpress.XtraEditors.ImageLocation.MiddleCenter;
+            this.btn_refrescar.Location = new System.Drawing.Point(346, 223);
+            this.btn_refrescar.Name = "btn_refrescar";
+            this.btn_refrescar.Size = new System.Drawing.Size(30, 28);
+            this.btn_refrescar.TabIndex = 4;
+            this.btn_refrescar.ToolTip = "Actualizar registros";
+            this.btn_refrescar.Click += new System.EventHandler(this.btn_refrescar_Click);
             // 
             // FormDetallesNegocio
             // 
@@ -523,5 +540,6 @@
         private DevExpress.XtraGrid.Views.Grid.GridView dgv_tareas;
         private DevExpress.XtraEditors.SimpleButton btn_modificar;
         private DevExpress.XtraEditors.SimpleButton btn_eliminar;
+        private DevExpress.XtraEditors.SimpleButton btn_refrescar;
     }
 }

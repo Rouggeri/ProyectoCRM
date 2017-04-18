@@ -43,10 +43,14 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.dgv_casos = new DevExpress.XtraGrid.GridControl();
-            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.gv_casos = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.label1 = new System.Windows.Forms.Label();
+            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
+            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_casos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -63,7 +67,7 @@
             this.panel2.Controls.Add(this.btn_editar);
             this.panel2.Controls.Add(this.btn_eliminar);
             this.panel2.Controls.Add(this.btn_siguiente);
-            this.panel2.Location = new System.Drawing.Point(229, 28);
+            this.panel2.Location = new System.Drawing.Point(227, 20);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(630, 77);
@@ -133,6 +137,7 @@
             this.btn_ultimo.Size = new System.Drawing.Size(30, 26);
             this.btn_ultimo.TabIndex = 181;
             this.btn_ultimo.UseVisualStyleBackColor = true;
+            this.btn_ultimo.Click += new System.EventHandler(this.btn_ultimo_Click);
             // 
             // btn_actualizar
             // 
@@ -198,6 +203,7 @@
             this.btn_primero.Size = new System.Drawing.Size(30, 26);
             this.btn_primero.TabIndex = 180;
             this.btn_primero.UseVisualStyleBackColor = true;
+            this.btn_primero.Click += new System.EventHandler(this.btn_primero_Click);
             // 
             // btn_anterior
             // 
@@ -214,6 +220,7 @@
             this.btn_anterior.Size = new System.Drawing.Size(30, 26);
             this.btn_anterior.TabIndex = 178;
             this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
             // 
             // btn_editar
             // 
@@ -230,6 +237,7 @@
             this.btn_editar.Size = new System.Drawing.Size(58, 59);
             this.btn_editar.TabIndex = 5;
             this.btn_editar.UseVisualStyleBackColor = true;
+            this.btn_editar.Click += new System.EventHandler(this.btn_editar_Click);
             // 
             // btn_eliminar
             // 
@@ -246,6 +254,7 @@
             this.btn_eliminar.Size = new System.Drawing.Size(58, 59);
             this.btn_eliminar.TabIndex = 6;
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_siguiente
             // 
@@ -262,34 +271,72 @@
             this.btn_siguiente.Size = new System.Drawing.Size(30, 26);
             this.btn_siguiente.TabIndex = 179;
             this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
             // dgv_casos
             // 
             this.dgv_casos.Location = new System.Drawing.Point(27, 133);
-            this.dgv_casos.MainView = this.gridView1;
+            this.dgv_casos.MainView = this.gv_casos;
             this.dgv_casos.Name = "dgv_casos";
             this.dgv_casos.Size = new System.Drawing.Size(988, 298);
             this.dgv_casos.TabIndex = 189;
             this.dgv_casos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
-            this.gridView1});
+            this.gv_casos});
             // 
-            // gridView1
+            // gv_casos
             // 
-            this.gridView1.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.Yellow;
-            this.gridView1.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.Blue;
-            this.gridView1.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.Black;
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseBackColor = true;
-            this.gridView1.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
-            this.gridView1.GridControl = this.dgv_casos;
-            this.gridView1.Name = "gridView1";
-            this.gridView1.OptionsView.RowAutoHeight = true;
-            this.gridView1.PaintStyleName = "Skin";
+            this.gv_casos.Appearance.ColumnFilterButton.BackColor = System.Drawing.Color.Yellow;
+            this.gv_casos.Appearance.ColumnFilterButton.BackColor2 = System.Drawing.Color.Blue;
+            this.gv_casos.Appearance.ColumnFilterButton.BorderColor = System.Drawing.Color.Black;
+            this.gv_casos.Appearance.ColumnFilterButton.Options.UseBackColor = true;
+            this.gv_casos.Appearance.ColumnFilterButton.Options.UseBorderColor = true;
+            this.gv_casos.GridControl = this.dgv_casos;
+            this.gv_casos.Name = "gv_casos";
+            this.gv_casos.OptionsView.RowAutoHeight = true;
+            this.gv_casos.PaintStyleName = "Skin";
+            // 
+            // simpleButton1
+            // 
+            this.simpleButton1.Location = new System.Drawing.Point(27, 104);
+            this.simpleButton1.Name = "simpleButton1";
+            this.simpleButton1.Size = new System.Drawing.Size(113, 23);
+            this.simpleButton1.TabIndex = 190;
+            this.simpleButton1.Text = "Solo casos abiertos";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(24, 88);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(26, 13);
+            this.label1.TabIndex = 193;
+            this.label1.Text = "Ver:";
+            // 
+            // simpleButton2
+            // 
+            this.simpleButton2.Location = new System.Drawing.Point(146, 104);
+            this.simpleButton2.Name = "simpleButton2";
+            this.simpleButton2.Size = new System.Drawing.Size(113, 23);
+            this.simpleButton2.TabIndex = 194;
+            this.simpleButton2.Text = "Solo casos cerrados";
+            // 
+            // simpleButton3
+            // 
+            this.simpleButton3.Location = new System.Drawing.Point(265, 104);
+            this.simpleButton3.Name = "simpleButton3";
+            this.simpleButton3.Size = new System.Drawing.Size(113, 23);
+            this.simpleButton3.TabIndex = 195;
+            this.simpleButton3.Text = "Todos";
             // 
             // Form_Casos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 459);
+            this.Controls.Add(this.simpleButton3);
+            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.dgv_casos);
             this.Controls.Add(this.panel2);
             this.Name = "Form_Casos";
@@ -297,8 +344,9 @@
             this.Load += new System.EventHandler(this.Form_Casos_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gv_casos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -317,6 +365,10 @@
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_siguiente;
         private DevExpress.XtraGrid.GridControl dgv_casos;
-        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraGrid.Views.Grid.GridView gv_casos;
+        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton simpleButton2;
+        private DevExpress.XtraEditors.SimpleButton simpleButton3;
     }
 }
