@@ -33,6 +33,9 @@
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView1 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lbl_fecha_hoy = new System.Windows.Forms.Label();
+            this.btn_meta_acceso = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
@@ -50,9 +53,7 @@
             this.gpc_nego_hoy = new DevExpress.XtraEditors.GroupControl();
             this.gpc_tareas_importantes = new DevExpress.XtraEditors.GroupControl();
             this.ctc_metas_negocios = new DevExpress.XtraCharts.ChartControl();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btn_meta_acceso = new System.Windows.Forms.Button();
-            this.lbl_fecha_hoy = new System.Windows.Forms.Label();
+            this.lkl_pronostico = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -74,6 +75,7 @@
             this.groupControl1.Appearance.BackColor2 = System.Drawing.Color.White;
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
             this.groupControl1.CaptionLocation = DevExpress.Utils.Locations.Top;
+            this.groupControl1.Controls.Add(this.lkl_pronostico);
             this.groupControl1.Controls.Add(this.lbl_fecha_hoy);
             this.groupControl1.Controls.Add(this.btn_meta_acceso);
             this.groupControl1.Controls.Add(this.label3);
@@ -101,6 +103,44 @@
             this.groupControl1.Size = new System.Drawing.Size(1229, 481);
             this.groupControl1.TabIndex = 28;
             this.groupControl1.Text = "Meta mensual";
+            // 
+            // lbl_fecha_hoy
+            // 
+            this.lbl_fecha_hoy.AutoSize = true;
+            this.lbl_fecha_hoy.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_fecha_hoy.Location = new System.Drawing.Point(1015, 61);
+            this.lbl_fecha_hoy.Name = "lbl_fecha_hoy";
+            this.lbl_fecha_hoy.Size = new System.Drawing.Size(98, 16);
+            this.lbl_fecha_hoy.TabIndex = 174;
+            this.lbl_fecha_hoy.Text = "A fecha de hoy:";
+            // 
+            // btn_meta_acceso
+            // 
+            this.btn_meta_acceso.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_meta_acceso.BackgroundImage")));
+            this.btn_meta_acceso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_meta_acceso.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btn_meta_acceso.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btn_meta_acceso.FlatAppearance.BorderSize = 0;
+            this.btn_meta_acceso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btn_meta_acceso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
+            this.btn_meta_acceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_meta_acceso.Location = new System.Drawing.Point(776, 56);
+            this.btn_meta_acceso.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_meta_acceso.Name = "btn_meta_acceso";
+            this.btn_meta_acceso.Size = new System.Drawing.Size(23, 21);
+            this.btn_meta_acceso.TabIndex = 173;
+            this.btn_meta_acceso.UseVisualStyleBackColor = true;
+            this.btn_meta_acceso.Click += new System.EventHandler(this.btn_meta_acceso_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(898, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(111, 16);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "A fecha de hoy:";
             // 
             // dataGridView3
             // 
@@ -281,43 +321,16 @@
             this.ctc_metas_negocios.Size = new System.Drawing.Size(857, 301);
             this.ctc_metas_negocios.TabIndex = 0;
             // 
-            // label3
+            // lkl_pronostico
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(898, 61);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 16);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "A fecha de hoy:";
-            // 
-            // btn_meta_acceso
-            // 
-            this.btn_meta_acceso.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_meta_acceso.BackgroundImage")));
-            this.btn_meta_acceso.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_meta_acceso.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btn_meta_acceso.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btn_meta_acceso.FlatAppearance.BorderSize = 0;
-            this.btn_meta_acceso.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btn_meta_acceso.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
-            this.btn_meta_acceso.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_meta_acceso.Location = new System.Drawing.Point(776, 56);
-            this.btn_meta_acceso.Margin = new System.Windows.Forms.Padding(4);
-            this.btn_meta_acceso.Name = "btn_meta_acceso";
-            this.btn_meta_acceso.Size = new System.Drawing.Size(23, 21);
-            this.btn_meta_acceso.TabIndex = 173;
-            this.btn_meta_acceso.UseVisualStyleBackColor = true;
-            this.btn_meta_acceso.Click += new System.EventHandler(this.btn_meta_acceso_Click);
-            // 
-            // lbl_fecha_hoy
-            // 
-            this.lbl_fecha_hoy.AutoSize = true;
-            this.lbl_fecha_hoy.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fecha_hoy.Location = new System.Drawing.Point(1015, 61);
-            this.lbl_fecha_hoy.Name = "lbl_fecha_hoy";
-            this.lbl_fecha_hoy.Size = new System.Drawing.Size(98, 16);
-            this.lbl_fecha_hoy.TabIndex = 174;
-            this.lbl_fecha_hoy.Text = "A fecha de hoy:";
+            this.lkl_pronostico.AutoSize = true;
+            this.lkl_pronostico.Location = new System.Drawing.Point(593, 78);
+            this.lkl_pronostico.Name = "lkl_pronostico";
+            this.lkl_pronostico.Size = new System.Drawing.Size(57, 13);
+            this.lkl_pronostico.TabIndex = 175;
+            this.lkl_pronostico.TabStop = true;
+            this.lkl_pronostico.Text = "Pronostico";
+            this.lkl_pronostico.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkl_pronostico_LinkClicked);
             // 
             // frm_pronostico
             // 
@@ -370,5 +383,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btn_meta_acceso;
         private System.Windows.Forms.Label lbl_fecha_hoy;
+        private System.Windows.Forms.LinkLabel lkl_pronostico;
     }
 }

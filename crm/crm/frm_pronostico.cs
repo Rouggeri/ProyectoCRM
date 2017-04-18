@@ -1195,5 +1195,14 @@ namespace crm
 
             }
         }
+
+
+        // link para ir a formulario de pronosticos
+        private void lkl_pronostico_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frm_pronostico_ventas_secundario pronostico = new frm_pronostico_ventas_secundario();
+            pronostico.Show();
+            
+        }
     }
 }

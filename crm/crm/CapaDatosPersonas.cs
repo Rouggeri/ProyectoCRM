@@ -556,5 +556,22 @@ namespace crm
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+
+        // *************************************** frm_pronostico_ventas_secundario ****************************
+
+        //1. seleccionar categoria de negocios
+        public DataTable seleccionar_cat_negos()
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select id_cat, nombre_cat from categoria_neg where estado = 'activo'";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+
+        }
+
+
     }
 }
