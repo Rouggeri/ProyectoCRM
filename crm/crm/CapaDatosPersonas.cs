@@ -384,7 +384,8 @@ namespace crm
         public DataTable consultar_negocios(string id_empleado, string fecha_ini, string fecha_fin)
         {
             DataTable carga = new DataTable();
-            string cadena = "select ta.id_tarea, nego.id_negocio, nego.titulo, nego.valor, nego.status, ta.id_tipo , ti.tipo, cat.id_cat, cat.nombre_cat,ta.estado_tarea, nego.id_empleado, cli.id_cliente, cli.nombres, cli.apellidos, empre.nombre from tbl_negocio nego, tbl_tarea ta, Tipo_tarea ti, categoria_neg cat, tbl_cliente cli,  empresa empre where nego.id_negocio = ta.id_negocio and ti.id_tipo = ta.id_tipo and nego.id_cat = cat.id_cat and cli.id_cliente = nego.id_cliente and empre.id_empresa = nego.id_empresa and nego.id_empleado = '" + id_empleado+"' and nego.fecha_inicio between '"+fecha_ini+"' and '"+fecha_fin+"'; ";
+            //string cadena = "select ta.id_tarea, nego.id_negocio, nego.titulo, nego.valor, nego.status, ta.id_tipo , ti.tipo, cat.id_cat, cat.nombre_cat,ta.estado_tarea, nego.id_empleado, cli.id_cliente, cli.nombres, cli.apellidos, empre.nombre from tbl_negocio nego, tbl_tarea ta, Tipo_tarea ti, categoria_neg cat, tbl_cliente cli,  empresa empre where nego.id_negocio = ta.id_negocio and ti.id_tipo = ta.id_tipo and nego.id_cat = cat.id_cat and cli.id_cliente = nego.id_cliente and empre.id_empresa = nego.id_empresa and nego.id_empleado = '" + id_empleado+"' and nego.fecha_inicio between '"+fecha_ini+"' and '"+fecha_fin+"'; ";
+            string cadena = "select tbl_tarea.id_tarea, tbl_negocio.id_negocio, tbl_negocio.titulo, tbl_negocio.valor, tbl_negocio.status, tbl_tarea.id_tipo , Tipo_tarea.tipo, categoria_neg.id_cat, categoria_neg.nombre_cat,tbl_tarea.estado_tarea, tbl_negocio.id_empleado, tbl_cliente.id_cliente,  tbl_cliente.nombres, tbl_cliente.apellidos, empresa.nombre  from(tbl_negocio left join tbl_tarea on tbl_negocio.id_negocio = tbl_tarea.id_negocio) left join Tipo_tarea on tbl_tarea.id_tipo = Tipo_tarea.id_tipo left join categoria_neg on categoria_neg.id_cat = tbl_negocio.id_cat left join tbl_empleado on tbl_empleado.id_empleado = tbl_negocio.id_empleado left join empresa on empresa.id_empresa = tbl_negocio.id_empresa left join tbl_cliente on tbl_cliente.id_cliente = tbl_negocio.id_cliente where tbl_negocio.id_empleado = '"+id_empleado+"' and tbl_negocio.fecha_inicio between '"+fecha_ini+"' and '"+fecha_fin+"'; "; 
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
@@ -433,7 +434,8 @@ namespace crm
         public DataTable consultar_negocios_empresa(string id_empresa, string fecha_ini, string fecha_fin)
         {
             DataTable carga = new DataTable();
-            string cadena = "select ta.id_tarea, nego.id_negocio, nego.titulo, nego.valor,nego.status, ta.id_tipo ,ti.tipo,cat.id_cat,cat.nombre_cat,ta.estado_tarea,nego.id_empleado, cli.id_cliente, cli.nombres, cli.apellidos, empre.nombre, emple.nombres from tbl_negocio nego , tbl_tarea ta, Tipo_tarea ti, categoria_neg cat, tbl_cliente cli,  empresa empre, tbl_empleado emple where nego.id_negocio = ta.id_negocio and ti.id_tipo = ta.id_tipo and nego.id_cat = cat.id_cat and cli.id_cliente = nego.id_cliente and empre.id_empresa = nego.id_empresa and emple.id_empleado = nego.id_empleado and empre.id_empresa = '"+id_empresa+"' and nego.fecha_inicio between '"+fecha_ini+"' and '"+fecha_fin+"'; ";
+            //string cadena = "select ta.id_tarea, nego.id_negocio, nego.titulo, nego.valor,nego.status, ta.id_tipo ,ti.tipo,cat.id_cat,cat.nombre_cat,ta.estado_tarea,nego.id_empleado, empre.nombre, emple.nombres from tbl_negocio nego , tbl_tarea ta, Tipo_tarea ti, categoria_neg cat, empresa empre, tbl_empleado emple where nego.id_negocio = ta.id_negocio and ti.id_tipo = ta.id_tipo and nego.id_cat = cat.id_cat  and empre.id_empresa = nego.id_empresa and emple.id_empleado = nego.id_empleado and empre.id_empresa = '"+id_empresa+"' and nego.fecha_inicio between '"+fecha_ini+"' and '"+fecha_fin+"'; ";
+            string cadena = "select tbl_tarea.id_tarea, tbl_negocio.id_negocio, tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.status, tbl_cliente.nombres,tbl_cliente.id_cliente,tbl_cliente.apellidos,tbl_tarea.id_tipo ,Tipo_tarea.tipo,categoria_neg.id_cat,categoria_neg.nombre_cat,tbl_tarea.estado_tarea,tbl_negocio.id_empleado,tbl_empleado.nombres,empresa.nombre from (tbl_negocio left join tbl_tarea on tbl_negocio.id_negocio = tbl_tarea.id_negocio)left join Tipo_tarea on tbl_tarea.id_tipo = Tipo_tarea.id_tipo left join categoria_neg on categoria_neg.id_cat = tbl_negocio.id_cat left join tbl_empleado on tbl_empleado.id_empleado = tbl_negocio.id_empleado left join empresa on empresa.id_empresa = tbl_negocio.id_empresa left join tbl_cliente on tbl_cliente.id_cliente = tbl_negocio.id_cliente where empresa.id_empresa = '"+id_empresa+"' and tbl_negocio.fecha_inicio between '"+fecha_ini+"' and '"+fecha_fin+"'; ";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
@@ -556,5 +558,22 @@ namespace crm
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+
+        // *************************************** frm_pronostico_ventas_secundario ****************************
+
+        //1. seleccionar categoria de negocios
+        public DataTable seleccionar_cat_negos()
+        {
+            DataTable carga = new DataTable();
+            string cadena = "select id_cat, nombre_cat from categoria_neg where estado = 'activo'";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+
+        }
+
+
     }
 }

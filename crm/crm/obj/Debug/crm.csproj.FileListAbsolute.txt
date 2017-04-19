@@ -1,4 +1,9 @@
 C:\ProyectoCRM\crm\crm\bin\Debug\crm.exe.config
+<<<<<<< HEAD
+=======
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.pdb
+>>>>>>> 52a74a29678ebbf7e32c1dcd7c0a227cb277b984
 C:\ProyectoCRM\crm\crm\bin\Debug\BaseDatosCalendario.mdf
 C:\ProyectoCRM\crm\crm\bin\Debug\BaseDatosCalendario_log.ldf
 C:\ProyectoCRM\crm\crm\bin\Debug\crm.exe
@@ -29,7 +34,11 @@ C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.Core.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.Extensions.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraVerticalGrid.v15.2.dll
+<<<<<<< HEAD
 C:\ProyectoCRM\crm\crm\bin\Debug\FuncionesNavegador.dll
+=======
+C:\ProyectoCRM\crm\crm\bin\Debug\MySql.Data.dll
+>>>>>>> 52a74a29678ebbf7e32c1dcd7c0a227cb277b984
 C:\ProyectoCRM\crm\crm\bin\Debug\seguridad.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.Xpf.Charts.v15.2.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.Xpf.Core.v15.2.dll
@@ -358,5 +367,8 @@ C:\ProyectoCRM\crm\crm\obj\Debug\crm.Properties.Resources.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.prueba.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.csproj.GenerateResource.Cache
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe.licenses
+<<<<<<< HEAD
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.pdb
+=======
+>>>>>>> 52a74a29678ebbf7e32c1dcd7c0a227cb277b984
