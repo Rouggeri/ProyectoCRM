@@ -33,6 +33,7 @@
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView1 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.lkl_pronostico = new System.Windows.Forms.LinkLabel();
             this.lbl_fecha_hoy = new System.Windows.Forms.Label();
             this.btn_meta_acceso = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
@@ -53,7 +54,6 @@
             this.gpc_nego_hoy = new DevExpress.XtraEditors.GroupControl();
             this.gpc_tareas_importantes = new DevExpress.XtraEditors.GroupControl();
             this.ctc_metas_negocios = new DevExpress.XtraCharts.ChartControl();
-            this.lkl_pronostico = new System.Windows.Forms.LinkLabel();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
@@ -100,9 +100,20 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1229, 481);
+            this.groupControl1.Size = new System.Drawing.Size(1362, 693);
             this.groupControl1.TabIndex = 28;
             this.groupControl1.Text = "Meta mensual";
+            // 
+            // lkl_pronostico
+            // 
+            this.lkl_pronostico.AutoSize = true;
+            this.lkl_pronostico.Location = new System.Drawing.Point(593, 78);
+            this.lkl_pronostico.Name = "lkl_pronostico";
+            this.lkl_pronostico.Size = new System.Drawing.Size(57, 13);
+            this.lkl_pronostico.TabIndex = 175;
+            this.lkl_pronostico.TabStop = true;
+            this.lkl_pronostico.Text = "Pronostico";
+            this.lkl_pronostico.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkl_pronostico_LinkClicked);
             // 
             // lbl_fecha_hoy
             // 
@@ -145,7 +156,7 @@
             // dataGridView3
             // 
             this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(954, 42);
+            this.dataGridView3.Location = new System.Drawing.Point(1290, 124);
             this.dataGridView3.Name = "dataGridView3";
             this.dataGridView3.Size = new System.Drawing.Size(10, 10);
             this.dataGridView3.TabIndex = 14;
@@ -154,7 +165,7 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(986, 42);
+            this.dataGridView2.Location = new System.Drawing.Point(1290, 302);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(10, 10);
             this.dataGridView2.TabIndex = 13;
@@ -163,7 +174,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(970, 42);
+            this.dataGridView1.Location = new System.Drawing.Point(1290, 240);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(10, 10);
             this.dataGridView1.TabIndex = 12;
@@ -172,9 +183,9 @@
             // dgv_hijo
             // 
             this.dgv_hijo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_hijo.Location = new System.Drawing.Point(1214, 42);
+            this.dgv_hijo.Location = new System.Drawing.Point(1329, 464);
             this.dgv_hijo.Name = "dgv_hijo";
-            this.dgv_hijo.Size = new System.Drawing.Size(10, 10);
+            this.dgv_hijo.Size = new System.Drawing.Size(28, 10);
             this.dgv_hijo.TabIndex = 1;
             this.dgv_hijo.Visible = false;
             // 
@@ -191,7 +202,7 @@
             // dgv_nego_importantes
             // 
             this.dgv_nego_importantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_nego_importantes.Location = new System.Drawing.Point(1182, 42);
+            this.dgv_nego_importantes.Location = new System.Drawing.Point(1290, 511);
             this.dgv_nego_importantes.Name = "dgv_nego_importantes";
             this.dgv_nego_importantes.Size = new System.Drawing.Size(10, 10);
             this.dgv_nego_importantes.TabIndex = 0;
@@ -277,7 +288,7 @@
             // 
             this.gpc_actis_recents.Location = new System.Drawing.Point(880, 97);
             this.gpc_actis_recents.Name = "gpc_actis_recents";
-            this.gpc_actis_recents.Size = new System.Drawing.Size(324, 508);
+            this.gpc_actis_recents.Size = new System.Drawing.Size(375, 508);
             this.gpc_actis_recents.TabIndex = 3;
             this.gpc_actis_recents.Text = "Actividades recientes";
             // 
@@ -321,22 +332,11 @@
             this.ctc_metas_negocios.Size = new System.Drawing.Size(857, 301);
             this.ctc_metas_negocios.TabIndex = 0;
             // 
-            // lkl_pronostico
-            // 
-            this.lkl_pronostico.AutoSize = true;
-            this.lkl_pronostico.Location = new System.Drawing.Point(593, 78);
-            this.lkl_pronostico.Name = "lkl_pronostico";
-            this.lkl_pronostico.Size = new System.Drawing.Size(57, 13);
-            this.lkl_pronostico.TabIndex = 175;
-            this.lkl_pronostico.TabStop = true;
-            this.lkl_pronostico.Text = "Pronostico";
-            this.lkl_pronostico.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lkl_pronostico_LinkClicked);
-            // 
             // frm_pronostico
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1229, 481);
+            this.ClientSize = new System.Drawing.Size(1362, 693);
             this.Controls.Add(this.groupControl1);
             this.Name = "frm_pronostico";
             this.Text = "Metas";
