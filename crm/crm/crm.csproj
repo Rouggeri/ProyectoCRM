@@ -107,6 +107,7 @@
     <Compile Include="CapaDatosPersonas.cs" />
     <Compile Include="CapaNegociod.cs" />
     <Compile Include="cls_grafica_pie.cs" />
+    <Compile Include="cls_nombre_mes.cs" />
     <Compile Include="Conexion.cs" />
     <Compile Include="crmbdDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
