@@ -33,6 +33,10 @@
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView1 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.dgv_tabla_result = new System.Windows.Forms.DataGridView();
+            this.dgv_consulta_negos_ventas = new System.Windows.Forms.DataGridView();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.cmb_metodo = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.rbt_seleccionar_categoria = new System.Windows.Forms.RadioButton();
             this.rbt_todos_categoria = new System.Windows.Forms.RadioButton();
@@ -51,6 +55,9 @@
             this.btn_pronosticar = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla_result)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_consulta_negos_ventas)).BeginInit();
+            this.groupBox4.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ctc_pronostico)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).BeginInit();
@@ -65,6 +72,9 @@
             this.groupControl1.Appearance.BackColor2 = System.Drawing.Color.White;
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
             this.groupControl1.CaptionLocation = DevExpress.Utils.Locations.Top;
+            this.groupControl1.Controls.Add(this.dgv_tabla_result);
+            this.groupControl1.Controls.Add(this.dgv_consulta_negos_ventas);
+            this.groupControl1.Controls.Add(this.groupBox4);
             this.groupControl1.Controls.Add(this.groupBox3);
             this.groupControl1.Controls.Add(this.ctc_pronostico);
             this.groupControl1.Controls.Add(this.label1);
@@ -75,9 +85,48 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1061, 515);
+            this.groupControl1.Size = new System.Drawing.Size(1243, 515);
             this.groupControl1.TabIndex = 31;
             this.groupControl1.Text = "Proyecciones";
+            // 
+            // dgv_tabla_result
+            // 
+            this.dgv_tabla_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_tabla_result.Location = new System.Drawing.Point(719, 286);
+            this.dgv_tabla_result.Name = "dgv_tabla_result";
+            this.dgv_tabla_result.Size = new System.Drawing.Size(512, 200);
+            this.dgv_tabla_result.TabIndex = 25;
+            // 
+            // dgv_consulta_negos_ventas
+            // 
+            this.dgv_consulta_negos_ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_consulta_negos_ventas.Location = new System.Drawing.Point(719, 163);
+            this.dgv_consulta_negos_ventas.Name = "dgv_consulta_negos_ventas";
+            this.dgv_consulta_negos_ventas.Size = new System.Drawing.Size(512, 90);
+            this.dgv_consulta_negos_ventas.TabIndex = 24;
+            // 
+            // groupBox4
+            // 
+            this.groupBox4.Controls.Add(this.cmb_metodo);
+            this.groupBox4.Location = new System.Drawing.Point(653, 476);
+            this.groupBox4.Name = "groupBox4";
+            this.groupBox4.Size = new System.Drawing.Size(22, 10);
+            this.groupBox4.TabIndex = 21;
+            this.groupBox4.TabStop = false;
+            this.groupBox4.Text = "Metodo";
+            this.groupBox4.Visible = false;
+            // 
+            // cmb_metodo
+            // 
+            this.cmb_metodo.FormattingEnabled = true;
+            this.cmb_metodo.Items.AddRange(new object[] {
+            "",
+            "Minimos cuadrados"});
+            this.cmb_metodo.Location = new System.Drawing.Point(7, 54);
+            this.cmb_metodo.Name = "cmb_metodo";
+            this.cmb_metodo.Size = new System.Drawing.Size(187, 21);
+            this.cmb_metodo.TabIndex = 2;
+            this.cmb_metodo.SelectedIndexChanged += new System.EventHandler(this.cmb_metodo_SelectedIndexChanged);
             // 
             // groupBox3
             // 
@@ -139,7 +188,7 @@
             series1.View = swiftPlotSeriesView1;
             this.ctc_pronostico.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.ctc_pronostico.Size = new System.Drawing.Size(952, 200);
+            this.ctc_pronostico.Size = new System.Drawing.Size(656, 200);
             this.ctc_pronostico.TabIndex = 23;
             // 
             // label1
@@ -158,7 +207,7 @@
             this.groupBox2.Controls.Add(this.radioButton4);
             this.groupBox2.Controls.Add(this.radioButton5);
             this.groupBox2.Controls.Add(this.radioButton6);
-            this.groupBox2.Location = new System.Drawing.Point(471, 98);
+            this.groupBox2.Location = new System.Drawing.Point(723, 56);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(508, 100);
             this.groupBox2.TabIndex = 21;
@@ -265,18 +314,23 @@
             this.btn_pronosticar.Size = new System.Drawing.Size(75, 23);
             this.btn_pronosticar.TabIndex = 18;
             this.btn_pronosticar.Text = "Pronosticar";
+            this.btn_pronosticar.Click += new System.EventHandler(this.btn_pronosticar_Click);
             // 
             // frm_pronostico_ventas_secundario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1061, 515);
+            this.ClientSize = new System.Drawing.Size(1243, 515);
             this.Controls.Add(this.groupControl1);
             this.Name = "frm_pronostico_ventas_secundario";
             this.Text = "Proyección de ventas";
+            this.Load += new System.EventHandler(this.frm_pronostico_ventas_secundario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_tabla_result)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_consulta_negos_ventas)).EndInit();
+            this.groupBox4.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(swiftPlotDiagram1)).EndInit();
@@ -310,5 +364,9 @@
         private System.Windows.Forms.RadioButton rbt_todos_clasificacion;
         private System.Windows.Forms.ComboBox cmb_clasificacion;
         private DevExpress.XtraEditors.SimpleButton btn_pronosticar;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.ComboBox cmb_metodo;
+        private System.Windows.Forms.DataGridView dgv_consulta_negos_ventas;
+        private System.Windows.Forms.DataGridView dgv_tabla_result;
     }
 }

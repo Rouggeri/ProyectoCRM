@@ -574,6 +574,19 @@ namespace crm
 
         }
 
+        //2. Seleccion de historial de negociaciones
+        public DataTable seleccionar_negos_historial(string id_nego_cat)
+        {
+            DataTable carga = new DataTable();
+            //string cadena = "select * from tbl_negocio where status = 'ganado';";
+            string cadena = "select tbl_negocio.id_negocio, tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre, categoria_neg.id_cat,categoria_neg.nombre_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) where tbl_negocio.status = 'ganado' and tbl_negocio.id_cat = '"+id_nego_cat+"'; "; 
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+
+        }
+
 
     }
 }
