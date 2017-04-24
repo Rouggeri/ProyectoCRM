@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormNegociaciones));
             this.dgv_negocios = new DevExpress.XtraGrid.GridControl();
             this.dgv_neg = new DevExpress.XtraGrid.Views.Grid.GridView();
@@ -62,6 +63,19 @@
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btn_clie = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_cat = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_normal = new DevExpress.XtraEditors.SimpleButton();
+            this.ddb_clientes = new DevExpress.XtraEditors.DropDownButton();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.bar3 = new DevExpress.XtraBars.Bar();
+            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
+            this.btn_empresa = new DevExpress.XtraEditors.SimpleButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_negocios)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_neg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).BeginInit();
@@ -79,18 +93,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.grupo_preparacion)).BeginInit();
             this.grupo_preparacion.SuspendLayout();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).BeginInit();
+            this.popupControlContainer1.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgv_negocios
             // 
-            this.dgv_negocios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgv_negocios.Location = new System.Drawing.Point(0, 0);
+            this.dgv_negocios.Location = new System.Drawing.Point(0, 54);
             this.dgv_negocios.MainView = this.dgv_neg;
             this.dgv_negocios.Name = "dgv_negocios";
-            this.dgv_negocios.Size = new System.Drawing.Size(947, 466);
+            this.dgv_negocios.Size = new System.Drawing.Size(947, 412);
             this.dgv_negocios.TabIndex = 0;
             this.dgv_negocios.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.dgv_neg});
+            this.dgv_negocios.Click += new System.EventHandler(this.dgv_negocios_Click);
             this.dgv_negocios.DoubleClick += new System.EventHandler(this.dgv_negocios_DoubleClick);
             // 
             // dgv_neg
@@ -98,6 +115,7 @@
             this.dgv_neg.GridControl = this.dgv_negocios;
             this.dgv_neg.Name = "dgv_neg";
             this.dgv_neg.OptionsView.ShowFooter = true;
+            this.dgv_neg.OptionsView.ShowGroupPanel = false;
             // 
             // textBox1
             // 
@@ -126,6 +144,11 @@
             // pag_lista
             // 
             this.pag_lista.Caption = "Lista";
+            this.pag_lista.Controls.Add(this.popupControlContainer1);
+            this.pag_lista.Controls.Add(this.ddb_clientes);
+            this.pag_lista.Controls.Add(this.btn_normal);
+            this.pag_lista.Controls.Add(this.btn_cat);
+            this.pag_lista.Controls.Add(this.label1);
             this.pag_lista.Controls.Add(this.dgv_negocios);
             this.pag_lista.Image = ((System.Drawing.Image)(resources.GetObject("pag_lista.Image")));
             this.pag_lista.Name = "pag_lista";
@@ -514,6 +537,130 @@
             this.btn_siguiente.UseVisualStyleBackColor = true;
             this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(635, 6);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Agrupar por:";
+            // 
+            // btn_clie
+            // 
+            this.btn_clie.Image = ((System.Drawing.Image)(resources.GetObject("btn_clie.Image")));
+            this.btn_clie.Location = new System.Drawing.Point(0, 3);
+            this.btn_clie.Name = "btn_clie";
+            this.btn_clie.Size = new System.Drawing.Size(81, 26);
+            this.btn_clie.TabIndex = 2;
+            this.btn_clie.Text = "Persona";
+            this.btn_clie.Click += new System.EventHandler(this.btn_clie_Click);
+            // 
+            // btn_cat
+            // 
+            this.btn_cat.Image = ((System.Drawing.Image)(resources.GetObject("btn_cat.Image")));
+            this.btn_cat.Location = new System.Drawing.Point(739, 22);
+            this.btn_cat.Name = "btn_cat";
+            this.btn_cat.Size = new System.Drawing.Size(81, 26);
+            this.btn_cat.TabIndex = 3;
+            this.btn_cat.Text = "Categoría";
+            this.btn_cat.Click += new System.EventHandler(this.btn_cat_Click);
+            // 
+            // btn_normal
+            // 
+            this.btn_normal.Image = ((System.Drawing.Image)(resources.GetObject("btn_normal.Image")));
+            this.btn_normal.Location = new System.Drawing.Point(836, 22);
+            this.btn_normal.Name = "btn_normal";
+            this.btn_normal.Size = new System.Drawing.Size(81, 26);
+            this.btn_normal.TabIndex = 4;
+            this.btn_normal.Text = "Ver normal";
+            this.btn_normal.Click += new System.EventHandler(this.btn_normal_Click);
+            // 
+            // ddb_clientes
+            // 
+            this.ddb_clientes.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
+            this.ddb_clientes.DropDownControl = this.popupControlContainer1;
+            this.ddb_clientes.Image = ((System.Drawing.Image)(resources.GetObject("ddb_clientes.Image")));
+            this.ddb_clientes.Location = new System.Drawing.Point(638, 23);
+            this.ddb_clientes.MenuManager = this.barManager1;
+            this.ddb_clientes.Name = "ddb_clientes";
+            this.ddb_clientes.Size = new System.Drawing.Size(81, 25);
+            this.ddb_clientes.TabIndex = 5;
+            this.ddb_clientes.Text = "Cliente";
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar3});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.MaxItemId = 0;
+            this.barManager1.StatusBar = this.bar3;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1026, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 568);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1026, 23);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 568);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1026, 0);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 568);
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Barra de estado";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Barra de estado";
+            // 
+            // popupControlContainer1
+            // 
+            this.popupControlContainer1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.popupControlContainer1.Controls.Add(this.btn_empresa);
+            this.popupControlContainer1.Controls.Add(this.btn_clie);
+            this.popupControlContainer1.Location = new System.Drawing.Point(638, 42);
+            this.popupControlContainer1.Manager = this.barManager1;
+            this.popupControlContainer1.Name = "popupControlContainer1";
+            this.popupControlContainer1.Size = new System.Drawing.Size(81, 54);
+            this.popupControlContainer1.TabIndex = 7;
+            this.popupControlContainer1.Visible = false;
+            // 
+            // btn_empresa
+            // 
+            this.btn_empresa.Image = ((System.Drawing.Image)(resources.GetObject("btn_empresa.Image")));
+            this.btn_empresa.Location = new System.Drawing.Point(0, 28);
+            this.btn_empresa.Name = "btn_empresa";
+            this.btn_empresa.Size = new System.Drawing.Size(81, 26);
+            this.btn_empresa.TabIndex = 3;
+            this.btn_empresa.Text = "Empresa";
+            this.btn_empresa.Click += new System.EventHandler(this.btn_empresa_Click);
+            // 
             // FormNegociaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -523,6 +670,10 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.navigationPane1);
             this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "FormNegociaciones";
             this.Text = "Negocios";
             this.Load += new System.EventHandler(this.FormNegociaciones_Load);
@@ -531,6 +682,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.navigationPane1)).EndInit();
             this.navigationPane1.ResumeLayout(false);
             this.pag_lista.ResumeLayout(false);
+            this.pag_lista.PerformLayout();
             this.pag_estado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl5)).EndInit();
             this.groupControl5.ResumeLayout(false);
@@ -543,6 +695,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.grupo_preparacion)).EndInit();
             this.grupo_preparacion.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).EndInit();
+            this.popupControlContainer1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -583,5 +738,18 @@
         private DevExpress.XtraBars.Navigation.TileBar tileBar3;
         private DevExpress.XtraBars.Navigation.TileBar tileBar2;
         private DevExpress.XtraBars.Navigation.TileBar tileBar1;
+        private System.Windows.Forms.Label label1;
+        private DevExpress.XtraEditors.SimpleButton btn_normal;
+        private DevExpress.XtraEditors.SimpleButton btn_cat;
+        private DevExpress.XtraEditors.SimpleButton btn_clie;
+        private DevExpress.XtraEditors.DropDownButton ddb_clientes;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
+        private DevExpress.XtraBars.PopupControlContainer popupControlContainer1;
+        private DevExpress.XtraEditors.SimpleButton btn_empresa;
     }
 }

@@ -56,12 +56,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.checkBox1);
-=======
             this.ClientSize = new System.Drawing.Size(1047, 438);
->>>>>>> 52a74a29678ebbf7e32c1dcd7c0a227cb277b984
             this.Controls.Add(this.button1);
             this.Name = "prueba";
             this.Text = "prueba";
