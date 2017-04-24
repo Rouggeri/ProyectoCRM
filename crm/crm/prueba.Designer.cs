@@ -56,12 +56,18 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
 //<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(284, 261);
             this.Controls.Add(this.checkBox1);
 //=======
             this.ClientSize = new System.Drawing.Size(1047, 438);
 //>>>>>>> 52a74a29678ebbf7e32c1dcd7c0a227cb277b984
+=======
+            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.Controls.Add(this.checkBox1);
+            this.ClientSize = new System.Drawing.Size(1047, 438);
+>>>>>>> 77e8afcc138a162a54bbeabc5ab15e2930c90c7a
             this.Controls.Add(this.button1);
             this.Name = "prueba";
             this.Text = "prueba";

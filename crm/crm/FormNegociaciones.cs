@@ -54,10 +54,11 @@ namespace crm
                     dgv_neg.Columns[5].DisplayFormat.FormatString = "n2";
                     dgv_neg.Columns[0].Width = 28;
                     dgv_neg.RowClick += Dgv_neg_RowClick;
+                    
                 }
                 dgv_neg.OptionsBehavior.ReadOnly = true;
-
-
+               
+               
                 //************************ESTADOS********************
                 DataTable dt_etapa0 = OpBD.SeleccionarNegociosEtapa0();
                 ObtenerNegociosPorEtapa(dt_etapa0, tileBar0);
@@ -140,6 +141,40 @@ namespace crm
 
         private void Dgv_neg_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
+            //DataRow row = dgv_neg.GetFocusedDataRow();
+            //string id_negocio = row[0].ToString();
+            //string titulo = row[1].ToString();
+            //string cliente = row[2].ToString();
+            //string empresa = row[3].ToString();
+            //string moneda = row[4].ToString();
+            //string valor = row[5].ToString();
+            //string fecha_cierre = row[6].ToString();
+            //string categoria = row[7].ToString();
+
+            //FormDetallesNegocio f = new FormDetallesNegocio();
+            //f.id_negocio = id_negocio;
+            //f.titulo = titulo;
+            //f.nombre_persona = cliente;
+            //f.nombre_empresa = empresa;
+            //f.moneda = moneda;
+            //f.valor= valor;
+            //f.fecha_cierre = fecha_cierre;
+            //f.categoria = categoria;
+
+            //f.MdiParent = this.MdiParent;
+            //f.Show();
+    }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            FormNuevoNegocio f = new FormNuevoNegocio();
+            f.MdiParent = this.MdiParent;
+            f.Show();
+            
+        }
+
+        private void dgv_negocios_DoubleClick(object sender, EventArgs e)
+        {
             DataRow row = dgv_neg.GetFocusedDataRow();
             string id_negocio = row[0].ToString();
             string titulo = row[1].ToString();
@@ -156,26 +191,13 @@ namespace crm
             f.nombre_persona = cliente;
             f.nombre_empresa = empresa;
             f.moneda = moneda;
-            f.valor= valor;
+            f.valor = valor;
             f.fecha_cierre = fecha_cierre;
             f.categoria = categoria;
 
             f.MdiParent = this.MdiParent;
             f.Show();
-    }
 
-        private void btn_nuevo_Click(object sender, EventArgs e)
-        {
-            FormNuevoNegocio f = new FormNuevoNegocio();
-            f.MdiParent = this.MdiParent;
-            f.Show();
-            
-        }
-
-        private void dgv_negocios_DoubleClick(object sender, EventArgs e)
-        {
-            
-            
         }
 
         private void btn_nuevo_Click_1(object sender, EventArgs e)
@@ -328,5 +350,41 @@ namespace crm
             f.Show();
         }
 
+        private void btn_clie_Click(object sender, EventArgs e)
+        {
+            dgv_neg.Columns[3].GroupIndex = -1;
+            dgv_neg.Columns[7].GroupIndex = -1;
+
+            dgv_neg.Columns[2].GroupIndex = 1;
+            
+        }
+
+        private void btn_cat_Click(object sender, EventArgs e)
+        {
+            dgv_neg.Columns[2].GroupIndex = -1;
+            dgv_neg.Columns[3].GroupIndex = -1;
+
+            dgv_neg.Columns[7].GroupIndex = 1;
+        }
+
+        private void btn_normal_Click(object sender, EventArgs e)
+        {
+            dgv_neg.Columns[2].GroupIndex = -1;
+            dgv_neg.Columns[3].GroupIndex = -1;
+            dgv_neg.Columns[7].GroupIndex = -1;
+        }
+
+        private void dgv_negocios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_empresa_Click(object sender, EventArgs e)
+        {
+            dgv_neg.Columns[2].GroupIndex = -1;
+            dgv_neg.Columns[7].GroupIndex = -1;
+
+            dgv_neg.Columns[3].GroupIndex = 1;
+        }
     }
 }
