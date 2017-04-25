@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            DevExpress.XtraScheduler.TimeRuler timeRuler1 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler2 = new DevExpress.XtraScheduler.TimeRuler();
-            DevExpress.XtraScheduler.TimeRuler timeRuler3 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler4 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler5 = new DevExpress.XtraScheduler.TimeRuler();
+            DevExpress.XtraScheduler.TimeRuler timeRuler6 = new DevExpress.XtraScheduler.TimeRuler();
             this.ContenedorCalendario = new DevExpress.XtraScheduler.SchedulerStorage(this.components);
             this.appointmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.baseDatosCalendarioDataSet = new crm.BaseDatosCalendarioDataSet();
@@ -77,7 +77,6 @@
             this.schedulerBarController1 = new DevExpress.XtraScheduler.UI.SchedulerBarController();
             this.appointmentsTableAdapter = new crm.BaseDatosCalendarioDataSetTableAdapters.AppointmentsTableAdapter();
             this.resourcesTableAdapter = new crm.BaseDatosCalendarioDataSetTableAdapters.ResourcesTableAdapter();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.ContenedorCalendario)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.appointmentsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.baseDatosCalendarioDataSet)).BeginInit();
@@ -89,7 +88,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // ContenedorCalendario
@@ -142,11 +140,11 @@
             this.Calendario.Storage = this.ContenedorCalendario;
             this.Calendario.TabIndex = 0;
             this.Calendario.Text = "schedulerControl1";
-            this.Calendario.Views.DayView.TimeRulers.Add(timeRuler1);
+            this.Calendario.Views.DayView.TimeRulers.Add(timeRuler4);
             this.Calendario.Views.FullWeekView.Enabled = true;
-            this.Calendario.Views.FullWeekView.TimeRulers.Add(timeRuler2);
+            this.Calendario.Views.FullWeekView.TimeRulers.Add(timeRuler5);
             this.Calendario.Views.WeekView.Enabled = false;
-            this.Calendario.Views.WorkWeekView.TimeRulers.Add(timeRuler3);
+            this.Calendario.Views.WorkWeekView.TimeRulers.Add(timeRuler6);
             // 
             // MenuCalendario
             // 
@@ -432,7 +430,7 @@
             this.dateNavigator1.Location = new System.Drawing.Point(775, 54);
             this.dateNavigator1.Name = "dateNavigator1";
             this.dateNavigator1.SchedulerControl = this.Calendario;
-            this.dateNavigator1.Size = new System.Drawing.Size(213, 240);
+            this.dateNavigator1.Size = new System.Drawing.Size(213, 493);
             this.dateNavigator1.TabIndex = 1;
             // 
             // schedulerBarController1
@@ -472,20 +470,11 @@
             // 
             this.resourcesTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(777, 300);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(211, 247);
-            this.dataGridView1.TabIndex = 2;
-            // 
             // FormActividadesCalendario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(991, 589);
-            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.MenuCalendario);
             this.Controls.Add(this.dateNavigator1);
             this.Controls.Add(this.Calendario);
@@ -504,7 +493,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1.CalendarTimeProperties)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dateNavigator1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.schedulerBarController1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -558,6 +546,5 @@
         private BaseDatosCalendarioDataSetTableAdapters.AppointmentsTableAdapter appointmentsTableAdapter;
         private System.Windows.Forms.BindingSource resourcesBindingSource;
         private BaseDatosCalendarioDataSetTableAdapters.ResourcesTableAdapter resourcesTableAdapter;
-        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

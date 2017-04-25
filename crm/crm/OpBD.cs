@@ -1049,7 +1049,7 @@ namespace crm
             {
                 DataTable dt = new DataTable();
                 OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
-                OdbcCommand comando = new OdbcCommand("select c.id_caso, c.titulo, concat(p.nombres,' ',p.apellidos) as Persona, e.nombre, c.fecha_finalizacion, ct.nombre_caso from caso c left join tbl_cliente p on c.id_cliente = p.id_cliente left join empresa e on c.id_empresa = e.id_empresa inner join categoria_caso ct on c.id_cat_caso = ct.id_cat_caso where c.estado = 'activo' ", con);
+                OdbcCommand comando = new OdbcCommand("select c.id_caso, c.titulo, concat(p.nombres,' ',p.apellidos) as Persona, e.nombre, c.fecha_finalizacion, ct.nombre_caso, c.estado_caso from caso c left join tbl_cliente p on c.id_cliente = p.id_cliente left join empresa e on c.id_empresa = e.id_empresa inner join categoria_caso ct on c.id_cat_caso = ct.id_cat_caso where c.estado = 'activo' ", con);
                 OdbcDataAdapter ad = new OdbcDataAdapter(comando);
                 ad.Fill(dt);
                 return dt;

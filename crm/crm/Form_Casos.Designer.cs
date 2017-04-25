@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Casos));
             this.panel2 = new System.Windows.Forms.Panel();
             this.button2 = new System.Windows.Forms.Button();
@@ -44,13 +45,26 @@
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.dgv_casos = new DevExpress.XtraGrid.GridControl();
             this.gv_casos = new DevExpress.XtraGrid.Views.Grid.GridView();
-            this.simpleButton1 = new DevExpress.XtraEditors.SimpleButton();
+            this.ddb_clientes = new DevExpress.XtraEditors.DropDownButton();
+            this.btn_normal = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_cat = new DevExpress.XtraEditors.SimpleButton();
             this.label1 = new System.Windows.Forms.Label();
-            this.simpleButton2 = new DevExpress.XtraEditors.SimpleButton();
-            this.simpleButton3 = new DevExpress.XtraEditors.SimpleButton();
+            this.popupControlContainer1 = new DevExpress.XtraBars.PopupControlContainer(this.components);
+            this.btn_empresa = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_clie = new DevExpress.XtraEditors.SimpleButton();
+            this.btn_abiertos_cerrados = new DevExpress.XtraEditors.SimpleButton();
+            this.barManager1 = new DevExpress.XtraBars.BarManager(this.components);
+            this.barDockControlTop = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlBottom = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlLeft = new DevExpress.XtraBars.BarDockControl();
+            this.barDockControlRight = new DevExpress.XtraBars.BarDockControl();
+            this.bar3 = new DevExpress.XtraBars.Bar();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_casos)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).BeginInit();
+            this.popupControlContainer1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel2
@@ -275,13 +289,14 @@
             // 
             // dgv_casos
             // 
-            this.dgv_casos.Location = new System.Drawing.Point(27, 133);
+            this.dgv_casos.Location = new System.Drawing.Point(35, 151);
             this.dgv_casos.MainView = this.gv_casos;
             this.dgv_casos.Name = "dgv_casos";
-            this.dgv_casos.Size = new System.Drawing.Size(988, 298);
+            this.dgv_casos.Size = new System.Drawing.Size(957, 285);
             this.dgv_casos.TabIndex = 189;
             this.dgv_casos.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
             this.gv_casos});
+            this.dgv_casos.DoubleClick += new System.EventHandler(this.dgv_casos_DoubleClick);
             // 
             // gv_casos
             // 
@@ -295,56 +310,166 @@
             this.gv_casos.OptionsView.RowAutoHeight = true;
             this.gv_casos.PaintStyleName = "Skin";
             // 
-            // simpleButton1
+            // ddb_clientes
             // 
-            this.simpleButton1.Location = new System.Drawing.Point(27, 104);
-            this.simpleButton1.Name = "simpleButton1";
-            this.simpleButton1.Size = new System.Drawing.Size(113, 23);
-            this.simpleButton1.TabIndex = 190;
-            this.simpleButton1.Text = "Solo casos abiertos";
+            this.ddb_clientes.DropDownArrowStyle = DevExpress.XtraEditors.DropDownArrowStyle.Hide;
+            this.ddb_clientes.DropDownControl = this.popupControlContainer1;
+            this.ddb_clientes.Image = ((System.Drawing.Image)(resources.GetObject("ddb_clientes.Image")));
+            this.ddb_clientes.Location = new System.Drawing.Point(561, 118);
+            this.ddb_clientes.MenuManager = this.barManager1;
+            this.ddb_clientes.Name = "ddb_clientes";
+            this.ddb_clientes.Size = new System.Drawing.Size(81, 25);
+            this.ddb_clientes.TabIndex = 193;
+            this.ddb_clientes.Text = "Cliente";
+            // 
+            // btn_normal
+            // 
+            this.btn_normal.Image = ((System.Drawing.Image)(resources.GetObject("btn_normal.Image")));
+            this.btn_normal.Location = new System.Drawing.Point(896, 117);
+            this.btn_normal.Name = "btn_normal";
+            this.btn_normal.Size = new System.Drawing.Size(81, 26);
+            this.btn_normal.TabIndex = 192;
+            this.btn_normal.Text = "Ver normal";
+            this.btn_normal.Click += new System.EventHandler(this.btn_normal_Click);
+            // 
+            // btn_cat
+            // 
+            this.btn_cat.Image = ((System.Drawing.Image)(resources.GetObject("btn_cat.Image")));
+            this.btn_cat.Location = new System.Drawing.Point(662, 117);
+            this.btn_cat.Name = "btn_cat";
+            this.btn_cat.Size = new System.Drawing.Size(81, 26);
+            this.btn_cat.TabIndex = 191;
+            this.btn_cat.Text = "Categoría";
+            this.btn_cat.Click += new System.EventHandler(this.btn_cat_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(24, 88);
+            this.label1.Location = new System.Drawing.Point(558, 101);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(26, 13);
-            this.label1.TabIndex = 193;
-            this.label1.Text = "Ver:";
+            this.label1.Size = new System.Drawing.Size(65, 13);
+            this.label1.TabIndex = 190;
+            this.label1.Text = "Agrupar por:";
             // 
-            // simpleButton2
+            // popupControlContainer1
             // 
-            this.simpleButton2.Location = new System.Drawing.Point(146, 104);
-            this.simpleButton2.Name = "simpleButton2";
-            this.simpleButton2.Size = new System.Drawing.Size(113, 23);
-            this.simpleButton2.TabIndex = 194;
-            this.simpleButton2.Text = "Solo casos cerrados";
+            this.popupControlContainer1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.NoBorder;
+            this.popupControlContainer1.Controls.Add(this.btn_empresa);
+            this.popupControlContainer1.Controls.Add(this.btn_clie);
+            this.popupControlContainer1.Location = new System.Drawing.Point(561, 131);
+            this.popupControlContainer1.Manager = this.barManager1;
+            this.popupControlContainer1.Name = "popupControlContainer1";
+            this.popupControlContainer1.Size = new System.Drawing.Size(81, 54);
+            this.popupControlContainer1.TabIndex = 196;
+            this.popupControlContainer1.Visible = false;
             // 
-            // simpleButton3
+            // btn_empresa
             // 
-            this.simpleButton3.Location = new System.Drawing.Point(265, 104);
-            this.simpleButton3.Name = "simpleButton3";
-            this.simpleButton3.Size = new System.Drawing.Size(113, 23);
-            this.simpleButton3.TabIndex = 195;
-            this.simpleButton3.Text = "Todos";
+            this.btn_empresa.Image = ((System.Drawing.Image)(resources.GetObject("btn_empresa.Image")));
+            this.btn_empresa.Location = new System.Drawing.Point(0, 28);
+            this.btn_empresa.Name = "btn_empresa";
+            this.btn_empresa.Size = new System.Drawing.Size(81, 26);
+            this.btn_empresa.TabIndex = 3;
+            this.btn_empresa.Text = "Empresa";
+            this.btn_empresa.Click += new System.EventHandler(this.btn_empresa_Click);
+            // 
+            // btn_clie
+            // 
+            this.btn_clie.Image = ((System.Drawing.Image)(resources.GetObject("btn_clie.Image")));
+            this.btn_clie.Location = new System.Drawing.Point(0, 3);
+            this.btn_clie.Name = "btn_clie";
+            this.btn_clie.Size = new System.Drawing.Size(81, 26);
+            this.btn_clie.TabIndex = 2;
+            this.btn_clie.Text = "Persona";
+            this.btn_clie.Click += new System.EventHandler(this.btn_clie_Click);
+            // 
+            // btn_abiertos_cerrados
+            // 
+            this.btn_abiertos_cerrados.Image = ((System.Drawing.Image)(resources.GetObject("btn_abiertos_cerrados.Image")));
+            this.btn_abiertos_cerrados.Location = new System.Drawing.Point(762, 117);
+            this.btn_abiertos_cerrados.Name = "btn_abiertos_cerrados";
+            this.btn_abiertos_cerrados.Size = new System.Drawing.Size(117, 26);
+            this.btn_abiertos_cerrados.TabIndex = 197;
+            this.btn_abiertos_cerrados.Text = "abiertos/cerrados";
+            this.btn_abiertos_cerrados.Click += new System.EventHandler(this.btn_abiertos_cerrados_Click);
+            // 
+            // barManager1
+            // 
+            this.barManager1.Bars.AddRange(new DevExpress.XtraBars.Bar[] {
+            this.bar3});
+            this.barManager1.DockControls.Add(this.barDockControlTop);
+            this.barManager1.DockControls.Add(this.barDockControlBottom);
+            this.barManager1.DockControls.Add(this.barDockControlLeft);
+            this.barManager1.DockControls.Add(this.barDockControlRight);
+            this.barManager1.Form = this;
+            this.barManager1.MaxItemId = 0;
+            this.barManager1.StatusBar = this.bar3;
+            // 
+            // barDockControlTop
+            // 
+            this.barDockControlTop.CausesValidation = false;
+            this.barDockControlTop.Dock = System.Windows.Forms.DockStyle.Top;
+            this.barDockControlTop.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlTop.Size = new System.Drawing.Size(1053, 0);
+            // 
+            // barDockControlBottom
+            // 
+            this.barDockControlBottom.CausesValidation = false;
+            this.barDockControlBottom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.barDockControlBottom.Location = new System.Drawing.Point(0, 436);
+            this.barDockControlBottom.Size = new System.Drawing.Size(1053, 23);
+            // 
+            // barDockControlLeft
+            // 
+            this.barDockControlLeft.CausesValidation = false;
+            this.barDockControlLeft.Dock = System.Windows.Forms.DockStyle.Left;
+            this.barDockControlLeft.Location = new System.Drawing.Point(0, 0);
+            this.barDockControlLeft.Size = new System.Drawing.Size(0, 436);
+            // 
+            // barDockControlRight
+            // 
+            this.barDockControlRight.CausesValidation = false;
+            this.barDockControlRight.Dock = System.Windows.Forms.DockStyle.Right;
+            this.barDockControlRight.Location = new System.Drawing.Point(1053, 0);
+            this.barDockControlRight.Size = new System.Drawing.Size(0, 436);
+            // 
+            // bar3
+            // 
+            this.bar3.BarName = "Barra de estado";
+            this.bar3.CanDockStyle = DevExpress.XtraBars.BarCanDockStyle.Bottom;
+            this.bar3.DockCol = 0;
+            this.bar3.DockStyle = DevExpress.XtraBars.BarDockStyle.Bottom;
+            this.bar3.OptionsBar.AllowQuickCustomization = false;
+            this.bar3.OptionsBar.DrawDragBorder = false;
+            this.bar3.OptionsBar.UseWholeRow = true;
+            this.bar3.Text = "Barra de estado";
             // 
             // Form_Casos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1053, 459);
-            this.Controls.Add(this.simpleButton3);
-            this.Controls.Add(this.simpleButton2);
+            this.Controls.Add(this.btn_abiertos_cerrados);
+            this.Controls.Add(this.popupControlContainer1);
+            this.Controls.Add(this.ddb_clientes);
+            this.Controls.Add(this.btn_normal);
+            this.Controls.Add(this.btn_cat);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.simpleButton1);
             this.Controls.Add(this.dgv_casos);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.barDockControlLeft);
+            this.Controls.Add(this.barDockControlRight);
+            this.Controls.Add(this.barDockControlBottom);
+            this.Controls.Add(this.barDockControlTop);
             this.Name = "Form_Casos";
             this.Text = "Vista General Casos";
             this.Load += new System.EventHandler(this.Form_Casos_Load);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_casos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gv_casos)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.popupControlContainer1)).EndInit();
+            this.popupControlContainer1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.barManager1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -366,9 +491,19 @@
         private System.Windows.Forms.Button btn_siguiente;
         private DevExpress.XtraGrid.GridControl dgv_casos;
         private DevExpress.XtraGrid.Views.Grid.GridView gv_casos;
-        private DevExpress.XtraEditors.SimpleButton simpleButton1;
+        private DevExpress.XtraEditors.DropDownButton ddb_clientes;
+        private DevExpress.XtraEditors.SimpleButton btn_normal;
+        private DevExpress.XtraEditors.SimpleButton btn_cat;
         private System.Windows.Forms.Label label1;
-        private DevExpress.XtraEditors.SimpleButton simpleButton2;
-        private DevExpress.XtraEditors.SimpleButton simpleButton3;
+        private DevExpress.XtraBars.PopupControlContainer popupControlContainer1;
+        private DevExpress.XtraEditors.SimpleButton btn_empresa;
+        private DevExpress.XtraEditors.SimpleButton btn_clie;
+        private DevExpress.XtraEditors.SimpleButton btn_abiertos_cerrados;
+        private DevExpress.XtraBars.BarManager barManager1;
+        private DevExpress.XtraBars.Bar bar3;
+        private DevExpress.XtraBars.BarDockControl barDockControlTop;
+        private DevExpress.XtraBars.BarDockControl barDockControlBottom;
+        private DevExpress.XtraBars.BarDockControl barDockControlLeft;
+        private DevExpress.XtraBars.BarDockControl barDockControlRight;
     }
 }

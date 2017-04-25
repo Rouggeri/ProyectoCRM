@@ -28,9 +28,16 @@ namespace crm
 
             DataTable dt_AppointmentsCalendario = baseDatosCalendarioDataSet.Appointments;
             int ultimoappointment = dt_AppointmentsCalendario.Rows.Count;
-            DataRow row_appointment = dt_AppointmentsCalendario.Rows[ultimoappointment-1];
-            int ultimo_uniqueID = Convert.ToInt32(row_appointment[0]);
-
+            int ultimo_uniqueID;
+            if (ultimoappointment > 0)
+            {
+                DataRow row_appointment = dt_AppointmentsCalendario.Rows[ultimoappointment - 1];
+                 ultimo_uniqueID = Convert.ToInt32(row_appointment[0]);
+            }
+            else
+              {
+                ultimo_uniqueID = 0;
+              }
 
             DataTable dt_tareas = OpBD.SeleccionarTareasCalendario();
             if (dt_tareas != null && dt_tareas.Rows.Count > 0)
@@ -75,7 +82,7 @@ namespace crm
                     
                     baseDatosCalendarioDataSet.Appointments.Rows.Add(row);
 
-                    dataGridView1.DataSource = baseDatosCalendarioDataSet.Appointments;
+                    //dataGridView1.DataSource = baseDatosCalendarioDataSet.Appointments;
                 }
             }
 
