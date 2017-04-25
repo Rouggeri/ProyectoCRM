@@ -114,6 +114,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>crmbdDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="datos.cs" />
+    <Compile Include="entidades.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -276,12 +278,19 @@
     <Compile Include="frm_pronostico_ventas_secundario.Designer.cs">
       <DependentUpon>frm_pronostico_ventas_secundario.cs</DependentUpon>
     </Compile>
+    <Compile Include="inventario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="inventario.Designer.cs">
+      <DependentUpon>inventario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="negocio.cs" />
     <Compile Include="OpBD.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -371,6 +380,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_pronostico_ventas_secundario.resx">
       <DependentUpon>frm_pronostico_ventas_secundario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="inventario.resx">
+      <DependentUpon>inventario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
