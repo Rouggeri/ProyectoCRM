@@ -397,8 +397,8 @@ namespace crm
         public DataTable consultar_caso(string id_empleado)
         {
             DataTable carga = new DataTable();
-            string cadena = "select  ca.titulo, cl.nombres, cl.apellidos  ,empre.nombre, ca.fecha_limite, ca.estado , emple.nombres from caso ca, tbl_cliente cl , tbl_empleado emple, empresa empre where ca.id_cliente = cl.id_cliente and ca.id_empresa = empre.id_empresa and ca.id_empleado = emple.id_empleado and ca.id_empleado = '" + id_empleado + "'; ";
-            //string cadena = "select caso.titulo, tbl_cliente.nombres,tbl_cliente.apellidos, empresa.nombre,caso.fecha_limite ,caso.estado,tbl_empleado.nombres from(caso left join tbl_cliente on caso.id_cliente = tbl_cliente.id_cliente) left join empresa on empresa.id_empresa = caso.id_empresa left join tbl_empleado on tbl_empleado.id_empleado = caso.id_empleado where caso.id_empleado = '´"+id_empleado+"'; "; 
+            //string cadena = "select  ca.titulo, cl.nombres, cl.apellidos  ,empre.nombre, ca.fecha_limite, ca.estado , emple.nombres from caso ca, tbl_cliente cl , tbl_empleado emple, empresa empre where ca.id_cliente = cl.id_cliente and ca.id_empresa = empre.id_empresa and ca.id_empleado = emple.id_empleado and ca.id_empleado = '" + id_empleado + "'; ";
+            string cadena = "select caso.titulo, tbl_cliente.nombres,tbl_cliente.apellidos, empresa.nombre,caso.fecha_limite ,caso.estado,tbl_empleado.nombres from(caso left join tbl_cliente on caso.id_cliente = tbl_cliente.id_cliente) left join empresa on empresa.id_empresa = caso.id_empresa left join tbl_empleado on tbl_empleado.id_empleado = caso.id_empleado where caso.id_empleado = '" + id_empleado + "'; ";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
