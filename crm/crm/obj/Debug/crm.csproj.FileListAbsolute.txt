@@ -29,7 +29,6 @@ C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.Core.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraScheduler.v15.2.Extensions.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.XtraVerticalGrid.v15.2.dll
-C:\ProyectoCRM\crm\crm\bin\Debug\MySql.Data.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\seguridad.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.Xpf.Charts.v15.2.dll
 C:\ProyectoCRM\crm\crm\bin\Debug\DevExpress.Xpf.Core.v15.2.dll
@@ -360,3 +359,4 @@ C:\ProyectoCRM\crm\crm\obj\Debug\crm.csproj.GenerateResource.Cache
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe.licenses
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.pdb
+C:\ProyectoCRM\crm\crm\bin\Debug\FuncionesNavegador.dll

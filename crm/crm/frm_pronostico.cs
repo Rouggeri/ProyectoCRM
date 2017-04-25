@@ -670,40 +670,41 @@ namespace crm
             dt_negos_proceso = CapaDatos.consultar_negocios_proceso(fecha_inicio_mes.ToString("yyyy-MM-dd"), hoy.ToString("yyyy-MM-dd"), "Proceso");
             dt_negos_ganados = CapaDatos.consultar_negocios_proceso(fecha_inicio_mes.ToString("yyyy-MM-dd"), hoy.ToString("yyyy-MM-dd"), "Ganado");
             dt_negos_perdidos = CapaDatos.consultar_negocios_proceso(fecha_inicio_mes.ToString("yyyy-MM-dd"), hoy.ToString("yyyy-MM-dd"), "Perdido");
+            //dataGridView3.DataSource = dt_negos_proceso;
+            // cambio de headers para datatable de negocios en proceso
+            //dt_negos_proceso.Columns[0].ColumnName = "Titulo de negociación";
+            //dt_negos_proceso.Columns[1].ColumnName = "Valor";
+            //dt_negos_proceso.Columns[2].ColumnName = "Usuario";
+            //dt_negos_proceso.Columns[3].ColumnName = "Apellidos";
+            //dt_negos_proceso.Columns[4].ColumnName = "Empresa";
+            //dt_negos_proceso.Columns[5].ColumnName = "Encargado";
+            //dt_negos_proceso.Columns[6].ColumnName = "Apellidos";
+            //dt_negos_proceso.Columns[7].ColumnName = "Estado actual";
+            //dt_negos_proceso.Columns[8].ColumnName = "Fecha de cierre";
 
             // cambio de headers para datatable de negocios en proceso
-            dt_negos_proceso.Columns["titulo"].ColumnName = "Titulo de negociación";
-            dt_negos_proceso.Columns["valor"].ColumnName = "Valor";
-            dt_negos_proceso.Columns["nombres"].ColumnName = "Usuario";
-            dt_negos_proceso.Columns["apellidos"].ColumnName = "Apellidos";
-            dt_negos_proceso.Columns["nombres1"].ColumnName = "Encargado";
-            dt_negos_proceso.Columns["apellidos1"].ColumnName = "Apellidos";
-            dt_negos_proceso.Columns["nombre"].ColumnName = "Empresa";
-            dt_negos_proceso.Columns["fecha_est_cierre"].ColumnName = "Fecha de cierre";
-            dt_negos_proceso.Columns["status"].ColumnName = "Estado actual";
+            //dt_negos_perdidos.Columns[0].ColumnName = "Titulo de negociación";
+            //dt_negos_perdidos.Columns[1].ColumnName = "Valor";
+            //dt_negos_perdidos.Columns[2].ColumnName = "Usuario";
+            //dt_negos_perdidos.Columns[3].ColumnName = "Apellidos";
+            //dt_negos_perdidos.Columns[4].ColumnName = "Empresa";
+            //dt_negos_perdidos.Columns[5].ColumnName = "Encargado";
+            //dt_negos_perdidos.Columns[6].ColumnName = "Apellidos";
+            //dt_negos_perdidos.Columns[7].ColumnName = "Estado actual";
+            //dt_negos_perdidos.Columns[8].ColumnName = "Fecha de cierre";
 
-            // cambio de headers para datatable de negocios en proceso
-            dt_negos_perdidos.Columns["titulo"].ColumnName = "Titulo de negociación";
-            dt_negos_perdidos.Columns["valor"].ColumnName = "Valor";
-            dt_negos_perdidos.Columns["nombres"].ColumnName = "Usuario";
-            dt_negos_perdidos.Columns["apellidos"].ColumnName = "Apellidos";
-            dt_negos_perdidos.Columns["nombres1"].ColumnName = "Encargado";
-            dt_negos_perdidos.Columns["apellidos1"].ColumnName = "Apellidos";
-            dt_negos_perdidos.Columns["nombre"].ColumnName = "Empresa";
-            dt_negos_perdidos.Columns["fecha_est_cierre"].ColumnName = "Fecha de cierre";
-            dt_negos_perdidos.Columns["status"].ColumnName = "Estado actual";
 
 
             // cambio de headers para datatable de negocios en proceso
-            dt_negos_ganados.Columns["titulo"].ColumnName = "Titulo de negociación";
-            dt_negos_ganados.Columns["valor"].ColumnName = "Valor";
-            dt_negos_ganados.Columns["nombres"].ColumnName = "Usuario";
-            dt_negos_ganados.Columns["apellidos"].ColumnName = "Apellidos";
-            dt_negos_ganados.Columns["nombres1"].ColumnName = "Encargado";
-            dt_negos_ganados.Columns["apellidos1"].ColumnName = "Apellidos";
-            dt_negos_ganados.Columns["nombre"].ColumnName = "Empresa";
-            dt_negos_ganados.Columns["fecha_est_cierre"].ColumnName = "Fecha de cierre";
-            dt_negos_ganados.Columns["status"].ColumnName = "Estado actual";
+            //dt_negos_ganados.Columns[0].ColumnName = "Titulo de negociación";
+            //dt_negos_ganados.Columns[1].ColumnName = "Valor";
+            //dt_negos_ganados.Columns[2].ColumnName = "Usuario";
+            //dt_negos_ganados.Columns[3].ColumnName = "Apellidos";
+            //dt_negos_ganados.Columns[4].ColumnName = "Empresa";
+            //dt_negos_ganados.Columns[5].ColumnName = "Encargado";
+            //dt_negos_ganados.Columns[6].ColumnName = "Apellidos";
+            //dt_negos_ganados.Columns[7].ColumnName = "Estado actual";
+            //dt_negos_ganados.Columns[8].ColumnName = "Fecha de cierre";
 
             //dataGridView2.DataSource = dt_negos_proceso;  
 
