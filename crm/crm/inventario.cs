@@ -119,5 +119,10 @@ namespace crm
             CapaNegocio fn = new CapaNegocio();
             fn.Ultimo(dgv_producto);
         }
+
+        private void inventario_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

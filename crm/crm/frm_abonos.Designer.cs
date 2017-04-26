@@ -1,4 +1,4 @@
-﻿namespace Cobros
+﻿namespace crm
 {
     partial class frm_abonos
     {

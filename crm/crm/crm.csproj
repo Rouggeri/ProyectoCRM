@@ -188,6 +188,12 @@
     <Compile Include="Form_inicio.Designer.cs">
       <DependentUpon>Form_inicio.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmListadoPrecio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmListadoPrecio.Designer.cs">
+      <DependentUpon>frmListadoPrecio.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_abonos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -353,6 +359,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_inicio.resx">
       <DependentUpon>Form_inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmListadoPrecio.resx">
+      <DependentUpon>frmListadoPrecio.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_abonos.resx">
       <DependentUpon>frm_abonos.cs</DependentUpon>
