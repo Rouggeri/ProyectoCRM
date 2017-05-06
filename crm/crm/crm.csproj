@@ -200,12 +200,15 @@
     <Compile Include="frm_abonos.Designer.cs">
       <DependentUpon>frm_abonos.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="frm_balance.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_balance.Designer.cs">
       <DependentUpon>frm_balance.cs</DependentUpon>
     </Compile>
+=======
+>>>>>>> 980ddbb32cfa6fe85eb9ae39215d7cae273852f1
     <Compile Include="frm_buscarfct.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -372,9 +375,12 @@
     <EmbeddedResource Include="frm_abonos.resx">
       <DependentUpon>frm_abonos.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="frm_balance.resx">
       <DependentUpon>frm_balance.cs</DependentUpon>
     </EmbeddedResource>
+=======
+>>>>>>> 980ddbb32cfa6fe85eb9ae39215d7cae273852f1
     <EmbeddedResource Include="frm_buscarfct.resx">
       <DependentUpon>frm_buscarfct.cs</DependentUpon>
     </EmbeddedResource>

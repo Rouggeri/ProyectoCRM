@@ -21,7 +21,11 @@ namespace crm
             InitializeComponent();
             llenar_encabezado();
         }
+<<<<<<< HEAD
         string id_form = "118";
+=======
+
+>>>>>>> 980ddbb32cfa6fe85eb9ae39215d7cae273852f1
         public void llenar_encabezado()
         {
             DataGridViewTextBoxColumn c1 = new DataGridViewTextBoxColumn();
