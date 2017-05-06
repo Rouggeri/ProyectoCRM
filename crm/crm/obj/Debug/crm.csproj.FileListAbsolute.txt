@@ -362,3 +362,10 @@ C:\ProyectoCRM\crm\crm\obj\Debug\crm.Properties.Resources.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.prueba.resources
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.csproj.GenerateResource.Cache
 C:\ProyectoCRM\crm\crm\obj\Debug\crm.exe.licenses
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.inventario.resources
+C:\ProyectoCRM\crm\crm\bin\Debug\FuncionesNavegador.dll
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frmListadoPrecio.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_abonos.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\Cobros.frm_balance.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.frm_buscarfct.resources
+C:\ProyectoCRM\crm\crm\obj\Debug\crm.inventario_bodega.resources

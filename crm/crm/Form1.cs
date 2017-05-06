@@ -41,7 +41,11 @@ namespace crm
         FormAsignacionPerfil asper = new FormAsignacionPerfil();
         Form_EditarPerfil edper = new Form_EditarPerfil();
         FormEliminarPerfil elper = new FormEliminarPerfil();
+        frm_pronostico_ventas_secundario secundarios = new frm_pronostico_ventas_secundario();
+        inventario inven = new inventario();
         CambioPass camb = new CambioPass();
+        inventario_bodega inv_bod = new inventario_bodega();
+        frmListadoPrecio precios = new frmListadoPrecio();
  
         private void LimpiarMDI()
         {
@@ -124,7 +128,10 @@ namespace crm
             edper = null;
             elper = null;
             camb = null;
-
+            secundarios = null;
+            inven = null;
+            inv_bod = null;
+            precios = null;
 
             if (ini == null)
             {
@@ -609,7 +616,100 @@ namespace crm
             this.Close();
         }
 
+        private void metasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "115");
+            if (dt.Rows.Count > 0)
+            {
+                //ClearAllMDIs();
+                LimpiarMDI();
+                if (secundarios == null)
+                {
+                    secundarios = new frm_pronostico_ventas_secundario();
+                    secundarios.MdiParent = this;
 
+                    secundarios.FormClosed += new FormClosedEventHandler(frm_pronostico_ventas_Secundario_form_closed);
+                    secundarios.Show();
+                }
+            }
+            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+        }
 
+        private void frm_pronostico_ventas_Secundario_form_closed(object sender, FormClosedEventArgs e)
+        {
+            secundarios = null;
+        }
+
+        private void ingresoProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "116");
+            if (dt.Rows.Count > 0)
+            {
+                //ClearAllMDIs();
+                LimpiarMDI();
+                if (inven == null)
+                {
+                    inven = new inventario();
+                    inven.MdiParent = this;
+
+                    inven.FormClosed += new FormClosedEventHandler(inventario_form_closed);
+                    inven.Show();
+                }
+            }
+            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+        }
+
+        private void inventario_form_closed(object sender, FormClosedEventArgs e)
+        {
+            inven = null;
+        }
+
+        private void bodegaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "117");
+            if (dt.Rows.Count > 0)
+            {
+                //ClearAllMDIs();
+                LimpiarMDI();
+                if (inv_bod == null)
+                {
+                    inv_bod = new inventario_bodega();
+                    inv_bod.MdiParent = this;
+
+                    inv_bod.FormClosed += new FormClosedEventHandler(inventario_bodega_form_closed);
+                    inv_bod.Show();
+                }
+            }
+            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+        }
+
+        private void inventario_bodega_form_closed(object sender, FormClosedEventArgs e)
+        {
+            inv_bod = null;
+        }
+
+        private void listaDePrecioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           // DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "117");
+           // if (dt.Rows.Count > 0)
+            //{
+                //ClearAllMDIs();
+                //LimpiarMDI();
+                if (precios == null)
+                {
+                    precios = new frmListadoPrecio();
+                    precios.MdiParent = this;
+
+                    precios.FormClosed += new FormClosedEventHandler(lista_de_precios_form_closed);
+                    precios.Show();
+                }
+            //}
+            //else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+        }
+
+        private void lista_de_precios_form_closed(object sender, FormClosedEventArgs e)
+        {
+            precios = null;
+        }
     }
 }
