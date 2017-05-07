@@ -16,11 +16,8 @@ namespace crm
         {
             InitializeComponent();
         }
-<<<<<<< HEAD
         public crm.entidades.factura facturaselec { get; set; }
-=======
-        public entidades.factura facturaselec { get; set;}
->>>>>>> 3e6606c786ded1cb086140fae4b32f3c7599c5db
+       // public entidades.factura facturaselec { get; set;}
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = crm.datos.Buscar(Convert.ToInt32(textBox1.Text));
