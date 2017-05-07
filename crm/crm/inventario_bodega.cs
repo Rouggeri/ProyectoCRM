@@ -22,11 +22,8 @@ namespace crm
         {
 
         }
-<<<<<<< HEAD
         string id_form = "117";
-=======
 
->>>>>>> 980ddbb32cfa6fe85eb9ae39215d7cae273852f1
         private void btn_actualizar_Click(object sender, EventArgs e)
         {
             negocio cnegocio = new negocio();           //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
