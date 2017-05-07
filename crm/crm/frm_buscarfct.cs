@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace Cobros
+namespace crm
 {
     public partial class frm_buscarfct : Form
     {
@@ -16,7 +16,11 @@ namespace Cobros
         {
             InitializeComponent();
         }
+<<<<<<< HEAD
         public crm.entidades.factura facturaselec { get; set; }
+=======
+        public entidades.factura facturaselec { get; set;}
+>>>>>>> 3e6606c786ded1cb086140fae4b32f3c7599c5db
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = crm.datos.Buscar(Convert.ToInt32(textBox1.Text));
@@ -39,6 +43,11 @@ namespace Cobros
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void frm_buscarfct_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

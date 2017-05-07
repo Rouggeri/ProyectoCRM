@@ -25,7 +25,7 @@ namespace crm
 
 
 
-
+        string if_form = "115";
 
         // Datatables:
         DataTable dt_cat_negos = new DataTable(); // dt que sirve para cargar las categorias de negocios

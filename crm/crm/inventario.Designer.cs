@@ -43,19 +43,19 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.dgv_producto = new System.Windows.Forms.DataGridView();
-            this.cbo_cat = new System.Windows.Forms.ComboBox();
+            this.txt_fecha = new System.Windows.Forms.TextBox();
+            this.txt_precio = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.txt_existencia = new System.Windows.Forms.TextBox();
             this.txt_marca = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txt_precio = new System.Windows.Forms.TextBox();
-            this.txt_fecha = new System.Windows.Forms.TextBox();
+            this.dgv_producto = new System.Windows.Forms.DataGridView();
+            this.cbo_cat = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -302,23 +302,46 @@
             this.groupControl1.TabIndex = 200;
             this.groupControl1.Text = "Información de Producto";
             // 
-            // dgv_producto
+            // txt_fecha
             // 
-            this.dgv_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_producto.Location = new System.Drawing.Point(30, 133);
-            this.dgv_producto.Name = "dgv_producto";
-            this.dgv_producto.Size = new System.Drawing.Size(664, 150);
-            this.dgv_producto.TabIndex = 198;
+            this.txt_fecha.Location = new System.Drawing.Point(397, 105);
+            this.txt_fecha.Name = "txt_fecha";
+            this.txt_fecha.Size = new System.Drawing.Size(121, 21);
+            this.txt_fecha.TabIndex = 209;
             // 
-            // cbo_cat
+            // txt_precio
             // 
-            this.cbo_cat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_cat.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_cat.FormattingEnabled = true;
-            this.cbo_cat.Location = new System.Drawing.Point(397, 70);
-            this.cbo_cat.Name = "cbo_cat";
-            this.cbo_cat.Size = new System.Drawing.Size(132, 24);
-            this.cbo_cat.TabIndex = 14;
+            this.txt_precio.Location = new System.Drawing.Point(397, 41);
+            this.txt_precio.Name = "txt_precio";
+            this.txt_precio.Size = new System.Drawing.Size(121, 21);
+            this.txt_precio.TabIndex = 208;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(330, 114);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.TabIndex = 207;
+            this.label6.Text = "Fecha:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(330, 75);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(58, 13);
+            this.label5.TabIndex = 206;
+            this.label5.Text = "Categoria:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(330, 44);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(39, 13);
+            this.label4.TabIndex = 205;
+            this.label4.Text = "Costo:";
             // 
             // txt_existencia
             // 
@@ -368,46 +391,23 @@
             this.label1.TabIndex = 199;
             this.label1.Text = "Nombre:";
             // 
-            // label4
+            // dgv_producto
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(330, 44);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
-            this.label4.TabIndex = 205;
-            this.label4.Text = "Costo:";
+            this.dgv_producto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_producto.Location = new System.Drawing.Point(30, 133);
+            this.dgv_producto.Name = "dgv_producto";
+            this.dgv_producto.Size = new System.Drawing.Size(664, 150);
+            this.dgv_producto.TabIndex = 198;
             // 
-            // label5
+            // cbo_cat
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(330, 75);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(58, 13);
-            this.label5.TabIndex = 206;
-            this.label5.Text = "Categoria:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(330, 114);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
-            this.label6.TabIndex = 207;
-            this.label6.Text = "Fecha:";
-            // 
-            // txt_precio
-            // 
-            this.txt_precio.Location = new System.Drawing.Point(397, 41);
-            this.txt_precio.Name = "txt_precio";
-            this.txt_precio.Size = new System.Drawing.Size(121, 21);
-            this.txt_precio.TabIndex = 208;
-            // 
-            // txt_fecha
-            // 
-            this.txt_fecha.Location = new System.Drawing.Point(397, 105);
-            this.txt_fecha.Name = "txt_fecha";
-            this.txt_fecha.Size = new System.Drawing.Size(121, 21);
-            this.txt_fecha.TabIndex = 209;
+            this.cbo_cat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_cat.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_cat.FormattingEnabled = true;
+            this.cbo_cat.Location = new System.Drawing.Point(397, 70);
+            this.cbo_cat.Name = "cbo_cat";
+            this.cbo_cat.Size = new System.Drawing.Size(132, 24);
+            this.cbo_cat.TabIndex = 14;
             // 
             // inventario
             // 
@@ -418,6 +418,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "inventario";
             this.Text = "inventario";
+            this.Load += new System.EventHandler(this.inventario_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);

@@ -1,5 +1,4 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using FuncionesNavegador;
 
-namespace Cobros
+namespace crm
 {
     public partial class frm_abonos : Form
     {
@@ -18,7 +17,9 @@ namespace Cobros
         {
             InitializeComponent();
         }
-        public crm.entidades.factura FacturaActual { get; set; }
+
+
+        public entidades.factura FacturaActual { get; set; }
         private void frm_abonos_Load(object sender, EventArgs e)
         {
 

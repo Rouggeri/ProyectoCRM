@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace crm
 {
-    class entidades
+    public class entidades
     {
         public class Producto
         {

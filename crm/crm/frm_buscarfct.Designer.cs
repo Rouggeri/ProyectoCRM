@@ -1,4 +1,4 @@
-﻿namespace Cobros
+﻿namespace crm
 {
     partial class frm_buscarfct
     {
@@ -41,17 +41,19 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 31);
+            this.label1.Location = new System.Drawing.Point(9, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 17);
+            this.label1.Size = new System.Drawing.Size(60, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "No.Factura";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(96, 26);
+            this.textBox1.Location = new System.Drawing.Point(72, 21);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
+            this.textBox1.Size = new System.Drawing.Size(76, 20);
             this.textBox1.TabIndex = 1;
             // 
             // btn_buscar
@@ -63,10 +65,9 @@
             this.btn_buscar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btn_buscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Silver;
             this.btn_buscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_buscar.Location = new System.Drawing.Point(213, 12);
-            this.btn_buscar.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_buscar.Location = new System.Drawing.Point(160, 10);
             this.btn_buscar.Name = "btn_buscar";
-            this.btn_buscar.Size = new System.Drawing.Size(51, 36);
+            this.btn_buscar.Size = new System.Drawing.Size(38, 29);
             this.btn_buscar.TabIndex = 20;
             this.btn_buscar.UseVisualStyleBackColor = true;
             this.btn_buscar.Click += new System.EventHandler(this.btn_buscar_Click);
@@ -74,19 +75,21 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(15, 97);
+            this.dataGridView1.Location = new System.Drawing.Point(11, 79);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(962, 517);
+            this.dataGridView1.Size = new System.Drawing.Size(722, 420);
             this.dataGridView1.TabIndex = 21;
             // 
             // btn_aceptar
             // 
             this.btn_aceptar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_aceptar.BackgroundImage")));
             this.btn_aceptar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_aceptar.Location = new System.Drawing.Point(320, 31);
+            this.btn_aceptar.Location = new System.Drawing.Point(240, 25);
+            this.btn_aceptar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_aceptar.Name = "btn_aceptar";
-            this.btn_aceptar.Size = new System.Drawing.Size(67, 60);
+            this.btn_aceptar.Size = new System.Drawing.Size(50, 49);
             this.btn_aceptar.TabIndex = 22;
             this.btn_aceptar.UseVisualStyleBackColor = true;
             this.btn_aceptar.Click += new System.EventHandler(this.button1_Click);
@@ -95,26 +98,29 @@
             // 
             this.btn_cancelar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_cancelar.BackgroundImage")));
             this.btn_cancelar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btn_cancelar.Location = new System.Drawing.Point(435, 31);
+            this.btn_cancelar.Location = new System.Drawing.Point(326, 25);
+            this.btn_cancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btn_cancelar.Name = "btn_cancelar";
-            this.btn_cancelar.Size = new System.Drawing.Size(74, 60);
+            this.btn_cancelar.Size = new System.Drawing.Size(56, 49);
             this.btn_cancelar.TabIndex = 23;
             this.btn_cancelar.UseVisualStyleBackColor = true;
             this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // frm_buscarfct
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(992, 621);
+            this.ClientSize = new System.Drawing.Size(744, 505);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_aceptar);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btn_buscar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "frm_buscarfct";
             this.Text = "frm_buscarfct";
+            this.Load += new System.EventHandler(this.frm_buscarfct_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

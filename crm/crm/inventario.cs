@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using FuncionesNavegador;
 
 namespace crm
 {
     public partial class inventario : Form
     {
+        string id_form= "116";
         public inventario()
         {
             InitializeComponent();
@@ -118,6 +120,11 @@ namespace crm
         {
             CapaNegocio fn = new CapaNegocio();
             fn.Ultimo(dgv_producto);
+        }
+
+        private void inventario_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
