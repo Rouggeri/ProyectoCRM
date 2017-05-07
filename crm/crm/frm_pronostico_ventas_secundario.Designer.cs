@@ -33,6 +33,9 @@
             DevExpress.XtraCharts.Series series1 = new DevExpress.XtraCharts.Series();
             DevExpress.XtraCharts.SwiftPlotSeriesView swiftPlotSeriesView1 = new DevExpress.XtraCharts.SwiftPlotSeriesView();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.groupControl2 = new DevExpress.XtraEditors.GroupControl();
+            this.dgv_detalle = new DevExpress.XtraGrid.GridControl();
+            this.gridView1 = new DevExpress.XtraGrid.Views.Grid.GridView();
             this.xtraTabControl1 = new DevExpress.XtraTab.XtraTabControl();
             this.xtraTabPage1 = new DevExpress.XtraTab.XtraTabPage();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -67,6 +70,10 @@
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).BeginInit();
+            this.groupControl2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_detalle)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).BeginInit();
             this.xtraTabControl1.SuspendLayout();
             this.xtraTabPage1.SuspendLayout();
@@ -91,6 +98,7 @@
             this.groupControl1.Appearance.BackColor2 = System.Drawing.Color.White;
             this.groupControl1.CaptionImage = ((System.Drawing.Image)(resources.GetObject("groupControl1.CaptionImage")));
             this.groupControl1.CaptionLocation = DevExpress.Utils.Locations.Top;
+            this.groupControl1.Controls.Add(this.groupControl2);
             this.groupControl1.Controls.Add(this.xtraTabControl1);
             this.groupControl1.Controls.Add(this.dgv_complemento);
             this.groupControl1.Controls.Add(this.dgv_tabla_result);
@@ -102,16 +110,42 @@
             this.groupControl1.Location = new System.Drawing.Point(0, 0);
             this.groupControl1.Margin = new System.Windows.Forms.Padding(4);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(1243, 515);
+            this.groupControl1.Size = new System.Drawing.Size(1243, 636);
             this.groupControl1.TabIndex = 31;
             this.groupControl1.Text = "Proyecciones";
             // 
+            // groupControl2
+            // 
+            this.groupControl2.Controls.Add(this.dgv_detalle);
+            this.groupControl2.Location = new System.Drawing.Point(864, 102);
+            this.groupControl2.Name = "groupControl2";
+            this.groupControl2.Size = new System.Drawing.Size(467, 473);
+            this.groupControl2.TabIndex = 30;
+            this.groupControl2.Text = "Detalles de Ventas";
+            // 
+            // dgv_detalle
+            // 
+            this.dgv_detalle.Location = new System.Drawing.Point(0, 19);
+            this.dgv_detalle.MainView = this.gridView1;
+            this.dgv_detalle.Name = "dgv_detalle";
+            this.dgv_detalle.Size = new System.Drawing.Size(467, 454);
+            this.dgv_detalle.TabIndex = 29;
+            this.dgv_detalle.ViewCollection.AddRange(new DevExpress.XtraGrid.Views.Base.BaseView[] {
+            this.gridView1});
+            // 
+            // gridView1
+            // 
+            this.gridView1.GridControl = this.dgv_detalle;
+            this.gridView1.Name = "gridView1";
+            this.gridView1.OptionsPrint.AutoWidth = false;
+            this.gridView1.OptionsView.ColumnAutoWidth = false;
+            // 
             // xtraTabControl1
             // 
-            this.xtraTabControl1.Location = new System.Drawing.Point(182, 79);
+            this.xtraTabControl1.Location = new System.Drawing.Point(44, 102);
             this.xtraTabControl1.Name = "xtraTabControl1";
             this.xtraTabControl1.SelectedTabPage = this.xtraTabPage1;
-            this.xtraTabControl1.Size = new System.Drawing.Size(904, 207);
+            this.xtraTabControl1.Size = new System.Drawing.Size(814, 207);
             this.xtraTabControl1.TabIndex = 28;
             this.xtraTabControl1.TabPages.AddRange(new DevExpress.XtraTab.XtraTabPage[] {
             this.xtraTabPage1,
@@ -124,7 +158,7 @@
             this.xtraTabPage1.Controls.Add(this.groupBox2);
             this.xtraTabPage1.Controls.Add(this.btn_pronosticar);
             this.xtraTabPage1.Name = "xtraTabPage1";
-            this.xtraTabPage1.Size = new System.Drawing.Size(898, 179);
+            this.xtraTabPage1.Size = new System.Drawing.Size(808, 179);
             this.xtraTabPage1.Text = "Minimos Cuadrados";
             // 
             // groupBox1
@@ -272,7 +306,7 @@
             // 
             // btn_pronosticar
             // 
-            this.btn_pronosticar.Location = new System.Drawing.Point(23, 137);
+            this.btn_pronosticar.Location = new System.Drawing.Point(336, 135);
             this.btn_pronosticar.Name = "btn_pronosticar";
             this.btn_pronosticar.Size = new System.Drawing.Size(105, 39);
             this.btn_pronosticar.TabIndex = 18;
@@ -285,7 +319,7 @@
             this.xtraTabPage2.Controls.Add(this.groupBox6);
             this.xtraTabPage2.Controls.Add(this.btn_promedio_moviles);
             this.xtraTabPage2.Name = "xtraTabPage2";
-            this.xtraTabPage2.Size = new System.Drawing.Size(898, 179);
+            this.xtraTabPage2.Size = new System.Drawing.Size(808, 179);
             this.xtraTabPage2.Text = "Promedio Movil";
             // 
             // groupBox5
@@ -383,7 +417,7 @@
             // 
             // btn_promedio_moviles
             // 
-            this.btn_promedio_moviles.Location = new System.Drawing.Point(452, 60);
+            this.btn_promedio_moviles.Location = new System.Drawing.Point(476, 78);
             this.btn_promedio_moviles.Name = "btn_promedio_moviles";
             this.btn_promedio_moviles.Size = new System.Drawing.Size(112, 37);
             this.btn_promedio_moviles.TabIndex = 27;
@@ -393,33 +427,36 @@
             // dgv_complemento
             // 
             this.dgv_complemento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_complemento.Location = new System.Drawing.Point(1119, 422);
+            this.dgv_complemento.Location = new System.Drawing.Point(12, 200);
             this.dgv_complemento.Name = "dgv_complemento";
-            this.dgv_complemento.Size = new System.Drawing.Size(162, 130);
+            this.dgv_complemento.Size = new System.Drawing.Size(10, 10);
             this.dgv_complemento.TabIndex = 26;
+            this.dgv_complemento.Visible = false;
             // 
             // dgv_tabla_result
             // 
             this.dgv_tabla_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla_result.Location = new System.Drawing.Point(1119, 292);
+            this.dgv_tabla_result.Location = new System.Drawing.Point(12, 177);
             this.dgv_tabla_result.Name = "dgv_tabla_result";
-            this.dgv_tabla_result.Size = new System.Drawing.Size(148, 124);
+            this.dgv_tabla_result.Size = new System.Drawing.Size(10, 17);
             this.dgv_tabla_result.TabIndex = 25;
+            this.dgv_tabla_result.Visible = false;
             // 
             // dgv_consulta_negos_ventas
             // 
             this.dgv_consulta_negos_ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_consulta_negos_ventas.Location = new System.Drawing.Point(1119, 102);
+            this.dgv_consulta_negos_ventas.Location = new System.Drawing.Point(6, 156);
             this.dgv_consulta_negos_ventas.Name = "dgv_consulta_negos_ventas";
-            this.dgv_consulta_negos_ventas.Size = new System.Drawing.Size(148, 184);
+            this.dgv_consulta_negos_ventas.Size = new System.Drawing.Size(16, 15);
             this.dgv_consulta_negos_ventas.TabIndex = 24;
+            this.dgv_consulta_negos_ventas.Visible = false;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.cmb_metodo);
             this.groupBox4.Location = new System.Drawing.Point(890, 63);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(277, 62);
+            this.groupBox4.Size = new System.Drawing.Size(10, 10);
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Metodo";
@@ -444,7 +481,7 @@
             swiftPlotDiagram1.AxisX.VisibleInPanesSerializable = "-1";
             swiftPlotDiagram1.AxisY.VisibleInPanesSerializable = "-1";
             this.ctc_pronostico.Diagram = swiftPlotDiagram1;
-            this.ctc_pronostico.Location = new System.Drawing.Point(183, 307);
+            this.ctc_pronostico.Location = new System.Drawing.Point(45, 330);
             this.ctc_pronostico.Name = "ctc_pronostico";
             this.ctc_pronostico.PaletteName = "Default";
             series1.Name = "Serie1";
@@ -452,24 +489,24 @@
             series1.View = swiftPlotSeriesView1;
             this.ctc_pronostico.SeriesSerializable = new DevExpress.XtraCharts.Series[] {
         series1};
-            this.ctc_pronostico.Size = new System.Drawing.Size(898, 245);
+            this.ctc_pronostico.Size = new System.Drawing.Size(808, 245);
             this.ctc_pronostico.TabIndex = 23;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(152, 60);
+            this.label1.Font = new System.Drawing.Font("Tahoma", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(363, 63);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(146, 16);
+            this.label1.Size = new System.Drawing.Size(209, 25);
             this.label1.TabIndex = 22;
-            this.label1.Text = "Pronostico de ventas";
+            this.label1.Text = "Proyección de ventas";
             // 
             // frm_pronostico_ventas_secundario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1243, 515);
+            this.ClientSize = new System.Drawing.Size(1243, 636);
             this.Controls.Add(this.groupControl1);
             this.Name = "frm_pronostico_ventas_secundario";
             this.Text = "Proyección de ventas";
@@ -477,6 +514,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.groupControl2)).EndInit();
+            this.groupControl2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_detalle)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabControl1)).EndInit();
             this.xtraTabControl1.ResumeLayout(false);
             this.xtraTabPage1.ResumeLayout(false);
@@ -538,5 +579,8 @@
         private System.Windows.Forms.RadioButton rbt_categoria_p_movil;
         private System.Windows.Forms.RadioButton rbt_categproa_p_movil_todos;
         private System.Windows.Forms.ComboBox cmb_categoria_p_movil;
+        private DevExpress.XtraGrid.GridControl dgv_detalle;
+        private DevExpress.XtraGrid.Views.Grid.GridView gridView1;
+        private DevExpress.XtraEditors.GroupControl groupControl2;
     }
 }

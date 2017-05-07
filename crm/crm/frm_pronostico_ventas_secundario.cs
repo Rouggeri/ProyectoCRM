@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Globalization;
 using DevExpress.XtraCharts;
 
+
 namespace crm
 {
     public partial class frm_pronostico_ventas_secundario : Form
@@ -160,10 +161,24 @@ namespace crm
             dgv_consulta_negos_ventas.DataSource = ""; // limpieza de dtgrid de prueba
             dt_negos_finalizados.Clear(); // limpieza de dtable de negocios para ir a seleccionar todos los negocios sin excepcion, que tengan estado de ganado
 
+            
+
             if (cmb_clasificacion.SelectedItem.ToString() == "Negocios")
             {
                 dt_negos_finalizados = capadatos.seleccionar_negos_historial_general(); // envio de solicitud a la cantidad de negocios vendidos en general 
                 dgv_consulta_negos_ventas.DataSource = dt_negos_finalizados;
+                dgv_detalle.DataSource = dt_negos_finalizados;
+
+                gridView1.Columns["nombre_cat"].Caption = "Categoria";
+                gridView1.Columns["titulo"].Caption = "Titulo";
+                gridView1.Columns["valor"].Caption = "Valor";
+                gridView1.Columns["fecha_est_cierre"].Caption = "Finalización";
+                gridView1.Columns["nombre"].Caption = "Empresa";
+                gridView1.Columns["nombres"].Caption = "Usuario";
+                gridView1.Columns["apellidos"].Caption = "Apellido";
+                gridView1.Columns["id_negocio"].Visible = false;
+                gridView1.Columns["id_cat"].Visible = false;
+
             }
         }
 
@@ -175,6 +190,7 @@ namespace crm
             if (cmb_clasificacion.SelectedItem.ToString() == "Negocios")
             {
                 dt_cat_negos =  capadatos.seleccionar_cat_negos();
+                
                 cmb_categoria.DataSource = dt_cat_negos;
                 cmb_categoria.ValueMember = "id_cat";
                 cmb_categoria.DisplayMember = "nombre_cat";
@@ -201,8 +217,19 @@ namespace crm
 
                 dt_negos_finalizados = capadatos.seleccionar_negos_historial(id_nego_venta); // envio de solicitud a la cantidad de productos vendidos segun producto seleccionado
                 dgv_consulta_negos_ventas.DataSource = dt_negos_finalizados;
+                dgv_detalle.DataSource = dt_negos_finalizados;
 
-                
+                gridView1.Columns["nombre_cat"].Caption = "Categoria";
+                gridView1.Columns["titulo"].Caption = "Titulo";
+                gridView1.Columns["valor"].Caption = "Valor";
+                gridView1.Columns["fecha_est_cierre"].Caption = "Finalización";
+                gridView1.Columns["nombre"].Caption = "Empresa";
+                gridView1.Columns["nombres"].Caption = "Usuario";
+                gridView1.Columns["apellidos"].Caption = "Apellido";
+                gridView1.Columns["id_negocio"].Visible = false ;
+                gridView1.Columns["id_cat"].Visible = false;
+
+
             }
         }
 
@@ -297,19 +324,20 @@ namespace crm
             //MessageBox.Show(N.ToString());
 
             // relleno de la primera fila, mes ante-pasado
-            columna1["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(uno) + 1);
+            //columna1["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(uno) + 1);
+            columna1["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(uno) + 2);
             columna1["x"] = uno;
             columna1["y"] = contador_negos_2ant_mes;
             dt_nego_ganado_hijo.Rows.Add(columna1);
 
             // relleno de la segunda fila, mes pasado
-            columna["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(dos) + 1);
+            columna["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(dos) + 2);
             columna["x"] = dos;
             columna["y"] = contador_negos_ant_mes;
             dt_nego_ganado_hijo.Rows.Add(columna);
 
             // relleno de la tercera fila, este mes
-            columna3["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(tres) + 1);
+            columna3["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(tres) + 2);
             columna3["x"] = tres;
             columna3["y"] = contador_negos_este_mes;
             dt_nego_ganado_hijo.Rows.Add(columna3);
@@ -396,7 +424,7 @@ namespace crm
 
                     DataRow nueva_fila = dt_nego_ganado_hijo.NewRow(); // nueva fila para insercion de complemento de x y Y
 
-                    nueva_fila["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(cont_meses) + 1); //***********++ NOTA++******* SUMAR +2 EN MAYO +3 EN JUNIO
+                    nueva_fila["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(cont_meses) + 2); //***********++ NOTA++******* SUMAR +2 EN MAYO +3 EN JUNIO
                     nueva_fila["x"] = cont_meses;
                     nueva_fila["y"] = y.ToString("N2");
 
@@ -421,7 +449,7 @@ namespace crm
 
                     DataRow nueva_fila = dt_nego_ganado_hijo.NewRow(); // nueva fila para insercion de complemento de x y Y
 
-                    nueva_fila["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(cont_meses) + 1);//***********++ NOTA++******* SUMAR +2 EN MAYO +3 EN JUNIO
+                    nueva_fila["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(cont_meses) + 2);//***********++ NOTA++******* SUMAR +2 EN MAYO +3 EN JUNIO
                     nueva_fila["x"] = cont_meses;
                     nueva_fila["y"] = y.ToString("N2");
 
@@ -439,13 +467,13 @@ namespace crm
 
                 cont_meses = 4;
 
-                for (double i = cont_meses; cont_meses <= 11; cont_meses++)
+                for (double i = cont_meses; cont_meses <= 10; cont_meses++) // CAMBIOS AQUI EL OTRO MES ES 9
                 {
                     y = a + b * (cont_meses);
 
                     DataRow nueva_fila = dt_nego_ganado_hijo.NewRow(); // nueva fila para insercion de complemento de x y Y
 
-                    nueva_fila["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(cont_meses) + 1);//***********++ NOTA++******* SUMAR +2 EN MAYO +3 EN JUNIO
+                    nueva_fila["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(cont_meses) + 2);//***********++ NOTA++******* SUMAR +2 EN MAYO +3 EN JUNIO
                     nueva_fila["x"] = cont_meses;
                     nueva_fila["y"] = y.ToString("N2");
 
@@ -678,19 +706,19 @@ namespace crm
             //MessageBox.Show(N.ToString());
 
             // relleno de la primera fila, mes ante-pasado
-            columna1["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(uno) + 1);
+            columna1["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(uno) + 2);
             columna1["x"] = uno;
             columna1["y"] = contador_negos_2ant_mes;
             dt_nego_ganado_hijo.Rows.Add(columna1);
 
             // relleno de la segunda fila, mes pasado
-            columna["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(dos) + 1);
+            columna["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(dos) + 2);
             columna["x"] = dos;
             columna["y"] = contador_negos_ant_mes;
             dt_nego_ganado_hijo.Rows.Add(columna);
 
             // relleno de la tercera fila, este mes
-            columna3["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(tres) + 1);
+            columna3["nom_mes"] = nombre_mes.nombre_mes(Convert.ToInt32(tres) + 2);
             columna3["x"] = tres;
             columna3["y"] = contador_negos_este_mes;
             dt_nego_ganado_hijo.Rows.Add(columna3);
@@ -712,8 +740,9 @@ namespace crm
 
 
 
-                  nueva_fila_moviles["nom_mes"] = nombre_mes.nombre_mes(5); // el siguiente mes hay que cambiarlo a 6 para que sea junio
-                  nueva_fila_moviles["x"] = Convert.ToInt32( tres) + 1;
+                  //nueva_fila_moviles["nom_mes"] = nombre_mes.nombre_mes(5); // el siguiente mes hay que cambiarlo a 6 para que sea junio
+            nueva_fila_moviles["nom_mes"] = nombre_mes.nombre_mes(6); // el siguiente mes hay que cambiarlo a 7 para que sea julio
+            nueva_fila_moviles["x"] = Convert.ToInt32( tres) + 1;
                   nueva_fila_moviles["y"] = divi.ToString("N2");
 
                   dt_nego_ganado_hijo.Rows.Add(nueva_fila_moviles);
@@ -819,6 +848,18 @@ namespace crm
 
                 dt_negos_finalizados = capadatos.seleccionar_negos_historial(id_nego_venta); // envio de solicitud a la cantidad de productos vendidos segun producto seleccionado
                 dgv_consulta_negos_ventas.DataSource = dt_negos_finalizados;
+                dgv_detalle.DataSource = dt_negos_finalizados;
+
+                gridView1.Columns["nombre_cat"].Caption = "Categoria";
+                gridView1.Columns["titulo"].Caption = "Titulo";
+                gridView1.Columns["valor"].Caption = "Valor";
+                gridView1.Columns["fecha_est_cierre"].Caption = "Finalización";
+                gridView1.Columns["nombre"].Caption = "Empresa";
+                gridView1.Columns["nombres"].Caption = "Usuario";
+                gridView1.Columns["apellidos"].Caption = "Apellido";
+                gridView1.Columns["id_negocio"].Visible = false;
+                gridView1.Columns["id_cat"].Visible = false;
+
 
 
             }
@@ -839,6 +880,18 @@ namespace crm
             {
                 dt_negos_finalizados = capadatos.seleccionar_negos_historial_general(); // envio de solicitud a la cantidad de negocios vendidos en general 
                 dgv_consulta_negos_ventas.DataSource = dt_negos_finalizados;
+                dgv_detalle.DataSource = dt_negos_finalizados;
+
+                gridView1.Columns["nombre_cat"].Caption = "Categoria";
+                gridView1.Columns["titulo"].Caption = "Titulo";
+                gridView1.Columns["valor"].Caption = "Valor";
+                gridView1.Columns["fecha_est_cierre"].Caption = "Finalización";
+                gridView1.Columns["nombre"].Caption = "Empresa";
+                gridView1.Columns["nombres"].Caption = "Usuario";
+                gridView1.Columns["apellidos"].Caption = "Apellido";
+                gridView1.Columns["id_negocio"].Visible = false;
+                gridView1.Columns["id_cat"].Visible = false;
+
             }
         }
 
