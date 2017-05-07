@@ -16,7 +16,7 @@ namespace Cobros
         {
             InitializeComponent();
         }
-        public crm.entidades.factura facturaselec { get; set;}
+        public crm.entidades.factura facturaselec { get; set; }
         private void btn_buscar_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = crm.datos.Buscar(Convert.ToInt32(textBox1.Text));
