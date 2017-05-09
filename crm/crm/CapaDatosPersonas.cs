@@ -581,7 +581,8 @@ namespace crm
         {
             DataTable carga = new DataTable();
             //string cadena = "select * from tbl_negocio where status = 'ganado';";
-            string cadena = "select tbl_negocio.id_negocio, tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre, categoria_neg.id_cat,categoria_neg.nombre_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) where tbl_negocio.status = 'ganado' and tbl_negocio.id_cat = '"+id_nego_cat+"'; "; 
+            //string cadena = "select tbl_negocio.id_negocio, tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre, categoria_neg.id_cat,categoria_neg.nombre_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) where tbl_negocio.status = 'ganado' and tbl_negocio.id_cat = '"+id_nego_cat+"'; ";
+            string cadena = "select tbl_negocio.id_negocio,categoria_neg.nombre_cat,tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre , empresa.nombre,tbl_cliente.nombres,tbl_cliente.apellidos ,categoria_neg.id_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) left join empresa on tbl_negocio.id_empresa = empresa.id_empresa left join tbl_cliente on tbl_negocio.id_cliente = tbl_cliente.id_cliente where tbl_negocio.status = 'ganado' and tbl_negocio.id_cat = '" + id_nego_cat + "'; ";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
@@ -594,7 +595,8 @@ namespace crm
         {
             DataTable carga = new DataTable();
             //string cadena = "select * from tbl_negocio where status = 'ganado';";
-            string cadena = "select tbl_negocio.id_negocio, tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre, categoria_neg.id_cat,categoria_neg.nombre_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) where tbl_negocio.status = 'ganado'; ";
+            //string cadena = "select tbl_negocio.id_negocio, tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre, categoria_neg.id_cat,categoria_neg.nombre_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) where tbl_negocio.status = 'ganado'; ";
+            string cadena = "select tbl_negocio.id_negocio,categoria_neg.nombre_cat,tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre , empresa.nombre,tbl_cliente.nombres,tbl_cliente.apellidos ,categoria_neg.id_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) left join empresa on tbl_negocio.id_empresa = empresa.id_empresa left join tbl_cliente on tbl_negocio.id_cliente = tbl_cliente.id_cliente where tbl_negocio.status = 'ganado'; ";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
