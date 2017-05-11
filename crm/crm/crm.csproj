@@ -200,7 +200,6 @@
     <Compile Include="frm_abonos.Designer.cs">
       <DependentUpon>frm_abonos.cs</DependentUpon>
     </Compile>
-
     <Compile Include="frm_balance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -302,6 +301,12 @@
     </Compile>
     <Compile Include="frm_pronostico_ventas_secundario.Designer.cs">
       <DependentUpon>frm_pronostico_ventas_secundario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_puesto_nuevo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_puesto_nuevo.Designer.cs">
+      <DependentUpon>frm_puesto_nuevo.cs</DependentUpon>
     </Compile>
     <Compile Include="inventario.cs">
       <SubType>Form</SubType>
@@ -423,6 +428,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_pronostico_ventas_secundario.resx">
       <DependentUpon>frm_pronostico_ventas_secundario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_puesto_nuevo.resx">
+      <DependentUpon>frm_puesto_nuevo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inventario.resx">
       <DependentUpon>inventario.cs</DependentUpon>
