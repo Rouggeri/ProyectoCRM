@@ -321,7 +321,6 @@
     <Compile Include="frm_pronostico_ventas_secundario.Designer.cs">
       <DependentUpon>frm_pronostico_ventas_secundario.cs</DependentUpon>
     </Compile>
-<<<<<<< HEAD
     <Compile Include="InsertarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -333,13 +332,12 @@
     </Compile>
     <Compile Include="InsertarProducto.Designer.cs">
       <DependentUpon>InsertarProducto.cs</DependentUpon>
-=======
+      </Compile>
     <Compile Include="frm_puesto_nuevo.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frm_puesto_nuevo.Designer.cs">
       <DependentUpon>frm_puesto_nuevo.cs</DependentUpon>
->>>>>>> 5d1248e7c540a3f2310bc5ad8097046ba31193be
     </Compile>
     <Compile Include="inventario.cs">
       <SubType>Form</SubType>
@@ -471,16 +469,14 @@
     <EmbeddedResource Include="frm_pronostico_ventas_secundario.resx">
       <DependentUpon>frm_pronostico_ventas_secundario.cs</DependentUpon>
     </EmbeddedResource>
-<<<<<<< HEAD
     <EmbeddedResource Include="InsertarCliente.resx">
       <DependentUpon>InsertarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="InsertarProducto.resx">
       <DependentUpon>InsertarProducto.cs</DependentUpon>
-=======
+      </EmbeddedResource>
     <EmbeddedResource Include="frm_puesto_nuevo.resx">
       <DependentUpon>frm_puesto_nuevo.cs</DependentUpon>
->>>>>>> 5d1248e7c540a3f2310bc5ad8097046ba31193be
     </EmbeddedResource>
     <EmbeddedResource Include="inventario.resx">
       <DependentUpon>inventario.cs</DependentUpon>
