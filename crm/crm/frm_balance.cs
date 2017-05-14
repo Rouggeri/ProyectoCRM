@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.Odbc;
 
-namespace Cobros
+namespace crm
 {
     public partial class frm_balance : Form
     {
@@ -93,5 +93,10 @@ namespace Cobros
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {        }
+
+        private void frm_balance_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -104,11 +104,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BaseDatosCalendarioDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BuscarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BuscarCliente.Designer.cs">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CapaDatos.cs" />
     <Compile Include="CapaDatosPersonas.cs" />
     <Compile Include="CapaNegociod.cs" />
     <Compile Include="cls_grafica_pie.cs" />
     <Compile Include="cls_nombre_mes.cs" />
     <Compile Include="Conexion.cs" />
+    <Compile Include="Cotizacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cotizacion.Designer.cs">
+      <DependentUpon>Cotizacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="crmbdDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -116,6 +129,12 @@
     </Compile>
     <Compile Include="datos.cs" />
     <Compile Include="entidades.cs" />
+    <Compile Include="Factura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Factura.Designer.cs">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -200,7 +219,6 @@
     <Compile Include="frm_abonos.Designer.cs">
       <DependentUpon>frm_abonos.cs</DependentUpon>
     </Compile>
-
     <Compile Include="frm_balance.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -303,6 +321,18 @@
     <Compile Include="frm_pronostico_ventas_secundario.Designer.cs">
       <DependentUpon>frm_pronostico_ventas_secundario.cs</DependentUpon>
     </Compile>
+    <Compile Include="InsertarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarCliente.Designer.cs">
+      <DependentUpon>InsertarCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InsertarProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="InsertarProducto.Designer.cs">
+      <DependentUpon>InsertarProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="inventario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -331,6 +361,15 @@
     <Compile Include="prueba.Designer.cs">
       <DependentUpon>prueba.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BuscarCliente.resx">
+      <DependentUpon>BuscarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cotizacion.resx">
+      <DependentUpon>Cotizacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Factura.resx">
+      <DependentUpon>Factura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -423,6 +462,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_pronostico_ventas_secundario.resx">
       <DependentUpon>frm_pronostico_ventas_secundario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarCliente.resx">
+      <DependentUpon>InsertarCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InsertarProducto.resx">
+      <DependentUpon>InsertarProducto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="inventario.resx">
       <DependentUpon>inventario.cs</DependentUpon>

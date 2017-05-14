@@ -55,7 +55,33 @@ namespace crm
             //    //item_personal.Enabled = false;
             //    //item_pronosticos.Enabled = false;
             //}
+
+            BloquearMenuInicio();
         }
+
+        private void BloquearMenuInicio()
+            {
+
+            foreach (DevExpress.XtraEditors.TileGroup grupo in tile.Groups)
+            {
+                foreach (DevExpress.XtraEditors.TileItem item in grupo.Items)
+                {
+                    string tag=""; 
+                    if (item.Tag != null)
+                    { 
+                    tag = item.Tag.ToString();
+                    }
+                    DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, tag);
+                  
+                    if (dt.Rows.Count > 0)
+                    {
+                        item.Enabled = true;
+                    }
+                    else { item.Enabled = false; }
+                }
+            }
+
+            }
 
         private void item_negocios_ItemClick(object sender, DevExpress.XtraEditors.TileItemEventArgs e)
         {

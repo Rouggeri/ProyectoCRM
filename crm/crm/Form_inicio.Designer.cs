@@ -104,6 +104,7 @@
             this.item_negocios.Id = 14;
             this.item_negocios.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.item_negocios.Name = "item_negocios";
+            this.item_negocios.Tag = "104";
             this.item_negocios.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_negocios_ItemClick);
             // 
             // item_contactos
@@ -122,6 +123,7 @@
             this.item_contactos.Id = 15;
             this.item_contactos.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.item_contactos.Name = "item_contactos";
+            this.item_contactos.Tag = "103";
             this.item_contactos.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_contactos_ItemClick);
             // 
             // item_calendario
@@ -141,6 +143,7 @@
             this.item_calendario.Id = 16;
             this.item_calendario.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.item_calendario.Name = "item_calendario";
+            this.item_calendario.Tag = "104";
             this.item_calendario.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_calendario_ItemClick);
             // 
             // itemcasos
@@ -159,6 +162,7 @@
             this.itemcasos.Id = 23;
             this.itemcasos.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.itemcasos.Name = "itemcasos";
+            this.itemcasos.Tag = "102";
             this.itemcasos.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.itemcasos_ItemClick);
             // 
             // tileGroup2
@@ -184,6 +188,7 @@
             this.item_clientes.Id = 9;
             this.item_clientes.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.item_clientes.Name = "item_clientes";
+            this.item_clientes.Tag = "112";
             this.item_clientes.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_clientes_ItemClick);
             // 
             // item_personal
@@ -206,6 +211,7 @@
             this.item_personal.Id = 17;
             this.item_personal.ItemSize = DevExpress.XtraEditors.TileItemSize.Medium;
             this.item_personal.Name = "item_personal";
+            this.item_personal.Tag = "113";
             this.item_personal.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_personal_ItemClick);
             // 
             // item_pronosticos
@@ -224,6 +230,7 @@
             this.item_pronosticos.Id = 18;
             this.item_pronosticos.ItemSize = DevExpress.XtraEditors.TileItemSize.Wide;
             this.item_pronosticos.Name = "item_pronosticos";
+            this.item_pronosticos.Tag = "114";
             this.item_pronosticos.ItemClick += new DevExpress.XtraEditors.TileItemClickEventHandler(this.item_pronosticos_ItemClick);
             // 
             // tileGroup3
