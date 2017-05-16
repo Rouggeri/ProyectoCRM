@@ -22,7 +22,11 @@ namespace proyectoUOne
             try
             {
                 CapaDatos nuevo = new CapaDatos();
-                nuevo.InsertarProducto(txt_descripcion.Text, Convert.ToDouble(txt_precioUnidad.Text));
+                double precioP = Convert.ToDouble(txt_precioUnidad.Text);
+                double tempo = precioP * 0.20;
+                double tempo2 = precioP - tempo;
+                
+                nuevo.InsertarProducto(txt_descripcion.Text, Convert.ToDouble(txt_precioUnidad.Text), tempo2);
                 MessageBox.Show("Se Inserto Correctamente");
                 txt_descripcion.Text = "";
                 txt_precioUnidad.Text = "";

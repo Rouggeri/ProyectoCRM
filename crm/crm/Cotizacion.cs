@@ -17,29 +17,6 @@ namespace proyectoUOne
         {
             InitializeComponent();
             //llenarComboDescrpicion();
-            llenarComboDescrpicion();
-        }
-
-        //llenar combobox descripcion de producto
-        public void llenarComboDescrpicion()
-        {
-            try
-            {
-                OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
-                string query = "select descripcion from producto ORDER BY descripcion ASC;";
-                OdbcCommand cmd = new OdbcCommand(query, con);
-                OdbcDataAdapter da1 = new OdbcDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da1.Fill(dt);
-                cmb_descripcion.ValueMember = "descripcion";
-                cmb_descripcion.DisplayMember = "descripcion";
-                cmb_descripcion.DataSource = dt;
-            }
-            catch
-            {
-                MessageBox.Show("Error al llenar combobox descripcion");
-            }
-
         }
         
         private void btn_guardar_Click(object sender, EventArgs e)
@@ -52,7 +29,7 @@ namespace proyectoUOne
                 dtpFechaT.Format = DateTimePickerFormat.Custom;
                 dtpFechaT.CustomFormat = "yyyy-MM-dd";
                 CapaDatos inserta = new CapaDatos();
-                inserta.InsertarCotizacion(txtCliente.Text.Trim(), txtCorreo.Text.Trim(), dtpFechaI.Text.Trim(), dtpFechaT.Text.Trim());
+                inserta.InsertarCotizacion(txtCliente.Text.Trim(), txtTelefono.Text.Trim(), dtpFechaI.Text.Trim(), dtpFechaT.Text.Trim());
 
                 CapaDatos v = new CapaDatos();
                 DataTable dt1 = CapaDatos.CargarGridAutoIncrement("select AUTO_INCREMENT from information_schema.TABLES where TABLE_SCHEMA='crmbd' and TABLE_NAME='cotizacion_encabezado';");
@@ -79,25 +56,53 @@ namespace proyectoUOne
         {
             try
             {
-                CapaDatos nuev = new CapaDatos();
-                int convertir = Convert.ToInt32(txt_codigoP.Text.Trim());
-                DataTable dt;
-                dt = nuev.query_precioUnidad(convertir);
-                cmb_prueba.ValueMember = "precio_unidad";
-                cmb_prueba.DisplayMember = "precio_unidad";
-                cmb_prueba.DataSource = dt;
-                double subtotall = Convert.ToInt32(cmb_prueba.SelectedValue.ToString()) * Convert.ToInt32(txt_cantidad.Text.Trim());
-                dgvCotizacion.Rows.Insert(0, convertir, cmb_descripcion.SelectedValue.ToString(), cmb_prueba.SelectedValue.ToString(),txt_cantidad.Text, subtotall);
+                BuscarProducto abir = new BuscarProducto();
+                //this.Hide();
+                abir.ShowDialog();
 
-                int suma = 0;
-                foreach (DataGridViewRow row in dgvCotizacion.Rows)
+                Factura fac = new Factura();
+                CapaDatos nuev = new CapaDatos();
+                string codigoP = abir.dgv_productosVista.CurrentRow.Cells[0].Value.ToString();
+                string decripcionP = abir.dgv_productosVista.CurrentRow.Cells[1].Value.ToString();
+                string precioUP = abir.dgv_productosVista.CurrentRow.Cells[2].Value.ToString();
+                string precioMayor = abir.dgv_productosVista.CurrentRow.Cells[3].Value.ToString();
+                  string decidido = "";
+                int primero = Convert.ToInt32(txt_tipo.Text);
+                                if (primero == 1)
+                                {
+                                    decidido = precioUP;
+                                }
+                                if (primero == 2)
+                                {
+                                    decidido = precioMayor;
+                                }
+                double temporal1 = Convert.ToDouble(abir.txt_cantidad.Text);
+                int temporal2 = Convert.ToInt32(decidido);
+                double subtot = temporal1 * temporal2;
+                string SubtotalP = Convert.ToString(subtot);
+
+
+
+
+                if (!String.IsNullOrEmpty(codigoP) && !String.IsNullOrEmpty(decripcionP) && !String.IsNullOrEmpty(precioUP) &&
+                                                !String.IsNullOrEmpty(SubtotalP))
                 {
-                    suma += Convert.ToInt32(row.Cells["Subtotal"].Value);
-                    //suma += (int)row.Cells["Subtotal"].Value;
+
+
+                    dgvCotizacion.Rows.Add(codigoP, decripcionP, abir.txt_cantidad.Text, decidido, SubtotalP);
+                    //dgv_facturaDetalle.Rows.Insert(0, cmb_codigo.SelectedValue.ToString(), cmb_descripcion.SelectedValue.ToString(), txt_cantidad.Text, cmb_prueba.SelectedValue.ToString(), subtotall);
+
+                    int suma = 0;
+                    foreach (DataGridViewRow row in dgvCotizacion.Rows)
+                    {
+                        suma += Convert.ToInt32(row.Cells["subtotal"].Value);
+                        //suma += (int)row.Cells["Subtotal"].Value;
+                    }
+                    txt_total.Text = Convert.ToString(suma);
+                    abir.txt_cantidad.Text = "";
+                    //this.Close();
                 }
-                txt_total.Text = Convert.ToString(suma);
-                txt_cantidad.Text = "";
-                textBox2.Text = "";
+                //this.Show();
             }
             catch
             {
@@ -135,76 +140,36 @@ namespace proyectoUOne
             }
         }
 
-        private void textBox2_TextChanged(object sender, EventArgs e)
+
+        public string temporalNumeroAdquirido;
+        private void btn_buscarCliente_Click(object sender, EventArgs e)
         {
             try
             {
-                if (textBox2.Text == null)
+                BuscarCliente abir = new BuscarCliente();
+                this.Hide();
+                abir.ShowDialog();
+
+                if (!String.IsNullOrEmpty(abir.codigoC) && !String.IsNullOrEmpty(abir.nitC) && !String.IsNullOrEmpty(abir.nombreC) &&
+                            !String.IsNullOrEmpty(abir.apellidoC) && !String.IsNullOrEmpty(abir.direccionC) && !String.IsNullOrEmpty(abir.telefonoC))
                 {
-                    llenarComboDescrpicion();
-                    txt_codigoP.Text = "";
+                    temporalNumeroAdquirido = abir.codigoC;
+                    txtCliente.Text = abir.nombreC;
+                    txtTelefono.Text = abir.apellidoC;
+                    txt_tipo.Text = abir.tipo;
+                    //this.Close();
+                    this.Show();
                 }
-                else {
-                    descripcionNoestavacio();
-                    CodigoProductoText();               
-                }               
-            }
-            catch (System.Exception ex)
-            {
-                MessageBox.Show(ex.Message);
-            }
-        }
-        //si esta vacio
-        public void descripcionNoestavacio()
-        {
-            try
-            {
-                    DataTable carga = CapaDatos.CargarGridAutoIncrement("select descripcion from producto WHERE id_producto like '%"+ textBox2.Text +"%' or descripcion like '%"+ textBox2.Text +"%'");
-                    DataRow rows = carga.Rows[0];
-                    string cod_prod = Convert.ToString(rows[0]);
-                    cmb_descripcion.Text = cod_prod.ToString();
-                    cmb_descripcion.DisplayMember = cod_prod.ToString();
-                    //cmb_descripcion.ValueMember = cod_prod.ToString();
             }
             catch
             {
-                MessageBox.Show("No se pudo cargar datos a combo");
-            }
-        }
-        //si no esta vacio
-        public void CodigoProductoText()
-        {
-            try
-            {
-                DataTable carga = CapaDatos.CargarGridAutoIncrement("select id_producto from producto WHERE id_producto like '%"+ textBox2.Text +"%' or descripcion like '%"+ textBox2.Text +"%'");
-                DataRow rows = carga.Rows[0];
-                string cod_prod = Convert.ToString(rows[0]);
-                txt_codigoP.Text = cod_prod;
-            }
-            catch
-            {
-                MessageBox.Show("No existe producto con esta descripcion");
+                MessageBox.Show("Error al cargar formulario");
             }
         }
 
-        private void cmb_descripcion_SelectedValueChanged(object sender, EventArgs e)
+        private void btn_eliminar_Click(object sender, EventArgs e)
         {
-            try
-            {
-                DataTable carga = CapaDatos.CargarGridAutoIncrement("select id_producto from producto WHERE descripcion like '%"+ cmb_descripcion.SelectedValue +"%'");
-                DataRow rows = carga.Rows[0];
-                string cod_prod = Convert.ToString(rows[0]);
-                txt_codigoP.Text = cod_prod;
-            }
-            catch
-            {
-                MessageBox.Show("No existe producto con descripcion");
-            }
-        }
-
-        private void cmb_descripcion_MouseCaptureChanged(object sender, EventArgs e)
-        {
-            textBox2.Text = "";
+            
         }
     }
 }

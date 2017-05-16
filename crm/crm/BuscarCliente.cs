@@ -19,6 +19,7 @@ namespace proyectoUOne
         public string apellidoC;
         public string direccionC;
         public string telefonoC;
+        public string tipo;
         public BuscarCliente()
         {
             InitializeComponent();
@@ -34,6 +35,7 @@ namespace proyectoUOne
         {
             try
             {
+                Factura vista = new Factura();
                 //Ponemos los valores del datagridview en variables globales publicas
                 codigoC = this.dgv_buscarCliente.CurrentRow.Cells[0].Value.ToString();
                 nitC = this.dgv_buscarCliente.CurrentRow.Cells[1].Value.ToString();
@@ -41,10 +43,13 @@ namespace proyectoUOne
                 apellidoC = this.dgv_buscarCliente.CurrentRow.Cells[3].Value.ToString();
                 direccionC = this.dgv_buscarCliente.CurrentRow.Cells[4].Value.ToString();
                 telefonoC = this.dgv_buscarCliente.CurrentRow.Cells[5].Value.ToString();
+                tipo = this.dgv_buscarCliente.CurrentRow.Cells[7].Value.ToString();
                 //Despues se llamara desde otro formulario las variables globales decalaradas aqui
+
                 if (!String.IsNullOrEmpty(codigoC) && !String.IsNullOrEmpty(nitC) && !String.IsNullOrEmpty(nombreC) &&
                     !String.IsNullOrEmpty(apellidoC) && !String.IsNullOrEmpty(direccionC) && !String.IsNullOrEmpty(telefonoC))
                 {
+                    
                     this.Close();
                 }
                 else {

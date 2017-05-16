@@ -12,6 +12,7 @@ namespace proyectoUOne
 {
     class CapaDatos
     {
+
         //Insertar Encabezado Cotizacion a base de datos
         public void InsertarCotizacion(string clienteP, string correoP, string fechaIniciosP, string fechaTerminasP)
         {
@@ -75,12 +76,12 @@ namespace proyectoUOne
         }
 
         //Insertar Cliente a base de datos
-        public int GuardarCliente(int nitP, string nombreP, string apellidoP, string direccionP, int telefonoP)
+        public int GuardarCliente(int nitP, string nombreP, string apellidoP, string direccionP, int telefonoP, int tipoP)
         {
             try
             {
                 int devolver = 0;
-                String cadena = "insert into cliente(id_cliente, nit, nombre, apellido, direccion, telefono, estado) values(null,"+ nitP +",'"+ nombreP +"','"+ apellidoP +"','"+ direccionP +"',"+ telefonoP +",'activo');";
+                String cadena = "insert into cliente_m(id_cliente, nit, nombre, apellido, direccion, telefono, estado, tipo) values(null," + nitP + ",'" + nombreP + "','" + apellidoP + "','" + direccionP + "'," + telefonoP + ",'activo', "+tipoP+");";
                 OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
                 OdbcCommand cmd = new OdbcCommand(cadena, con);
                 devolver = cmd.ExecuteNonQuery();
@@ -95,10 +96,10 @@ namespace proyectoUOne
         }
 
         //Insertar Productos a base de datos
-        public void InsertarProducto(string descripcionP, double preciP)
+        public void InsertarProducto(string descripcionP, double preciP, double precioMayorP)
         {
 
-            String cadena = "insert into producto(id_producto, descripcion, precio_unidad, estado) values(null,'"+descripcionP+"',"+preciP+",'ACTIVO')";
+            String cadena = "insert into producto_m(id_producto, descripcion, precio_unidad, precio_mayorista, estado) values(null,'"+descripcionP+"',"+preciP+","+precioMayorP+",'ACTIVO')";
             OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
             OdbcCommand cmd = new OdbcCommand(cadena, con);
             cmd.ExecuteNonQuery();
@@ -109,7 +110,7 @@ namespace proyectoUOne
         public DataTable query_precioUnidad(int codigoPP)
         {
             OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
-            string query = "select precio_unidad from producto where id_producto= "+codigoPP+";";
+            string query = "select precio_unidad from producto_m where id_producto= " + codigoPP + ";";
             OdbcCommand cmd = new OdbcCommand(query, con);
             OdbcDataAdapter da1 = new OdbcDataAdapter(cmd);
             DataTable dt = new DataTable();
@@ -128,7 +129,7 @@ namespace proyectoUOne
             {
                 OdbcConnection conn = seguridad.Conexion.ObtenerConexionODBC();
                 DataTable dtd = new DataTable();
-                string queryd = "select * from cliente WHERE id_cliente like '%"+busquedaP+"%' or nombre like '%"+busquedaP+"%'";
+                string queryd = "select * from cliente_m WHERE id_cliente like '%"+busquedaP+"%' or nombre like '%"+busquedaP+"%'";
                 OdbcCommand cmdd = new OdbcCommand(queryd, conn);
                 OdbcDataAdapter adapd = new OdbcDataAdapter(cmdd);
                 adapd.Fill(dtd);
@@ -169,7 +170,7 @@ namespace proyectoUOne
             {
                 OdbcConnection conn = seguridad.Conexion.ObtenerConexionODBC();
                 DataTable dtd = new DataTable();
-                string queryd = "select id_producto, cantidad, subtotal from cotizacion_detalle WHERE id_cotizacion = "+busquedaP+"";
+                string queryd = "select id_producto, cantidad, subtotal from cotizacion_detalle WHERE id_cotizacion = " + busquedaP + "";
                 OdbcCommand cmdd = new OdbcCommand(queryd, conn);
                 OdbcDataAdapter adapd = new OdbcDataAdapter(cmdd);
                 adapd.Fill(dtd);
@@ -184,14 +185,59 @@ namespace proyectoUOne
         }
 
         ///Actualizar Encabezado Factura a base de datos
-        public void ActualziarFacturaEncabezado(string fechaP, string formaPagoP, double totalP, int codigoClienteP, int id_facturaP)
+        public void ActualziarFacturaEncabezado(string fechaP, string formaPagoP, string totalP, int codigoClienteP, string id_facturaP)
         {
 
-            String cadena = "update factura_encabezado set fecha='"+fechaP+"',forma_pago='"+formaPagoP+"',total='"+totalP+"',id_cliente='"+codigoClienteP+"' where id_factura='"+id_facturaP+"';";
+            String cadena = "update factura_encabezado set fecha='"+fechaP+"',forma_pago='"+formaPagoP+"',total='"+totalP+"',id_cliente='"+codigoClienteP+"' where id_factura='"+id_facturaP+"'";
             OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
             OdbcCommand cmd = new OdbcCommand(cadena, con);
             cmd.ExecuteNonQuery();
             con.Close();
         }
+
+        ///Actualizar Encabezado Cotizacion a base de datos
+        public void ActualziarCotizacionEncabezado(string clienteS, string correoS, string FechaIn, string fechaTer, string id_CotizacionS)
+        {
+
+            String cadena = "update cotizacion_encabezado set cliente='"+clienteS+"',correo='"+correoS+"',fechaInicio='"+FechaIn+"',fechaTermina='"+fechaTer+"'where id_cotizacion='"+id_CotizacionS+"'";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        ///Actualizar Estado cotizacion a base de datos
+        public void ActualizaEstado(string id_CotizacionS)
+        {
+
+            String cadena = "update cotizacion_encabezado set estado='INACTIVO' WHERE id_cotizacion='"+id_CotizacionS+"'";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        ///Actualizar Estado factura a base de datos
+        public void ActualizaEstadoFactura(string id_FacturaS)
+        {
+
+            String cadena = "update factura_encabezado set estado='INACTIVO' WHERE id_factura='"+id_FacturaS+"'";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        ///Actualizar Estado_pedido cotizacion a base de datos
+        public void ActualizaEstadoPedidoCotizacion(string id_Cotizacions)
+        {
+
+            String cadena = "update cotizacion_encabezado set estadoCotizacion='FACTURADA' WHERE id_cotizacion='"+id_Cotizacions+"'";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, con);
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
     }
 }

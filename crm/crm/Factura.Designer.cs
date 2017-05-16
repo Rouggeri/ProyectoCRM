@@ -31,11 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Factura));
             this.txt_total = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txt_cantidad = new System.Windows.Forms.TextBox();
-            this.cmb_descripcion = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.dtp_fecha = new System.Windows.Forms.DateTimePicker();
             this.txt_apellido = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,7 +47,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.cmb_pago = new System.Windows.Forms.ComboBox();
-            this.btn_agregar = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btn_nuevo = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
@@ -70,72 +64,29 @@
             this.cmb_prueba = new System.Windows.Forms.ComboBox();
             this.cmb_cotizaciones = new System.Windows.Forms.ComboBox();
             this.chb_habilita = new System.Windows.Forms.CheckBox();
-            this.txt_buscaProd = new System.Windows.Forms.TextBox();
-            this.txt_codigoPo = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.btn_agregarProducto = new System.Windows.Forms.Button();
+            this.txt_tipo = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_facturaDetalle)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_total
             // 
-            this.txt_total.Location = new System.Drawing.Point(510, 271);
+            this.txt_total.Location = new System.Drawing.Point(470, 217);
             this.txt_total.Name = "txt_total";
+            this.txt_total.ReadOnly = true;
             this.txt_total.Size = new System.Drawing.Size(131, 20);
             this.txt_total.TabIndex = 37;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(470, 278);
+            this.label8.Location = new System.Drawing.Point(430, 224);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(34, 13);
             this.label8.TabIndex = 36;
             this.label8.Text = "Total:";
-            // 
-            // txt_cantidad
-            // 
-            this.txt_cantidad.Location = new System.Drawing.Point(501, 245);
-            this.txt_cantidad.Name = "txt_cantidad";
-            this.txt_cantidad.Size = new System.Drawing.Size(84, 20);
-            this.txt_cantidad.TabIndex = 35;
-            // 
-            // cmb_descripcion
-            // 
-            this.cmb_descripcion.FormattingEnabled = true;
-            this.cmb_descripcion.Location = new System.Drawing.Point(280, 245);
-            this.cmb_descripcion.Name = "cmb_descripcion";
-            this.cmb_descripcion.Size = new System.Drawing.Size(144, 21);
-            this.cmb_descripcion.TabIndex = 34;
-            this.cmb_descripcion.SelectedValueChanged += new System.EventHandler(this.cmb_descripcion_SelectedValueChanged);
-            this.cmb_descripcion.MouseCaptureChanged += new System.EventHandler(this.cmb_descripcion_MouseCaptureChanged);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(211, 248);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 13);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Descripcion";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(446, 248);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(49, 13);
-            this.label6.TabIndex = 31;
-            this.label6.Text = "Cantidad";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(41, 252);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(40, 13);
-            this.label5.TabIndex = 30;
-            this.label5.Text = "Codigo";
             // 
             // dtp_fecha
             // 
@@ -192,7 +143,7 @@
             this.dgv_facturaDetalle.AllowUserToAddRows = false;
             this.dgv_facturaDetalle.AllowUserToOrderColumns = true;
             this.dgv_facturaDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_facturaDetalle.Location = new System.Drawing.Point(29, 297);
+            this.dgv_facturaDetalle.Location = new System.Drawing.Point(29, 257);
             this.dgv_facturaDetalle.Name = "dgv_facturaDetalle";
             this.dgv_facturaDetalle.Size = new System.Drawing.Size(630, 273);
             this.dgv_facturaDetalle.TabIndex = 21;
@@ -276,16 +227,6 @@
             this.cmb_pago.Size = new System.Drawing.Size(154, 21);
             this.cmb_pago.TabIndex = 50;
             this.cmb_pago.ValueMember = "Seleccione:::";
-            // 
-            // btn_agregar
-            // 
-            this.btn_agregar.Location = new System.Drawing.Point(594, 233);
-            this.btn_agregar.Name = "btn_agregar";
-            this.btn_agregar.Size = new System.Drawing.Size(47, 32);
-            this.btn_agregar.TabIndex = 52;
-            this.btn_agregar.Text = "Add";
-            this.btn_agregar.UseVisualStyleBackColor = true;
-            this.btn_agregar.Click += new System.EventHandler(this.btn_agregar_Click);
             // 
             // panel2
             // 
@@ -538,47 +479,48 @@
             this.chb_habilita.UseVisualStyleBackColor = true;
             this.chb_habilita.CheckedChanged += new System.EventHandler(this.chb_habilita_CheckedChanged);
             // 
-            // txt_buscaProd
-            // 
-            this.txt_buscaProd.Location = new System.Drawing.Point(138, 219);
-            this.txt_buscaProd.Name = "txt_buscaProd";
-            this.txt_buscaProd.Size = new System.Drawing.Size(120, 20);
-            this.txt_buscaProd.TabIndex = 203;
-            this.txt_buscaProd.TextChanged += new System.EventHandler(this.txt_buscaProd_TextChanged);
-            // 
-            // txt_codigoPo
-            // 
-            this.txt_codigoPo.Location = new System.Drawing.Point(87, 245);
-            this.txt_codigoPo.Name = "txt_codigoPo";
-            this.txt_codigoPo.ReadOnly = true;
-            this.txt_codigoPo.Size = new System.Drawing.Size(100, 20);
-            this.txt_codigoPo.TabIndex = 202;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(41, 222);
+            this.label2.Location = new System.Drawing.Point(38, 224);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(89, 13);
+            this.label2.Size = new System.Drawing.Size(93, 13);
             this.label2.TabIndex = 204;
-            this.label2.Text = "Buscar Producto:";
+            this.label2.Text = "Agregar Producto:";
+            // 
+            // btn_agregarProducto
+            // 
+            this.btn_agregarProducto.Location = new System.Drawing.Point(146, 219);
+            this.btn_agregarProducto.Name = "btn_agregarProducto";
+            this.btn_agregarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btn_agregarProducto.TabIndex = 205;
+            this.btn_agregarProducto.Text = "Add Prod";
+            this.btn_agregarProducto.UseVisualStyleBackColor = true;
+            this.btn_agregarProducto.Click += new System.EventHandler(this.btn_agregarProducto_Click);
+            // 
+            // txt_tipo
+            // 
+            this.txt_tipo.Location = new System.Drawing.Point(595, 151);
+            this.txt_tipo.Name = "txt_tipo";
+            this.txt_tipo.Size = new System.Drawing.Size(26, 20);
+            this.txt_tipo.TabIndex = 206;
+            this.txt_tipo.Visible = false;
             // 
             // Factura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.ClientSize = new System.Drawing.Size(694, 582);
+            this.ClientSize = new System.Drawing.Size(694, 538);
+            this.Controls.Add(this.txt_tipo);
+            this.Controls.Add(this.btn_agregarProducto);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.txt_buscaProd);
-            this.Controls.Add(this.txt_codigoPo);
             this.Controls.Add(this.chb_habilita);
             this.Controls.Add(this.cmb_cotizaciones);
             this.Controls.Add(this.cmb_prueba);
             this.Controls.Add(this.txt_temporal);
             this.Controls.Add(this.btn_buscarCliente);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btn_agregar);
             this.Controls.Add(this.cmb_pago);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label12);
@@ -590,11 +532,6 @@
             this.Controls.Add(this.label9);
             this.Controls.Add(this.txt_total);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.txt_cantidad);
-            this.Controls.Add(this.cmb_descripcion);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
             this.Controls.Add(this.dtp_fecha);
             this.Controls.Add(this.txt_apellido);
             this.Controls.Add(this.label4);
@@ -614,25 +551,17 @@
         }
 
         #endregion
-        private System.Windows.Forms.TextBox txt_total;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.TextBox txt_cantidad;
-        private System.Windows.Forms.ComboBox cmb_descripcion;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.DateTimePicker dtp_fecha;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgv_facturaDetalle;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.ComboBox cmb_pago;
-        private System.Windows.Forms.Button btn_agregar;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btn_nuevo;
         private System.Windows.Forms.Button btn_cancelar;
@@ -655,8 +584,10 @@
         private System.Windows.Forms.ComboBox cmb_prueba;
         public System.Windows.Forms.ComboBox cmb_cotizaciones;
         private System.Windows.Forms.CheckBox chb_habilita;
-        private System.Windows.Forms.TextBox txt_buscaProd;
-        private System.Windows.Forms.TextBox txt_codigoPo;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btn_agregarProducto;
+        public System.Windows.Forms.DataGridView dgv_facturaDetalle;
+        public System.Windows.Forms.TextBox txt_total;
+        private System.Windows.Forms.TextBox txt_tipo;
     }
 }

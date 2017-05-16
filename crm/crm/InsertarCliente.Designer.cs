@@ -40,6 +40,8 @@
             this.txt_telefono = new System.Windows.Forms.TextBox();
             this.btn_guardar = new System.Windows.Forms.Button();
             this.label = new System.Windows.Forms.Label();
+            this.txt_tipo = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -124,7 +126,7 @@
             // 
             // btn_guardar
             // 
-            this.btn_guardar.Location = new System.Drawing.Point(140, 264);
+            this.btn_guardar.Location = new System.Drawing.Point(140, 296);
             this.btn_guardar.Name = "btn_guardar";
             this.btn_guardar.Size = new System.Drawing.Size(85, 23);
             this.btn_guardar.TabIndex = 10;
@@ -141,11 +143,29 @@
             this.label.TabIndex = 11;
             this.label.Text = "Insertar Cliente Nuevo";
             // 
+            // txt_tipo
+            // 
+            this.txt_tipo.Location = new System.Drawing.Point(97, 261);
+            this.txt_tipo.Name = "txt_tipo";
+            this.txt_tipo.Size = new System.Drawing.Size(157, 20);
+            this.txt_tipo.TabIndex = 13;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(21, 268);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(32, 13);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "TIPO";
+            // 
             // InsertarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(325, 353);
+            this.Controls.Add(this.txt_tipo);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.label);
             this.Controls.Add(this.btn_guardar);
             this.Controls.Add(this.txt_telefono);
@@ -179,5 +199,7 @@
         private System.Windows.Forms.TextBox txt_telefono;
         private System.Windows.Forms.Button btn_guardar;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.TextBox txt_tipo;
+        private System.Windows.Forms.Label label6;
     }
 }

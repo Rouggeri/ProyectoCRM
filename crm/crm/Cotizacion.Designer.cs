@@ -30,16 +30,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Cotizacion));
             this.dgvCotizacion = new System.Windows.Forms.DataGridView();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecioU = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.txtCliente = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
             this.dtpFechaI = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.txt_total = new System.Windows.Forms.TextBox();
@@ -59,15 +54,14 @@
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.ClienteData = new DevExpress.XtraEditors.GroupControl();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.txt_codigoP = new System.Windows.Forms.TextBox();
-            this.cmb_prueba = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_cantidad = new System.Windows.Forms.TextBox();
-            this.cmb_descripcion = new System.Windows.Forms.ComboBox();
+            this.btn_buscarCliente = new System.Windows.Forms.Button();
+            this.txt_tipo = new System.Windows.Forms.TextBox();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCotizacion)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ClienteData)).BeginInit();
@@ -82,39 +76,14 @@
             this.dgvCotizacion.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigo,
             this.descripcion,
-            this.PrecioU,
             this.cantidad,
+            this.Precio,
             this.Subtotal});
             this.dgvCotizacion.Location = new System.Drawing.Point(22, 306);
             this.dgvCotizacion.Name = "dgvCotizacion";
             this.dgvCotizacion.Size = new System.Drawing.Size(630, 275);
             this.dgvCotizacion.TabIndex = 0;
             this.dgvCotizacion.CellMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvCotizacion_CellMouseDoubleClick);
-            // 
-            // codigo
-            // 
-            this.codigo.HeaderText = "codigo";
-            this.codigo.Name = "codigo";
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "descripcion";
-            this.descripcion.Name = "descripcion";
-            // 
-            // PrecioU
-            // 
-            this.PrecioU.HeaderText = "PrecioU";
-            this.PrecioU.Name = "PrecioU";
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "cantidad";
-            this.cantidad.Name = "cantidad";
-            // 
-            // Subtotal
-            // 
-            this.Subtotal.HeaderText = "Subtotal";
-            this.Subtotal.Name = "Subtotal";
             // 
             // label1
             // 
@@ -130,7 +99,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(33, 59);
+            this.label2.Location = new System.Drawing.Point(15, 59);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(56, 13);
             this.label2.TabIndex = 2;
@@ -154,13 +123,13 @@
             this.txtCliente.Size = new System.Drawing.Size(163, 21);
             this.txtCliente.TabIndex = 4;
             // 
-            // txtCorreo
+            // txtTelefono
             // 
-            this.txtCorreo.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.Location = new System.Drawing.Point(77, 55);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(163, 21);
-            this.txtCorreo.TabIndex = 7;
+            this.txtTelefono.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTelefono.Location = new System.Drawing.Point(77, 55);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(163, 21);
+            this.txtTelefono.TabIndex = 7;
             // 
             // dtpFechaI
             // 
@@ -185,6 +154,7 @@
             this.txt_total.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_total.Location = new System.Drawing.Point(478, 161);
             this.txt_total.Name = "txt_total";
+            this.txt_total.ReadOnly = true;
             this.txt_total.Size = new System.Drawing.Size(134, 21);
             this.txt_total.TabIndex = 17;
             // 
@@ -386,6 +356,7 @@
             this.btn_eliminar.Size = new System.Drawing.Size(58, 59);
             this.btn_eliminar.TabIndex = 6;
             this.btn_eliminar.UseVisualStyleBackColor = true;
+            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_siguiente
             // 
@@ -406,9 +377,9 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(567, 119);
+            this.button1.Location = new System.Drawing.Point(149, 129);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(45, 37);
+            this.button1.Size = new System.Drawing.Size(91, 27);
             this.button1.TabIndex = 192;
             this.button1.Text = "ADD";
             this.button1.UseVisualStyleBackColor = true;
@@ -421,16 +392,10 @@
             this.ClienteData.AppearanceCaption.Options.UseFont = true;
             this.ClienteData.AppearanceCaption.Options.UseForeColor = true;
             this.ClienteData.CaptionImageUri.Uri = "AlignJustify";
-            this.ClienteData.Controls.Add(this.label7);
-            this.ClienteData.Controls.Add(this.textBox2);
-            this.ClienteData.Controls.Add(this.txt_codigoP);
-            this.ClienteData.Controls.Add(this.cmb_prueba);
-            this.ClienteData.Controls.Add(this.label6);
-            this.ClienteData.Controls.Add(this.label5);
+            this.ClienteData.Controls.Add(this.txt_tipo);
             this.ClienteData.Controls.Add(this.label4);
-            this.ClienteData.Controls.Add(this.txt_cantidad);
+            this.ClienteData.Controls.Add(this.btn_buscarCliente);
             this.ClienteData.Controls.Add(this.label1);
-            this.ClienteData.Controls.Add(this.cmb_descripcion);
             this.ClienteData.Controls.Add(this.button1);
             this.ClienteData.Controls.Add(this.txtCliente);
             this.ClienteData.Controls.Add(this.label8);
@@ -438,7 +403,7 @@
             this.ClienteData.Controls.Add(this.dtpFechaT);
             this.ClienteData.Controls.Add(this.label2);
             this.ClienteData.Controls.Add(this.label9);
-            this.ClienteData.Controls.Add(this.txtCorreo);
+            this.ClienteData.Controls.Add(this.txtTelefono);
             this.ClienteData.Controls.Add(this.dtpFechaI);
             this.ClienteData.Controls.Add(this.label3);
             this.ClienteData.Location = new System.Drawing.Point(22, 113);
@@ -447,87 +412,58 @@
             this.ClienteData.TabIndex = 193;
             this.ClienteData.Text = "Client Data";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(26, 111);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(102, 13);
-            this.label7.TabIndex = 202;
-            this.label7.Text = "Buscar Producto:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(131, 108);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 21);
-            this.textBox2.TabIndex = 201;
-            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
-            // 
-            // txt_codigoP
-            // 
-            this.txt_codigoP.Location = new System.Drawing.Point(77, 135);
-            this.txt_codigoP.Name = "txt_codigoP";
-            this.txt_codigoP.ReadOnly = true;
-            this.txt_codigoP.Size = new System.Drawing.Size(100, 21);
-            this.txt_codigoP.TabIndex = 200;
-            // 
-            // cmb_prueba
-            // 
-            this.cmb_prueba.FormattingEnabled = true;
-            this.cmb_prueba.Location = new System.Drawing.Point(542, 135);
-            this.cmb_prueba.Name = "cmb_prueba";
-            this.cmb_prueba.Size = new System.Drawing.Size(19, 21);
-            this.cmb_prueba.TabIndex = 194;
-            this.cmb_prueba.Visible = false;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(389, 142);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(57, 13);
-            this.label6.TabIndex = 199;
-            this.label6.Text = "Cantidad";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(197, 142);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(72, 13);
-            this.label5.TabIndex = 198;
-            this.label5.Text = "Descripcion";
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(26, 143);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(45, 13);
-            this.label4.TabIndex = 197;
-            this.label4.Text = "Codigo";
+            this.label4.Size = new System.Drawing.Size(99, 13);
+            this.label4.TabIndex = 204;
+            this.label4.Text = "Buscar Producto";
             // 
-            // txt_cantidad
+            // btn_buscarCliente
             // 
-            this.txt_cantidad.Location = new System.Drawing.Point(452, 134);
-            this.txt_cantidad.Name = "txt_cantidad";
-            this.txt_cantidad.Size = new System.Drawing.Size(84, 21);
-            this.txt_cantidad.TabIndex = 196;
+            this.btn_buscarCliente.Location = new System.Drawing.Point(9, 28);
+            this.btn_buscarCliente.Name = "btn_buscarCliente";
+            this.btn_buscarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btn_buscarCliente.TabIndex = 203;
+            this.btn_buscarCliente.Text = "BUSCAR";
+            this.btn_buscarCliente.UseVisualStyleBackColor = true;
+            this.btn_buscarCliente.Click += new System.EventHandler(this.btn_buscarCliente_Click);
             // 
-            // cmb_descripcion
+            // txt_tipo
             // 
-            this.cmb_descripcion.FormattingEnabled = true;
-            this.cmb_descripcion.Location = new System.Drawing.Point(275, 134);
-            this.cmb_descripcion.Name = "cmb_descripcion";
-            this.cmb_descripcion.Size = new System.Drawing.Size(110, 21);
-            this.cmb_descripcion.TabIndex = 195;
-            this.cmb_descripcion.SelectedValueChanged += new System.EventHandler(this.cmb_descripcion_SelectedValueChanged);
-            this.cmb_descripcion.MouseCaptureChanged += new System.EventHandler(this.cmb_descripcion_MouseCaptureChanged);
+            this.txt_tipo.Location = new System.Drawing.Point(534, 55);
+            this.txt_tipo.Name = "txt_tipo";
+            this.txt_tipo.Size = new System.Drawing.Size(57, 21);
+            this.txt_tipo.TabIndex = 205;
+            this.txt_tipo.Visible = false;
+            // 
+            // codigo
+            // 
+            this.codigo.HeaderText = "codigo";
+            this.codigo.Name = "codigo";
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "descripcion";
+            this.descripcion.Name = "descripcion";
+            // 
+            // cantidad
+            // 
+            this.cantidad.HeaderText = "cantidad";
+            this.cantidad.Name = "cantidad";
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "Precio";
+            this.Precio.Name = "Precio";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
             // 
             // Cotizacion
             // 
@@ -572,23 +508,17 @@
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_siguiente;
         private System.Windows.Forms.Button button1;
+        private DevExpress.XtraEditors.GroupControl ClienteData;
+        public System.Windows.Forms.DataGridView dgvCotizacion;
+        public System.Windows.Forms.TextBox txtCliente;
+        public System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.Button btn_buscarCliente;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txt_tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn PrecioU;
         private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
-        private DevExpress.XtraEditors.GroupControl ClienteData;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_cantidad;
-        private System.Windows.Forms.ComboBox cmb_descripcion;
-        private System.Windows.Forms.ComboBox cmb_prueba;
-        public System.Windows.Forms.DataGridView dgvCotizacion;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox txt_codigoP;
-        public System.Windows.Forms.TextBox txtCliente;
-        public System.Windows.Forms.TextBox txtCorreo;
     }
 }

@@ -20,15 +20,10 @@ namespace proyectoUOne
             try
             {
                 InitializeComponent();
-                //llenarComboBoxCodigoProducto();
-                llenarComboBoxDescripcionProducto();
-                llenarCotizacion();
+                //llenarCotizacion();
                 cmb_cotizaciones.Enabled = false;
-                //cargardetalle();
                 llenarTipoPago();
-                btn_agregar.Enabled = false;
-                txt_cantidad.Enabled = false;
-                cmb_descripcion.Enabled = false;
+                dgv_facturaDetalle.DataSource = null;
             }
             catch
             {
@@ -41,7 +36,7 @@ namespace proyectoUOne
             try
             {
                 OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
-                string query = "select id_cotizacion from cotizacion_encabezado;";
+                string query = "select id_cotizacion from cotizacion_encabezado WHERE estadoCotizacion='ESPERA';";
                 OdbcCommand cmd = new OdbcCommand(query, con);
                 OdbcDataAdapter da1 = new OdbcDataAdapter(cmd);
                 DataTable dt = new DataTable();
@@ -71,11 +66,11 @@ namespace proyectoUOne
                 foreach (DataRow row in dt.Rows)
                 {
                     int codigoD = Convert.ToInt32(row[0].ToString().Trim());
-                    DataTable dt2 = CapaDatos.CargarGridAutoIncrement("select descripcion from producto where id_producto = "+ codigoD +";");
+                    DataTable dt2 = CapaDatos.CargarGridAutoIncrement("select descripcion from producto_m where id_producto = " + codigoD + ";");
                     DataRow rowi = dt2.Rows[0];
                     string ronald = Convert.ToString(rowi[0]);
                     int cantidadD = Convert.ToInt32(row[1].ToString().Trim());
-                    DataTable dt5 = CapaDatos.CargarGridAutoIncrement("select precio_unidad from producto where id_producto = "+ codigoD +";");
+                    DataTable dt5 = CapaDatos.CargarGridAutoIncrement("select precio_unidad from producto_m where id_producto = " + codigoD + ";");
                     DataRow dete = dt5.Rows[0];
                     string caris = Convert.ToString(dete[0]);
                     double final = Convert.ToDouble(caris);
@@ -94,26 +89,6 @@ namespace proyectoUOne
                 MessageBox.Show("error al llamdo de cotizacion detalle");
             }
 
-        }
-
-        public void llenarComboBoxDescripcionProducto()
-        {
-            try
-            {
-                OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
-                string query = "select descripcion from producto ORDER BY descripcion ASC;";
-                OdbcCommand cmd = new OdbcCommand(query, con);
-                OdbcDataAdapter da1 = new OdbcDataAdapter(cmd);
-                DataTable dt = new DataTable();
-                da1.Fill(dt);
-                cmb_descripcion.ValueMember = "descripcion";
-                cmb_descripcion.DisplayMember = "descripcion";
-                cmb_descripcion.DataSource = dt;
-            }
-            catch
-            {
-                MessageBox.Show("Error al llenar combobox descripcion");
-            }
         }
 
         //Guardar datos de factura, cliente y detalle factura
@@ -148,8 +123,15 @@ namespace proyectoUOne
                         int cantidadM = Convert.ToInt32(row.Cells[3].Value);
                         double subtotalM = Convert.ToDouble(row.Cells[4].Value);
                         v.insertar_detalle_factura(codigo_facturaM, codigo_productoM, cantidadM, subtotalM);
-                    } //termina mi foreach                
+                    } //termina mi foreach      
+
+                            
                 }
+                if (chb_habilita.Checked) {
+                        CapaDatos nuevo = new CapaDatos();
+                        string temporales = cmb_cotizaciones.SelectedValue.ToString();
+                        nuevo.ActualizaEstadoPedidoCotizacion(temporales);
+                    }  
             }
             catch
             {
@@ -162,44 +144,26 @@ namespace proyectoUOne
             try
             {
                 BuscarCliente abir = new BuscarCliente();
-                abir.Show();
-                this.Close();
+                //this.Hide();
+                abir.ShowDialog();
+                
+                if (!String.IsNullOrEmpty(abir.codigoC) && !String.IsNullOrEmpty(abir.nitC) && !String.IsNullOrEmpty(abir.nombreC) &&
+                            !String.IsNullOrEmpty(abir.apellidoC) && !String.IsNullOrEmpty(abir.direccionC) && !String.IsNullOrEmpty(abir.telefonoC))
+                {
+                    txt_temporal.Text = abir.codigoC;
+                    txt_nit.Text = abir.nitC;
+                    txt_nombre.Text = abir.nombreC;
+                    txt_apellido.Text = abir.apellidoC;
+                    txt_direccion.Text = abir.direccionC;
+                    txt_telefono.Text = abir.telefonoC;
+                    txt_tipo.Text = abir.tipo;
+                    //this.Close();
+                    //this.Show();
+                }
             }
             catch
             {
                 MessageBox.Show("Error al cargar formulario");
-            }
-        }
-
-        private void btn_agregar_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                CapaDatos nuev = new CapaDatos();
-                int convertir = Convert.ToInt32(txt_codigoPo.Text.Trim());
-                DataTable dt;
-                dt = nuev.query_precioUnidad(convertir);
-                cmb_prueba.ValueMember = "precio_unidad";
-                cmb_prueba.DisplayMember = "precio_unidad";
-                cmb_prueba.DataSource = dt;
-                double subtotall = Convert.ToInt32(cmb_prueba.SelectedValue.ToString()) * Convert.ToInt32(txt_cantidad.Text.Trim());
-
-                dgv_facturaDetalle.Rows.Add(convertir, cmb_descripcion.SelectedValue.ToString(), txt_cantidad.Text, cmb_prueba.SelectedValue.ToString(), subtotall);
-                //dgv_facturaDetalle.Rows.Insert(0, cmb_codigo.SelectedValue.ToString(), cmb_descripcion.SelectedValue.ToString(), txt_cantidad.Text, cmb_prueba.SelectedValue.ToString(), subtotall);
-
-                int suma = 0;
-                foreach (DataGridViewRow row in dgv_facturaDetalle.Rows)
-                {
-                    suma += Convert.ToInt32(row.Cells["subtotal"].Value);
-                    //suma += (int)row.Cells["Subtotal"].Value;
-                }
-                txt_total.Text = Convert.ToString(suma);
-                txt_cantidad.Text = "";
-                txt_buscaProd.Text = "";
-            }
-            catch
-            {
-                MessageBox.Show("Error al agregar registro a tabla");
             }
         }
 
@@ -222,25 +186,19 @@ namespace proyectoUOne
                 Factura non = new Factura();
                 if (chb_habilita.Checked)
                 {
+                    llenarCotizacion();
                     eliminarCOlumndas();
                     cmb_cotizaciones.Enabled = true;
                     cargardetalle();
                     non.Refresh();
-                    btn_agregar.Enabled = false;
-                    txt_cantidad.Enabled = false;
-                    cmb_descripcion.Enabled = false;
                 }
                 if (!chb_habilita.Checked)
                 {
                     eliminarCOlumndas();
                     dgv_facturaDetalle.DataSource = null;
                     cmb_cotizaciones.Enabled = false;
-                    dgv_facturaDetalle.DataSource = null;
                     columnas();
                     txt_total.Text = "";
-                    btn_agregar.Enabled = true;
-                    txt_cantidad.Enabled = true;
-                    cmb_descripcion.Enabled = true;
                 }
             }
             catch
@@ -251,7 +209,7 @@ namespace proyectoUOne
 
         private void Factura_Load(object sender, EventArgs e)
         {
-
+            dgv_facturaDetalle.DataSource = null;
         }
 
         //Poner encabezado a columnas de una tabla datagridview
@@ -313,45 +271,6 @@ namespace proyectoUOne
             }
         }
 
-        private void txt_buscaProd_TextChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                if (txt_buscaProd.Text == null)
-                {
-                    llenarComboBoxDescripcionProducto();
-                    txt_buscaProd.Text = "";
-                }
-                else
-                {
-                    descripcionNoestavacio();
-                    CodigoProductoText();
-                }
-            }
-            catch
-            {
-                MessageBox.Show("Error al buscar cliente");
-            }
-        }
-
-        //si esta vacio
-        public void descripcionNoestavacio()
-        {
-            try
-            {
-                DataTable carga = CapaDatos.CargarGridAutoIncrement("select descripcion from producto WHERE id_producto like '%"+txt_buscaProd.Text+"%' or descripcion like '%"+txt_buscaProd.Text+"%'");
-                DataRow rows = carga.Rows[0];
-                string cod_prod = Convert.ToString(rows[0]);
-                cmb_descripcion.Text = cod_prod.ToString();
-                cmb_descripcion.DisplayMember = cod_prod.ToString();
-                //cmb_descripcion.ValueMember = cod_prod.ToString();
-            }
-            catch
-            {
-                MessageBox.Show("Error llenar combobox describpion -Form-");
-            }
-        }
-
         //llenar combobox tipo pago
         public void llenarTipoPago()
         {
@@ -364,42 +283,6 @@ namespace proyectoUOne
             {
                 MessageBox.Show("Errorr al llenar combo manualmente");
             }
-        }
-
-        //si no esta vacio
-        public void CodigoProductoText()
-        {
-            try
-            {
-                DataTable carga = CapaDatos.CargarGridAutoIncrement("select id_producto from producto WHERE id_producto like '%"+txt_buscaProd.Text+"%' or descripcion like '%"+txt_buscaProd.Text+"%'");
-                DataRow rows = carga.Rows[0];
-                string cod_prod = Convert.ToString(rows[0]);
-                txt_codigoPo.Text = cod_prod;
-            }
-            catch
-            {
-                MessageBox.Show("Error al lenar textbox codigo");
-            }
-        }
-
-        private void cmb_descripcion_SelectedValueChanged(object sender, EventArgs e)
-        {
-            try
-            {
-                DataTable carga = CapaDatos.CargarGridAutoIncrement("select id_producto from producto WHERE descripcion like '%"+cmb_descripcion.SelectedValue+"%'");
-                DataRow rows = carga.Rows[0];
-                string cod_prod = Convert.ToString(rows[0]);
-                txt_codigoPo.Text = cod_prod;
-            }
-            catch
-            {
-                MessageBox.Show("Error al llenar textbox codigo");
-            }
-        }
-
-        private void cmb_descripcion_MouseCaptureChanged(object sender, EventArgs e)
-        {
-            txt_buscaProd.Text = "";
         }
 
         private void cmb_cotizaciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -416,9 +299,6 @@ namespace proyectoUOne
                 {
                     eliminarCOlumndas();
                     cargardetalle();
-                    btn_agregar.Enabled = false;
-                    txt_cantidad.Enabled = false;
-                    cmb_descripcion.Enabled = false;
                 }
                 if (!chb_habilita.Checked)
                 {
@@ -452,9 +332,67 @@ namespace proyectoUOne
 
         private void btn_editar_Click(object sender, EventArgs e)
         {
-            //ModificarFactura abrir = new ModificarFactura();
-            //abrir.Show();
-            //this.Close();
+            ModificarFactura abrir = new ModificarFactura();
+            abrir.Show();
+            this.Close();
+        }
+
+        private void btn_agregarProducto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BuscarProducto abir = new BuscarProducto();
+                //this.Hide();
+                abir.ShowDialog();
+
+            Factura fac = new Factura();
+            CapaDatos nuev = new CapaDatos();
+            string codigoP = abir.dgv_productosVista.CurrentRow.Cells[0].Value.ToString();
+            string decripcionP = abir.dgv_productosVista.CurrentRow.Cells[1].Value.ToString();
+            string precioUP = abir.dgv_productosVista.CurrentRow.Cells[2].Value.ToString();
+                string precioMayor = abir.dgv_productosVista.CurrentRow.Cells[3].Value.ToString();
+            double temporal1 = Convert.ToDouble(abir.txt_cantidad.Text);
+                string decidido = "";
+                int primero = Convert.ToInt32(txt_tipo.Text);
+                 if (primero == 1) {
+                    decidido = precioUP;
+                }
+                if (primero == 2) {
+                    decidido = precioMayor;
+                }
+          int temporal2 = Convert.ToInt32(decidido);
+            double subtot = temporal1 * temporal2;
+                string SubtotalP = Convert.ToString(subtot);
+              
+
+              
+              
+
+            if (!String.IsNullOrEmpty(codigoP) && !String.IsNullOrEmpty(decripcionP) && !String.IsNullOrEmpty(precioUP) &&
+                                            !String.IsNullOrEmpty(SubtotalP) )
+                                {
+
+
+                    dgv_facturaDetalle.Rows.Add(codigoP, decripcionP, abir.txt_cantidad.Text, decidido, SubtotalP);
+                    //dgv_facturaDetalle.Rows.Insert(0, cmb_codigo.SelectedValue.ToString(), cmb_descripcion.SelectedValue.ToString(), txt_cantidad.Text, cmb_prueba.SelectedValue.ToString(), subtotall);
+
+                    int suma = 0;
+                    foreach (DataGridViewRow row in dgv_facturaDetalle.Rows)
+                    {
+                        suma += Convert.ToInt32(row.Cells["subtotal"].Value);
+                        //suma += (int)row.Cells["Subtotal"].Value;
+                    }
+                    txt_total.Text = Convert.ToString(suma);
+                    abir.txt_cantidad.Text = "";
+                    //this.Close();
+                }
+                //this.Show();
+                
+            }
+            catch
+            {
+                MessageBox.Show("Error al cargar formulario");
+            }
         }
     }
 }

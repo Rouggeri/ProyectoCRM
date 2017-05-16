@@ -17,6 +17,10 @@ namespace crm
         {
             InitializeComponent();
         }
+
+
+       
+
         string tipo;
         DataTable dt_permisos = new DataTable();
         
@@ -47,7 +51,7 @@ namespace crm
         inventario_bodega inv_bod = new inventario_bodega();
         frmListadoPrecio precios = new frmListadoPrecio();
         frm_abonos abono = new frm_abonos();
-        frm_balance balance = new frm_balance();
+        BALANCE balance = new BALANCE();
 
         private void LimpiarMDI()
         {
@@ -95,12 +99,7 @@ namespace crm
             BloquearMDI();
             Bloqueo.DesbloquearMDI(menuStrip1);
 
-            otroToolStripMenuItem.Enabled = true;
-            cobrosToolStripMenuItem.Enabled = true;
-            cotizacionToolStripMenuItem.Enabled = true;
-            facturacionToolStripMenuItem.Enabled = true;
-            aBONOSToolStripMenuItem.Enabled = true;
-            bALANCEToolStripMenuItem.Enabled = true;
+         
 
             //------------------------
             tipo = OpBD.VerificarTipoUsuario();
@@ -733,28 +732,10 @@ namespace crm
             try
             {
                 LimpiarMDI();
-                proyectoUOne.Factura fac = new proyectoUOne.Factura();
-                proyectoUOne.BuscarCliente nuevo = new proyectoUOne.BuscarCliente();
-                fac.Hide();
-                nuevo.ShowDialog();
-                if (!String.IsNullOrEmpty(nuevo.codigoC) && !String.IsNullOrEmpty(nuevo.nitC) && !String.IsNullOrEmpty(nuevo.nombreC) &&
-                        !String.IsNullOrEmpty(nuevo.apellidoC) && !String.IsNullOrEmpty(nuevo.direccionC) && !String.IsNullOrEmpty(nuevo.telefonoC))
-                {
-                    fac.txt_temporal.Text = nuevo.codigoC;
-                    fac.txt_nit.Text = nuevo.nitC;
-                    fac.txt_nombre.Text = nuevo.nombreC;
-                    fac.txt_apellido.Text = nuevo.apellidoC;
-                    fac.txt_direccion.Text = nuevo.direccionC;
-                    fac.txt_telefono.Text = nuevo.telefonoC;
-
-                    fac.MdiParent = this;
-                    fac.AutoSize = true;
-                    fac.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Para facturar necesita seleccionar un cliente");
-                }
+               proyectoUOne. FacturaVista abrir = new proyectoUOne.FacturaVista();
+                abrir.MdiParent = this;
+                abrir.AutoSize = true;
+                abrir.Show();
             }
             catch
             {
@@ -767,25 +748,10 @@ namespace crm
             try
             {
                 LimpiarMDI();
-                proyectoUOne.Cotizacion coti = new proyectoUOne.Cotizacion();
-                proyectoUOne.BuscarCliente nuevo = new proyectoUOne.BuscarCliente();
-                coti.Hide();
-                nuevo.ShowDialog();
-                if (!String.IsNullOrEmpty(nuevo.codigoC) && !String.IsNullOrEmpty(nuevo.nitC) && !String.IsNullOrEmpty(nuevo.nombreC) &&
-                        !String.IsNullOrEmpty(nuevo.apellidoC) && !String.IsNullOrEmpty(nuevo.direccionC) && !String.IsNullOrEmpty(nuevo.telefonoC))
-                {
-                    coti.txtCliente.Text = nuevo.nombreC;
-                    coti.txtCorreo.Text = nuevo.telefonoC;
-                    coti.MdiParent = this;
-                    coti.AutoSize = true;
-                    coti.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Para cotizar necesita seleccionar un cliente");
-                }
-
-
+                proyectoUOne.CotizacionVista abrir = new proyectoUOne.CotizacionVista();
+                abrir.MdiParent = this;
+                abrir.AutoSize = true;
+                abrir.Show();
             }
             catch
             {
@@ -815,7 +781,7 @@ namespace crm
 
             if (balance == null)
             {
-                balance = new frm_balance();
+                balance = new BALANCE();
                 balance.MdiParent = this;
 
                 balance.FormClosed += new FormClosedEventHandler(frm_balance_form_closed);
@@ -826,6 +792,48 @@ namespace crm
         private void frm_balance_form_closed(object sender, FormClosedEventArgs e)
         {
             balance = null;
+        }
+
+        private void idiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_configurar_idioma f = new frm_configurar_idioma();
+            f.Show();
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+
+            if (OpBD.CambioIdioma == true)
+            {
+                this.Controls.Clear();
+                InitializeComponent();
+                OpBD.CambioIdioma = false;
+
+                ini = null;
+                if (ini == null)
+                {
+                    ini = new Form_inicio();
+                    ini.MdiParent = this;
+
+                    ini.FormClosed += new FormClosedEventHandler(frm_inicio_FormClosed);
+                    ini.Show();
+                }
+
+               
+                  
+            }
+        }
+
+        private void morososToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cobros.frm_morosos moro = new Cobros.frm_morosos();
+            moro.Show();
+        }
+
+        private void cuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cobros.Cuenta ct = new Cobros.Cuenta();
+            ct.Show();
         }
     }
 }
