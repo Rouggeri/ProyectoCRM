@@ -118,7 +118,7 @@
             // groupControl2
             // 
             this.groupControl2.Controls.Add(this.dgv_detalle);
-            this.groupControl2.Location = new System.Drawing.Point(864, 102);
+            this.groupControl2.Location = new System.Drawing.Point(864, 125);
             this.groupControl2.Name = "groupControl2";
             this.groupControl2.Size = new System.Drawing.Size(467, 473);
             this.groupControl2.TabIndex = 30;
@@ -428,7 +428,7 @@
             // dgv_complemento
             // 
             this.dgv_complemento.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_complemento.Location = new System.Drawing.Point(12, 200);
+            this.dgv_complemento.Location = new System.Drawing.Point(37, 62);
             this.dgv_complemento.Name = "dgv_complemento";
             this.dgv_complemento.Size = new System.Drawing.Size(10, 10);
             this.dgv_complemento.TabIndex = 26;
@@ -437,18 +437,18 @@
             // dgv_tabla_result
             // 
             this.dgv_tabla_result.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_tabla_result.Location = new System.Drawing.Point(12, 177);
+            this.dgv_tabla_result.Location = new System.Drawing.Point(21, 63);
             this.dgv_tabla_result.Name = "dgv_tabla_result";
-            this.dgv_tabla_result.Size = new System.Drawing.Size(10, 17);
+            this.dgv_tabla_result.Size = new System.Drawing.Size(10, 10);
             this.dgv_tabla_result.TabIndex = 25;
             this.dgv_tabla_result.Visible = false;
             // 
             // dgv_consulta_negos_ventas
             // 
             this.dgv_consulta_negos_ventas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_consulta_negos_ventas.Location = new System.Drawing.Point(6, 156);
+            this.dgv_consulta_negos_ventas.Location = new System.Drawing.Point(5, 63);
             this.dgv_consulta_negos_ventas.Name = "dgv_consulta_negos_ventas";
-            this.dgv_consulta_negos_ventas.Size = new System.Drawing.Size(16, 15);
+            this.dgv_consulta_negos_ventas.Size = new System.Drawing.Size(10, 10);
             this.dgv_consulta_negos_ventas.TabIndex = 24;
             this.dgv_consulta_negos_ventas.Visible = false;
             // 
@@ -461,7 +461,6 @@
             this.groupBox4.TabIndex = 21;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Metodo";
-            this.groupBox4.Visible = false;
             // 
             // cmb_metodo
             // 
