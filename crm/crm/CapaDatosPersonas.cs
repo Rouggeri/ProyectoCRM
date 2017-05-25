@@ -67,10 +67,33 @@ namespace crm
             cmd.ExecuteNonQuery();
             con.Close();
         }
+        // ----------------------------------------------- frm_puesto_nuevo
+        public void InsertarNuevoPuesto(string puesto, string descripcion)
+        {
+
+            String cadena = "insert into tbl_puesto(puesto,descripcion,estado)values('" + puesto + "','" + descripcion + "','activo')";
+            OdbcConnection con = seguridad.Conexion.ObtenerConexionODBC();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            cmd.ExecuteNonQuery();
+            con.Close();
+        }
+
+        //2.  seleccionar puestos
+        public DataTable SeleccionarPuestos()
+        {
+            String cadena = "select id_puesto,puesto from tbl_puesto where estado = 'activo' ";
+            DataTable contenedor = new DataTable();
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(contenedor);
+            return contenedor;
+
+        }
+
 
         // ---------------------------------------------- frm_NuevoEmpleado
 
-            // 1. Insertar nuevo empleado:
+        // 1. Insertar nuevo empleado:
         public void InsertarEmpleado(string nombres,string apellidos,string puesto,string telefono1, string movil, string direccion, string correo, string foto)
         {
             String cadena = "insert into tbl_empleado (nombres,apellidos,puesto,telefono1,movil,direccion,correo,foto,estado) values ('"+nombres+"','"+apellidos+"','"+puesto+"','"+telefono1+"','"+movil+"','"+direccion+"','"+correo+"','"+foto+"','activo')";
@@ -397,7 +420,8 @@ namespace crm
         public DataTable consultar_caso(string id_empleado)
         {
             DataTable carga = new DataTable();
-            string cadena = "select  ca.titulo, cl.nombres, cl.apellidos  ,empre.nombre, ca.fecha_limite, ca.estado , emple.nombres from caso ca, tbl_cliente cl , tbl_empleado emple, empresa empre where ca.id_cliente = cl.id_cliente and ca.id_empresa = empre.id_empresa and ca.id_empleado = emple.id_empleado and ca.id_empleado = '" + id_empleado+"'; ";
+            //string cadena = "select  ca.titulo, cl.nombres, cl.apellidos  ,empre.nombre, ca.fecha_limite, ca.estado , emple.nombres from caso ca, tbl_cliente cl , tbl_empleado emple, empresa empre where ca.id_cliente = cl.id_cliente and ca.id_empresa = empre.id_empresa and ca.id_empleado = emple.id_empleado and ca.id_empleado = '" + id_empleado + "'; ";
+            string cadena = "select caso.titulo, tbl_cliente.nombres,tbl_cliente.apellidos, empresa.nombre,caso.fecha_limite ,caso.estado,tbl_empleado.nombres from(caso left join tbl_cliente on caso.id_cliente = tbl_cliente.id_cliente) left join empresa on empresa.id_empresa = caso.id_empresa left join tbl_empleado on tbl_empleado.id_empleado = caso.id_empleado where caso.id_empleado = '" + id_empleado + "'; ";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
@@ -458,7 +482,7 @@ namespace crm
         public DataTable Consulta_Negocios_importantes_proyecciones()
         {
             DataTable carga = new DataTable();
-            string cadena = "select ta.id_tarea, ti.tipo,nego.titulo,ta.estado_tarea, ta.criticidad, ta.fecha_asignacion, ta.fecha_establecida, nego.valor, emple.id_empleado, emple.nombres, emple.apellidos , empre.id_empresa, empre.nombre, clt.id_cliente, clt.nombres, clt.apellidos  from tbl_tarea ta, Tipo_tarea ti, tbl_negocio nego, tbl_empleado emple, empresa empre, tbl_cliente clt  where ta.id_negocio = nego.id_negocio and ta.id_tipo = ti.id_tipo and ta.id_empleado = emple.id_empleado and nego.id_empresa = empre.id_empresa  and nego.id_cliente = clt.id_cliente and ta.estado_tarea ='pendiente' and ta.criticidad = 'Alta'; ";
+            string cadena = "select ta.id_tarea, ti.tipo,nego.titulo,ta.estado_tarea, ta.criticidad, ta.fecha_asignacion, ta.fecha_establecida, nego.valor, emple.id_empleado, emple.nombres, emple.apellidos , empre.id_empresa, empre.nombre, clt.id_cliente, clt.nombres, clt.apellidos  from tbl_tarea ta, Tipo_tarea ti, tbl_negocio nego, tbl_empleado emple, empresa empre, tbl_cliente clt  where ta.id_negocio = nego.id_negocio and ta.id_tipo = ti.id_tipo and ta.id_empleado = emple.id_empleado and nego.id_empresa = empre.id_empresa  and nego.id_cliente = clt.id_cliente and ta.estado_tarea ='pendiente' and ta.criticidad = 'Alta'  order by ta.fecha_asignacion desc ; ";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
@@ -483,7 +507,7 @@ namespace crm
         public DataTable Consulta_Actualizaciones()
         {
             DataTable carga = new DataTable();
-            string cadena = "select ta.id_tarea, ti.tipo,nego.titulo,ta.estado_tarea, ta.criticidad, ta.fecha_asignacion, ta.fecha_establecida, nego.valor, emple.id_empleado, emple.nombres, emple.apellidos , empre.id_empresa, empre.nombre, clt.id_cliente, clt.nombres, clt.apellidos  from tbl_tarea ta, Tipo_tarea ti, tbl_negocio nego, tbl_empleado emple, empresa empre, tbl_cliente clt  where ta.id_negocio = nego.id_negocio and ta.id_tipo = ti.id_tipo and ta.id_empleado = emple.id_empleado and nego.id_empresa = empre.id_empresa  and nego.id_cliente = clt.id_cliente order by fecha_asignacion desc; ";
+            string cadena = "select ta.id_tarea, ti.tipo,nego.titulo,ta.estado_tarea, ta.criticidad, ta.fecha_asignacion, ta.fecha_establecida, nego.valor, emple.id_empleado, emple.nombres, emple.apellidos , empre.id_empresa, empre.nombre, clt.id_cliente, clt.nombres, clt.apellidos  from tbl_tarea ta, Tipo_tarea ti, tbl_negocio nego, tbl_empleado emple, empresa empre, tbl_cliente clt  where ta.id_negocio = nego.id_negocio and ta.id_tipo = ti.id_tipo and ta.id_empleado = emple.id_empleado and nego.id_empresa = empre.id_empresa  and nego.id_cliente = clt.id_cliente order by ta.fecha_asignacion desc; "; 
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
@@ -505,7 +529,8 @@ namespace crm
         public DataTable consultar_negocios_proceso(string fecha_ini, string fecha_fin, string estado)
         {
             DataTable carga = new DataTable();
-            string cadena = "select nego.titulo,nego.valor, clt.nombres, clt.apellidos, empre.nombre,emple.nombres, emple.apellidos,nego.status,  nego.fecha_est_cierre from tbl_negocio nego , tbl_empleado emple, tbl_cliente clt, empresa empre where status = '"+estado+"' and emple.id_empleado = nego.id_empleado and clt.id_cliente = nego.id_cliente and empre.id_empresa = nego.id_empresa and nego.fecha_est_cierre between '"+fecha_ini+"' and '"+fecha_fin+"'   order by nego.fecha_est_cierre asc;";
+            //string cadena = "select nego.titulo,nego.valor, clt.nombres, clt.apellidos, empre.nombre,emple.nombres, emple.apellidos,nego.status,  nego.fecha_est_cierre from tbl_negocio nego , tbl_empleado emple, tbl_cliente clt, empresa empre where status = '"+estado+"' and emple.id_empleado = nego.id_empleado and clt.id_cliente = nego.id_cliente and empre.id_empresa = nego.id_empresa and nego.fecha_est_cierre between '"+fecha_ini+"' and '"+fecha_fin+"'   order by nego.fecha_est_cierre asc;";
+            string cadena = "select tbl_negocio.titulo,tbl_negocio.valor,tbl_cliente.nombres,tbl_cliente.apellidos,empresa.nombre,tbl_empleado.nombres,tbl_empleado.apellidos, tbl_negocio.status,tbl_negocio.fecha_est_cierre from tbl_negocio left join tbl_cliente on tbl_negocio.id_cliente = tbl_cliente.id_cliente left join empresa on tbl_negocio.id_empresa = empresa.id_empresa left join tbl_empleado on tbl_negocio.id_empleado = tbl_empleado.id_empleado where tbl_negocio.status = '"+estado+"' and tbl_negocio.fecha_est_cierre between '"+fecha_ini+"' and '"+fecha_fin+"'   order by tbl_negocio.fecha_est_cierre asc;  ";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
@@ -574,12 +599,13 @@ namespace crm
 
         }
 
-        //2. Seleccion de historial de negociaciones
+        //2. Seleccion de historial de negociaciones por categoria de negocio especifico
         public DataTable seleccionar_negos_historial(string id_nego_cat)
         {
             DataTable carga = new DataTable();
             //string cadena = "select * from tbl_negocio where status = 'ganado';";
-            string cadena = "select tbl_negocio.id_negocio, tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre, categoria_neg.id_cat,categoria_neg.nombre_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) where tbl_negocio.status = 'ganado' and tbl_negocio.id_cat = '"+id_nego_cat+"'; "; 
+            //string cadena = "select tbl_negocio.id_negocio, tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre, categoria_neg.id_cat,categoria_neg.nombre_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) where tbl_negocio.status = 'ganado' and tbl_negocio.id_cat = '"+id_nego_cat+"'; ";
+            string cadena = "select tbl_negocio.id_negocio,categoria_neg.nombre_cat,tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre , empresa.nombre,tbl_cliente.nombres,tbl_cliente.apellidos ,categoria_neg.id_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) left join empresa on tbl_negocio.id_empresa = empresa.id_empresa left join tbl_cliente on tbl_negocio.id_cliente = tbl_cliente.id_cliente where tbl_negocio.status = 'ganado' and tbl_negocio.id_cat = '" + id_nego_cat + "'; ";
             OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
             OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
             adap.Fill(carga);
@@ -587,6 +613,33 @@ namespace crm
 
         }
 
+        //3. Seleccion de historial de negociaciones en general
+        public DataTable seleccionar_negos_historial_general()
+        {
+            DataTable carga = new DataTable();
+            //string cadena = "select * from tbl_negocio where status = 'ganado';";
+            //string cadena = "select tbl_negocio.id_negocio, tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre, categoria_neg.id_cat,categoria_neg.nombre_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) where tbl_negocio.status = 'ganado'; ";
+            string cadena = "select tbl_negocio.id_negocio,categoria_neg.nombre_cat,tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre , empresa.nombre,tbl_cliente.nombres,tbl_cliente.apellidos ,categoria_neg.id_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) left join empresa on tbl_negocio.id_empresa = empresa.id_empresa left join tbl_cliente on tbl_negocio.id_cliente = tbl_cliente.id_cliente where tbl_negocio.status = 'ganado'; ";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+
+        }
+
+        //4. Seleccion de historial de ventas generales encabezado
+        public DataTable seleccionar_ventas_historial_general()
+        {
+            DataTable carga = new DataTable();
+            //string cadena = "select * from tbl_negocio where status = 'ganado';";
+            //string cadena = "select tbl_negocio.id_negocio, tbl_negocio.titulo, tbl_negocio.valor,tbl_negocio.fecha_est_cierre, categoria_neg.id_cat,categoria_neg.nombre_cat from(tbl_negocio left join categoria_neg on tbl_negocio.id_cat = categoria_neg.id_cat) where tbl_negocio.status = 'ganado'; ";
+            string cadena = "select fecha, forma_pago, total from factura_encabezado";
+            OdbcCommand cmd = new OdbcCommand(cadena, seguridad.Conexion.ObtenerConexionODBC());
+            OdbcDataAdapter adap = new OdbcDataAdapter(cmd);
+            adap.Fill(carga);
+            return carga;
+
+        }
 
     }
 }

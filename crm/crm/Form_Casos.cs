@@ -72,7 +72,9 @@ namespace crm
                 gv_casos.Columns[3].Caption = "Organización";
                 gv_casos.Columns[4].Caption = "Fecha finalización";
                 gv_casos.Columns[5].Caption = "Categoria";
-        
+                gv_casos.Columns[6].Visible = false;
+                gv_casos.Columns[6].Caption = "Estado";
+
                 gv_casos.Columns[0].Width = 28;
                 gv_casos.RowClick += Gv_casos_RowClick;
             }
@@ -82,24 +84,24 @@ namespace crm
 
         private void Gv_casos_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
-            DataRow row = gv_casos.GetFocusedDataRow();
-            string id_caso = row[0].ToString();
-            string titulo = row[1].ToString();
-            string persona = row[2].ToString();
-            string organizacion = row[3].ToString();
-            string fecha_fin = row[4].ToString();
-            string categoria = row[5].ToString();
+            //DataRow row = gv_casos.GetFocusedDataRow();
+            //string id_caso = row[0].ToString();
+            //string titulo = row[1].ToString();
+            //string persona = row[2].ToString();
+            //string organizacion = row[3].ToString();
+            //string fecha_fin = row[4].ToString();
+            //string categoria = row[5].ToString();
 
-            FormDetallesCaso f = new FormDetallesCaso();
-            f.id_caso = id_caso;
-            f.titulo = titulo;
-            f.persona = persona;
-            f.organizacion = organizacion;
-            f.fecha_fin = fecha_fin;
-            f.categoria = categoria;
+            //FormDetallesCaso f = new FormDetallesCaso();
+            //f.id_caso = id_caso;
+            //f.titulo = titulo;
+            //f.persona = persona;
+            //f.organizacion = organizacion;
+            //f.fecha_fin = fecha_fin;
+            //f.categoria = categoria;
 
-            f.MdiParent = this.MdiParent;
-            f.Show();
+            //f.MdiParent = this.MdiParent;
+            //f.Show();
 
         }
 
@@ -232,6 +234,72 @@ namespace crm
 
             f.MdiParent = this.MdiParent;
             f.Show();
+        }
+
+        private void btn_cat_Click(object sender, EventArgs e)
+        {
+            gv_casos.Columns[2].GroupIndex = -1;
+            gv_casos.Columns[3].GroupIndex = -1;
+            gv_casos.Columns[6].GroupIndex = -1;
+
+            gv_casos.Columns[5].GroupIndex = 1;
+        }
+
+        private void btn_clie_Click(object sender, EventArgs e)
+        {
+            gv_casos.Columns[5].GroupIndex = -1;
+            gv_casos.Columns[3].GroupIndex = -1;
+            gv_casos.Columns[6].GroupIndex = -1;
+
+            gv_casos.Columns[2].GroupIndex = 1;
+        }
+
+        private void btn_empresa_Click(object sender, EventArgs e)
+        {
+            gv_casos.Columns[2].GroupIndex = -1;
+            gv_casos.Columns[5].GroupIndex = -1;
+            gv_casos.Columns[6].GroupIndex = -1;
+
+            gv_casos.Columns[3].GroupIndex = 1;
+        }
+
+        private void btn_normal_Click(object sender, EventArgs e)
+        {
+            gv_casos.Columns[2].GroupIndex = -1;
+            gv_casos.Columns[5].GroupIndex = -1;
+            gv_casos.Columns[3].GroupIndex = -1;
+            gv_casos.Columns[6].GroupIndex = -1;
+        }
+
+        private void dgv_casos_DoubleClick(object sender, EventArgs e)
+        {
+            DataRow row = gv_casos.GetFocusedDataRow();
+            string id_caso = row[0].ToString();
+            string titulo = row[1].ToString();
+            string persona = row[2].ToString();
+            string organizacion = row[3].ToString();
+            string fecha_fin = row[4].ToString();
+            string categoria = row[5].ToString();
+
+            FormDetallesCaso f = new FormDetallesCaso();
+            f.id_caso = id_caso;
+            f.titulo = titulo;
+            f.persona = persona;
+            f.organizacion = organizacion;
+            f.fecha_fin = fecha_fin;
+            f.categoria = categoria;
+
+            f.MdiParent = this.MdiParent;
+            f.Show();
+        }
+
+        private void btn_abiertos_cerrados_Click(object sender, EventArgs e)
+        {
+            gv_casos.Columns[2].GroupIndex = -1;
+            gv_casos.Columns[5].GroupIndex = -1;
+            gv_casos.Columns[3].GroupIndex = -1;
+
+            gv_casos.Columns[6].GroupIndex = 1;
         }
     }
 }

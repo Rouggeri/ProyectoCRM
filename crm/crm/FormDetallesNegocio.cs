@@ -297,7 +297,7 @@ namespace crm
         {
            
             OpBD o = new OpBD();
-            int res = o.ActualizarEstatus("Perdida",id_negocio,titulo);
+            int res = o.ActualizarEstatus("Perdido",id_negocio,titulo);
             if(res == 1)
             {
                // MessageBox.Show("exito");
@@ -328,7 +328,7 @@ namespace crm
         private void btn_Ganada_Click(object sender, EventArgs e)
         {
             OpBD o = new OpBD();
-            int res = o.ActualizarEstatus("Ganada", id_negocio, titulo);
+            int res = o.ActualizarEstatus("Ganado", id_negocio, titulo);
             if (res == 1)
             {
                 // MessageBox.Show("exito");

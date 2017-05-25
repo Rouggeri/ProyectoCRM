@@ -24,6 +24,21 @@ namespace crm
             {
                 WindowState = FormWindowState.Maximized;
 
+
+                //------------------------------
+                if(OpBD.Idioma == "ingles")
+                {
+                    pag_estado.Caption = "Phases";
+                    pag_lista.Caption = "List";
+                }else
+                   {
+                    pag_estado.Caption = "Etapa";
+                    pag_lista.Caption = "Lista";
+                   }
+
+
+                //------------------------------
+
                 CapaNegocio fn = new CapaNegocio();
                 DataTable seg = seguridad.ObtenerPermisos.Permisos(seguridad.Conexion.User, id_form);
                 if (seg.Rows.Count > 0)
@@ -41,23 +56,37 @@ namespace crm
                 dgv_negocios.DataSource = OpBD.SeleccionarNegocios();
                 if (dgv_negocios.DataSource != null)
                 {
-                    dgv_neg.Columns[0].Caption = "No.";
-                    dgv_neg.Columns[1].Caption = "Titulo";
-                    dgv_neg.Columns[2].Caption = "Persona";
-                    dgv_neg.Columns[3].Caption = "Organización";
-                    dgv_neg.Columns[4].Caption = "Moneda";
-                    dgv_neg.Columns[5].Caption = "Valor";
-                    dgv_neg.Columns[6].Caption = "Fecha de cierre estimada";
-                    dgv_neg.Columns[7].Caption = "Categoría";
+                    if (OpBD.Idioma == "ingles")
+                    {
+                        dgv_neg.Columns[0].Caption = "No.";
+                        dgv_neg.Columns[1].Caption = "Title";
+                        dgv_neg.Columns[2].Caption = "Person";
+                        dgv_neg.Columns[3].Caption = "Company";
+                        dgv_neg.Columns[4].Caption = "Currency";
+                        dgv_neg.Columns[5].Caption = "Amount";
+                        dgv_neg.Columns[6].Caption = "Deadline";
+                        dgv_neg.Columns[7].Caption = "Category";
+                    } else
+                       {
+                        dgv_neg.Columns[0].Caption = "No.";
+                        dgv_neg.Columns[1].Caption = "Titulo";
+                        dgv_neg.Columns[2].Caption = "Persona";
+                        dgv_neg.Columns[3].Caption = "Organización";
+                        dgv_neg.Columns[4].Caption = "Moneda";
+                        dgv_neg.Columns[5].Caption = "Valor";
+                        dgv_neg.Columns[6].Caption = "Fecha de cierre estimada";
+                        dgv_neg.Columns[7].Caption = "Categoría";
+                      }
 
                     dgv_neg.Columns[5].DisplayFormat.FormatType = DevExpress.Utils.FormatType.Numeric;
                     dgv_neg.Columns[5].DisplayFormat.FormatString = "n2";
                     dgv_neg.Columns[0].Width = 28;
                     dgv_neg.RowClick += Dgv_neg_RowClick;
+                    
                 }
                 dgv_neg.OptionsBehavior.ReadOnly = true;
-
-
+               
+               
                 //************************ESTADOS********************
                 DataTable dt_etapa0 = OpBD.SeleccionarNegociosEtapa0();
                 ObtenerNegociosPorEtapa(dt_etapa0, tileBar0);
@@ -140,6 +169,40 @@ namespace crm
 
         private void Dgv_neg_RowClick(object sender, DevExpress.XtraGrid.Views.Grid.RowClickEventArgs e)
         {
+            //DataRow row = dgv_neg.GetFocusedDataRow();
+            //string id_negocio = row[0].ToString();
+            //string titulo = row[1].ToString();
+            //string cliente = row[2].ToString();
+            //string empresa = row[3].ToString();
+            //string moneda = row[4].ToString();
+            //string valor = row[5].ToString();
+            //string fecha_cierre = row[6].ToString();
+            //string categoria = row[7].ToString();
+
+            //FormDetallesNegocio f = new FormDetallesNegocio();
+            //f.id_negocio = id_negocio;
+            //f.titulo = titulo;
+            //f.nombre_persona = cliente;
+            //f.nombre_empresa = empresa;
+            //f.moneda = moneda;
+            //f.valor= valor;
+            //f.fecha_cierre = fecha_cierre;
+            //f.categoria = categoria;
+
+            //f.MdiParent = this.MdiParent;
+            //f.Show();
+    }
+
+        private void btn_nuevo_Click(object sender, EventArgs e)
+        {
+            FormNuevoNegocio f = new FormNuevoNegocio();
+            f.MdiParent = this.MdiParent;
+            f.Show();
+            
+        }
+
+        private void dgv_negocios_DoubleClick(object sender, EventArgs e)
+        {
             DataRow row = dgv_neg.GetFocusedDataRow();
             string id_negocio = row[0].ToString();
             string titulo = row[1].ToString();
@@ -156,26 +219,13 @@ namespace crm
             f.nombre_persona = cliente;
             f.nombre_empresa = empresa;
             f.moneda = moneda;
-            f.valor= valor;
+            f.valor = valor;
             f.fecha_cierre = fecha_cierre;
             f.categoria = categoria;
 
             f.MdiParent = this.MdiParent;
             f.Show();
-    }
 
-        private void btn_nuevo_Click(object sender, EventArgs e)
-        {
-            FormNuevoNegocio f = new FormNuevoNegocio();
-            f.MdiParent = this.MdiParent;
-            f.Show();
-            
-        }
-
-        private void dgv_negocios_DoubleClick(object sender, EventArgs e)
-        {
-            
-            
         }
 
         private void btn_nuevo_Click_1(object sender, EventArgs e)
@@ -328,5 +378,41 @@ namespace crm
             f.Show();
         }
 
+        private void btn_clie_Click(object sender, EventArgs e)
+        {
+            dgv_neg.Columns[3].GroupIndex = -1;
+            dgv_neg.Columns[7].GroupIndex = -1;
+
+            dgv_neg.Columns[2].GroupIndex = 1;
+            
+        }
+
+        private void btn_cat_Click(object sender, EventArgs e)
+        {
+            dgv_neg.Columns[2].GroupIndex = -1;
+            dgv_neg.Columns[3].GroupIndex = -1;
+
+            dgv_neg.Columns[7].GroupIndex = 1;
+        }
+
+        private void btn_normal_Click(object sender, EventArgs e)
+        {
+            dgv_neg.Columns[2].GroupIndex = -1;
+            dgv_neg.Columns[3].GroupIndex = -1;
+            dgv_neg.Columns[7].GroupIndex = -1;
+        }
+
+        private void dgv_negocios_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_empresa_Click(object sender, EventArgs e)
+        {
+            dgv_neg.Columns[2].GroupIndex = -1;
+            dgv_neg.Columns[7].GroupIndex = -1;
+
+            dgv_neg.Columns[3].GroupIndex = 1;
+        }
     }
 }

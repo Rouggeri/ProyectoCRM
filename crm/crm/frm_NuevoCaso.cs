@@ -406,9 +406,17 @@ namespace crm
             //cmb_categoria.ValueMember = "id_cat_caso";
             //cmb_categoria.DisplayMember = "nombre_caso";
 
-            cmb_categoria.DataSource = OpBD.SeleccionarCategoriascbo();
-            cmb_categoria.ValueMember = "id_cat";
-            cmb_categoria.DisplayMember = "nombre_cat";
+            //cmb_categoria.DataSource = OpBD.SeleccionarCategoriasCaso();
+            //cmb_categoria.ValueMember = "id_cat";
+            //cmb_categoria.DisplayMember = "nombre_cat";
+
+            DataTable dt_catcaso = OpBD.SeleccionarCategoriasCaso();
+            if (dt_catcaso != null)
+            {
+                cmb_categoria.DataSource = dt_catcaso;
+                cmb_categoria.ValueMember = "id_cat_caso";
+                cmb_categoria.DisplayMember = "nombre_caso";
+            }
         }
 
         // boton de prueba

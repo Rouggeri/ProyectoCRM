@@ -17,6 +17,10 @@ namespace crm
         {
             InitializeComponent();
         }
+
+
+       
+
         string tipo;
         DataTable dt_permisos = new DataTable();
         
@@ -41,8 +45,14 @@ namespace crm
         FormAsignacionPerfil asper = new FormAsignacionPerfil();
         Form_EditarPerfil edper = new Form_EditarPerfil();
         FormEliminarPerfil elper = new FormEliminarPerfil();
+        frm_pronostico_ventas_secundario secundarios = new frm_pronostico_ventas_secundario();
+        inventario inven = new inventario();
         CambioPass camb = new CambioPass();
- 
+        inventario_bodega inv_bod = new inventario_bodega();
+        frmListadoPrecio precios = new frmListadoPrecio();
+        frm_abonos abono = new frm_abonos();
+        BALANCE balance = new BALANCE();
+
         private void LimpiarMDI()
         {
             if (this.ActiveMdiChild != null)
@@ -89,6 +99,8 @@ namespace crm
             BloquearMDI();
             Bloqueo.DesbloquearMDI(menuStrip1);
 
+         
+
             //------------------------
             tipo = OpBD.VerificarTipoUsuario();
             if(tipo == "administrador")
@@ -124,7 +136,12 @@ namespace crm
             edper = null;
             elper = null;
             camb = null;
-
+            secundarios = null;
+            inven = null;
+            inv_bod = null;
+            precios = null;
+            abono = null;
+            balance = null;
 
             if (ini == null)
             {
@@ -164,9 +181,9 @@ namespace crm
 
         private void actividadesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "104");
-            if (dt.Rows.Count > 0)
-            {
+            //DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "104");
+            //if (dt.Rows.Count > 0)
+            //{
                 // ClearAllMDIs();
                 LimpiarMDI();
                 if (cal == null)
@@ -177,8 +194,8 @@ namespace crm
                     cal.FormClosed += new FormClosedEventHandler(FormActividadesCalendario_FormClosed);
                     cal.Show();
                 }
-            }
-            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+            //}
+            //else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
         }
 
       
@@ -190,9 +207,9 @@ namespace crm
 
         private void contactoToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "103");
-            if (dt.Rows.Count > 0)
-            {
+            //DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "103");
+            //if (dt.Rows.Count > 0)
+            //{
                 // ClearAllMDIs();
                 LimpiarMDI();
                 if (con == null)
@@ -203,8 +220,8 @@ namespace crm
                     con.FormClosed += new FormClosedEventHandler(FormCotactos_FormClosed);
                     con.Show();
                 }
-            }
-            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+            //}
+            //else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
         }
 
         private void FormCotactos_FormClosed(object sender, FormClosedEventArgs e)
@@ -217,9 +234,9 @@ namespace crm
         {
             //ClearAllMDIs();
 
-           DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User,"104");
-            if (dt.Rows.Count > 0)
-            {
+           //DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User,"104");
+           // if (dt.Rows.Count > 0)
+           // {
                 LimpiarMDI();
                 if (neg == null)
                 {
@@ -229,8 +246,8 @@ namespace crm
                     neg.FormClosed += new FormClosedEventHandler(FormNegociaciones_FormClosed);
                     neg.Show();
                 }
-            }
-            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+            //}
+            //else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
         }
 
         private void FormNegociaciones_FormClosed(object sender, FormClosedEventArgs e)
@@ -240,9 +257,9 @@ namespace crm
 
         private void personalToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "112");
-            if (dt.Rows.Count > 0)
-            {
+            //DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "112");
+            //if (dt.Rows.Count > 0)
+            //{
                 //ClearAllMDIs();
                 LimpiarMDI();
                 if (em == null)
@@ -253,8 +270,8 @@ namespace crm
                     em.FormClosed += new FormClosedEventHandler(frm_estadistica_empresa_FormClosed);
                     em.Show();
                 }
-            }
-            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+            //}
+            //else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
         }
 
         private void frm_estadistica_empresa_FormClosed(object sender, FormClosedEventArgs e)
@@ -264,9 +281,9 @@ namespace crm
 
         private void personalToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "113");
-            if (dt.Rows.Count > 0)
-            {
+            //DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "113");
+            //if (dt.Rows.Count > 0)
+            //{
                 //ClearAllMDIs();
                 LimpiarMDI();
                 if (per == null)
@@ -277,8 +294,8 @@ namespace crm
                     per.FormClosed += new FormClosedEventHandler(frm_estadistica_personal_FormClosed);
                     per.Show();
                 }
-            }
-            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+            //}
+            //else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
         }
 
         private void frm_estadistica_personal_FormClosed(object sender, FormClosedEventArgs e)
@@ -288,9 +305,9 @@ namespace crm
 
         private void proyeccionesToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "114");
-            if (dt.Rows.Count > 0)
-            {
+            //DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "114");
+            //if (dt.Rows.Count > 0)
+            //{
                 //ClearAllMDIs();
                 LimpiarMDI();
                 if (pro == null)
@@ -301,8 +318,8 @@ namespace crm
                     pro.FormClosed += new FormClosedEventHandler(frm_pronostico_FormClosed);
                     pro.Show();
                 }
-            }
-            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+            //}
+            //else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
         }
 
         private void frm_pronostico_FormClosed(object sender, FormClosedEventArgs e)
@@ -394,9 +411,9 @@ namespace crm
 
         private void casosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "102");
-            if (dt.Rows.Count > 0)
-            {
+            //DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "102");
+            //if (dt.Rows.Count > 0)
+            //{
                 //LimpiarMDI();
                 if (caso == null)
                 {
@@ -407,7 +424,7 @@ namespace crm
                     caso.Show();
                 }
 
-            }else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+            //}else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
         }
 
         private void Form_Casos_FormClosed(object sender, FormClosedEventArgs e)
@@ -609,7 +626,226 @@ namespace crm
             this.Close();
         }
 
+        private void metasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "115");
+            if (dt.Rows.Count > 0)
+            {
+                //ClearAllMDIs();
+                LimpiarMDI();
+                if (secundarios == null)
+                {
+                    secundarios = new frm_pronostico_ventas_secundario();
+                    secundarios.MdiParent = this;
 
+                    secundarios.FormClosed += new FormClosedEventHandler(frm_pronostico_ventas_Secundario_form_closed);
+                    secundarios.Show();
+                }
+            }
+            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+        }
 
+        private void frm_pronostico_ventas_Secundario_form_closed(object sender, FormClosedEventArgs e)
+        {
+            secundarios = null;
+        }
+
+        private void ingresoProductoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "116");
+            if (dt.Rows.Count > 0)
+            {
+                //ClearAllMDIs();
+                LimpiarMDI();
+                if (inven == null)
+                {
+                    inven = new inventario();
+                    inven.MdiParent = this;
+
+                    inven.FormClosed += new FormClosedEventHandler(inventario_form_closed);
+                    inven.Show();
+                }
+            }
+            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+        }
+
+        private void inventario_form_closed(object sender, FormClosedEventArgs e)
+        {
+            inven = null;
+        }
+
+        private void bodegaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "117");
+            if (dt.Rows.Count > 0)
+            {
+                //ClearAllMDIs();
+                LimpiarMDI();
+                if (inv_bod == null)
+                {
+                    inv_bod = new inventario_bodega();
+                    inv_bod.MdiParent = this;
+
+                    inv_bod.FormClosed += new FormClosedEventHandler(inventario_bodega_form_closed);
+                    inv_bod.Show();
+                }
+            }
+            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+        }
+
+        private void inventario_bodega_form_closed(object sender, FormClosedEventArgs e)
+        {
+            inv_bod = null;
+        }
+
+        private void listaDePrecioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           // DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "117");
+           // if (dt.Rows.Count > 0)
+            //{
+                //ClearAllMDIs();
+                //LimpiarMDI();
+                if (precios == null)
+                {
+                    precios = new frmListadoPrecio();
+                    precios.MdiParent = this;
+
+                    precios.FormClosed += new FormClosedEventHandler(lista_de_precios_form_closed);
+                    precios.Show();
+                }
+            //}
+            //else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+        }
+
+        private void lista_de_precios_form_closed(object sender, FormClosedEventArgs e)
+        {
+            precios = null;
+        }
+
+        private void dToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void facturacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LimpiarMDI();
+               proyectoUOne. FacturaVista abrir = new proyectoUOne.FacturaVista();
+                abrir.MdiParent = this;
+                abrir.AutoSize = true;
+                abrir.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Error de llamada");
+            }
+        }
+
+        private void cotizacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                LimpiarMDI();
+                proyectoUOne.CotizacionVista abrir = new proyectoUOne.CotizacionVista();
+                abrir.MdiParent = this;
+                abrir.AutoSize = true;
+                abrir.Show();
+            }
+            catch
+            {
+                MessageBox.Show("Para facturar necesita seleccionar un cliente");
+            }
+        }
+
+        private void aBONOSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (abono == null)
+            {
+                abono = new frm_abonos();
+                abono.MdiParent = this;
+
+                abono.FormClosed += new FormClosedEventHandler(frm_abonos_form_closed);
+                abono.Show();
+            }
+        }
+
+        private void frm_abonos_form_closed(object sender, FormClosedEventArgs e)
+        {
+            abono = null;
+        }
+
+        private void bALANCEToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            if (balance == null)
+            {
+                balance = new BALANCE();
+                balance.MdiParent = this;
+
+                balance.FormClosed += new FormClosedEventHandler(frm_balance_form_closed);
+                balance.Show();
+            }
+        }
+
+        private void frm_balance_form_closed(object sender, FormClosedEventArgs e)
+        {
+            balance = null;
+        }
+
+        private void idiomaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_configurar_idioma f = new frm_configurar_idioma();
+            f.Show();
+        }
+
+        private void Form1_Activated(object sender, EventArgs e)
+        {
+
+            if (OpBD.CambioIdioma == true)
+            {
+                this.Controls.Clear();
+                InitializeComponent();
+                OpBD.CambioIdioma = false;
+
+                ini = null;
+                if (ini == null)
+                {
+                    ini = new Form_inicio();
+                    ini.MdiParent = this;
+
+                    ini.FormClosed += new FormClosedEventHandler(frm_inicio_FormClosed);
+                    ini.Show();
+                }
+
+               
+                  
+            }
+        }
+
+        private void morososToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cobros.frm_morosos moro = new Cobros.frm_morosos();
+            moro.Show();
+        }
+
+        private void cuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Cobros.Cuenta ct = new Cobros.Cuenta();
+            ct.Show();
+        }
+
+        private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_existencia ex = new frm_existencia();
+            ex.Show();
+        }
+
+        private void ingresoCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_categoria cat = new frm_categoria();
+            cat.Show();
+        }
     }
 }
