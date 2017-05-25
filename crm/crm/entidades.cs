@@ -69,10 +69,11 @@ namespace crm
             public Int32 producto { get; set; }
             public Int32 bodega { get; set; }
             public string ingreso { get; set; }
+            public Int32 proveedor { get; set; }
 
             public Existencia() { }                   //CONSTRUCTOR VACIO
 
-            public Existencia(string codigo, Int32 cantidad, Int32 producto, Int32 bodega, string ingreso)      //CONSTRUCTOR CON PARAMETROS
+            public Existencia(string codigo, Int32 cantidad, Int32 producto, Int32 bodega, string ingreso, Int32 proveedor)      //CONSTRUCTOR CON PARAMETROS
             {
                 this.codigo = codigo;
                 this.cantidad = cantidad;
@@ -140,6 +141,24 @@ namespace crm
                 this.saldo_factura = saldo_factura;
                 this.forma_pago = forma_pago;
                 this.id_cliente = id_cliente;
+            }
+        }
+
+        public class Proveedor
+        {
+            public string nombre { get; set; }
+            public string nit { get; set; }
+            public string direccion { get; set; }
+            public string telefono { get; set; }
+           
+
+            public Proveedor() { }
+            public Proveedor(string nombre, string nit, string direccion, string telefono)
+            {
+                this.nombre = nombre;
+                this.nit = nit;
+                this.direccion = direccion;
+                this.telefono = telefono;
             }
         }
     }

@@ -76,12 +76,12 @@ namespace crm
         } //insertar categoria
 
 
-        public void insertarexistencia(Int32 cantidad, Int32 producto, Int32 bodega, String ingreso)
+        public void insertarexistencia(Int32 cantidad, Int32 producto, Int32 bodega, String ingreso, Int32 prov)
         {
             try
             {
                 mySqlComando = new OdbcCommand(
-                string.Format("Insert into existencia (cantidad, id_producto, id_bodega, fec_ingreso) values ('{0}','{1}','{2}','{3}')", cantidad, producto, bodega, ingreso),
+                string.Format("Insert into existencia (cantidad, id_producto, id_bodega, fec_ingreso, id_proveedor) values ('{0}','{1}','{2}','{3}','{4}')", cantidad, producto, bodega, ingreso, prov),
                 Conexion.ObtenerConexion()
                 );
                 mySqlComando.ExecuteNonQuery();                 //se ejecuta el query
@@ -137,6 +137,28 @@ namespace crm
                 MessageBox.Show("No es posible acceder a los registros en bodega");
             }
             return dtBodega;
+        }
+
+        public static DataTable ObtenerProveedor()
+        {
+            DataTable dtProveedor = new DataTable();
+            try
+            {
+                mySqlComando = new OdbcCommand(
+                    string.Format("SELECT * FROM tbl_proveedor"),      //query de consultas de categoria
+                    Conexion.ObtenerConexion()              //llamada a clase conexion
+                    );
+                //-------------------------------------------------------------------------//
+                mySqlDAdAdaptador = new OdbcDataAdapter();         //Llenando DataTable Categoria
+                mySqlDAdAdaptador.SelectCommand = mySqlComando;
+                mySqlDAdAdaptador.Fill(dtProveedor);
+                //------------------------------------------------------------------------//
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No es posible acceder a los registros en proveedor");
+            }
+            return dtProveedor;
         }
 
         public static DataTable ObtenerRegistros()
@@ -213,7 +235,7 @@ namespace crm
             try
             {
                 mySqlComando = new OdbcCommand(
-                     string.Format("SELECT producto.nombre, bodega.nombre_bodega, existencia.fec_ingreso, existencia.cantidad FROM producto INNER JOIN existencia INNER JOIN bodega ON bodega.id_bodega = existencia.id_bodega AND producto.id_producto = existencia.id_producto"),
+                     string.Format("SELECT producto.nombre, bodega.nombre_bodega, existencia.fec_ingreso, existencia.cantidad, tbl_proveedor.nombre_proveedor FROM producto INNER JOIN existencia INNER JOIN bodega INNER JOIN tbl_proveedor ON bodega.id_bodega = existencia.id_bodega AND producto.id_producto = existencia.id_producto AND existencia.id_proveedor = tbl_proveedor.id_proveedor"),
                      Conexion.ObtenerConexion()
                  );                                                  //se realiza el query para la consulta de todos los registros de la tabla persona           
                 mySqlDAdAdaptador = new OdbcDataAdapter();          //se crea un sqlDataAdaptor 

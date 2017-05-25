@@ -80,14 +80,14 @@ namespace crm
 
         public void InsertarExistencia(Existencia existencia)
         {
-            if (String.IsNullOrWhiteSpace(Convert.ToString(existencia.cantidad)) || string.IsNullOrWhiteSpace(Convert.ToString(existencia.producto)) || string.IsNullOrWhiteSpace(Convert.ToString(existencia.bodega)) || string.IsNullOrWhiteSpace(existencia.ingreso))
+            if (String.IsNullOrWhiteSpace(Convert.ToString(existencia.cantidad)) || string.IsNullOrWhiteSpace(Convert.ToString(existencia.producto)) || string.IsNullOrWhiteSpace(Convert.ToString(existencia.bodega)) || string.IsNullOrWhiteSpace(existencia.ingreso) || string.IsNullOrWhiteSpace(Convert.ToString(existencia.proveedor)))
             {
                 MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
             }
             else
             {
                 datos cdatos = new datos();     //Se crea un objeto de capa de datos
-                cdatos.insertarexistencia(existencia.cantidad, existencia.producto, existencia.bodega, existencia.ingreso);
+                cdatos.insertarexistencia(existencia.cantidad, existencia.producto, existencia.bodega, existencia.ingreso, existencia.proveedor);
             }
         }
 
@@ -114,6 +114,11 @@ namespace crm
         public System.Data.DataTable consultaprecio()
         {
             return datos.ObtenerPrecio();              //se llama la funcion ObtenerCat
+        }
+
+        public System.Data.DataTable consultaprov()
+        {
+            return datos.ObtenerProveedor();              //se llama la funcion ObtenerCat
         }
 
         public void InsertarAbono(Abono abono)

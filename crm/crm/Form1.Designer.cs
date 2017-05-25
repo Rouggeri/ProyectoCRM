@@ -58,6 +58,8 @@
             this.ingresoProductoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.bodegaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.listaDePrecioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ingresoCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mantenimientosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.empresaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -77,8 +79,6 @@
             this.ayudaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.xtraTabbedMdiManager1 = new DevExpress.XtraTabbedMdi.XtraTabbedMdiManager(this.components);
             this.empleadoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordenDeCompraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ingresoCategoriaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xtraTabbedMdiManager1)).BeginInit();
             this.SuspendLayout();
@@ -306,6 +306,20 @@
             this.listaDePrecioToolStripMenuItem.Tag = "118";
             this.listaDePrecioToolStripMenuItem.Click += new System.EventHandler(this.listaDePrecioToolStripMenuItem_Click);
             // 
+            // ordenDeCompraToolStripMenuItem
+            // 
+            this.ordenDeCompraToolStripMenuItem.Name = "ordenDeCompraToolStripMenuItem";
+            resources.ApplyResources(this.ordenDeCompraToolStripMenuItem, "ordenDeCompraToolStripMenuItem");
+            this.ordenDeCompraToolStripMenuItem.Tag = "119";
+            this.ordenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
+            // 
+            // ingresoCategoriaToolStripMenuItem
+            // 
+            this.ingresoCategoriaToolStripMenuItem.Name = "ingresoCategoriaToolStripMenuItem";
+            resources.ApplyResources(this.ingresoCategoriaToolStripMenuItem, "ingresoCategoriaToolStripMenuItem");
+            this.ingresoCategoriaToolStripMenuItem.Tag = "120";
+            this.ingresoCategoriaToolStripMenuItem.Click += new System.EventHandler(this.ingresoCategoriaToolStripMenuItem_Click);
+            // 
             // mantenimientosToolStripMenuItem
             // 
             this.mantenimientosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -435,18 +449,6 @@
             this.empleadoToolStripMenuItem.Name = "empleadoToolStripMenuItem";
             resources.ApplyResources(this.empleadoToolStripMenuItem, "empleadoToolStripMenuItem");
             this.empleadoToolStripMenuItem.Click += new System.EventHandler(this.empleadoToolStripMenuItem_Click);
-            // 
-            // ordenDeCompraToolStripMenuItem
-            // 
-            this.ordenDeCompraToolStripMenuItem.Name = "ordenDeCompraToolStripMenuItem";
-            resources.ApplyResources(this.ordenDeCompraToolStripMenuItem, "ordenDeCompraToolStripMenuItem");
-            this.ordenDeCompraToolStripMenuItem.Click += new System.EventHandler(this.ordenDeCompraToolStripMenuItem_Click);
-            // 
-            // ingresoCategoriaToolStripMenuItem
-            // 
-            this.ingresoCategoriaToolStripMenuItem.Name = "ingresoCategoriaToolStripMenuItem";
-            resources.ApplyResources(this.ingresoCategoriaToolStripMenuItem, "ingresoCategoriaToolStripMenuItem");
-            this.ingresoCategoriaToolStripMenuItem.Click += new System.EventHandler(this.ingresoCategoriaToolStripMenuItem_Click);
             // 
             // Form1
             // 

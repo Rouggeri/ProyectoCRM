@@ -16,8 +16,11 @@ namespace crm
         public frm_existencia()
         {
             InitializeComponent();
+            //llenar_encabezado();
             llenarprod();
             llenarbod();
+            llenarprov();
+            txt_ingreso.Enabled = false;
         }
 
         public void llenar_encabezado()
@@ -49,6 +52,13 @@ namespace crm
             c4.ReadOnly = true;
 
             dgv_existencia.Columns.Add(c4);
+
+            DataGridViewTextBoxColumn c5 = new DataGridViewTextBoxColumn();
+            c5.HeaderText = "Proveedor";
+            c5.Width = 50;
+            c5.ReadOnly = true;
+
+            dgv_existencia.Columns.Add(c5);
         }
         
 
@@ -66,6 +76,14 @@ namespace crm
             cbo_bodega.DataSource = cnegocio.consultarbod();
             cbo_bodega.ValueMember = "id_bodega";
             cbo_bodega.DisplayMember = "nombre_bodega";
+        }
+
+        private void llenarprov()
+        {
+            negocio cnegocio = new negocio();
+            cbo_proveedor.DataSource = cnegocio.consultaprov();
+            cbo_proveedor.ValueMember = "id_proveedor";
+            cbo_proveedor.DisplayMember = "nombre_proveedor";
         }
 
         private void frm_existencia_Load(object sender, EventArgs e)
@@ -87,6 +105,7 @@ namespace crm
             existencia.producto = Convert.ToInt32(cbo_producto.SelectedIndex + 1);
             existencia.bodega = Convert.ToInt32(cbo_bodega.SelectedIndex + 1);
             existencia.ingreso = Convert.ToString(DateTime.Today);
+            existencia.proveedor = Convert.ToInt32(cbo_proveedor.SelectedIndex + 1);
             cnegocio.InsertarExistencia(existencia);
         }
 
@@ -94,6 +113,11 @@ namespace crm
         {
             negocio cnegocio = new negocio();           //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
             dgv_existencia.DataSource = cnegocio.consultaex();
+        }
+
+        private void txt_ingreso_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

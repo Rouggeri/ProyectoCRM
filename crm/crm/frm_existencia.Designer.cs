@@ -52,6 +52,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_existencia = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbo_proveedor = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -274,6 +276,8 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.cbo_proveedor);
+            this.groupControl1.Controls.Add(this.label5);
             this.groupControl1.Controls.Add(this.txt_cantidad);
             this.groupControl1.Controls.Add(this.label4);
             this.groupControl1.Controls.Add(this.cbo_bodega);
@@ -285,7 +289,7 @@
             this.groupControl1.Controls.Add(this.dgv_existencia);
             this.groupControl1.Location = new System.Drawing.Point(12, 87);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(607, 232);
+            this.groupControl1.Size = new System.Drawing.Size(607, 253);
             this.groupControl1.TabIndex = 201;
             this.groupControl1.Text = "Información de Producto";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
@@ -332,6 +336,7 @@
             this.txt_ingreso.Name = "txt_ingreso";
             this.txt_ingreso.Size = new System.Drawing.Size(102, 21);
             this.txt_ingreso.TabIndex = 204;
+            this.txt_ingreso.TextChanged += new System.EventHandler(this.txt_ingreso_TextChanged);
             // 
             // label3
             // 
@@ -363,16 +368,35 @@
             // dgv_existencia
             // 
             this.dgv_existencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_existencia.Location = new System.Drawing.Point(18, 102);
+            this.dgv_existencia.Location = new System.Drawing.Point(18, 135);
             this.dgv_existencia.Name = "dgv_existencia";
             this.dgv_existencia.Size = new System.Drawing.Size(516, 112);
             this.dgv_existencia.TabIndex = 198;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 108);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 214;
+            this.label5.Text = "Proveedor:";
+            // 
+            // cbo_proveedor
+            // 
+            this.cbo_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_proveedor.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_proveedor.FormattingEnabled = true;
+            this.cbo_proveedor.Location = new System.Drawing.Point(84, 102);
+            this.cbo_proveedor.Name = "cbo_proveedor";
+            this.cbo_proveedor.Size = new System.Drawing.Size(132, 24);
+            this.cbo_proveedor.TabIndex = 215;
             // 
             // frm_existencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(851, 331);
+            this.ClientSize = new System.Drawing.Size(851, 352);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.panel1);
             this.Name = "frm_existencia";
@@ -413,5 +437,7 @@
         private System.Windows.Forms.DataGridView dgv_existencia;
         private System.Windows.Forms.TextBox txt_cantidad;
         private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.ComboBox cbo_proveedor;
+        private System.Windows.Forms.Label label5;
     }
 }
