@@ -43,11 +43,11 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.dgv_bodega = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.txt_ubicacion = new System.Windows.Forms.TextBox();
-            this.cbo_tamanio = new System.Windows.Forms.ComboBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.dgv_bodega = new System.Windows.Forms.DataGridView();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -275,9 +275,9 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.cbo_tamanio);
+            this.groupControl1.Controls.Add(this.label1);
+            this.groupControl1.Controls.Add(this.txt_nombre);
             this.groupControl1.Controls.Add(this.txt_ubicacion);
-            this.groupControl1.Controls.Add(this.label2);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.dgv_bodega);
             this.groupControl1.Location = new System.Drawing.Point(42, 97);
@@ -285,6 +285,22 @@
             this.groupControl1.Size = new System.Drawing.Size(716, 299);
             this.groupControl1.TabIndex = 200;
             this.groupControl1.Text = "Información de Bodega";
+            // 
+            // txt_ubicacion
+            // 
+            this.txt_ubicacion.Location = new System.Drawing.Point(91, 98);
+            this.txt_ubicacion.Name = "txt_ubicacion";
+            this.txt_ubicacion.Size = new System.Drawing.Size(291, 21);
+            this.txt_ubicacion.TabIndex = 201;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(29, 101);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(56, 13);
+            this.label3.TabIndex = 199;
+            this.label3.Text = "Ubicacion:";
             // 
             // dgv_bodega
             // 
@@ -294,44 +310,21 @@
             this.dgv_bodega.Size = new System.Drawing.Size(664, 150);
             this.dgv_bodega.TabIndex = 198;
             // 
-            // label3
+            // txt_nombre
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(43, 52);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 199;
-            this.label3.Text = "Ubicacion:";
+            this.txt_nombre.Location = new System.Drawing.Point(91, 60);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(291, 21);
+            this.txt_nombre.TabIndex = 204;
             // 
-            // label2
+            // label1
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(43, 94);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(49, 13);
-            this.label2.TabIndex = 200;
-            this.label2.Text = "Tamaño:";
-            // 
-            // txt_ubicacion
-            // 
-            this.txt_ubicacion.Location = new System.Drawing.Point(105, 49);
-            this.txt_ubicacion.Name = "txt_ubicacion";
-            this.txt_ubicacion.Size = new System.Drawing.Size(291, 21);
-            this.txt_ubicacion.TabIndex = 201;
-            // 
-            // cbo_tamanio
-            // 
-            this.cbo_tamanio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_tamanio.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_tamanio.FormattingEnabled = true;
-            this.cbo_tamanio.Items.AddRange(new object[] {
-            "Grande",
-            "Mediano",
-            "Pequeño"});
-            this.cbo_tamanio.Location = new System.Drawing.Point(98, 89);
-            this.cbo_tamanio.Name = "cbo_tamanio";
-            this.cbo_tamanio.Size = new System.Drawing.Size(132, 24);
-            this.cbo_tamanio.TabIndex = 203;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(29, 63);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 13);
+            this.label1.TabIndex = 205;
+            this.label1.Text = "Nombre:";
             // 
             // inventario_bodega
             // 
@@ -370,8 +363,8 @@
         private DevExpress.XtraEditors.GroupControl groupControl1;
         private System.Windows.Forms.DataGridView dgv_bodega;
         private System.Windows.Forms.TextBox txt_ubicacion;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.ComboBox cbo_tamanio;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txt_nombre;
     }
 }

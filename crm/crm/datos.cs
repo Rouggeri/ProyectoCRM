@@ -19,12 +19,12 @@ namespace crm
         #endregion
 
         #region Funciones de Manipulacion de Datos
-        public void insertarproducto(string nombre, Int32 existencia, string marca, double precio, DateTime ingreso, Int32 id_categoria)
+        public void insertarproducto(string nombre, string descripcion, string marca, double precio, Int32 id_categoria, Int32 comision)
         {
             try
             {
                 mySqlComando = new OdbcCommand(
-                string.Format("Insert into producto (nombre, existencia, marca, precio, fecha_ingreso, id_categoria) values ('{0}','{1}','{2}','{3}','{4}','{5}')", nombre, existencia, marca, precio, ingreso, id_categoria),
+                string.Format("Insert into producto (nombre, descripcion, marca, precio_unidad, id_categoria, cporcentaje, estado) values ('{0}','{1}','{2}','{3}','{4}','{5}','ACTIVO')", nombre, descripcion, marca, precio, id_categoria, comision),
                 Conexion.ObtenerConexion()
                 );
                 mySqlComando.ExecuteNonQuery();                 //se ejecuta el query
@@ -38,12 +38,50 @@ namespace crm
         } //insertar producto
 
         #region
-        public void insertarbodega(string ubicacion, string tamanio)
+        public void insertarbodega(string nombre, string direccion)
         {
             try
             {
                 mySqlComando = new OdbcCommand(
-                string.Format("Insert into bodega (ubicacion, tamanio) values ('{0}','{1}')", ubicacion, tamanio),
+                string.Format("Insert into bodega (nombre_bodega, direccion_bodega) values ('{0}','{1}')", nombre, direccion),
+                Conexion.ObtenerConexion()
+                );
+                mySqlComando.ExecuteNonQuery();                 //se ejecuta el query
+                MessageBox.Show("Se inserto con exito");        //si el try-catch no encontro algun error se muestra el mensaje de transaccion exitosa
+            }
+            catch (OdbcException e)
+            {
+                MessageBox.Show("Error de insercion");          //si el try-catch encontro algun error indica mensaje de fracaso
+            }
+
+        } //insertar bodega
+
+
+        public void insertarcategoria(string nombre)
+        {
+            try
+            {
+                mySqlComando = new OdbcCommand(
+                string.Format("Insert into categoria (nombre) values ('{0}')", nombre),
+                Conexion.ObtenerConexion()
+                );
+                mySqlComando.ExecuteNonQuery();                 //se ejecuta el query
+                MessageBox.Show("Se inserto con exito");        //si el try-catch no encontro algun error se muestra el mensaje de transaccion exitosa
+            }
+            catch (OdbcException e)
+            {
+                MessageBox.Show("Error de insercion");          //si el try-catch encontro algun error indica mensaje de fracaso
+            }
+
+        } //insertar categoria
+
+
+        public void insertarexistencia(Int32 cantidad, Int32 producto, Int32 bodega, String ingreso)
+        {
+            try
+            {
+                mySqlComando = new OdbcCommand(
+                string.Format("Insert into existencia (cantidad, id_producto, id_bodega, fec_ingreso) values ('{0}','{1}','{2}','{3}')", cantidad, producto, bodega, ingreso),
                 Conexion.ObtenerConexion()
                 );
                 mySqlComando.ExecuteNonQuery();                 //se ejecuta el query
@@ -167,6 +205,51 @@ namespace crm
 
             return dtAbono; //retornamos el sqlDataAdaptor con los datos del query
 
+        }
+
+        public static DataTable ObtenerExistencia()
+        {
+            DataTable dtExistencia = new DataTable();
+            try
+            {
+                mySqlComando = new OdbcCommand(
+                     string.Format("SELECT producto.nombre, bodega.nombre_bodega, existencia.fec_ingreso, existencia.cantidad FROM producto INNER JOIN existencia INNER JOIN bodega ON bodega.id_bodega = existencia.id_bodega AND producto.id_producto = existencia.id_producto"),
+                     Conexion.ObtenerConexion()
+                 );                                                  //se realiza el query para la consulta de todos los registros de la tabla persona           
+                mySqlDAdAdaptador = new OdbcDataAdapter();          //se crea un sqlDataAdaptor 
+                mySqlDAdAdaptador.SelectCommand = mySqlComando;      //ejecutamos el query de consulta
+                mySqlDAdAdaptador.Fill(dtExistencia);                 //poblamos el sqlDataAdaptor con el resultado del query
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("No es posible obtener el registro", "Error al Realizar la Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            return dtExistencia; //retornamos el sqlDataAdaptor con los datos del query
+
+        }
+
+        public static DataTable ObtenerPrecio()
+        {
+            DataTable dtPrecio = new DataTable();
+            try
+            {
+                mySqlComando = new OdbcCommand(
+                    string.Format("SELECT * FROM tipo_precio"),      //query de consultas de categoria
+                    Conexion.ObtenerConexion()              //llamada a clase conexion
+                    );
+                //-------------------------------------------------------------------------//
+                mySqlDAdAdaptador = new OdbcDataAdapter();         //Llenando DataTable Categoria
+                mySqlDAdAdaptador.SelectCommand = mySqlComando;
+                mySqlDAdAdaptador.Fill(dtPrecio);
+                //------------------------------------------------------------------------//
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No es posible acceder a los registros en categoria producto");
+            }
+            return dtPrecio;
         }
 
 

@@ -835,5 +835,17 @@ namespace crm
             Cobros.Cuenta ct = new Cobros.Cuenta();
             ct.Show();
         }
+
+        private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_existencia ex = new frm_existencia();
+            ex.Show();
+        }
+
+        private void ingresoCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_categoria cat = new frm_categoria();
+            cat.Show();
+        }
     }
 }

@@ -17,16 +17,21 @@ namespace crm
         public inventario()
         {
             InitializeComponent();
+            llenarcbo();
+            limpiar();
+            deshabilitar();
         }
+
+       
 
         private void limpiar()
         {
             txt_nombre.Clear();
-            txt_existencia.Clear();
+            txt_descripcion.Clear();
             txt_marca.Clear();
             txt_precio.Clear();
             //txt_categoria.Clear();
-            txt_fecha.Clear();
+            txt_comision.Clear();
 
         }
 
@@ -34,8 +39,10 @@ namespace crm
         {
             txt_nombre.Enabled = true;
             txt_marca.Enabled = true;
-            txt_existencia.Enabled = true;
+            txt_descripcion.Enabled = true;
             txt_precio.Enabled = true;
+            txt_comision.Enabled = true;
+            cbo_cat.Enabled = true;
             //txt_categoria.Enabled = true;
         }
 
@@ -43,8 +50,10 @@ namespace crm
         {
             txt_nombre.Enabled = false;
             txt_marca.Enabled = false;
-            txt_existencia.Enabled = false;
+            txt_descripcion.Enabled = false;
             txt_precio.Enabled = false;
+            txt_comision.Enabled = false;
+            cbo_cat.Enabled = false;
             //txt_categoria.Enabled = false;
         }
 
@@ -55,7 +64,7 @@ namespace crm
             cbo_cat.ValueMember = "id";
             cbo_cat.DisplayMember = "nombre";
             cbo_cat.DataSource = cnegocio.consultacat();
-            txt_fecha.Enabled = false;
+           
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
@@ -68,17 +77,15 @@ namespace crm
         {
             entidades.Producto producto = new entidades.Producto();  //Creamos un objeto de la capa de Entidades para poder acceder a sus objetos
             negocio cnegocio = new negocio();                       //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
-            producto.nombre = txt_nombre.Text;                                //Llenamos el objeto persona con la informacion de los cuadros de texto/
+            producto.nombre = txt_nombre.Text; //Llenamos el objeto persona con la informacion de los cuadros de texto/
+            producto.descripcion = txt_descripcion.Text;
             producto.marca = txt_marca.Text;
-            producto.existencia = Convert.ToInt32(txt_existencia.Text);
             producto.precio = Convert.ToDouble(txt_precio.Text);
-            //producto.categoria = Convert.ToInt32(txt_categoria.Text);
-            producto.ingreso = DateTime.Today;
             producto.categoria = Convert.ToInt32(cbo_cat.SelectedIndex + 1);
+            producto.porcentaje = Convert.ToInt32(txt_comision.Text);
             cnegocio.InsertarProducto(producto);                                    //Llamamos a la funcion Ninsertar a traves del objeto de la capa de negocio y le enviamos como parametro nuestro objeto persona
             limpiar();
             deshabilitar();
-
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
@@ -125,6 +132,28 @@ namespace crm
         private void inventario_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_precio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_actualizar_Click(object sender, EventArgs e)
+        {
+            negocio cnegocio = new negocio();           //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
+            dgv_producto.DataSource = cnegocio.consultar();
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+            deshabilitar();
         }
     }
 }

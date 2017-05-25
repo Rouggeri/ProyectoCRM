@@ -9,103 +9,140 @@ namespace crm
 {
     class negocio : entidades
     {
-            public void InsertarProducto(Producto producto)
+        public void InsertarProducto(Producto producto)
+        {
+            if (string.IsNullOrWhiteSpace(producto.nombre) || string.IsNullOrWhiteSpace(producto.descripcion) || string.IsNullOrWhiteSpace(producto.marca) || string.IsNullOrWhiteSpace(Convert.ToString(producto.precio)) || string.IsNullOrWhiteSpace(Convert.ToString(producto.categoria)) || string.IsNullOrWhiteSpace(Convert.ToString(producto.porcentaje)))
             {
-                if (string.IsNullOrWhiteSpace(producto.nombre) || string.IsNullOrWhiteSpace(producto.marca) || string.IsNullOrWhiteSpace(Convert.ToString(producto.existencia)) || string.IsNullOrWhiteSpace(Convert.ToString(producto.precio)) || string.IsNullOrWhiteSpace(Convert.ToString(producto.categoria)) || string.IsNullOrWhiteSpace(Convert.ToString(producto.ingreso)))
-                {
-                    MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
-                }
-                else
-                {
-                    datos cdatos = new datos();     //Se crea un objeto de capa de datos
-                    cdatos.insertarproducto(producto.nombre, producto.existencia, producto.marca, producto.precio, producto.ingreso, producto.categoria);      //se llama la funcion de DinsertarPersona con los datos del objeto persona
-                }
+                MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
+            }
+            else
+            {
+                datos cdatos = new datos();     //Se crea un objeto de capa de datos
+                cdatos.insertarproducto(producto.nombre, producto.descripcion, producto.marca, producto.precio, producto.categoria, producto.porcentaje);      //se llama la funcion de DinsertarPersona con los datos del objeto persona
+            }
+        }
+
+        public void EliminarProducto(Producto producto)
+        {
+            if (string.IsNullOrWhiteSpace(producto.codigo))
+            {
+                MessageBox.Show("No ha seleccionado la fila a eliminar");
+            }
+            else
+            {
+                MessageBox.Show("seleccionada fila para eliminar");
+                datos edatos = new datos();     //Se crea un objeto de capa de datos
+                edatos.eliminarproducto(producto.codigo);
             }
 
-            public void EliminarProducto(Producto producto)
-            {
-                if (string.IsNullOrWhiteSpace(producto.codigo))
-                {
-                    MessageBox.Show("No ha seleccionado la fila a eliminar");
-                }
-                else
-                {
-                    MessageBox.Show("seleccionada fila para eliminar");
-                    datos edatos = new datos();     //Se crea un objeto de capa de datos
-                    edatos.eliminarproducto(producto.codigo);
-                }
+        }
 
+        public void EliminarBodega(Bodega bodega)
+        {
+            if (string.IsNullOrWhiteSpace(bodega.codigo))
+            {
+                MessageBox.Show("No ha seleccionado la fila a eliminar");
+            }
+            else
+            {
+                MessageBox.Show("seleccionada fila para eliminar");
+                datos edatos = new datos();     //Se crea un objeto de capa de datos
+                edatos.eliminarbodega(bodega.codigo);
             }
 
-            public void EliminarBodega(Bodega bodega)
-            {
-                if (string.IsNullOrWhiteSpace(bodega.codigo))
-                {
-                    MessageBox.Show("No ha seleccionado la fila a eliminar");
-                }
-                else
-                {
-                    MessageBox.Show("seleccionada fila para eliminar");
-                    datos edatos = new datos();     //Se crea un objeto de capa de datos
-                    edatos.eliminarbodega(bodega.codigo);
-                }
+        }
 
+        public void InsertarBodega(Bodega bodega)
+        {
+            if (string.IsNullOrWhiteSpace(bodega.nombre) || string.IsNullOrWhiteSpace(bodega.direccion))
+            {
+                MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
             }
+            else
+            {
+                datos cdatos = new datos();     //Se crea un objeto de capa de datos
+                cdatos.insertarbodega(bodega.nombre, bodega.direccion);
+            }
+        }
 
-            public void InsertarBodega(Bodega bodega)
+        public void InsertarCategoria(Categoria categoria)
+        {
+            if (string.IsNullOrWhiteSpace(categoria.nombre))
             {
-                if (string.IsNullOrWhiteSpace(bodega.tamanio) || string.IsNullOrWhiteSpace(bodega.ubicacion))
-                {
-                    MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
-                }
-                else
-                {
-                    datos cdatos = new datos();     //Se crea un objeto de capa de datos
-                    cdatos.insertarbodega(bodega.tamanio, bodega.ubicacion);
-                }
+                MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
             }
+            else
+            {
+                datos cdatos = new datos();     //Se crea un objeto de capa de datos
+                cdatos.insertarcategoria(categoria.nombre);
+            }
+        }
 
-            public System.Data.DataTable consultar()
+        public void InsertarExistencia(Existencia existencia)
+        {
+            if (String.IsNullOrWhiteSpace(Convert.ToString(existencia.cantidad)) || string.IsNullOrWhiteSpace(Convert.ToString(existencia.producto)) || string.IsNullOrWhiteSpace(Convert.ToString(existencia.bodega)) || string.IsNullOrWhiteSpace(existencia.ingreso))
             {
-                return datos.ObtenerRegistros();        //se llama la funcion ObtenerRegistros
+                MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
             }
+            else
+            {
+                datos cdatos = new datos();     //Se crea un objeto de capa de datos
+                cdatos.insertarexistencia(existencia.cantidad, existencia.producto, existencia.bodega, existencia.ingreso);
+            }
+        }
 
-            public System.Data.DataTable consultarbod()
-            {
-                return datos.ObtenerRegistrosbod();
-            }
+        public System.Data.DataTable consultar()
+        {
+            return datos.ObtenerRegistros();        //se llama la funcion ObtenerRegistros
+        }
 
-            public System.Data.DataTable consultacat()
-            {
-                return datos.ObtenerCat();              //se llama la funcion ObtenerCat
-            }
-            public void InsertarAbono(Abono abono)
-            {
-                if (string.IsNullOrWhiteSpace(abono.id_factura) || string.IsNullOrWhiteSpace(abono.id_cliente) || string.IsNullOrWhiteSpace(Convert.ToString(abono.forma_pago)) || string.IsNullOrWhiteSpace(Convert.ToString(abono.abono)) || string.IsNullOrWhiteSpace(Convert.ToString(abono.fecha)))
-                {
-                    MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
-                }
-                else
-                {
-                    datos cdatos = new datos();     //Se crea un objeto de capa de datos
-                    cdatos.insertarabono(abono.id_factura, abono.id_cliente, abono.forma_pago, abono.abono, abono.fecha);      //se llama la funcion de DinsertarPersona con los datos del objeto persona
-                }
-            }
-            public void InsertarIncidencia(Cliente cliente)
-            {
-                datos idatos = new datos(); //Se crea un objeto de capa de datos
-                                            //idatos.insertarabono
-            }
+        public System.Data.DataTable consultarbod()
+        {
+            return datos.ObtenerBod();
+        }
 
-            public System.Data.DataTable consultar2()
-            {
-                return datos.ObtenerRegistros2();        //se llama la funcion ObtenerRegistros
-            }
+        public System.Data.DataTable consultacat()
+        {
+            return datos.ObtenerCat();              //se llama la funcion ObtenerCat
+        }
 
-            /*public System.Data.DataTable consultac()
+        public System.Data.DataTable consultaex()
+        {
+            return datos.ObtenerExistencia();              //se llama la funcion ObtenerCat
+        }
+
+        public System.Data.DataTable consultaprecio()
+        {
+            return datos.ObtenerPrecio();              //se llama la funcion ObtenerCat
+        }
+
+        public void InsertarAbono(Abono abono)
+        {
+            if (string.IsNullOrWhiteSpace(abono.id_factura) || string.IsNullOrWhiteSpace(abono.id_cliente) || string.IsNullOrWhiteSpace(Convert.ToString(abono.forma_pago)) || string.IsNullOrWhiteSpace(Convert.ToString(abono.abono)) || string.IsNullOrWhiteSpace(Convert.ToString(abono.fecha)))
             {
-                //return datos.ObtenerClientes();         //se llama la funcion ObtenerClientes
-            }*/
-        
+                MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
+            }
+            else
+            {
+                datos cdatos = new datos();     //Se crea un objeto de capa de datos
+                cdatos.insertarabono(abono.id_factura, abono.id_cliente, abono.forma_pago, abono.abono, abono.fecha);      //se llama la funcion de DinsertarPersona con los datos del objeto persona
+            }
+        }
+        public void InsertarIncidencia(Cliente cliente)
+        {
+            datos idatos = new datos(); //Se crea un objeto de capa de datos
+                                        //idatos.insertarabono
+        }
+
+        public System.Data.DataTable consultar2()
+        {
+            return datos.ObtenerRegistros2();        //se llama la funcion ObtenerRegistros
+        }
+
+        /*public System.Data.DataTable consultac()
+        {
+            //return datos.ObtenerClientes();         //se llama la funcion ObtenerClientes
+        }*/
+
     }
 }

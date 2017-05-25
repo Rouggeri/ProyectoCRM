@@ -79,7 +79,7 @@
     </Reference>
     <Reference Include="MySql.Data, Version=6.3.5.0, Culture=neutral, PublicKeyToken=c5687fc88969c44d, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\..\..\..\Desktop\8vo semestre\MySql.Data.dll</HintPath>
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\MySQL\MySQL Installer for Windows\MySql.Data.dll</HintPath>
     </Reference>
     <Reference Include="seguridad, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -133,6 +133,9 @@
     </Compile>
     <Compile Include="CotizacionVista.Designer.cs">
       <DependentUpon>CotizacionVista.cs</DependentUpon>
+    </Compile>
+    <Compile Include="crmbdDataSet.cs">
+      <DependentUpon>crmbdDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="crmbdDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -267,6 +270,12 @@
     <Compile Include="frm_busqueda_fecha_personalizada.Designer.cs">
       <DependentUpon>frm_busqueda_fecha_personalizada.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_categoria.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_categoria.Designer.cs">
+      <DependentUpon>frm_categoria.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_categoria_caso.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -314,6 +323,12 @@
     </Compile>
     <Compile Include="frm_estadistica_personal.Designer.cs">
       <DependentUpon>frm_estadistica_personal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frm_existencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_existencia.Designer.cs">
+      <DependentUpon>frm_existencia.cs</DependentUpon>
     </Compile>
     <Compile Include="frm_meta_mantenimiento.cs">
       <SubType>Form</SubType>
@@ -505,6 +520,9 @@
     <EmbeddedResource Include="frm_busqueda_fecha_personalizada.resx">
       <DependentUpon>frm_busqueda_fecha_personalizada.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_categoria.resx">
+      <DependentUpon>frm_categoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_categoria_caso.resx">
       <DependentUpon>frm_categoria_caso.cs</DependentUpon>
     </EmbeddedResource>
@@ -531,6 +549,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_estadistica_personal.resx">
       <DependentUpon>frm_estadistica_personal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_existencia.resx">
+      <DependentUpon>frm_existencia.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_meta_mantenimiento.resx">
       <DependentUpon>frm_meta_mantenimiento.cs</DependentUpon>

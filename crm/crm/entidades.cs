@@ -12,23 +12,23 @@ namespace crm
         {
             public string codigo { get; set; }       //ATRIBUTOS DEL OBJETO PRODUCTO
             public string nombre { get; set; }
-            public Int32 existencia { get; set; }
+            public string descripcion { get; set; }
             public string marca { get; set; }
             public double precio { get; set; }
-            public DateTime ingreso { get; set; }
             public Int32 categoria { get; set; }
+            public Int32 porcentaje { get; set; }
 
             public Producto() { }                   //CONSTRUCTOR VACIO
 
-            public Producto(string codigo, string nombre, Int32 existencia, string marca, double precio, DateTime ingreso, Int32 categoria)      //CONSTRUCTOR CON PARAMETROS
+            public Producto(string codigo, string nombre, string descripcion, string marca, double precio, Int32 categoria, Int32 porcentaje)      //CONSTRUCTOR CON PARAMETROS
             {
                 this.codigo = codigo;
                 this.nombre = nombre;
-                this.existencia = existencia;
+                this.descripcion = descripcion;
                 this.marca = marca;
                 this.precio = precio;
-                this.ingreso = ingreso;
                 this.categoria = categoria;
+                this.porcentaje = porcentaje;
             }
         } //class producto
 
@@ -49,18 +49,39 @@ namespace crm
         public class Bodega
         {
             public string codigo { get; set; }       //ATRIBUTOS DEL OBJETO BODEGA
-            public string ubicacion { get; set; }
-            public string tamanio { get; set; }
+            public string nombre { get; set; }
+            public string direccion { get; set; }
 
             public Bodega() { }                   //CONSTRUCTOR VACIO
 
-            public Bodega(string codigo, string ubicacion, string tamanio)      //CONSTRUCTOR CON PARAMETROS
+            public Bodega(string codigo, string nombre, string direccion)      //CONSTRUCTOR CON PARAMETROS
             {
                 this.codigo = codigo;
-                this.ubicacion = ubicacion;
-                this.tamanio = tamanio;
+                this.nombre = nombre;
+                this.direccion = direccion;
             }
         } //class categoria
+
+        public class Existencia
+        {
+            public string codigo { get; set; }       //ATRIBUTOS DEL OBJETO PERSONA
+            public Int32 cantidad { get; set; }
+            public Int32 producto { get; set; }
+            public Int32 bodega { get; set; }
+            public string ingreso { get; set; }
+
+            public Existencia() { }                   //CONSTRUCTOR VACIO
+
+            public Existencia(string codigo, Int32 cantidad, Int32 producto, Int32 bodega, string ingreso)      //CONSTRUCTOR CON PARAMETROS
+            {
+                this.codigo = codigo;
+                this.cantidad = cantidad;
+                this.producto = producto;
+                this.bodega = bodega;
+                this.ingreso = ingreso;
+            }
+        } //class existencia
+
         public class Abono
         {
             public string id_abono { get; set; }       //ATRIBUTOS DEL OBJETO PERSONA
