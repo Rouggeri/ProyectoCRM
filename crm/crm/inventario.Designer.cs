@@ -49,13 +49,13 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.txt_descripcion = new System.Windows.Forms.TextBox();
-            this.txt_marca = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_producto = new System.Windows.Forms.DataGridView();
             this.cbo_cat = new System.Windows.Forms.ComboBox();
+            this.cbo_marca = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -285,13 +285,13 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.cbo_marca);
             this.groupControl1.Controls.Add(this.txt_comision);
             this.groupControl1.Controls.Add(this.txt_precio);
             this.groupControl1.Controls.Add(this.label6);
             this.groupControl1.Controls.Add(this.label5);
             this.groupControl1.Controls.Add(this.label4);
             this.groupControl1.Controls.Add(this.txt_descripcion);
-            this.groupControl1.Controls.Add(this.txt_marca);
             this.groupControl1.Controls.Add(this.txt_nombre);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label2);
@@ -303,6 +303,7 @@
             this.groupControl1.Size = new System.Drawing.Size(716, 299);
             this.groupControl1.TabIndex = 200;
             this.groupControl1.Text = "Información de Producto";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
             // txt_comision
             // 
@@ -352,13 +353,6 @@
             this.txt_descripcion.Name = "txt_descripcion";
             this.txt_descripcion.Size = new System.Drawing.Size(325, 21);
             this.txt_descripcion.TabIndex = 204;
-            // 
-            // txt_marca
-            // 
-            this.txt_marca.Location = new System.Drawing.Point(87, 72);
-            this.txt_marca.Name = "txt_marca";
-            this.txt_marca.Size = new System.Drawing.Size(121, 21);
-            this.txt_marca.TabIndex = 203;
             // 
             // txt_nombre
             // 
@@ -413,6 +407,16 @@
             this.cbo_cat.Size = new System.Drawing.Size(132, 24);
             this.cbo_cat.TabIndex = 14;
             // 
+            // cbo_marca
+            // 
+            this.cbo_marca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_marca.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_marca.FormattingEnabled = true;
+            this.cbo_marca.Location = new System.Drawing.Point(87, 75);
+            this.cbo_marca.Name = "cbo_marca";
+            this.cbo_marca.Size = new System.Drawing.Size(132, 24);
+            this.cbo_marca.TabIndex = 210;
+            // 
             // inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,12 +458,12 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txt_descripcion;
-        private System.Windows.Forms.TextBox txt_marca;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_producto;
         public System.Windows.Forms.ComboBox cbo_cat;
+        public System.Windows.Forms.ComboBox cbo_marca;
     }
 }

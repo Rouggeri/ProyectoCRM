@@ -19,12 +19,12 @@ namespace crm
         #endregion
 
         #region Funciones de Manipulacion de Datos
-        public void insertarproducto(string nombre, string descripcion, string marca, double precio, Int32 id_categoria, Int32 comision)
+        public void insertarproducto(string nombre, string descripcion, Int32 marca, double precio, Int32 id_categoria, Int32 comision)
         {
             try
             {
                 mySqlComando = new OdbcCommand(
-                string.Format("Insert into producto (nombre, descripcion, marca, precio_unidad, id_categoria, cporcentaje, estado) values ('{0}','{1}','{2}','{3}','{4}','{5}','ACTIVO')", nombre, descripcion, marca, precio, id_categoria, comision),
+                string.Format("Insert into producto (id_marca, nombre, descripcion, precio_unidad, id_categoria, cporcentaje, estado) values ('{0}','{1}','{2}','{3}','{4}','{5}','ACTIVO')", marca, nombre, descripcion, precio, id_categoria, comision),
                 Conexion.ObtenerConexion()
                 );
                 mySqlComando.ExecuteNonQuery();                 //se ejecuta el query
@@ -205,6 +205,28 @@ namespace crm
 
             return dtBodega; //retornamos el sqlDataAdaptor con los datos del query
         } //mostrar registros
+
+        public static DataTable ObtenerMarca()
+        {
+            DataTable dtMarca = new DataTable();
+            try
+            {
+                mySqlComando = new OdbcCommand(
+                    string.Format("SELECT * FROM marca"),      //query de consultas de categoria
+                    Conexion.ObtenerConexion()              //llamada a clase conexion
+                    );
+                //-------------------------------------------------------------------------//
+                mySqlDAdAdaptador = new OdbcDataAdapter();         //Llenando DataTable Categoria
+                mySqlDAdAdaptador.SelectCommand = mySqlComando;
+                mySqlDAdAdaptador.Fill(dtMarca);
+                //------------------------------------------------------------------------//
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("No es posible acceder a los registros en bodega");
+            }
+            return dtMarca;
+        }
 
         public static DataTable ObtenerRegistros2()
         {

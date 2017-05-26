@@ -13,14 +13,14 @@ namespace crm
             public string codigo { get; set; }       //ATRIBUTOS DEL OBJETO PRODUCTO
             public string nombre { get; set; }
             public string descripcion { get; set; }
-            public string marca { get; set; }
+            public Int32 marca { get; set; }
             public double precio { get; set; }
             public Int32 categoria { get; set; }
             public Int32 porcentaje { get; set; }
 
             public Producto() { }                   //CONSTRUCTOR VACIO
 
-            public Producto(string codigo, string nombre, string descripcion, string marca, double precio, Int32 categoria, Int32 porcentaje)      //CONSTRUCTOR CON PARAMETROS
+            public Producto(string codigo, string nombre, string descripcion, Int32 marca, double precio, Int32 categoria, Int32 porcentaje)      //CONSTRUCTOR CON PARAMETROS
             {
                 this.codigo = codigo;
                 this.nombre = nombre;

@@ -17,6 +17,7 @@ namespace crm
         public inventario()
         {
             InitializeComponent();
+            llenarmarca();
             llenarcbo();
             limpiar();
             deshabilitar();
@@ -28,7 +29,7 @@ namespace crm
         {
             txt_nombre.Clear();
             txt_descripcion.Clear();
-            txt_marca.Clear();
+            //txt_marca.Clear();
             txt_precio.Clear();
             //txt_categoria.Clear();
             txt_comision.Clear();
@@ -38,7 +39,7 @@ namespace crm
         private void habilitar()
         {
             txt_nombre.Enabled = true;
-            txt_marca.Enabled = true;
+            cbo_marca.Enabled = true;
             txt_descripcion.Enabled = true;
             txt_precio.Enabled = true;
             txt_comision.Enabled = true;
@@ -49,7 +50,7 @@ namespace crm
         private void deshabilitar()
         {
             txt_nombre.Enabled = false;
-            txt_marca.Enabled = false;
+            cbo_marca.Enabled = false;
             txt_descripcion.Enabled = false;
             txt_precio.Enabled = false;
             txt_comision.Enabled = false;
@@ -63,8 +64,15 @@ namespace crm
             negocio cnegocio = new negocio();
             cbo_cat.ValueMember = "id";
             cbo_cat.DisplayMember = "nombre";
-            cbo_cat.DataSource = cnegocio.consultacat();
-           
+            cbo_cat.DataSource = cnegocio.consultacat(); 
+        }
+
+        private void llenarmarca()
+        {
+            negocio cnegocio = new negocio();
+            cbo_marca.ValueMember = "id_marca";
+            cbo_marca.DisplayMember = "nombre_marca";
+            cbo_marca.DataSource = cnegocio.consultamarca();
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
@@ -79,7 +87,7 @@ namespace crm
             negocio cnegocio = new negocio();                       //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
             producto.nombre = txt_nombre.Text; //Llenamos el objeto persona con la informacion de los cuadros de texto/
             producto.descripcion = txt_descripcion.Text;
-            producto.marca = txt_marca.Text;
+            producto.marca = Convert.ToInt32(cbo_cat.SelectedIndex + 1);
             producto.precio = Convert.ToDouble(txt_precio.Text);
             producto.categoria = Convert.ToInt32(cbo_cat.SelectedIndex + 1);
             producto.porcentaje = Convert.ToInt32(txt_comision.Text);
@@ -154,6 +162,11 @@ namespace crm
         {
             limpiar();
             deshabilitar();
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

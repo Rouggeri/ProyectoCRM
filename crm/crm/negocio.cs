@@ -11,7 +11,7 @@ namespace crm
     {
         public void InsertarProducto(Producto producto)
         {
-            if (string.IsNullOrWhiteSpace(producto.nombre) || string.IsNullOrWhiteSpace(producto.descripcion) || string.IsNullOrWhiteSpace(producto.marca) || string.IsNullOrWhiteSpace(Convert.ToString(producto.precio)) || string.IsNullOrWhiteSpace(Convert.ToString(producto.categoria)) || string.IsNullOrWhiteSpace(Convert.ToString(producto.porcentaje)))
+            if (string.IsNullOrWhiteSpace(producto.nombre) || string.IsNullOrWhiteSpace(producto.descripcion) || string.IsNullOrWhiteSpace(Convert.ToString(producto.marca)) || string.IsNullOrWhiteSpace(Convert.ToString(producto.precio)) || string.IsNullOrWhiteSpace(Convert.ToString(producto.categoria)) || string.IsNullOrWhiteSpace(Convert.ToString(producto.porcentaje)))
             {
                 MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
             }
@@ -119,6 +119,11 @@ namespace crm
         public System.Data.DataTable consultaprov()
         {
             return datos.ObtenerProveedor();              //se llama la funcion ObtenerCat
+        }
+
+        public System.Data.DataTable consultamarca()
+        {
+            return datos.ObtenerMarca();              //se llama la funcion ObtenerCat
         }
 
         public void InsertarAbono(Abono abono)
