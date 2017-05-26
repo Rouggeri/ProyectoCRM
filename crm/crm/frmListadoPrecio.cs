@@ -20,6 +20,7 @@ namespace crm
         {
             InitializeComponent();
             llenar_encabezado();
+            llenarcbo();
         }
         string id_form = "118";
 
@@ -49,15 +50,40 @@ namespace crm
             
         }
 
-            public void llenar_bien()
+        private void llenarcbo()
+        {
+            negocio cnegocio = new negocio();
+            cbo_catalogo.ValueMember = "id_tprecio_pk";
+            cbo_catalogo.DisplayMember = "tipo";
+            cbo_catalogo.DataSource = cnegocio.consultaprecio();
+        }
+
+        public Int32 codtipo;
+
+        public void obtenerid()
+        {
+            //OBTENIENDO ID DE CATALOGO DE PRECIOS
+
+
+            string scad2 = "SELECT id_tprecio_pk from tipo_precio where tipo='" + cbo_catalogo.Text + "'";
+            OdbcCommand mcd2 = new OdbcCommand(scad2, Conexion.ObtenerConexion());
+            OdbcDataReader mdr2 = mcd2.ExecuteReader();
+
+            while (mdr2.Read())
             {
+                codtipo = mdr2.GetInt16(0);
+            }
+        }
+
+        public void llenar_bien()
+        {
             //OBTENIENDO ID DE CATALOGO DE PRECIOS
             dgv_bien.Rows.Clear();
 
-            
+
             //LLENANDO DATAGRID CON BIENES Y SU PRECIO
-            string scad = "SELECT producto.nombre, producto.precio, precio.precio FROM producto INNER JOIN precio ON producto.id = precio.id_bien";
-            OdbcCommand mcd = new OdbcCommand(scad, seguridad.Conexion.ObtenerConexionODBC());
+            string scad = "SELECT producto.nombre, producto.precio_unidad, precio.precio FROM producto INNER JOIN precio ON producto.id_producto = precio.id_bien and precio.id_tipo = " + codtipo;
+            OdbcCommand mcd = new OdbcCommand(scad, Conexion.ObtenerConexion());
             OdbcDataReader mdr = mcd.ExecuteReader();
 
             while (mdr.Read())
@@ -68,7 +94,7 @@ namespace crm
             }
         }
 
-        
+
 
         private void btn_Buscte_Click(object sender, EventArgs e)
         {
@@ -82,20 +108,20 @@ namespace crm
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            obtenerid();
             if (string.IsNullOrWhiteSpace(txt_precio1.Text))
                 MessageBox.Show("Campo obligatorio vacío", "Campo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             else
             {
-                
+
                 MessageBox.Show("Cambiando precio...");
                 string scad = "select * from producto";
-                OdbcCommand mcd = new OdbcCommand(scad, seguridad.Conexion.ObtenerConexionODBC());
+                OdbcCommand mcd = new OdbcCommand(scad, Conexion.ObtenerConexion());
                 OdbcDataReader mdr = mcd.ExecuteReader();
                 int j = 1;
 
-                OdbcCommand mcd2 = new OdbcCommand("delete from precio", seguridad.Conexion.ObtenerConexionODBC());
+                OdbcCommand mcd2 = new OdbcCommand("delete from precio where id_tipo=(" + codtipo + ")", Conexion.ObtenerConexion());
                 OdbcDataReader mdr2 = mcd2.ExecuteReader();
 
                 while (mdr.Read())
@@ -107,7 +133,7 @@ namespace crm
                     float total = mult + (Convert.ToInt32(costo));
 
 
-                    OdbcCommand mcd1 = new OdbcCommand("insert into precio (precio, id_bien) values(" + total + "," + j + ")", seguridad.Conexion.ObtenerConexionODBC());
+                    OdbcCommand mcd1 = new OdbcCommand("insert into precio (precio, id_bien, id_tipo) values(" + total + "," + j + "," + codtipo + ")", Conexion.ObtenerConexion());
                     OdbcDataReader mdr1 = mcd1.ExecuteReader();
                     j++;
                     costo = 0;
@@ -122,7 +148,7 @@ namespace crm
 
         private void btn_actualizar_Click(object sender, EventArgs e)
         {
-
+            obtenerid();
             llenar_bien();
         }
 

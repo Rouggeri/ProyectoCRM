@@ -1,6 +1,6 @@
 ﻿namespace crm
 {
-    partial class inventario_bodega
+    partial class frm_categoria
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventario_bodega));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_categoria));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_reporte = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
@@ -42,16 +42,11 @@
             this.btn_editar = new System.Windows.Forms.Button();
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
-            this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.txt_ubicacion = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.dgv_bodega = new System.Windows.Forms.DataGridView();
-            this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.dgv_categoria = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
-            this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_bodega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_categoria)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,11 +63,11 @@
             this.panel1.Controls.Add(this.btn_editar);
             this.panel1.Controls.Add(this.btn_eliminar);
             this.panel1.Controls.Add(this.btn_siguiente);
-            this.panel1.Location = new System.Drawing.Point(88, 7);
+            this.panel1.Location = new System.Drawing.Point(9, 11);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(630, 77);
-            this.panel1.TabIndex = 186;
+            this.panel1.TabIndex = 187;
             // 
             // btn_reporte
             // 
@@ -137,7 +132,6 @@
             this.btn_ultimo.Size = new System.Drawing.Size(30, 26);
             this.btn_ultimo.TabIndex = 181;
             this.btn_ultimo.UseVisualStyleBackColor = true;
-            this.btn_ultimo.Click += new System.EventHandler(this.btn_ultimo_Click);
             // 
             // btn_actualizar
             // 
@@ -204,7 +198,6 @@
             this.btn_primero.Size = new System.Drawing.Size(30, 26);
             this.btn_primero.TabIndex = 180;
             this.btn_primero.UseVisualStyleBackColor = true;
-            this.btn_primero.Click += new System.EventHandler(this.btn_primero_Click);
             // 
             // btn_anterior
             // 
@@ -221,7 +214,6 @@
             this.btn_anterior.Size = new System.Drawing.Size(30, 26);
             this.btn_anterior.TabIndex = 178;
             this.btn_anterior.UseVisualStyleBackColor = true;
-            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
             // 
             // btn_editar
             // 
@@ -254,7 +246,6 @@
             this.btn_eliminar.Size = new System.Drawing.Size(58, 59);
             this.btn_eliminar.TabIndex = 174;
             this.btn_eliminar.UseVisualStyleBackColor = true;
-            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_siguiente
             // 
@@ -271,77 +262,48 @@
             this.btn_siguiente.Size = new System.Drawing.Size(30, 26);
             this.btn_siguiente.TabIndex = 179;
             this.btn_siguiente.UseVisualStyleBackColor = true;
-            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
-            // 
-            // groupControl1
-            // 
-            this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Controls.Add(this.txt_nombre);
-            this.groupControl1.Controls.Add(this.txt_ubicacion);
-            this.groupControl1.Controls.Add(this.label3);
-            this.groupControl1.Controls.Add(this.dgv_bodega);
-            this.groupControl1.Location = new System.Drawing.Point(42, 97);
-            this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(716, 299);
-            this.groupControl1.TabIndex = 200;
-            this.groupControl1.Text = "Información de Bodega";
-            // 
-            // txt_ubicacion
-            // 
-            this.txt_ubicacion.Location = new System.Drawing.Point(91, 98);
-            this.txt_ubicacion.Name = "txt_ubicacion";
-            this.txt_ubicacion.Size = new System.Drawing.Size(291, 21);
-            this.txt_ubicacion.TabIndex = 201;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 101);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 199;
-            this.label3.Text = "Ubicacion:";
-            // 
-            // dgv_bodega
-            // 
-            this.dgv_bodega.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_bodega.Location = new System.Drawing.Point(23, 133);
-            this.dgv_bodega.Name = "dgv_bodega";
-            this.dgv_bodega.Size = new System.Drawing.Size(664, 150);
-            this.dgv_bodega.TabIndex = 198;
-            // 
-            // txt_nombre
-            // 
-            this.txt_nombre.Location = new System.Drawing.Point(91, 60);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(291, 21);
-            this.txt_nombre.TabIndex = 204;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 63);
+            this.label1.Location = new System.Drawing.Point(31, 117);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 205;
+            this.label1.Size = new System.Drawing.Size(47, 13);
+            this.label1.TabIndex = 200;
             this.label1.Text = "Nombre:";
             // 
-            // inventario_bodega
+            // txt_nombre
+            // 
+            this.txt_nombre.Location = new System.Drawing.Point(84, 114);
+            this.txt_nombre.Name = "txt_nombre";
+            this.txt_nombre.Size = new System.Drawing.Size(121, 20);
+            this.txt_nombre.TabIndex = 203;
+            // 
+            // dgv_categoria
+            // 
+            this.dgv_categoria.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_categoria.Location = new System.Drawing.Point(34, 141);
+            this.dgv_categoria.Name = "dgv_categoria";
+            this.dgv_categoria.Size = new System.Drawing.Size(240, 150);
+            this.dgv_categoria.TabIndex = 204;
+            // 
+            // frm_categoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 409);
-            this.Controls.Add(this.groupControl1);
+            this.ClientSize = new System.Drawing.Size(653, 303);
+            this.Controls.Add(this.dgv_categoria);
+            this.Controls.Add(this.txt_nombre);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
-            this.Name = "inventario_bodega";
-            this.Text = "inventario_bodega";
-            this.Load += new System.EventHandler(this.inventario_bodega_Load);
+            this.Name = "frm_categoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Categoria";
+            this.Load += new System.EventHandler(this.frm_categoria_Load);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
-            this.groupControl1.ResumeLayout(false);
-            this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_bodega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_categoria)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -360,11 +322,8 @@
         private System.Windows.Forms.Button btn_editar;
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_siguiente;
-        private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.DataGridView dgv_bodega;
-        private System.Windows.Forms.TextBox txt_ubicacion;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.DataGridView dgv_categoria;
     }
 }

@@ -51,11 +51,22 @@ namespace crm
         {
             entidades.Bodega bodega = new entidades.Bodega();  //Creamos un objeto de la capa de Entidades para poder acceder a sus objetos
             negocio cnegocio = new negocio();                       //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
-            bodega.tamanio = cbo_tamanio.Text;                                //Llenamos el objeto persona con la informacion de los cuadros de texto/
-            bodega.ubicacion = txt_ubicacion.Text;
+            bodega.nombre = txt_nombre.Text;                                //Llenamos el objeto persona con la informacion de los cuadros de texto/
+            bodega.direccion = txt_ubicacion.Text;
             cnegocio.InsertarBodega(bodega);                                    //Llamamos a la funcion Ninsertar a traves del objeto de la capa de negocio y le enviamos como parametro nuestro objeto persona
-            //limpiar();
-            //deshabilitar();
+            limpiar();
+            deshabilitar();
+        }
+
+        void limpiar()
+        {
+            txt_nombre.Clear();
+            txt_ubicacion.Clear();
+        }
+        void deshabilitar()
+        {
+            txt_nombre.Enabled = false;
+            txt_ubicacion.Enabled = false;
         }
 
         private void btn_anterior_Click(object sender, EventArgs e)

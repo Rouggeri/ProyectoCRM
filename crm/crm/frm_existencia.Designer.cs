@@ -1,6 +1,6 @@
 ﻿namespace crm
 {
-    partial class inventario_bodega
+    partial class frm_existencia
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(inventario_bodega));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_existencia));
             this.panel1 = new System.Windows.Forms.Panel();
             this.btn_reporte = new System.Windows.Forms.Button();
             this.btn_nuevo = new System.Windows.Forms.Button();
@@ -43,15 +43,21 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.txt_ubicacion = new System.Windows.Forms.TextBox();
+            this.txt_cantidad = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.cbo_bodega = new System.Windows.Forms.ComboBox();
+            this.cbo_producto = new System.Windows.Forms.ComboBox();
+            this.txt_ingreso = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dgv_bodega = new System.Windows.Forms.DataGridView();
-            this.txt_nombre = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.dgv_existencia = new System.Windows.Forms.DataGridView();
+            this.label5 = new System.Windows.Forms.Label();
+            this.cbo_proveedor = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_bodega)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_existencia)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -68,11 +74,11 @@
             this.panel1.Controls.Add(this.btn_editar);
             this.panel1.Controls.Add(this.btn_eliminar);
             this.panel1.Controls.Add(this.btn_siguiente);
-            this.panel1.Location = new System.Drawing.Point(88, 7);
+            this.panel1.Location = new System.Drawing.Point(13, 3);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(630, 77);
-            this.panel1.TabIndex = 186;
+            this.panel1.TabIndex = 187;
             // 
             // btn_reporte
             // 
@@ -137,7 +143,6 @@
             this.btn_ultimo.Size = new System.Drawing.Size(30, 26);
             this.btn_ultimo.TabIndex = 181;
             this.btn_ultimo.UseVisualStyleBackColor = true;
-            this.btn_ultimo.Click += new System.EventHandler(this.btn_ultimo_Click);
             // 
             // btn_actualizar
             // 
@@ -204,7 +209,6 @@
             this.btn_primero.Size = new System.Drawing.Size(30, 26);
             this.btn_primero.TabIndex = 180;
             this.btn_primero.UseVisualStyleBackColor = true;
-            this.btn_primero.Click += new System.EventHandler(this.btn_primero_Click);
             // 
             // btn_anterior
             // 
@@ -221,7 +225,6 @@
             this.btn_anterior.Size = new System.Drawing.Size(30, 26);
             this.btn_anterior.TabIndex = 178;
             this.btn_anterior.UseVisualStyleBackColor = true;
-            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
             // 
             // btn_editar
             // 
@@ -254,7 +257,6 @@
             this.btn_eliminar.Size = new System.Drawing.Size(58, 59);
             this.btn_eliminar.TabIndex = 174;
             this.btn_eliminar.UseVisualStyleBackColor = true;
-            this.btn_eliminar.Click += new System.EventHandler(this.btn_eliminar_Click);
             // 
             // btn_siguiente
             // 
@@ -271,76 +273,141 @@
             this.btn_siguiente.Size = new System.Drawing.Size(30, 26);
             this.btn_siguiente.TabIndex = 179;
             this.btn_siguiente.UseVisualStyleBackColor = true;
-            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Controls.Add(this.txt_nombre);
-            this.groupControl1.Controls.Add(this.txt_ubicacion);
+            this.groupControl1.Controls.Add(this.cbo_proveedor);
+            this.groupControl1.Controls.Add(this.label5);
+            this.groupControl1.Controls.Add(this.txt_cantidad);
+            this.groupControl1.Controls.Add(this.label4);
+            this.groupControl1.Controls.Add(this.cbo_bodega);
+            this.groupControl1.Controls.Add(this.cbo_producto);
+            this.groupControl1.Controls.Add(this.txt_ingreso);
             this.groupControl1.Controls.Add(this.label3);
-            this.groupControl1.Controls.Add(this.dgv_bodega);
-            this.groupControl1.Location = new System.Drawing.Point(42, 97);
+            this.groupControl1.Controls.Add(this.label2);
+            this.groupControl1.Controls.Add(this.label1);
+            this.groupControl1.Controls.Add(this.dgv_existencia);
+            this.groupControl1.Location = new System.Drawing.Point(12, 87);
             this.groupControl1.Name = "groupControl1";
-            this.groupControl1.Size = new System.Drawing.Size(716, 299);
-            this.groupControl1.TabIndex = 200;
-            this.groupControl1.Text = "Información de Bodega";
+            this.groupControl1.Size = new System.Drawing.Size(607, 253);
+            this.groupControl1.TabIndex = 201;
+            this.groupControl1.Text = "Información de Producto";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
-            // txt_ubicacion
+            // txt_cantidad
             // 
-            this.txt_ubicacion.Location = new System.Drawing.Point(91, 98);
-            this.txt_ubicacion.Name = "txt_ubicacion";
-            this.txt_ubicacion.Size = new System.Drawing.Size(291, 21);
-            this.txt_ubicacion.TabIndex = 201;
+            this.txt_cantidad.Location = new System.Drawing.Point(432, 72);
+            this.txt_cantidad.Name = "txt_cantidad";
+            this.txt_cantidad.Size = new System.Drawing.Size(102, 21);
+            this.txt_cantidad.TabIndex = 213;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(332, 77);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(54, 13);
+            this.label4.TabIndex = 212;
+            this.label4.Text = "Cantidad:";
+            // 
+            // cbo_bodega
+            // 
+            this.cbo_bodega.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_bodega.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_bodega.FormattingEnabled = true;
+            this.cbo_bodega.Location = new System.Drawing.Point(84, 72);
+            this.cbo_bodega.Name = "cbo_bodega";
+            this.cbo_bodega.Size = new System.Drawing.Size(132, 24);
+            this.cbo_bodega.TabIndex = 211;
+            // 
+            // cbo_producto
+            // 
+            this.cbo_producto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_producto.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_producto.FormattingEnabled = true;
+            this.cbo_producto.Location = new System.Drawing.Point(84, 42);
+            this.cbo_producto.Name = "cbo_producto";
+            this.cbo_producto.Size = new System.Drawing.Size(132, 24);
+            this.cbo_producto.TabIndex = 210;
+            // 
+            // txt_ingreso
+            // 
+            this.txt_ingreso.Location = new System.Drawing.Point(432, 42);
+            this.txt_ingreso.Name = "txt_ingreso";
+            this.txt_ingreso.Size = new System.Drawing.Size(102, 21);
+            this.txt_ingreso.TabIndex = 204;
+            this.txt_ingreso.TextChanged += new System.EventHandler(this.txt_ingreso_TextChanged);
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(29, 101);
+            this.label3.Location = new System.Drawing.Point(332, 44);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(56, 13);
-            this.label3.TabIndex = 199;
-            this.label3.Text = "Ubicacion:";
+            this.label3.Size = new System.Drawing.Size(83, 13);
+            this.label3.TabIndex = 201;
+            this.label3.Text = "Fecha_Ingreso:";
             // 
-            // dgv_bodega
+            // label2
             // 
-            this.dgv_bodega.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_bodega.Location = new System.Drawing.Point(23, 133);
-            this.dgv_bodega.Name = "dgv_bodega";
-            this.dgv_bodega.Size = new System.Drawing.Size(664, 150);
-            this.dgv_bodega.TabIndex = 198;
-            // 
-            // txt_nombre
-            // 
-            this.txt_nombre.Location = new System.Drawing.Point(91, 60);
-            this.txt_nombre.Name = "txt_nombre";
-            this.txt_nombre.Size = new System.Drawing.Size(291, 21);
-            this.txt_nombre.TabIndex = 204;
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(27, 75);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(47, 13);
+            this.label2.TabIndex = 200;
+            this.label2.Text = "Bodega:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(29, 63);
+            this.label1.Location = new System.Drawing.Point(27, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 205;
-            this.label1.Text = "Nombre:";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 199;
+            this.label1.Text = "Producto:";
             // 
-            // inventario_bodega
+            // dgv_existencia
+            // 
+            this.dgv_existencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_existencia.Location = new System.Drawing.Point(18, 135);
+            this.dgv_existencia.Name = "dgv_existencia";
+            this.dgv_existencia.Size = new System.Drawing.Size(516, 112);
+            this.dgv_existencia.TabIndex = 198;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(27, 108);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 214;
+            this.label5.Text = "Proveedor:";
+            // 
+            // cbo_proveedor
+            // 
+            this.cbo_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_proveedor.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_proveedor.FormattingEnabled = true;
+            this.cbo_proveedor.Location = new System.Drawing.Point(84, 102);
+            this.cbo_proveedor.Name = "cbo_proveedor";
+            this.cbo_proveedor.Size = new System.Drawing.Size(132, 24);
+            this.cbo_proveedor.TabIndex = 215;
+            // 
+            // frm_existencia
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(819, 409);
+            this.ClientSize = new System.Drawing.Size(851, 352);
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.panel1);
-            this.Name = "inventario_bodega";
-            this.Text = "inventario_bodega";
-            this.Load += new System.EventHandler(this.inventario_bodega_Load);
+            this.Name = "frm_existencia";
+            this.Tag = "119";
+            this.Text = "frm_existencia";
+            this.Load += new System.EventHandler(this.frm_existencia_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_bodega)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_existencia)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -361,10 +428,16 @@
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_siguiente;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.DataGridView dgv_bodega;
-        private System.Windows.Forms.TextBox txt_ubicacion;
+        public System.Windows.Forms.ComboBox cbo_bodega;
+        public System.Windows.Forms.ComboBox cbo_producto;
+        private System.Windows.Forms.TextBox txt_ingreso;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txt_nombre;
+        private System.Windows.Forms.DataGridView dgv_existencia;
+        private System.Windows.Forms.TextBox txt_cantidad;
+        private System.Windows.Forms.Label label4;
+        public System.Windows.Forms.ComboBox cbo_proveedor;
+        private System.Windows.Forms.Label label5;
     }
 }
