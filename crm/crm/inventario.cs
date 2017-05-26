@@ -87,7 +87,7 @@ namespace crm
             negocio cnegocio = new negocio();                       //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
             producto.nombre = txt_nombre.Text; //Llenamos el objeto persona con la informacion de los cuadros de texto/
             producto.descripcion = txt_descripcion.Text;
-            producto.marca = Convert.ToInt32(cbo_cat.SelectedIndex + 1);
+            producto.marca = Convert.ToInt32(cbo_marca.SelectedIndex + 1);
             producto.precio = Convert.ToDouble(txt_precio.Text);
             producto.categoria = Convert.ToInt32(cbo_cat.SelectedIndex + 1);
             producto.porcentaje = Convert.ToInt32(txt_comision.Text);
@@ -155,7 +155,7 @@ namespace crm
         private void btn_actualizar_Click(object sender, EventArgs e)
         {
             negocio cnegocio = new negocio();           //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
-            dgv_producto.DataSource = cnegocio.consultar();
+            dgv_producto.DataSource = cnegocio.consultaprod();
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)

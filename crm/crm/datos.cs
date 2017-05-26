@@ -94,6 +94,24 @@ namespace crm
 
         } //insertar bodega
 
+        public void insertarmarca(string nombre, int porcentaje)
+        {
+            try
+            {
+                mySqlComando = new OdbcCommand(
+                string.Format("Insert into marca (nombre_marca, porcentaje) values ('{0}','{1}')", nombre, porcentaje),
+                Conexion.ObtenerConexion()
+                );
+                mySqlComando.ExecuteNonQuery();                 //se ejecuta el query
+                MessageBox.Show("Se inserto con exito");        //si el try-catch no encontro algun error se muestra el mensaje de transaccion exitosa
+            }
+            catch (OdbcException e)
+            {
+                MessageBox.Show("Error de insercion");          //si el try-catch encontro algun error indica mensaje de fracaso
+            }
+
+        } //insertar marca
+
 
         public static DataTable ObtenerCat()
         {
@@ -182,6 +200,29 @@ namespace crm
             }
 
             return dtProducto; //retornamos el sqlDataAdaptor con los datos del query
+        } //mostrar registros
+
+        public static DataTable ObtenerProductos()
+        {
+
+            DataTable dtProductos = new DataTable();         //se crea el objeto dtProducto
+            try
+            {
+                mySqlComando = new OdbcCommand(
+                     string.Format("SELECT producto.id_producto AS producto, marca.nombre_marca AS marca, producto.nombre AS nombre, producto.descripcion AS descripcion, producto.precio_unidad AS precio, categoria.nombre AS categoria, producto.cporcentaje AS comision FROM producto INNER JOIN marca INNER JOIN categoria ON marca.id_marca = producto.id_marca AND categoria.id = producto.id_categoria"),
+                     Conexion.ObtenerConexion()
+                 );                                                  //se realiza el query para la consulta de todos los registros de la tabla persona           
+                mySqlDAdAdaptador = new OdbcDataAdapter();          //se crea un sqlDataAdaptor 
+                mySqlDAdAdaptador.SelectCommand = mySqlComando;      //ejecutamos el query de consulta
+                mySqlDAdAdaptador.Fill(dtProductos);                 //poblamos el sqlDataAdaptor con el resultado del query
+
+            }
+            catch (Exception Ex)
+            {
+                MessageBox.Show("No es posible obtener el registro", "Error al Realizar la Consulta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+
+            return dtProductos; //retornamos el sqlDataAdaptor con los datos del query
         } //mostrar registros
 
         public static DataTable ObtenerRegistrosbod()

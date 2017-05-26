@@ -804,6 +804,12 @@
   <data name="ingresoCategoriaToolStripMenuItem.Text" xml:space="preserve">
     <value>Ingreso Categoria</value>
   </data>
+  <data name="marcaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>169, 22</value>
+  </data>
+  <data name="marcaToolStripMenuItem.Text" xml:space="preserve">
+    <value>Marca</value>
+  </data>
   <data name="productosToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAABfRJREFUeF7t
@@ -842,25 +848,25 @@
     <value>Productos</value>
   </data>
   <data name="clientesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Clientes</value>
   </data>
   <data name="empresaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="empresaToolStripMenuItem.Text" xml:space="preserve">
     <value>Empresa</value>
   </data>
   <data name="empleadosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="empleadosToolStripMenuItem.Text" xml:space="preserve">
     <value>Empleados</value>
   </data>
   <data name="monedaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>132, 22</value>
+    <value>152, 22</value>
   </data>
   <data name="monedaToolStripMenuItem.Text" xml:space="preserve">
     <value>Moneda</value>
@@ -1387,6 +1393,12 @@
     <value>empleadoToolStripMenuItem</value>
   </data>
   <data name="&gt;&gt;empleadoToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;marcaToolStripMenuItem.Name" xml:space="preserve">
+    <value>marcaToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;marcaToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

@@ -80,7 +80,7 @@
             this.txt_usuario.Name = "txt_usuario";
             this.txt_usuario.Size = new System.Drawing.Size(146, 20);
             this.txt_usuario.TabIndex = 12;
-            this.txt_usuario.Text = "Marvin";
+            this.txt_usuario.Text = "MarioYuque";
             // 
             // btn_logear
             // 

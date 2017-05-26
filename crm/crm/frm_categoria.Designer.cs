@@ -297,6 +297,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel1);
             this.Name = "frm_categoria";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Categoria";
             this.Load += new System.EventHandler(this.frm_categoria_Load);
             this.panel1.ResumeLayout(false);

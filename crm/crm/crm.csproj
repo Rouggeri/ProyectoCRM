@@ -330,6 +330,12 @@
     <Compile Include="frm_existencia.Designer.cs">
       <DependentUpon>frm_existencia.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_marca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_marca.Designer.cs">
+      <DependentUpon>frm_marca.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_meta_mantenimiento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -552,6 +558,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frm_existencia.resx">
       <DependentUpon>frm_existencia.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_marca.resx">
+      <DependentUpon>frm_marca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frm_meta_mantenimiento.resx">
       <DependentUpon>frm_meta_mantenimiento.cs</DependentUpon>

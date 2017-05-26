@@ -91,9 +91,27 @@ namespace crm
             }
         }
 
+        public void InsertarMarca(Marca marca)
+        {
+            if (string.IsNullOrWhiteSpace(marca.nombre) || string.IsNullOrWhiteSpace(Convert.ToString(marca.porcentaje)))
+            {
+                MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
+            }
+            else
+            {
+                datos cdatos = new datos();     //Se crea un objeto de capa de datos
+                cdatos.insertarmarca(marca.nombre, marca.porcentaje);
+            }
+        }
+
         public System.Data.DataTable consultar()
         {
             return datos.ObtenerRegistros();        //se llama la funcion ObtenerRegistros
+        }
+
+        public System.Data.DataTable consultaprod()
+        {
+            return datos.ObtenerProductos();        //se llama la funcion ObtenerRegistros
         }
 
         public System.Data.DataTable consultarbod()

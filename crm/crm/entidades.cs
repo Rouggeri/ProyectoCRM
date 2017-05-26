@@ -46,6 +46,22 @@ namespace crm
             }
         } //class categoria
 
+        public class Marca
+        {
+            public int codigo { get; set; }       //ATRIBUTOS DEL OBJETO MARCA
+            public string nombre { get; set; }
+            public int porcentaje { get; set; }
+
+            public Marca() { }                   //CONSTRUCTOR VACIO
+
+            public Marca(int codigo, string nombre, int porcentaje)      //CONSTRUCTOR CON PARAMETROS
+            {
+                this.codigo = codigo;
+                this.nombre = nombre;
+                this.porcentaje = porcentaje;
+            }
+        } //class marca
+
         public class Bodega
         {
             public string codigo { get; set; }       //ATRIBUTOS DEL OBJETO BODEGA

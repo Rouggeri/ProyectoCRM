@@ -867,5 +867,11 @@ namespace crm
             frm_categoria cat = new frm_categoria();
             cat.Show();
         }
+
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_marca m = new frm_marca();
+            m.Show();
+        }
     }
 }

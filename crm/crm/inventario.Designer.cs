@@ -43,6 +43,7 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cbo_marca = new System.Windows.Forms.ComboBox();
             this.txt_comision = new System.Windows.Forms.TextBox();
             this.txt_precio = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -55,7 +56,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_producto = new System.Windows.Forms.DataGridView();
             this.cbo_cat = new System.Windows.Forms.ComboBox();
-            this.cbo_marca = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -305,6 +305,16 @@
             this.groupControl1.Text = "Información de Producto";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
+            // cbo_marca
+            // 
+            this.cbo_marca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_marca.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_marca.FormattingEnabled = true;
+            this.cbo_marca.Location = new System.Drawing.Point(87, 75);
+            this.cbo_marca.Name = "cbo_marca";
+            this.cbo_marca.Size = new System.Drawing.Size(132, 24);
+            this.cbo_marca.TabIndex = 210;
+            // 
             // txt_comision
             // 
             this.txt_comision.Location = new System.Drawing.Point(527, 108);
@@ -406,16 +416,6 @@
             this.cbo_cat.Name = "cbo_cat";
             this.cbo_cat.Size = new System.Drawing.Size(132, 24);
             this.cbo_cat.TabIndex = 14;
-            // 
-            // cbo_marca
-            // 
-            this.cbo_marca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_marca.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_marca.FormattingEnabled = true;
-            this.cbo_marca.Location = new System.Drawing.Point(87, 75);
-            this.cbo_marca.Name = "cbo_marca";
-            this.cbo_marca.Size = new System.Drawing.Size(132, 24);
-            this.cbo_marca.TabIndex = 210;
             // 
             // inventario
             // 
