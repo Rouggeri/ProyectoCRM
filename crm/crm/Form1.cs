@@ -52,7 +52,7 @@ namespace crm
         frmListadoPrecio precios = new frmListadoPrecio();
         frm_abonos abono = new frm_abonos();
         BALANCE balance = new BALANCE();
-        frm_existencia exis = new frm_existencia();
+       
 
         private void LimpiarMDI()
         {
@@ -143,7 +143,7 @@ namespace crm
             precios = null;
             abono = null;
             balance = null;
-            exis = null;
+            //exis = null;
 
             if (ini == null)
             {
@@ -840,12 +840,16 @@ namespace crm
 
         private void frm_existencia_FormClosed(object sender, FormClosedEventArgs e)
         {
-            exis = null;
+            //exis = null;
         }
 
         private void ordenDeCompraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "119");
+
+            frm_existencia ct = new frm_existencia();
+            ct.Show();
+
+            /*DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "119");
             if (dt.Rows.Count > 0)
             {
                 //ClearAllMDIs();
@@ -859,7 +863,7 @@ namespace crm
                     exis.Show();
                 }
             }
-            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
+            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }*/
         }
 
         private void ingresoCategoriaToolStripMenuItem_Click(object sender, EventArgs e)
