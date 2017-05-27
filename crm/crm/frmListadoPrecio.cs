@@ -19,8 +19,7 @@ namespace crm
         public frmListadoPrecio()
         {
             InitializeComponent();
-            llenar_encabezado();
-            llenarcbo();
+            
         }
         string id_form = "118";
 
@@ -223,7 +222,8 @@ namespace crm
         private void frmListadoPrecio_Load(object sender, EventArgs e)
         {
             cbo_catalogo.DropDownStyle = ComboBoxStyle.DropDownList;
-
+            llenar_encabezado();
+            llenarcbo();
             cbo_categoria.Enabled = false;
             cbo_marca.Enabled = false;
 
