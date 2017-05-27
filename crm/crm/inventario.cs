@@ -17,34 +17,44 @@ namespace crm
         public inventario()
         {
             InitializeComponent();
+            llenarmarca();
+            llenarcbo();
+            limpiar();
+            deshabilitar();
         }
+
+       
 
         private void limpiar()
         {
             txt_nombre.Clear();
-            txt_existencia.Clear();
-            txt_marca.Clear();
+            txt_descripcion.Clear();
+            //txt_marca.Clear();
             txt_precio.Clear();
             //txt_categoria.Clear();
-            txt_fecha.Clear();
+            txt_comision.Clear();
 
         }
 
         private void habilitar()
         {
             txt_nombre.Enabled = true;
-            txt_marca.Enabled = true;
-            txt_existencia.Enabled = true;
+            cbo_marca.Enabled = true;
+            txt_descripcion.Enabled = true;
             txt_precio.Enabled = true;
+            txt_comision.Enabled = true;
+            cbo_cat.Enabled = true;
             //txt_categoria.Enabled = true;
         }
 
         private void deshabilitar()
         {
             txt_nombre.Enabled = false;
-            txt_marca.Enabled = false;
-            txt_existencia.Enabled = false;
+            cbo_marca.Enabled = false;
+            txt_descripcion.Enabled = false;
             txt_precio.Enabled = false;
+            txt_comision.Enabled = false;
+            cbo_cat.Enabled = false;
             //txt_categoria.Enabled = false;
         }
 
@@ -54,8 +64,15 @@ namespace crm
             negocio cnegocio = new negocio();
             cbo_cat.ValueMember = "id";
             cbo_cat.DisplayMember = "nombre";
-            cbo_cat.DataSource = cnegocio.consultacat();
-            txt_fecha.Enabled = false;
+            cbo_cat.DataSource = cnegocio.consultacat(); 
+        }
+
+        private void llenarmarca()
+        {
+            negocio cnegocio = new negocio();
+            cbo_marca.ValueMember = "id_marca";
+            cbo_marca.DisplayMember = "nombre_marca";
+            cbo_marca.DataSource = cnegocio.consultamarca();
         }
 
         private void btn_nuevo_Click(object sender, EventArgs e)
@@ -68,17 +85,15 @@ namespace crm
         {
             entidades.Producto producto = new entidades.Producto();  //Creamos un objeto de la capa de Entidades para poder acceder a sus objetos
             negocio cnegocio = new negocio();                       //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
-            producto.nombre = txt_nombre.Text;                                //Llenamos el objeto persona con la informacion de los cuadros de texto/
-            producto.marca = txt_marca.Text;
-            producto.existencia = Convert.ToInt32(txt_existencia.Text);
+            producto.nombre = txt_nombre.Text; //Llenamos el objeto persona con la informacion de los cuadros de texto/
+            producto.descripcion = txt_descripcion.Text;
+            producto.marca = Convert.ToInt32(cbo_marca.SelectedIndex + 1);
             producto.precio = Convert.ToDouble(txt_precio.Text);
-            //producto.categoria = Convert.ToInt32(txt_categoria.Text);
-            producto.ingreso = DateTime.Today;
             producto.categoria = Convert.ToInt32(cbo_cat.SelectedIndex + 1);
+            producto.porcentaje = Convert.ToInt32(txt_comision.Text);
             cnegocio.InsertarProducto(producto);                                    //Llamamos a la funcion Ninsertar a traves del objeto de la capa de negocio y le enviamos como parametro nuestro objeto persona
             limpiar();
             deshabilitar();
-
         }
 
         private void btn_eliminar_Click(object sender, EventArgs e)
@@ -123,6 +138,33 @@ namespace crm
         }
 
         private void inventario_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_precio_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_actualizar_Click(object sender, EventArgs e)
+        {
+            negocio cnegocio = new negocio();           //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
+            dgv_producto.DataSource = cnegocio.consultaprod();
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+            limpiar();
+            deshabilitar();
+        }
+
+        private void groupControl1_Paint(object sender, PaintEventArgs e)
         {
 
         }

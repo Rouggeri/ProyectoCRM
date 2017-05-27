@@ -43,13 +43,13 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
-            this.txt_fecha = new System.Windows.Forms.TextBox();
+            this.cbo_marca = new System.Windows.Forms.ComboBox();
+            this.txt_comision = new System.Windows.Forms.TextBox();
             this.txt_precio = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.txt_existencia = new System.Windows.Forms.TextBox();
-            this.txt_marca = new System.Windows.Forms.TextBox();
+            this.txt_descripcion = new System.Windows.Forms.TextBox();
             this.txt_nombre = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -76,7 +76,7 @@
             this.panel1.Controls.Add(this.btn_editar);
             this.panel1.Controls.Add(this.btn_eliminar);
             this.panel1.Controls.Add(this.btn_siguiente);
-            this.panel1.Location = new System.Drawing.Point(56, 4);
+            this.panel1.Location = new System.Drawing.Point(52, 4);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(630, 77);
@@ -130,6 +130,7 @@
             this.btn_cancelar.Size = new System.Drawing.Size(56, 59);
             this.btn_cancelar.TabIndex = 176;
             this.btn_cancelar.UseVisualStyleBackColor = true;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_ultimo
             // 
@@ -163,6 +164,7 @@
             this.btn_actualizar.Size = new System.Drawing.Size(56, 59);
             this.btn_actualizar.TabIndex = 177;
             this.btn_actualizar.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
             // btn_guardar
             // 
@@ -283,13 +285,13 @@
             // 
             // groupControl1
             // 
-            this.groupControl1.Controls.Add(this.txt_fecha);
+            this.groupControl1.Controls.Add(this.cbo_marca);
+            this.groupControl1.Controls.Add(this.txt_comision);
             this.groupControl1.Controls.Add(this.txt_precio);
             this.groupControl1.Controls.Add(this.label6);
             this.groupControl1.Controls.Add(this.label5);
             this.groupControl1.Controls.Add(this.label4);
-            this.groupControl1.Controls.Add(this.txt_existencia);
-            this.groupControl1.Controls.Add(this.txt_marca);
+            this.groupControl1.Controls.Add(this.txt_descripcion);
             this.groupControl1.Controls.Add(this.txt_nombre);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label2);
@@ -301,34 +303,46 @@
             this.groupControl1.Size = new System.Drawing.Size(716, 299);
             this.groupControl1.TabIndex = 200;
             this.groupControl1.Text = "Información de Producto";
+            this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
             // 
-            // txt_fecha
+            // cbo_marca
             // 
-            this.txt_fecha.Location = new System.Drawing.Point(397, 105);
-            this.txt_fecha.Name = "txt_fecha";
-            this.txt_fecha.Size = new System.Drawing.Size(121, 21);
-            this.txt_fecha.TabIndex = 209;
+            this.cbo_marca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_marca.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_marca.FormattingEnabled = true;
+            this.cbo_marca.Location = new System.Drawing.Point(87, 75);
+            this.cbo_marca.Name = "cbo_marca";
+            this.cbo_marca.Size = new System.Drawing.Size(132, 24);
+            this.cbo_marca.TabIndex = 210;
+            // 
+            // txt_comision
+            // 
+            this.txt_comision.Location = new System.Drawing.Point(527, 108);
+            this.txt_comision.Name = "txt_comision";
+            this.txt_comision.Size = new System.Drawing.Size(121, 21);
+            this.txt_comision.TabIndex = 209;
             // 
             // txt_precio
             // 
-            this.txt_precio.Location = new System.Drawing.Point(397, 41);
+            this.txt_precio.Location = new System.Drawing.Point(527, 41);
             this.txt_precio.Name = "txt_precio";
             this.txt_precio.Size = new System.Drawing.Size(121, 21);
             this.txt_precio.TabIndex = 208;
+            this.txt_precio.TextChanged += new System.EventHandler(this.txt_precio_TextChanged);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(330, 114);
+            this.label6.Location = new System.Drawing.Point(445, 114);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(40, 13);
+            this.label6.Size = new System.Drawing.Size(75, 13);
             this.label6.TabIndex = 207;
-            this.label6.Text = "Fecha:";
+            this.label6.Text = "Comision (%):";
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(330, 75);
+            this.label5.Location = new System.Drawing.Point(445, 75);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 13);
             this.label5.TabIndex = 206;
@@ -337,25 +351,18 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(330, 44);
+            this.label4.Location = new System.Drawing.Point(445, 44);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(39, 13);
             this.label4.TabIndex = 205;
             this.label4.Text = "Costo:";
             // 
-            // txt_existencia
+            // txt_descripcion
             // 
-            this.txt_existencia.Location = new System.Drawing.Point(87, 106);
-            this.txt_existencia.Name = "txt_existencia";
-            this.txt_existencia.Size = new System.Drawing.Size(121, 21);
-            this.txt_existencia.TabIndex = 204;
-            // 
-            // txt_marca
-            // 
-            this.txt_marca.Location = new System.Drawing.Point(87, 72);
-            this.txt_marca.Name = "txt_marca";
-            this.txt_marca.Size = new System.Drawing.Size(121, 21);
-            this.txt_marca.TabIndex = 203;
+            this.txt_descripcion.Location = new System.Drawing.Point(87, 106);
+            this.txt_descripcion.Name = "txt_descripcion";
+            this.txt_descripcion.Size = new System.Drawing.Size(325, 21);
+            this.txt_descripcion.TabIndex = 204;
             // 
             // txt_nombre
             // 
@@ -369,9 +376,10 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(27, 108);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 13);
+            this.label3.Size = new System.Drawing.Size(65, 13);
             this.label3.TabIndex = 201;
-            this.label3.Text = "Existencia:";
+            this.label3.Text = "Descripcion:";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -404,7 +412,7 @@
             this.cbo_cat.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_cat.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_cat.FormattingEnabled = true;
-            this.cbo_cat.Location = new System.Drawing.Point(397, 70);
+            this.cbo_cat.Location = new System.Drawing.Point(527, 70);
             this.cbo_cat.Name = "cbo_cat";
             this.cbo_cat.Size = new System.Drawing.Size(132, 24);
             this.cbo_cat.TabIndex = 14;
@@ -444,18 +452,18 @@
         private System.Windows.Forms.Button btn_eliminar;
         private System.Windows.Forms.Button btn_siguiente;
         private DevExpress.XtraEditors.GroupControl groupControl1;
-        private System.Windows.Forms.TextBox txt_fecha;
+        private System.Windows.Forms.TextBox txt_comision;
         private System.Windows.Forms.TextBox txt_precio;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox txt_existencia;
-        private System.Windows.Forms.TextBox txt_marca;
+        private System.Windows.Forms.TextBox txt_descripcion;
         private System.Windows.Forms.TextBox txt_nombre;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dgv_producto;
         public System.Windows.Forms.ComboBox cbo_cat;
+        public System.Windows.Forms.ComboBox cbo_marca;
     }
 }
