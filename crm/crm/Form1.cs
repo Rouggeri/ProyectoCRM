@@ -53,6 +53,7 @@ namespace crm
         frm_abonos abono = new frm_abonos();
         BALANCE balance = new BALANCE();
         frm_existencia exis = new frm_existencia();
+        frm_compra compra = new frm_compra();
 
         private void LimpiarMDI()
         {
@@ -144,6 +145,7 @@ namespace crm
             abono = null;
             balance = null;
             exis = null;
+            compra = null;
 
             if (ini == null)
             {
@@ -872,6 +874,30 @@ namespace crm
         {
             frm_marca m = new frm_marca();
             m.Show();
+        }
+
+        private void frm_compra_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            compra = null;
+        }
+
+        private void comprasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            DataTable dt = ObtenerPermisos.Permisos(seguridad.Conexion.User, "122");
+            if (dt.Rows.Count > 0)
+            {
+                //ClearAllMDIs();
+                LimpiarMDI();
+                if (compra == null)
+                {
+                    compra = new frm_compra();
+                    compra.MdiParent = this;
+
+                    compra.FormClosed += new FormClosedEventHandler(frm_compra_FormClosed);
+                    compra.Show();
+                }
+            }
+            else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
         }
     }
 }
