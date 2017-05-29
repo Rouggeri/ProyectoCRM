@@ -13,6 +13,8 @@ namespace crm
     public partial class frm_existencia : Form
     {
         string id_form = "119";
+        Int32 idprod;
+        Int32 idmarc;
         public frm_existencia()
         {
             InitializeComponent();
@@ -56,16 +58,7 @@ namespace crm
 
             dgv_existencia.Columns.Add(c5);
         }
-        
-
-        private void llenarprod()
-        {
-            negocio cnegocio = new negocio();
-            cbo_producto.ValueMember = "id";
-            cbo_producto.DisplayMember = "nombre";
-            cbo_producto.DataSource = cnegocio.consultar();
-        }
-
+       
         private void llenarbod()
         {
             negocio cnegocio = new negocio();
@@ -86,10 +79,11 @@ namespace crm
         {
             txt_ingreso.Text = Convert.ToString(DateTime.Today);
             //llenar_encabezado();
-            llenarprod();
+           
             llenarbod();
             llenarprov();
             txt_ingreso.Enabled = false;
+            txt_prod.Enabled = false;
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
@@ -102,7 +96,8 @@ namespace crm
             entidades.Existencia existencia = new entidades.Existencia();  //Creamos un objeto de la capa de Entidades para poder acceder a sus objetos
             negocio cnegocio = new negocio();                       //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
             existencia.cantidad = Convert.ToInt32(txt_cantidad.Text); //Llenamos el objeto persona con la informacion de los cuadros de texto/
-            existencia.producto = Convert.ToInt32(cbo_producto.SelectedIndex + 1);
+            existencia.producto = idprod;
+            existencia.marca = idmarc;
             existencia.bodega = Convert.ToInt32(cbo_bodega.SelectedIndex + 1);
             existencia.ingreso = Convert.ToString(DateTime.Today);
             existencia.proveedor = Convert.ToInt32(cbo_proveedor.SelectedIndex + 1);
@@ -118,6 +113,34 @@ namespace crm
         private void txt_ingreso_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        public entidades.Producto clsprod { get; set; }
+        private void btn_bproducto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+
+                frmbuscproducto buscl = new frmbuscproducto();
+                buscl.ShowDialog();
+
+
+                if (buscl.busq != null)
+                {
+                    clsprod = buscl.busq;
+
+                    txt_prod.Text = Convert.ToString(buscl.busq.nombre);
+                    idprod = Convert.ToInt16(buscl.busq.codigo);
+                    idmarc = Convert.ToInt16(buscl.busq.marca);
+                   
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }

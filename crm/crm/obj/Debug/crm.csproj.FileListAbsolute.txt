@@ -789,3 +789,4 @@ C:\Users\salaz\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.exe.licenses
 C:\Users\salaz\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\en\crm.resources.dll
 C:\Users\salaz\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.frm_compra.resources
 C:\Users\salaz\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.frmbuscproducto.resources
+C:\Users\salaz\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.frm_tprecio.resources

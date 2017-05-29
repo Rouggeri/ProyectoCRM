@@ -358,46 +358,52 @@
     <value>Estadisticas</value>
   </data>
   <data name="ingresoProductoToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="ingresoProductoToolStripMenuItem.Text" xml:space="preserve">
     <value>Ingreso producto</value>
   </data>
   <data name="bodegaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="bodegaToolStripMenuItem.Text" xml:space="preserve">
     <value>Bodega</value>
   </data>
   <data name="listaDePrecioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="listaDePrecioToolStripMenuItem.Text" xml:space="preserve">
     <value>Lista de precio</value>
   </data>
   <data name="ordenDeCompraToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="ordenDeCompraToolStripMenuItem.Text" xml:space="preserve">
-    <value>Orden de Compra</value>
+    <value>Existencias</value>
   </data>
   <data name="ingresoCategoriaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="ingresoCategoriaToolStripMenuItem.Text" xml:space="preserve">
     <value>Ingreso Categoria</value>
   </data>
   <data name="marcaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="marcaToolStripMenuItem.Text" xml:space="preserve">
     <value>Marca</value>
   </data>
   <data name="comprasToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>169, 22</value>
+    <value>174, 22</value>
   </data>
   <data name="comprasToolStripMenuItem.Text" xml:space="preserve">
     <value>Compras</value>
+  </data>
+  <data name="catalogoDePrecioToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 22</value>
+  </data>
+  <data name="catalogoDePrecioToolStripMenuItem.Text" xml:space="preserve">
+    <value>Catalogo de precio</value>
   </data>
   <data name="productosToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -1012,25 +1018,25 @@
     <value>Metas</value>
   </data>
   <data name="clientesToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>132, 22</value>
   </data>
   <data name="clientesToolStripMenuItem.Text" xml:space="preserve">
     <value>Clientes</value>
   </data>
   <data name="empresaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>132, 22</value>
   </data>
   <data name="empresaToolStripMenuItem.Text" xml:space="preserve">
     <value>Empresa</value>
   </data>
   <data name="empleadosToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>132, 22</value>
   </data>
   <data name="empleadosToolStripMenuItem.Text" xml:space="preserve">
     <value>Empleados</value>
   </data>
   <data name="monedaToolStripMenuItem.Size" type="System.Drawing.Size, System.Drawing">
-    <value>152, 22</value>
+    <value>132, 22</value>
   </data>
   <data name="monedaToolStripMenuItem.Text" xml:space="preserve">
     <value>Moneda</value>
@@ -1293,6 +1299,12 @@
   <data name="&gt;&gt;marcaToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="&gt;&gt;comprasToolStripMenuItem.Name" xml:space="preserve">
+    <value>comprasToolStripMenuItem</value>
+  </data>
+  <data name="&gt;&gt;comprasToolStripMenuItem.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;mantenimientosToolStripMenuItem.Name" xml:space="preserve">
     <value>mantenimientosToolStripMenuItem</value>
   </data>
@@ -1407,10 +1419,10 @@
   <data name="&gt;&gt;empleadoToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;comprasToolStripMenuItem.Name" xml:space="preserve">
-    <value>comprasToolStripMenuItem</value>
+  <data name="&gt;&gt;catalogoDePrecioToolStripMenuItem.Name" xml:space="preserve">
+    <value>catalogoDePrecioToolStripMenuItem</value>
   </data>
-  <data name="&gt;&gt;comprasToolStripMenuItem.Type" xml:space="preserve">
+  <data name="&gt;&gt;catalogoDePrecioToolStripMenuItem.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripMenuItem, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">

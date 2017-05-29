@@ -899,5 +899,11 @@ namespace crm
             }
             else { MessageBox.Show("No posee los permisos necesarios para acceder al modulo"); }
         }
+
+        private void catalogoDePrecioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frm_tprecio tp = new frm_tprecio();
+            tp.Show();
+        }
     }
 }

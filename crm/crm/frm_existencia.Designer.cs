@@ -43,17 +43,18 @@
             this.btn_eliminar = new System.Windows.Forms.Button();
             this.btn_siguiente = new System.Windows.Forms.Button();
             this.groupControl1 = new DevExpress.XtraEditors.GroupControl();
+            this.cbo_proveedor = new System.Windows.Forms.ComboBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.txt_cantidad = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cbo_bodega = new System.Windows.Forms.ComboBox();
-            this.cbo_producto = new System.Windows.Forms.ComboBox();
             this.txt_ingreso = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgv_existencia = new System.Windows.Forms.DataGridView();
-            this.label5 = new System.Windows.Forms.Label();
-            this.cbo_proveedor = new System.Windows.Forms.ComboBox();
+            this.txt_prod = new System.Windows.Forms.TextBox();
+            this.btn_bproducto = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
@@ -276,12 +277,13 @@
             // 
             // groupControl1
             // 
+            this.groupControl1.Controls.Add(this.btn_bproducto);
+            this.groupControl1.Controls.Add(this.txt_prod);
             this.groupControl1.Controls.Add(this.cbo_proveedor);
             this.groupControl1.Controls.Add(this.label5);
             this.groupControl1.Controls.Add(this.txt_cantidad);
             this.groupControl1.Controls.Add(this.label4);
             this.groupControl1.Controls.Add(this.cbo_bodega);
-            this.groupControl1.Controls.Add(this.cbo_producto);
             this.groupControl1.Controls.Add(this.txt_ingreso);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label2);
@@ -293,6 +295,25 @@
             this.groupControl1.TabIndex = 201;
             this.groupControl1.Text = "Información de Producto";
             this.groupControl1.Paint += new System.Windows.Forms.PaintEventHandler(this.groupControl1_Paint);
+            // 
+            // cbo_proveedor
+            // 
+            this.cbo_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbo_proveedor.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbo_proveedor.FormattingEnabled = true;
+            this.cbo_proveedor.Location = new System.Drawing.Point(87, 75);
+            this.cbo_proveedor.Name = "cbo_proveedor";
+            this.cbo_proveedor.Size = new System.Drawing.Size(132, 24);
+            this.cbo_proveedor.TabIndex = 215;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(20, 77);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(61, 13);
+            this.label5.TabIndex = 214;
+            this.label5.Text = "Proveedor:";
             // 
             // txt_cantidad
             // 
@@ -315,20 +336,10 @@
             this.cbo_bodega.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_bodega.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbo_bodega.FormattingEnabled = true;
-            this.cbo_bodega.Location = new System.Drawing.Point(84, 72);
+            this.cbo_bodega.Location = new System.Drawing.Point(87, 105);
             this.cbo_bodega.Name = "cbo_bodega";
             this.cbo_bodega.Size = new System.Drawing.Size(132, 24);
             this.cbo_bodega.TabIndex = 211;
-            // 
-            // cbo_producto
-            // 
-            this.cbo_producto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_producto.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_producto.FormattingEnabled = true;
-            this.cbo_producto.Location = new System.Drawing.Point(84, 42);
-            this.cbo_producto.Name = "cbo_producto";
-            this.cbo_producto.Size = new System.Drawing.Size(132, 24);
-            this.cbo_producto.TabIndex = 210;
             // 
             // txt_ingreso
             // 
@@ -350,7 +361,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(27, 75);
+            this.label2.Location = new System.Drawing.Point(34, 108);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(47, 13);
             this.label2.TabIndex = 200;
@@ -373,24 +384,23 @@
             this.dgv_existencia.Size = new System.Drawing.Size(516, 112);
             this.dgv_existencia.TabIndex = 198;
             // 
-            // label5
+            // txt_prod
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 108);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(61, 13);
-            this.label5.TabIndex = 214;
-            this.label5.Text = "Proveedor:";
+            this.txt_prod.Location = new System.Drawing.Point(87, 41);
+            this.txt_prod.Name = "txt_prod";
+            this.txt_prod.Size = new System.Drawing.Size(129, 21);
+            this.txt_prod.TabIndex = 216;
             // 
-            // cbo_proveedor
+            // btn_bproducto
             // 
-            this.cbo_proveedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_proveedor.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbo_proveedor.FormattingEnabled = true;
-            this.cbo_proveedor.Location = new System.Drawing.Point(84, 102);
-            this.cbo_proveedor.Name = "cbo_proveedor";
-            this.cbo_proveedor.Size = new System.Drawing.Size(132, 24);
-            this.cbo_proveedor.TabIndex = 215;
+            this.btn_bproducto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_bproducto.BackgroundImage")));
+            this.btn_bproducto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btn_bproducto.Location = new System.Drawing.Point(222, 40);
+            this.btn_bproducto.Name = "btn_bproducto";
+            this.btn_bproducto.Size = new System.Drawing.Size(29, 23);
+            this.btn_bproducto.TabIndex = 218;
+            this.btn_bproducto.UseVisualStyleBackColor = true;
+            this.btn_bproducto.Click += new System.EventHandler(this.btn_bproducto_Click);
             // 
             // frm_existencia
             // 
@@ -401,7 +411,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "frm_existencia";
             this.Tag = "119";
-            this.Text = "frm_existencia";
+            this.Text = "Existencias";
             this.Load += new System.EventHandler(this.frm_existencia_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
@@ -429,7 +439,6 @@
         private System.Windows.Forms.Button btn_siguiente;
         private DevExpress.XtraEditors.GroupControl groupControl1;
         public System.Windows.Forms.ComboBox cbo_bodega;
-        public System.Windows.Forms.ComboBox cbo_producto;
         private System.Windows.Forms.TextBox txt_ingreso;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -439,5 +448,7 @@
         private System.Windows.Forms.Label label4;
         public System.Windows.Forms.ComboBox cbo_proveedor;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.TextBox txt_prod;
+        private System.Windows.Forms.Button btn_bproducto;
     }
 }
