@@ -120,6 +120,7 @@
     <Compile Include="CapaDatosPersonas.cs" />
     <Compile Include="CapaNegociod.cs" />
     <Compile Include="Clsopbien.cs" />
+    <Compile Include="Clsoporden.cs" />
     <Compile Include="cls_grafica_pie.cs" />
     <Compile Include="cls_nombre_mes.cs" />
     <Compile Include="Conexion.cs" />
@@ -234,6 +235,12 @@
     </Compile>
     <Compile Include="Form_inicio.Designer.cs">
       <DependentUpon>Form_inicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmbuscorden.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmbuscorden.Designer.cs">
+      <DependentUpon>frmbuscorden.cs</DependentUpon>
     </Compile>
     <Compile Include="frmbuscproducto.cs">
       <SubType>Form</SubType>
@@ -526,6 +533,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form_inicio.resx">
       <DependentUpon>Form_inicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmbuscorden.resx">
+      <DependentUpon>frmbuscorden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmbuscproducto.resx">
       <DependentUpon>frmbuscproducto.cs</DependentUpon>

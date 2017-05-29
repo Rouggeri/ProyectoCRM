@@ -13,8 +13,19 @@ namespace crm
     public partial class frm_existencia : Form
     {
         string id_form = "119";
+        /******************************************/
         Int32 idprod;
         Int32 idmarc;
+        /*******************************************/
+        Int32 idcompra;
+        Int32 idproducto;
+        Int32 idmarca;
+        Int32 idproveedor;
+        Int32 cantidad;
+        String fecha;
+
+
+
         public frm_existencia()
         {
             InitializeComponent();
@@ -81,9 +92,13 @@ namespace crm
             //llenar_encabezado();
            
             llenarbod();
-            llenarprov();
             txt_ingreso.Enabled = false;
             txt_prod.Enabled = false;
+            txt_orden.Enabled = false;
+            btn_bproducto.Enabled = false;
+            cbo_proveedor.Enabled = false;
+            txt_cantidad.Enabled = false;
+
         }
 
         private void groupControl1_Paint(object sender, PaintEventArgs e)
@@ -91,7 +106,7 @@ namespace crm
 
         }
 
-        private void btn_guardar_Click(object sender, EventArgs e)
+        private void guardarnuevo()
         {
             entidades.Existencia existencia = new entidades.Existencia();  //Creamos un objeto de la capa de Entidades para poder acceder a sus objetos
             negocio cnegocio = new negocio();                       //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
@@ -102,6 +117,51 @@ namespace crm
             existencia.ingreso = Convert.ToString(DateTime.Today);
             existencia.proveedor = Convert.ToInt32(cbo_proveedor.SelectedIndex + 1);
             cnegocio.InsertarExistencia(existencia);
+        }
+
+        private void guardarexistente()
+        {
+            entidades.Existencia existencia = new entidades.Existencia();  //Creamos un objeto de la capa de Entidades para poder acceder a sus objetos
+            negocio cnegocio = new negocio();                       //Creamos un objeto de la capa de negocio para poder acceder a sus funciones
+            existencia.codigo = Convert.ToString(idcompra);
+            existencia.cantidad = cantidad; //Llenamos el objeto persona con la informacion de los cuadros de texto/
+            existencia.producto = idproducto;
+            existencia.marca = idmarca;
+            existencia.bodega = Convert.ToInt32(cbo_bodega.SelectedIndex + 1);
+            existencia.ingreso = fecha;
+            existencia.proveedor = idproveedor;
+            cnegocio.InsertarExistencia(existencia);
+        }
+
+        private void btn_guardar_Click(object sender, EventArgs e)
+        {
+            
+                if (check_correlativo.Checked)
+            {
+
+                btn_borden.Enabled = true;
+                cbo_bodega.Enabled = true;
+
+                guardarexistente();
+                            
+
+            }
+
+            else
+                        if (check_nuevo.Checked) {
+
+                txt_ingreso.Enabled = true;
+                txt_prod.Enabled = true;
+                btn_bproducto.Enabled = true;
+                cbo_proveedor.Enabled = true;
+                cbo_bodega.Enabled = true;
+                txt_cantidad.Enabled = true;
+                cbo_bodega.Enabled = true;
+
+                guardarnuevo(); }
+
+
+            
         }
 
         private void btn_actualizar_Click(object sender, EventArgs e)
@@ -141,6 +201,89 @@ namespace crm
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void check_marca_CheckedChanged(object sender, EventArgs e)
+        {
+            switch (check_correlativo.CheckState.ToString())
+            {
+                case "Checked":
+                    btn_bproducto.Enabled = false;
+                    cbo_proveedor.Enabled = false;
+                    txt_cantidad.Enabled = false;
+
+                    //llenarmarca();
+
+                    break;
+                case "Uncheked":
+                    //cbo_marca.Enabled = false;
+                    btn_bproducto.Enabled = true;
+                    cbo_proveedor.Enabled = true;
+                    txt_cantidad.Enabled = true;
+                    break;
+                default:
+                    //cbo_marca.Enabled = false;
+                    btn_bproducto.Enabled = true;
+                    cbo_proveedor.Enabled = true;
+                    txt_cantidad.Enabled = true;
+
+                    break;
+            }
+        }
+
+        
+        private void btn_borden_Click(object sender, EventArgs e)
+        {
+            existente();
+        }
+
+        public entidades.Orden clsord { get; set; }
+        private void existente()
+        {
+            try
+            {
+
+
+                frmbuscorden busco = new frmbuscorden();
+                busco.ShowDialog();
+
+
+                if (busco.busq != null)
+                {
+                    clsord = busco.busq;
+
+                    txt_orden.Text = Convert.ToString(busco.busq.codigo);
+                    idcompra = Convert.ToInt32(busco.busq.codigo);
+                    idmarca = busco.busq.marca;
+                    idproducto = busco.busq.producto;
+                    idproveedor = busco.busq.proveedor;
+                    cantidad = busco.busq.cantidad;
+                    fecha = Convert.ToString(DateTime.Today);
+
+                    MessageBox.Show(Convert.ToString(idcompra));
+                    MessageBox.Show(Convert.ToString(idproducto));
+                    MessageBox.Show(Convert.ToString(idmarca));
+                    MessageBox.Show(Convert.ToString(idproveedor));
+                    MessageBox.Show(Convert.ToString(cantidad));
+                    MessageBox.Show(Convert.ToString(fecha));
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void nuevo()
+        {
+
+        }
+
+        private void check_categoria_CheckedChanged(object sender, EventArgs e)
+        {
+            llenarprov();
         }
     }
 }

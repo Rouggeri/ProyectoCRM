@@ -790,3 +790,4 @@ C:\Users\salaz\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\en\crm.resources.d
 C:\Users\salaz\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.frm_compra.resources
 C:\Users\salaz\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.frmbuscproducto.resources
 C:\Users\salaz\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.frm_tprecio.resources
+C:\Users\salaz\Documents\GitHub\ProyectoCRM\crm\crm\obj\Debug\crm.frmbuscorden.resources

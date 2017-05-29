@@ -32,7 +32,7 @@ namespace crm
         {
             try
             {
-                dgv_bien.DataSource = Clsopbien.Buscar(txt_bien.Text);
+                dgv_bien.DataSource = Clsoporden.Buscar(txt_bien.Text);
             }
             catch (Exception ex)
             {
