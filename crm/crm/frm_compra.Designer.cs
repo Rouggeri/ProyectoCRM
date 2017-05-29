@@ -52,11 +52,11 @@
             this.txt_ingreso = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dgv_existencia = new System.Windows.Forms.DataGridView();
+            this.dgv_compra = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).BeginInit();
             this.groupControl1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_existencia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_compra)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -142,6 +142,7 @@
             this.btn_ultimo.Size = new System.Drawing.Size(30, 26);
             this.btn_ultimo.TabIndex = 181;
             this.btn_ultimo.UseVisualStyleBackColor = true;
+            this.btn_ultimo.Click += new System.EventHandler(this.btn_ultimo_Click);
             // 
             // btn_actualizar
             // 
@@ -158,6 +159,7 @@
             this.btn_actualizar.Size = new System.Drawing.Size(56, 59);
             this.btn_actualizar.TabIndex = 177;
             this.btn_actualizar.UseVisualStyleBackColor = true;
+            this.btn_actualizar.Click += new System.EventHandler(this.btn_actualizar_Click);
             // 
             // btn_guardar
             // 
@@ -174,6 +176,7 @@
             this.btn_guardar.Size = new System.Drawing.Size(58, 59);
             this.btn_guardar.TabIndex = 172;
             this.btn_guardar.UseVisualStyleBackColor = true;
+            this.btn_guardar.Click += new System.EventHandler(this.btn_guardar_Click);
             // 
             // btn_buscar
             // 
@@ -206,6 +209,7 @@
             this.btn_primero.Size = new System.Drawing.Size(30, 26);
             this.btn_primero.TabIndex = 180;
             this.btn_primero.UseVisualStyleBackColor = true;
+            this.btn_primero.Click += new System.EventHandler(this.btn_primero_Click);
             // 
             // btn_anterior
             // 
@@ -222,6 +226,7 @@
             this.btn_anterior.Size = new System.Drawing.Size(30, 26);
             this.btn_anterior.TabIndex = 178;
             this.btn_anterior.UseVisualStyleBackColor = true;
+            this.btn_anterior.Click += new System.EventHandler(this.btn_anterior_Click);
             // 
             // btn_editar
             // 
@@ -270,6 +275,7 @@
             this.btn_siguiente.Size = new System.Drawing.Size(30, 26);
             this.btn_siguiente.TabIndex = 179;
             this.btn_siguiente.UseVisualStyleBackColor = true;
+            this.btn_siguiente.Click += new System.EventHandler(this.btn_siguiente_Click);
             // 
             // groupControl1
             // 
@@ -282,7 +288,7 @@
             this.groupControl1.Controls.Add(this.txt_ingreso);
             this.groupControl1.Controls.Add(this.label3);
             this.groupControl1.Controls.Add(this.label1);
-            this.groupControl1.Controls.Add(this.dgv_existencia);
+            this.groupControl1.Controls.Add(this.dgv_compra);
             this.groupControl1.Location = new System.Drawing.Point(31, 87);
             this.groupControl1.Name = "groupControl1";
             this.groupControl1.Size = new System.Drawing.Size(607, 253);
@@ -368,13 +374,13 @@
             this.label1.TabIndex = 199;
             this.label1.Text = "Producto:";
             // 
-            // dgv_existencia
+            // dgv_compra
             // 
-            this.dgv_existencia.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_existencia.Location = new System.Drawing.Point(18, 135);
-            this.dgv_existencia.Name = "dgv_existencia";
-            this.dgv_existencia.Size = new System.Drawing.Size(516, 112);
-            this.dgv_existencia.TabIndex = 198;
+            this.dgv_compra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_compra.Location = new System.Drawing.Point(18, 135);
+            this.dgv_compra.Name = "dgv_compra";
+            this.dgv_compra.Size = new System.Drawing.Size(516, 112);
+            this.dgv_compra.TabIndex = 198;
             // 
             // frm_compra
             // 
@@ -384,13 +390,13 @@
             this.Controls.Add(this.groupControl1);
             this.Controls.Add(this.panel1);
             this.Name = "frm_compra";
-            this.Text = "frm_compra";
+            this.Text = "Orden de Compra";
             this.Load += new System.EventHandler(this.frm_compra_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.groupControl1)).EndInit();
             this.groupControl1.ResumeLayout(false);
             this.groupControl1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgv_existencia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_compra)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -419,7 +425,7 @@
         private System.Windows.Forms.TextBox txt_ingreso;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dgv_existencia;
+        private System.Windows.Forms.DataGridView dgv_compra;
         private System.Windows.Forms.Button btn_bproducto;
     }
 }

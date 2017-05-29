@@ -104,6 +104,19 @@ namespace crm
             }
         }
 
+        public void InsertarCompra(Compra compra)
+        {
+            if (string.IsNullOrWhiteSpace(Convert.ToString(compra.producto)) || string.IsNullOrWhiteSpace(Convert.ToString(compra.marca)) || string.IsNullOrWhiteSpace(Convert.ToString(compra.proveedor)) || string.IsNullOrWhiteSpace(Convert.ToString(compra.cantidad)) || string.IsNullOrWhiteSpace(compra.fecha))
+            {
+                MessageBox.Show("Hay campos que estan vacios");     //si hace falta algun campo no se realiza la transaccion
+            }
+            else
+            {
+                datos cdatos = new datos();     //Se crea un objeto de capa de datos
+                cdatos.insertarcompra(compra.producto, compra.marca, compra.proveedor, compra.cantidad, compra.fecha);
+            }
+        }
+
         public System.Data.DataTable consultar()
         {
             return datos.ObtenerRegistros();        //se llama la funcion ObtenerRegistros
@@ -142,6 +155,11 @@ namespace crm
         public System.Data.DataTable consultamarca()
         {
             return datos.ObtenerMarca();              //se llama la funcion ObtenerCat
+        }
+
+        public System.Data.DataTable consultacomp()
+        {
+            return datos.ObtenerCompra();              //se llama la funcion ObtenerCat
         }
 
         public void InsertarAbono(Abono abono)

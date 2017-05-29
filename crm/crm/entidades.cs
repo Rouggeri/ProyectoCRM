@@ -177,5 +177,30 @@ namespace crm
                 this.telefono = telefono;
             }
         }
+
+        public class Compra
+        {
+            public string codigo { get; set; }       //ATRIBUTOS DEL OBJETO PRODUCTO
+            public Int32 producto { get; set; }
+            public Int32 proveedor { get; set; }
+            public Int32 marca { get; set; }
+            public Int32 cantidad { get; set; }
+            public String fecha { get; set; }
+            
+
+            public Compra() { }                   //CONSTRUCTOR VACIO
+
+            public Compra(string codigo, Int32 producto, Int32 marca,Int32 proveedor, Int32 cantidad, String fecha)      //CONSTRUCTOR CON PARAMETROS
+            {
+                this.codigo = codigo;
+                this.producto = producto;
+                this.marca = marca;
+                this.proveedor = proveedor;
+                this.cantidad = cantidad;
+                this.fecha = fecha;
+            }
+        } //class producto
+
+
     }
 }
